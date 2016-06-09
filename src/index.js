@@ -1,18 +1,19 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import createSession as create from './actions/index';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import { Router, browserHistory } from 'react-router';
+import promise from 'redux-promise';
+import routes from './routes';
+import reducers from './reducers';
+import io from 'socket.io-client';
 
-class InfoIndex extends Component {
-	render() {
+const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
+const store = createStoreWithMiddleware(reducers);
 
-		return (
-			<div>
-				<div className="landing-page">Landing icon</div>
-				<button className="create btn btn-primary" onClick={this.props.create}>Create a session</button>
-				<button className="join btn btn-primary">Join a session</button>
-			</div>
-		);
-	}
-}
-
-export default connect(null, create)(InfoIndex);
+ReactDOM.render(
+	<Provider store={store}>
+		<Router history={browserHistory} routes={routes} />
+	</Provider>
+	, document.querySelector('.container'));
+)
