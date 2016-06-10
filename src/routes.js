@@ -1,5 +1,5 @@
 import React from 'react';
-import { React, IndexRoute } from 'react-router';
+import { Route, IndexRoute } from 'react-router';
 
 import App from './components/app';
 import InfoIndex from './components/info_index';
