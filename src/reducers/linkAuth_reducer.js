@@ -6,7 +6,7 @@ export default function(state= {
 }, action){
   switch(action.type){
     case LINK_CODE_AUTH:
-      return {...state, linkCode: action.paylod, linkCodeError: ''};
+      return {...state, linkCode: action.payload, linkCodeError: ''};
     case LINK_CODE_ERROR:
       return {...state, linkCodeError: action.payload};
     case default:
