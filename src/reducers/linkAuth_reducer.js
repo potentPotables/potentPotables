@@ -1,7 +1,7 @@
 import { LINK_CODE_AUTH, LINK_CODE_ERROR } from '../actions/index';
 
 export default function(state= {
-  linkCode: ''
+  linkCode: '',
   linkCodeError: ''
 }, action){
   switch(action.type){
@@ -9,7 +9,7 @@ export default function(state= {
       return {...state, linkCode: action.payload, linkCodeError: ''};
     case LINK_CODE_ERROR:
       return {...state, linkCodeError: action.payload};
-    case default:
+    default:
       return state;
   }
 }
