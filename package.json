@@ -26,6 +26,7 @@
     "express": "^4.13.4",
     "jsdom": "^9.2.1",
     "mongoose": "^4.4.20",
+    "morgan": "^1.7.0",
     "nodemon": "^1.9.2",
     "react": "^15.1.0",
     "react-addons-test-utils": "^15.1.0",
