@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import createSession as create from './actions/index';
+import { createSession as create } from '../actions/index';
 
 class InfoIndex extends Component {
 	render() {

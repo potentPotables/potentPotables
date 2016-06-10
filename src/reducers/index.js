@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import sessionID from './sessionID_reducer';
 
-const rootReducer = combineReducer({
+const rootReducer = combineReducers({
 	sessionID,
 });
 
