@@ -15,4 +15,4 @@ class InfoIndex extends Component {
 	}
 }
 
-export default connect(null, create)(InfoIndex);
+export default connect(null, { create })(InfoIndex);
