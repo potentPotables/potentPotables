@@ -1,0 +1,15 @@
+import { LINK_CODE_AUTH, LINK_CODE_ERROR } from '../actions/index';
+
+export default function(state= {
+  linkCode: ''
+  linkCodeError: ''
+}, action){
+  switch(action.type){
+    case LINK_CODE_AUTH:
+      return {...state, linkCode: action.paylod, linkCodeError: ''};
+    case LINK_CODE_ERROR:
+      return {...state, linkCodeError: action.payload};
+    case default:
+      return state;
+  }
+}
