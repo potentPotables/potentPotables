@@ -23,8 +23,11 @@ module.exports = function(app, io) {
 	  res.sendFile(path.resolve(__dirname + '/../node_modules/socket.io-client/socket.io.js'))
 	});
 
+	app.get('/favicon.ico', function(req, res) {
+    res.sendFile(path.resolve(__dirname + '/../style/icon/favicon.ico'));
+  });
+
 	app.post('/create', CreateSession.createSession, function(req, res, next) {
-		console.log('hello');
 		res.json({ session: req.body.session })
 	});
 }

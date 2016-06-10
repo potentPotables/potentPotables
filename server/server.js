@@ -24,7 +24,6 @@ db.once('open', function() {
 });
 
 
-//serving up files
 app.use(morgan('combined'));
 app.use(cors());
 app.use(bodyParser.json({type: '*/*'}));
