@@ -29,7 +29,7 @@ class LinkVerification extends Component {
          <button className="join btn btn-primary" onClick= {() => this.props.setUserType('player')}>Player</button>
         </div>
       </div>
-      <form onSubmit={this.handleFormSubmit}>
+      <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
         <div>
           <label>Link Code</label>
           <input type="text" placeholder="Enter Link Code Here" {...linkCode}/>
@@ -47,6 +47,6 @@ function mapStateToProps(state){
 }
 
 export default reduxForm({
-  form: linkForm,
+  form: 'LinkForm',
   fields: [ linkCode ]
 }, mapStateToProps, { setUserType, linkCodeVerification })(LinkVerification);

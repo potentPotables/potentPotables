@@ -3,6 +3,7 @@ import { browserHistory } from 'react-router';
 
 export const CREATE_SESSION = 'CREATE_SESSION';
 export const SET_USER_TYPE= 'SET_USER_TYPE';
+export const CREATE_USERNAME= 'CREATE_USERNAME';
 export const LINK_CODE_AUTH= 'LINK_CODE_AUTH';
 export const LINK_CODE_ERROR= 'LINK_CODE_ERROR';
 
@@ -27,11 +28,23 @@ export function linkCodeVerifcation({linkcode}) {
     axios.post('/linkcode', {linkcode})
       .then(response => {
         const currentState= getState();
-        currentState.user.userType === 'host' ? browserHistory.push('/playerConfig') : browserHistory.push('/host');
-        dispatch({type: LINK_CODE_AUTH payload: response.data.linkcode})
+        currentState.user.userType === 'host' ? browserHistory.push('/playerconfig') : browserHistory.push('/host');
+        dispatch({type: LINK_CODE_AUTH, payload: response.data.linkcode})
       })
       .catch(response => {
-        dispatch({type: LINK_CODE_ERROR payload: response.data.error});
+        dispatch({type: LINK_CODE_ERROR, payload: response.data.error});
       })
+  }
+}
+
+export function createUsername({username}) {
+  return function(dispatch){
+    axios.post('/username', {username})
+      .then(response => {
+        dispatch({type: CREATE_USERNAME, payload: response.data.username});
+      })
+      .catch(response => {
+        console.log(response);
+      });
   }
 }

@@ -3,10 +3,18 @@ import { Route, IndexRoute } from 'react-router';
 
 import App from './components/app';
 import InfoIndex from './components/info_index';
+import LinkLanding from './components/link_landing';
+import LinkVerification from './components/link_verification';
+import UserConfig from './components/user_config'
 
 
 export default (
 	<Route path="/" component={App}>
 		<IndexRoute component={InfoIndex} />
+    <Route path="linklanding" component={LinkLanding} />
+    <Route path="linkverification" component={LinkVerification} />
+    <Route path="userconfig" component={UserConfig} />
+    <Route path="host" component={} />
+    <Route path="gameboard" component={} />
 	</Route>
 )
