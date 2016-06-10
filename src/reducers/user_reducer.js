@@ -1,14 +1,14 @@
-import { SET_USER_TYPE, CREATE_USERNAME } from '../action/index';
+import { SET_USER_TYPE, CREATE_USERNAME } from '../actions/index';
 
-export default function (state= {
+export default function(state= {
   userType: '',
   username: ''
 }, action) {
   switch(action.type){
     case SET_USER_TYPE:
-      return {...state, userType: action.payload}
+      return {...state, userType: action.payload};
     case CREATE_USERNAME:
-      return {...state, username: action.payload}
+      return {...state, username: action.payload};
     default:
       return state;
   }

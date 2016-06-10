@@ -6,7 +6,7 @@ export default function(state={}, action){
       var newState= {...state};
       newState= action.payload;
       return newState;
-    case default:
+    default:
       return state;
   }
 }

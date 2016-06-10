@@ -9,6 +9,7 @@ import UserConfig from './components/user_config';
 import UserGameplay from './components/user_gameplay';
 
 
+
 export default (
 	<Route path="/" component={App}>
 		<IndexRoute component={InfoIndex} />
@@ -16,7 +17,6 @@ export default (
     <Route path="linkverification" component={LinkVerification} />
     <Route path="userconfig" component={UserConfig} />
     <Route path="usergameplay" component={UserGameplay} />
-    <Route path="hostgameplay" component={} />
-    <Route path="gameboard" component={} />
+
 	</Route>
 )
