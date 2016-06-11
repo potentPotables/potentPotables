@@ -55,7 +55,7 @@ export function createUsername({username}) {
 
 export function fetchGame(){
   return function(dispatch){
-    axios.get('/game')
+    axios.post('/game')
       .then(response => {
         dispatch({type: CREATE_GAME, payload: response.data.clues});
         dispatch({type: ACTIVATE_GAME, payload: true});
