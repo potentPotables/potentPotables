@@ -37,6 +37,7 @@ module.exports = function(app, io) {
 	});
 
 	app.post('/linkcode', VerifyCode.verifyCode, function(req, res, next) {
+		res.json({ room: req.body.room })
 	});
 
 	app.post('/game', function(req, res, next) {
