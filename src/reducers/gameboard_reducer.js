@@ -5,11 +5,11 @@ export default function(state= {
   category2: {},
   category3: {},
   category4: {}
-}, action){
+}, action) {
   switch(action.payload){
     case CREATE_GAME:
-      var newState= {...state};
-      newState= action.payload;
+      var newState = {...state};
+      newState = action.payload;
       return newState;
     default:
       return state;

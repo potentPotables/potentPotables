@@ -11,7 +11,7 @@ export const ACTIVATE_GAME= 'ACTIVATE_GAME';
 
 export function createSession() {
   return function(dispatch){
-    axios.get('/create')
+    axios.post('/create')
       .then( response => {
         dispatch({type: CREATE_SESSION, payload: response});
         browserHistory.push('/linklanding');
@@ -55,9 +55,9 @@ export function createUsername({username}) {
 
 export function fetchGame(){
   return function(dispatch){
-    axios.get('/game')
+    axios.post('/game')
       .then(response => {
-        dispatch({type: CREATE_GAME, payload: response.data.game});
+        dispatch({type: CREATE_GAME, payload: response.data.clues});
         dispatch({type: ACTIVATE_GAME, payload: true});
         browserHistory.push('/gameboard');
       })
