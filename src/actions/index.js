@@ -7,6 +7,7 @@ export const CREATE_USERNAME= 'CREATE_USERNAME';
 export const LINK_CODE_AUTH= 'LINK_CODE_AUTH';
 export const LINK_CODE_ERROR= 'LINK_CODE_ERROR';
 export const CREATE_GAME= 'CREATE_GAME';
+export const ACTIVATE_GAME= 'ACTIVATE_GAME';
 
 export function createSession() {
   return function(dispatch){
@@ -25,7 +26,7 @@ export function setUserType(value) {
   }
 }
 
-export function linkCodeVerifcation({linkcode}) {
+export function linkCodeVerification({linkcode}) {
   return function(dispatch, getState){
     axios.post('/linkcode', {linkcode})
       .then(response => {
@@ -57,6 +58,7 @@ export function fetchGame(){
     axios.get('/game')
       .then(response => {
         dispatch({type: CREATE_GAME, payload: response.data.game});
+        dispatch({type: ACTIVATE_GAME, payload: true});
         browserHistory.push('/gameboard');
       })
       .catch(response => {

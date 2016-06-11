@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { fetchGame } from '../actions/index';
 
@@ -14,7 +14,7 @@ class LinkLanding extends Component {
   }
 };
 
-function MapStateToProps(state) {
+function mapStateToProps(state) {
   return {link: state.sessionID};
 }
 export default connect(mapStateToProps, { fetchGame })(LinkLanding)

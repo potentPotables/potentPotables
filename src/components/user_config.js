@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import reduxForm from 'redux-form';
+import { reduxForm } from 'redux-form';
 import { createUsername } from '../actions/index';
 
 class userConfig extends Component {

@@ -34,7 +34,7 @@ class LinkVerification extends Component {
           <label>Link Code</label>
           <input type="text" placeholder="Enter Link Code Here" {...linkCode}/>
         </div>
-        {this.renderAlert()};
+        {this.renderAlert()}
         <button type="submit">Submit</button>
       </form>
       </div>
@@ -48,5 +48,5 @@ function mapStateToProps(state){
 
 export default reduxForm({
   form: 'LinkForm',
-  fields: [ linkCode ]
+  fields: [ 'linkCode' ]
 }, mapStateToProps, { setUserType, linkCodeVerification })(LinkVerification);
