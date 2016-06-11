@@ -1,4 +1,5 @@
 const CreateSession = require('./controllers/createsession');
+const VerifyCode = require('./controllers/verifycode');
 const path = require('path');
 const rp = require('request-promise');
 const _ = require('lodash');
@@ -35,6 +36,10 @@ module.exports = function(app, io) {
 		res.json({ session: req.body.session })
 	});
 
+	app.post('/linkcode', VerifyCode.verifyCode, function(req, res, next) {
+		res.json({ room: req.body.room })
+	});
+
 	app.post('/game', function(req, res, next) {
 		//Host selects the size of the game board, otherwise defaults to 5x6
 		var columns = req.body.categories || 6;
@@ -67,7 +72,7 @@ module.exports = function(app, io) {
 				.catch(function(err) {console.log(err);})
 			}
 			//Neatly pack them up to be delivered to client
-			setTimeout(function(){ res.json({ clues: payload }); }, 500);
+			setTimeout(function(){ res.json({ clues: payload }); }, 1000);
 		})
 		.catch(function(err) { console.log(err); });
 	});
