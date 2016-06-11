@@ -1,6 +1,6 @@
 import { SET_USER_TYPE, CREATE_USERNAME } from '../actions/index';
 
-export default function(state= {
+export default function(state = {
   userType: '',
   username: ''
 }, action) {

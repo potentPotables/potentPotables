@@ -1,6 +1,6 @@
 import { LINK_CODE_AUTH, LINK_CODE_ERROR } from '../actions/index';
 
-export default function(state= {
+export default function(state = {
   linkCode: '',
   linkCodeError: ''
 }, action){
