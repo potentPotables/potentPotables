@@ -35,7 +35,6 @@ module.exports = function(app, io) {
 		res.json({ session: req.body.session })
 	});
 
-
 	app.post('/game', function(req, res, next) {
 		//Host selects the size of the game board, otherwise defaults to 5x6
 		var columns = req.body.categories || 6;
