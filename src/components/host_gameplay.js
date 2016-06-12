@@ -25,4 +25,4 @@ function mapStateToProps(state){
           };
 }
 
-export default connect(mapStateToProps, {} )(HostGamePlay)
+export default connect(mapStateToProps, {} )(HostGameplay)

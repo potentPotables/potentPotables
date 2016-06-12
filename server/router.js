@@ -47,7 +47,7 @@ module.exports = function(app, io) {
 		//Grab 13 random clues and out of those, randomly pick out 6 of the 13
 		rp('http://jservice.io/api/random?count=13')
 		.then((body) => {
-			var array = JSON.parse(body); 
+			var array = JSON.parse(body);
 			var categories = [];
 			_.shuffle(array).forEach(category => {
 				if (categories.indexOf(category.category_id) > -1 || categories.length > columns - 1) {

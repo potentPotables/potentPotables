@@ -10,6 +10,7 @@ const router = require('./router');
 const mongoose = require('mongoose');
 const server = http.createServer(app);
 const io = require('socket.io')(server);
+const Sockets= require('./sockets_server');
 
 
 var db_url = process.env.MONGODB_URI || 'mongodb://localhost:sessions/sessions';
@@ -28,6 +29,10 @@ app.use(morgan('combined'));
 app.use(cors());
 app.use(bodyParser.json({type: '*/*'}));
 router(app, io);
+
+io.on('connection', function (socket){
+  Sockets.initSockets(io, socket);
+})
 //Server set up
 
 const port = process.env.port || 3000;
