@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
+import { joinRoom } from '../sockets_client';
 
 export const CREATE_SESSION = 'CREATE_SESSION';
 export const SET_USER_TYPE= 'SET_USER_TYPE';
