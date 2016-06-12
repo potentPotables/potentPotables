@@ -32,7 +32,7 @@ export function linkCodeVerification({linkcode}) {
     axios.post('/linkcode', {linkcode})
       .then(response => {
         const currentState= getState();
-        currentState.user.userType !== 'host' ? browserHistory.push('/playerconfig') : browserHistory.push('/hostgameplay');
+        currentState.user.userType !== 'host' ? browserHistory.push('/userconfig') : browserHistory.push('/hostgameplay');
         dispatch({type: LINK_CODE_AUTH, payload: response.data.room})
       })
       .catch(response => {
