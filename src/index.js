@@ -6,12 +6,9 @@ import { Router, browserHistory } from 'react-router';
 import reduxThunk from 'redux-thunk';
 import routes from './routes';
 import reducers from './reducers';
-import io from 'socket.io-client';
 
 const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
 const store = createStoreWithMiddleware(reducers);
-
-var socket= io();
 
 ReactDOM.render(
 	<Provider store={store}>
