@@ -55,6 +55,7 @@
     "casperjs": "^1.1.1",
     "chai": "*",
     "chai-jquery": "^2.0.0",
+    "enzyme": "^2.3.0",
     "mocha": "*"
   }
 }
