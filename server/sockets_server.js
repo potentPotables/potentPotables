@@ -1,6 +1,6 @@
 //all server-side sockets functions will be written here;
 //initSockets will be exported to server-side index
-module.exports.initSockets= function(socket){
+module.exports.initSockets= function(socket, io){
   var isButtonClicked= false;
 
   socket.emit('test', { hello: 'world' });

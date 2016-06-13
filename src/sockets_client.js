@@ -25,7 +25,6 @@ export function joinRoom(room){
 }
 
 export function createUsernameSockets(username, room) {
-	
 	socket.emit('createUsernameSockets', {username: username, room: room});
 
 	// socket.to(room).emit('createUsernameSockets', { username });
