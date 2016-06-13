@@ -1,30 +1,35 @@
 import React, { Component } from 'react';
-import { reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
 import { createUsername } from '../actions/index';
 
 class userConfig extends Component {
-  handleFormSubmit(formProps){
-    this.props.createUsername(formProps);
+  constructor (props) {
+    super(props);
+    this.state = {username: ''}
   }
+
+  nameChange(e) {
+    this.setState({username: e.target.value});
+  }
+
+  submitUsername(username) {
+    this.props.createUsername(username);
+    console.log('username is :', username)
+  }
+
   render() {
-    const {handleSubmit, fields:{username}}= this.props;
     return (
-      <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
         <div>
           <label>Username</label>
-          <input type="text" placeholder="Enter Username Here" {...username}/>
+          <input onChange={(e) => this.nameChange(e)} type="text" placeholder="Enter Username Here" value={this.state.username}/>
+          <button type="button" onClick={() => this.submitUsername(this.state.username)}>Submit</button>
         </div>
-        <button type="submit">Submit</button>
-      </form>
     );
   }
 }
 
 
-export default reduxForm({
-  form: 'UsernameForm',
-  fields: ['username']
-}, null, { createUsername })(userConfig);
+export default connect(null, {createUsername})(userConfig);
 
 
 

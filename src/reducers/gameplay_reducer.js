@@ -16,7 +16,7 @@ export default function(state= {
     case CREATE_NEW_USER:
       var stateUsersCopy = {...state.users};
       stateUsersCopy.username = {username: action.payload, score: 0};
-      var stateCopy = {..state};
+      var stateCopy = {...state};
       stateCopy.users = stateUsersCopy;
       return stateCopy;
     default:

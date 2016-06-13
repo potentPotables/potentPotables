@@ -12,6 +12,6 @@ module.exports.initSockets= function(socket){
 
   socket.on('createUsername', function(data) {
   	socket.emit('newUser', { newUser : data.username} );
-  }
+  });
 
 }
