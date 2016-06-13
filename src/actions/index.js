@@ -48,7 +48,8 @@ export function createUsername({username}) {
   return function(dispatch, getState){
         const currentState = getState();
         dispatch({type: CREATE_USERNAME, payload: username});
-        createUsernameSockets(username, currentState.sessionID);
+        console.log('currentState.linkAuth.linkCode is :', currentState.linkAuth.linkCode);
+        createUsernameSockets(username, currentState.linkAuth.linkCode);
         browserHistory.push('/usergameplay');
   }
 }
