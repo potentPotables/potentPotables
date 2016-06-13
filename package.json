@@ -28,6 +28,7 @@
     "body-parser": "^1.15.1",
     "cors": "^2.7.1",
     "express": "^4.13.4",
+    "jquery": "^3.0.0",
     "jsdom": "^9.2.1",
     "lodash": "^4.13.1",
     "mongoose": "^4.4.20",
@@ -49,5 +50,11 @@
     "socket.io-client": "^1.4.6",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
+  },
+  "devDependencies": {
+    "casperjs": "^1.1.1",
+    "chai": "*",
+    "chai-jquery": "^2.0.0",
+    "mocha": "*"
   }
 }
