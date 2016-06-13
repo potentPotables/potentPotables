@@ -31,6 +31,6 @@ $.fn.simulate = function(eventName, value) {
 	TestUtils.Simulate[eventName](this[0]);
 }
 
-chaijQuery(chai, chai.util, $)
+chaijQuery(chai, chai.util, $);
 
 export { renderComponent, expect };

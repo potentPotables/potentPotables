@@ -1,16 +1,12 @@
 import { CREATE_GAME } from '../actions/index';
 
-export default function(state= {
-  category1: {},
-  category2: {},
-  category3: {},
-  category4: {}
+export default function(state = {
+  categories: null,
+  clues: null,
 }, action) {
-  switch(action.payload){
+  switch(action.type){
     case CREATE_GAME:
-      var newState = {...state};
-      newState = action.payload;
-      return newState;
+      return Object.assign(state, action.payload);
     default:
       return state;
   }
