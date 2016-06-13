@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
-import { joinRoom } from '../sockets_client';
+import joinRoom from '../sockets_client';
 
 export const CREATE_SESSION = 'CREATE_SESSION';
 export const SET_USER_TYPE= 'SET_USER_TYPE';
@@ -33,9 +33,11 @@ export function linkCodeVerification({linkcode}) {
       .then(response => {
         const currentState= getState();
         currentState.user.userType !== 'host' ? browserHistory.push('/userconfig') : browserHistory.push('/hostgameplay');
+        joinRoom(response.data.room);
         dispatch({type: LINK_CODE_AUTH, payload: response.data.room})
       })
       .catch(response => {
+        console.log('error REsponse', response);
         dispatch({type: LINK_CODE_ERROR, payload: response.data.error});
       })
   }

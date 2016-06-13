@@ -1,4 +1,5 @@
 //Main starting point of the application
+"use strict"
 
 const express = require('express');
 const http = require('http');
@@ -11,6 +12,11 @@ const mongoose = require('mongoose');
 const server = http.createServer(app);
 const io = require('socket.io')(server);
 const Sockets= require('./sockets_server');
+// const EventEmitter= require('events');
+
+// class MyEmitter extends EventEmitter {}
+
+// MyEmitter.setMaxListeners(0);
 
 
 var db_url = process.env.MONGODB_URI || 'mongodb://localhost:sessions/sessions';
@@ -25,14 +31,14 @@ db.once('open', function() {
 });
 
 
-app.use(morgan('combined'));
+//app.use(morgan('combined'));
 app.use(cors());
 app.use(bodyParser.json({type: '*/*'}));
 router(app, io);
 
-io.on('connection', function (socket){
-  Sockets.initSockets(io, socket);
-})
+io.on('connection', function(socket){
+  Sockets.initSockets(socket);
+});
 //Server set up
 
 const port = process.env.port || 3000;
