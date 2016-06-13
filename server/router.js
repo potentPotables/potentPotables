@@ -59,14 +59,14 @@ module.exports = function(app, io) {
 		})
 		//Once you have your 6 categories, make another call to the API to grab the clues that belong to them.
 		.then((categories) => {
-			var payload = [[],[]];
+			var payload = {categories: [], clues: []};
 			for(var i = 0; i < categories.length; i++){
 				rp('http://jservice.io/api/category?id=' + categories[i])
 				.then((clues) => {
 					var clues = JSON.parse(clues);
-					payload[0].push(clues.title);
+					payload.categories.push(clues.title);
 					for(var j = 0; j < rows; j++){
-						payload[1].push(clues.clues[j]);
+						payload.clues.push(clues.clues[j]);
 					}
 				})
 				.catch(function(err) {console.log(err);})
