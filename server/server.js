@@ -12,11 +12,6 @@ const mongoose = require('mongoose');
 const server = http.createServer(app);
 const io = require('socket.io')(server);
 const Sockets= require('./sockets_server');
-// const EventEmitter= require('events');
-
-// class MyEmitter extends EventEmitter {}
-
-// MyEmitter.setMaxListeners(0);
 
 
 var db_url = process.env.MONGODB_URI || 'mongodb://localhost:sessions/sessions';
