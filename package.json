@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
+    "test:watch": "npm run test -- --watch",
     "dev": "nodemon server/server.js"
   },
   "repository": {
