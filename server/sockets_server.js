@@ -10,8 +10,8 @@ module.exports.initSockets= function(socket){
     socket.join(data.room);
   });
 
-  socket.on('createUsername', function(data) {
-  	socket.emit('newUser', { newUser : data.username} );
+  socket.on('createUsernameSockets', function(data) {
+  	socket.to(data.room).emit('newUser', { newUser : data.username} );
   });
 
 }
