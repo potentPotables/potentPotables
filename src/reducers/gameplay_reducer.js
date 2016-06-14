@@ -2,6 +2,8 @@ import { ACTIVATE_GAME } from '../actions/index';
 import { ADD_NEW_USER,
          DISABLE_BUTTON,
          SET_ACTIVE_USER } from '../sockets_client';
+import { CREATE_NEW_USER } from '../sockets_client';
+import { SET_ACTIVE_CLUE } from '../sockets_client';
 
 export default function(state= {
   isGameActive: false,
@@ -24,6 +26,8 @@ export default function(state= {
       return {...state, isButtonDisabled: action.payload};
     case SET_ACTIVE_USER:
       return {...state, activeUser: action.payload};
+    case SET_ACTIVE_CLUE:
+      return {...state, activeClue: action.payload};
     default:
       return state;
   }
