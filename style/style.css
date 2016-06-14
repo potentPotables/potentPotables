@@ -4,4 +4,16 @@
 	text-align: center;
 	width: 300px;  
 	height: 70px;
+	position: absolute;
+}
+
+.clues {
+	text-align: center;
+	background-color: white;
+	color: #3F51B5;
+	width: 300px;  
+	height: 70px;
+	border: 1px;
+	position: relative;
+
 }
