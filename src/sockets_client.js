@@ -4,6 +4,9 @@ var socket= io();
 export const ADD_NEW_USER = 'ADD_NEW_USER';
 export const SET_ACTIVE_USER= 'SET_ACTIVE_USER';
 export const DISABLE_BUTTON= 'DISABLE_BUTTON';
+export const CREATE_NEW_USER = 'CREATE_NEW_USER';
+export const ACTIVATE_GAME = 'ACTIVATE_GAME';
+
 //all client-side socket listeners will be be contained here
 //initSockets will be exported to client-side index
 export function initSockets(store){
@@ -22,6 +25,10 @@ export function initSockets(store){
     store.dispatch({type: ACTIVATE_GAME, payload: true});
   });
 
+  socket.on('currentClue', function(data) {
+    
+  })
+
   socket.on('test', function(data){
     console.log('data is', data);
     console.log('store is', store);
@@ -37,6 +44,7 @@ export function joinRoom(room){
   socket.emit('joinRoom', {room: room});
 }
 
+// called inside /actions/index.js => createUsername
 export function createUsernameSockets(username, room) {
   console.log('room is', room);
   console.log('inside UsernameSockeetEmitter', room)
@@ -45,7 +53,13 @@ export function createUsernameSockets(username, room) {
 
 export function sendButtonClick(username, room) {
   socket.emit('sendButtonClick', {username: username, room: room});
+}
+// called inside /actions/index.js => fetchGame
 export function startGame(room) {
   socket.emit('startGame', { room });
 }
 
+// will be called inside /actions/index.js => 
+export function activeClue(activeClue, room) {
+  socket.emit('activeClue', { activeClue, room });
+}

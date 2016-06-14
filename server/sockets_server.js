@@ -40,4 +40,8 @@ module.exports.initSockets= function(socket, clients, ioAccess){
   	socket.to(data.room).emit('gameActive');
   });
 
+  socket.on('activeClue', function(data) {
+  	socket.to(data.room).emit('currentClue', {currentClue: data.activeClue});
+  })
+
 }
