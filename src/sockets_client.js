@@ -1,5 +1,5 @@
 import io from 'socket.io-client';
-// var socket = io('http://localhost');
+
 var socket = io();
 
 
@@ -17,36 +17,29 @@ export function initSockets(store){
   console.log('inside initSockets Client');
 
   socket.on('newUser', function(data) {
-    console.log('newUser is', data.users);
-  	store.dispatch({action: ADD_NEW_USER, payload: data})
+  	store.dispatch({type: ADD_NEW_USER, payload: data})
   });
 
   socket.on('setActiveUser', function(data){
-    store.dispatch({action: SET_ACTIVE_USER, payload: data.username})
-    store.dispatch({action: DISABLE_BUTTON, payload: data.isButtonClicked})
-  	store.dispatch({action: CREATE_NEW_USER, payload: data.newUser })
+    store.dispatch({type: SET_ACTIVE_USER, payload: data.username});
+    store.dispatch({type: DISABLE_BUTTON, payload: data.isButtonClicked});
   });
 
   socket.on('gameActive', function(data) {
+    console.log('listening start game client');
     store.dispatch({type: ACTIVATE_GAME, payload: true});
   });
 
   socket.on('currentClue', function(data) {
-    
-  });
 
-  socket.on('test', function(data){
-    console.log('data is', data);
-    console.log('store is', store);
-    //store.dispatch()
   });
 
   socket.on('incorrect', function(data) {
-    store.dispatch({type: INCORRECT_ANSWER, payload: data.username});
+    store.dispatch({type: INCORRECT_ANSWER, payload: data});
   });
 
   socket.on('correct', function(data) {
-  	store.dispatch({type: CORRECT_ANSWER, payload: data.username});
+  	store.dispatch({type: CORRECT_ANSWER, payload: data});
   });
 
   socket.on('skip', function() {
@@ -72,24 +65,26 @@ export function createUsernameSockets(username, room) {
 export function sendButtonClick(username, room) {
   socket.emit('sendButtonClick', {username: username, room: room});
 }
-// called inside /actions/index.js => fetchGame
+
 export function startGame(room) {
-  socket.emit('startGame', { room });
+  console.log('emitting start Game', room);
+  socket.emit('startGame', { room: room });
 }
 
-// will be called inside /actions/index.js => 
+// will be called inside /actions/index.js =>
+//still pending gameboard completion
 export function activeClue(activeClue, room) {
   socket.emit('activeClue', { activeClue, room });
 }
 
-export function incorrect(username) {
-	socket.emit('incorrect', {username: username});
+export function declareIncorrect(username, room, clue) {
+	socket.emit('incorrect', {username: username, room: room, value: clue.value});
 }
 
-export function correct(username) {
-	socket.emit('correct', {username: username});
+export function declareCorrect(username, room, clue) {
+	socket.emit('correct', {username: username, room: room, clue: clue.value});
 }
 
-export function skip() {
-	socket.emit('skip');
+export function skipClue(room, clue) {
+	socket.emit('skip', {room: room, clue: clue});
 }
