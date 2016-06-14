@@ -1,16 +1,35 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Categories from './categories';
-// import Clues from './clues';
+import Clue from './clue';
 
 
 
 class Gameboard extends Component {
     render() {
+      const clues= this.props.clues.map((clue) => {
+        return <Clue value={clue.value} key= {clue.id} />;
+      });
+
+      const categories = this.props.categories.map((category, index) => {
+        return(
+          <div>
+            <tbody>
+              <tr>
+                <th className="categories" key={category}> {category} </th>
+              </tr>
+              <tr>
+                  {clues.splice(0, 5)}
+              </tr>
+            </tbody>
+          </div>
+        )
+      });
+
       return(
         <div>
           <table className="table table-reflow">
-              <Categories />
+              { categories }
           </table>
         </div>  
     );
@@ -18,7 +37,7 @@ class Gameboard extends Component {
 }
 
 function mapStateToProps(state){
-  return {users: state.gameplay.user}
+  return {users: state.gameplay.user, categories: state.gameboard.categories, clues: state.gameboard.clues}
 }
 
 export default connect(mapStateToProps)(Gameboard);
