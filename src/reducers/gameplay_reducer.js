@@ -1,5 +1,7 @@
 import { ACTIVATE_GAME } from '../actions/index';
-import { CREATE_NEW_USER } from '../sockets_client';
+import { ADD_NEW_USER,
+         DISABLE_BUTTON,
+         SET_ACTIVE_USER } from '../sockets_client';
 
 export default function(state= {
   isGameActive: false,
@@ -7,19 +9,22 @@ export default function(state= {
   activeUser: '',
   users: {},
   hasAnsweredUsers: [],
-  isButtonActive: true,
+  isButtonDisabled: false,
   isPlayLive: false
 }, action){
   switch(action.type){
     case ACTIVATE_GAME:
       return {...state, isGameActive: action.payload};
-    case CREATE_NEW_USER:
+    case ADD_NEW_USER:
       var stateUsersCopy = {...state.users};
-      stateUsersCopy.username = {username: action.payload, score: 0};
-      var stateCopy = {...state};
-      stateCopy.users = stateUsersCopy;
+      stateUsersCopy= action.payload;
+      var stateCopy = {...state, users: stateUsersCopy};
       return stateCopy;
+    case DISABLE_BUTTON:
+      return {...state, isButtonDisabled: action.payload};
+    case SET_ACTIVE_USER:
+      return {...state, activeUser: action.payload};
     default:
-      return state
+      return state;
   }
 }

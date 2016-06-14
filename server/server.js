@@ -32,7 +32,9 @@ app.use(bodyParser.json({type: '*/*'}));
 router(app, io);
 
 io.on('connection', function(socket){
-  Sockets.initSockets(socket);
+  var clients= io.sockets.adapter;
+  var ioAccess= io.sockets
+  Sockets.initSockets(socket, clients, ioAccess);
 });
 //Server set up
 
