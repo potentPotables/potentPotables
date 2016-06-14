@@ -1,5 +1,7 @@
 import io from 'socket.io-client';
-var socket = io('http://localhost');
+// var socket = io('http://localhost');
+var socket = io();
+
 
 export const ADD_NEW_USER = 'ADD_NEW_USER';
 export const SET_ACTIVE_USER= 'SET_ACTIVE_USER';
