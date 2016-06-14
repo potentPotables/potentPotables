@@ -8,16 +8,15 @@ class Categories extends Component {
 		const categories = this.props.categories.map((category) => {
 			return(
         <div>
-          <div>
-            <th className="col-md-2 categories" key={category}> {category} </th>
-          </div>
-          
-        <div>
-          <tr>
-            <Clues />
-          </tr>
+          <tbody>
+            <tr>
+              <th className="categories" key={category}> {category} </th>
+            </tr>
+            <tr>
+                <Clues />
+            </tr>
+          </tbody>
         </div>
-      </div>
     	)
   	});
   	

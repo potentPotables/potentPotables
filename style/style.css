@@ -1,19 +1,20 @@
 .categories {
-	background-color: #3F51B5;
+	background-color: navy;
 	color: white;
 	text-align: center;
-	width: 300px;  
-	height: 70px;
+	width: 175px;  
+	height: 100px;
 	position: absolute;
+	flex: 2;
 }
 
 .clues {
 	text-align: center;
-	background-color: white;
-	color: #3F51B5;
-	width: 300px;  
-	height: 70px;
+	background-color: navy;
+	color: yellow;
+	width: 175px;  
+	height: 100px;
 	border: 1px;
-	position: relative;
-
+	font-size: 30px;
+	flex: 6;
 }
