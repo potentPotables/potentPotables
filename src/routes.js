@@ -8,7 +8,7 @@ import LinkVerification from './components/link_verification';
 import UserConfig from './components/user_config';
 import UserGameplay from './components/user_gameplay';
 import HostGameplay from './components/host_gameplay';
-import Clue from './components/clue';
+import ClueView from './components/clue_view';
 import HostAnswer from './components/host_answer';
 import Gameboard from './components/gameboard';
 
@@ -20,7 +20,7 @@ export default (
     <Route path="userconfig" component={UserConfig} />
     <Route path="usergameplay" component={UserGameplay} />
     <Route path="hostgameplay" component={HostGameplay} />
-    <Route path="clue" component={Clue} />
+    <Route path="clue_view" component={ClueView} />
     <Route path="hostanswer" component={HostAnswer} />
     <Route path="gameboard" component={Gameboard} />
 	</Route>

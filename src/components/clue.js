@@ -1,28 +1,14 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { Link } from 'react-router';
 
-class Clue extends Component {
-  static contextTypes = {
-    router: React.PropTypes.object
-  }
+const Clue = ({value}) => (
 
-  componentWillUpdate(){
-    if (this.props.activeClue === ''){
-      this.context.router.push('/gameboard');
-    }
-  }
+			<div>
+				<Link to="/clue_view">
+					<td className="clues">${value}</td>
+				</Link>
+			</div>
 
-  render() {
-    return(
-      <div>
-        {this.props.activeClue}
-      </div>
-    );
-  }
-}
+);
 
-function mapStateToProps(state){
-  return {activeClue: state.gameplay.activeClue};
-}
-
-export default connect(mapStateToProps)(Clue);
+export default Clue;
