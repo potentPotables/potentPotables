@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
-import { joinRoom, createUsernameSockets } from '../sockets_client';
+import { joinRoom, createUsernameSockets, startGame } from '../sockets_client';
 
 
 export const CREATE_SESSION = 'CREATE_SESSION';
@@ -48,7 +48,6 @@ export function createUsername(username) {
   return function(dispatch, getState){
         const currentState = getState();
         dispatch({type: CREATE_USERNAME, payload: username});
-        console.log(username)
         createUsernameSockets(username, currentState.linkAuth.linkCode);
         browserHistory.push('/usergameplay');
   }
@@ -59,7 +58,7 @@ export function fetchGame(){
     axios.post('/game')
       .then(response => {
         dispatch({type: CREATE_GAME, payload: response.data.clues});
-        dispatch({type: ACTIVATE_GAME, payload: true});
+        startGame(response.data.room);
         browserHistory.push('/gameboard');
       })
       .catch(response => {

@@ -36,5 +36,8 @@ module.exports.initSockets= function(socket, clients, ioAccess){
     }
     socket.to(data.room).emit('setActiveUser', {username: roomData[data.room].activeUser, isButtonClicked: true});
   })
+  socket.on('startGame', function(data) {
+  	socket.to(data.room).emit('gameActive');
+  });
 
 }

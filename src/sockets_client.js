@@ -15,6 +15,17 @@ export function initSockets(store){
   socket.on('setActiveUser', function(data){
     store.dispatch({action: SET_ACTIVE_USER, payload: data.username})
     store.dispatch({action: DISABLE_BUTTON, payload: data.isButtonClicked})
+  	store.dispatch({action: CREATE_NEW_USER, payload: data.newUser })
+  });
+
+  socket.on('gameActive', function(data) {
+    store.dispatch({type: ACTIVATE_GAME, payload: true});
+  });
+
+  socket.on('test', function(data){
+    console.log('data is', data);
+    console.log('store is', store);
+    //store.dispatch()
   })
 }
 
@@ -34,5 +45,7 @@ export function createUsernameSockets(username, room) {
 
 export function sendButtonClick(username, room) {
   socket.emit('sendButtonClick', {username: username, room: room});
+export function startGame(room) {
+  socket.emit('startGame', { room });
 }
 
