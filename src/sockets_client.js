@@ -1,20 +1,24 @@
 import io from 'socket.io-client';
-var socket= io();
+var socket = io('http://localhost');
 
 export const ADD_NEW_USER = 'ADD_NEW_USER';
 export const SET_ACTIVE_USER= 'SET_ACTIVE_USER';
 export const DISABLE_BUTTON= 'DISABLE_BUTTON';
 export const CREATE_NEW_USER = 'CREATE_NEW_USER';
 export const ACTIVATE_GAME = 'ACTIVATE_GAME';
-
+export const INCORRECT_ANSWER = 'INCORRECT_ANSWER';
+export const CORRECT_ANSWER = 'CORRECT_ANSWER';
+export const SKIP = 'SKIP';
 //all client-side socket listeners will be be contained here
 //initSockets will be exported to client-side index
 export function initSockets(store){
   console.log('inside initSockets Client');
+
   socket.on('newUser', function(data) {
     console.log('newUser is', data.users);
   	store.dispatch({action: ADD_NEW_USER, payload: data})
-  })
+  });
+
   socket.on('setActiveUser', function(data){
     store.dispatch({action: SET_ACTIVE_USER, payload: data.username})
     store.dispatch({action: DISABLE_BUTTON, payload: data.isButtonClicked})
@@ -27,12 +31,24 @@ export function initSockets(store){
 
   socket.on('currentClue', function(data) {
     
-  })
+  });
 
   socket.on('test', function(data){
     console.log('data is', data);
     console.log('store is', store);
     //store.dispatch()
+  });
+
+  socket.on('incorrect', function(data) {
+    store.dispatch({type: INCORRECT_ANSWER, payload: data.username});
+  });
+
+  socket.on('correct', function(data) {
+  	store.dispatch({type: CORRECT_ANSWER, payload: data.username});
+  });
+
+  socket.on('skip', function() {
+  	store.dispatch({type: SKIP});
   })
 }
 
@@ -62,4 +78,16 @@ export function startGame(room) {
 // will be called inside /actions/index.js => 
 export function activeClue(activeClue, room) {
   socket.emit('activeClue', { activeClue, room });
+}
+
+export function incorrect(username) {
+	socket.emit('incorrect', {username: username});
+}
+
+export function correct(username) {
+	socket.emit('correct', {username: username});
+}
+
+export function skip() {
+	socket.emit('skip');
 }

@@ -1,9 +1,5 @@
 import { ACTIVATE_GAME } from '../actions/index';
-import { ADD_NEW_USER,
-         DISABLE_BUTTON,
-         SET_ACTIVE_USER } from '../sockets_client';
-import { CREATE_NEW_USER } from '../sockets_client';
-import { SET_ACTIVE_CLUE } from '../sockets_client';
+import { INCORRECT_ANSWER, CORRECT_ANSWER, SKIP, SET_ACTIVE_CLUE, ADD_NEW_USER, DISABLE_BUTTON, SET_ACTIVE_USER } from '../sockets_client';
 
 export default function(state= {
   isGameActive: false,
@@ -28,6 +24,13 @@ export default function(state= {
       return {...state, activeUser: action.payload};
     case SET_ACTIVE_CLUE:
       return {...state, activeClue: action.payload};
+    case INCORRECT_ANSWER:
+      var hasAnsweredCopy = state.hasAnsweredUsers.concat(action.payload);
+      return {...state, hasAnsweredUsers: hasAnsweredCopy, activeUser: '', isButtonActive: true};
+    case CORRECT_ANSWER:
+      return {...state, hasAnsweredUsers: []}; //needs additional logic to bring back to gameboard on browser
+    case SKIP:
+      return {...state}; //needs additional logic to bring back to gameboard on browser
     default:
       return state;
   }

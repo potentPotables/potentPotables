@@ -57,6 +57,7 @@
     "chai": "*",
     "chai-jquery": "^2.0.0",
     "enzyme": "^2.3.0",
-    "mocha": "*"
+    "mocha": "*",
+    "phantomjs": "^2.1.7"
   }
 }
