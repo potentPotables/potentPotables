@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
-import { joinRoom, createUsernameSockets, incorrect, correct, skip, startGame } from '../sockets_client';
+import { joinRoom,
+         createUsernameSockets,
+         skip } from '../sockets_client';
 
 export const CREATE_SESSION = 'CREATE_SESSION';
 export const SET_USER_TYPE= 'SET_USER_TYPE';
@@ -58,35 +60,10 @@ export function fetchGame(){
     axios.post('/game')
       .then(response => {
         dispatch({type: CREATE_GAME, payload: response.data.clues});
-        startGame(response.data.room);
-        browserHistory.push('/gameboard');
       })
       .catch(response => {
         console.log(response);
       })
-  }
-}
-
-// if we don't use dispatch here, we won't create this action at all.  we'll have to import the
-// activeClue function from sockets_client into the view
-export function setActiveClue({clue}) {
-  return function(dispatch) {
-    // dispatch({type: SET_ACTIVE_CLUE, payload: clue});
-    activeClue(clue);
-    browserHistory.push('/clue');
-
-  }
-}
-
-export function declareIncorrect(username) {
-  return function(){
-    incorrect(username);
-  }
-}
-
-export function declareCorrect(username) {
-  return function(){
-    correct(username);
   }
 }
 
@@ -95,4 +72,7 @@ export function skipClue() {
     skip();
   }
 }
+
+//need action creator to delete clue from gameboard once clicked on gameboard
+//this function would only be called by gameboard
 

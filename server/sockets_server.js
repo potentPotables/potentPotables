@@ -16,7 +16,6 @@ module.exports.initSockets= function(socket, clients, ioAccess){
       }
     }
     socket.join(data.room);
-    //console.log('clients', clients);
     var clientsFin= clients.rooms[data.room].sockets;
     console.log('Clients in room include', clientsFin);
   });
@@ -24,8 +23,10 @@ module.exports.initSockets= function(socket, clients, ioAccess){
   socket.on('createUsernameSockets', function(data) {
     if(!roomData[data.room].users){
       roomData[data.room].users= {};
+      roomData[data.room].users.count= 0;
     }
     roomData[data.room].users[data.username]= {username: data.username, score: 0};
+    roomData[data.room].users.count ++;
   	ioAccess.in(data.room).emit('newUser', {users : roomData[data.room].users} );
   });
 
@@ -34,11 +35,12 @@ module.exports.initSockets= function(socket, clients, ioAccess){
       roomData[data.room].isButtonClicked= true;
       roomData[data.room].activeUser= data.username;
     }
-    socket.to(data.room).emit('setActiveUser', {username: roomData[data.room].activeUser, isButtonClicked: true});
+    ioAccess.in(data.room).emit('setActiveUser', {username: roomData[data.room].activeUser, isButtonClicked: true});
   });
 
   socket.on('startGame', function(data) {
-  	socket.to(data.room).emit('gameActive');
+    console.log('inside server start game');
+  	ioAccess.in(data.room).emit('gameActive');
   });
 
   socket.on('activeClue', function(data) {
@@ -46,11 +48,17 @@ module.exports.initSockets= function(socket, clients, ioAccess){
   })
 
   socket.on('incorrect', function(data) {
-  	socket.to(data.room).emit('incorrect', {username: data.username} );
+    roomData[data.room].isButtonClicked= false;
+    roomData[data.room].activeUser= '';
+    roomData[data.room][data.username].score -= data.value;
+  	ioAccess.to(data.room).emit('incorrect', {username: data.username, score: roomData[data.room][data.username].score} );
   });
 
   socket.on('correct', function(data) {
-  	socket.to(data.room).emit('correct', {username: data.username} );
+    roomData[data.room].isButtonClicked= false;
+    roomData[data.room].activeUser= '';
+    roomData[data.room][data.username].score += data.value
+  	socket.to(data.room).emit('correct', {username: data.username, score: roomData[data.room][data.username].score} );
   });
 
   socket.on('skip', function(data) {

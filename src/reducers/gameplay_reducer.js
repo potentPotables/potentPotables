@@ -12,6 +12,7 @@ export default function(state= {
 }, action){
   switch(action.type){
     case ACTIVATE_GAME:
+      console.log('inside reducer Activate Game', action.payload);
       return {...state, isGameActive: action.payload};
     case ADD_NEW_USER:
       var stateUsersCopy = {...state.users};
@@ -25,8 +26,12 @@ export default function(state= {
     case SET_ACTIVE_CLUE:
       return {...state, activeClue: action.payload};
     case INCORRECT_ANSWER:
+      var stateUsernameCopy= {...state.users[action.payload.username]};
+      stateUsernameCopy.score= action.payload.score;
+      var stateUsersCopy= {...state.users};
+      stateUsersCopy[action.payload.username]= stateUsernameCopy;
       var hasAnsweredCopy = state.hasAnsweredUsers.concat(action.payload);
-      return {...state, hasAnsweredUsers: hasAnsweredCopy, activeUser: '', isButtonActive: true};
+      return {...state, users: stateUsersCopy, hasAnsweredUsers: hasAnsweredCopy, activeUser: '', isButtonActive: true};
     case CORRECT_ANSWER:
       return {...state, hasAnsweredUsers: []}; //needs additional logic to bring back to gameboard on browser
     case SKIP:

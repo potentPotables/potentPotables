@@ -2,13 +2,21 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { fetchGame } from '../actions/index';
+import { joinRoom, startGame } from '../sockets_client';
 
 class LinkLanding extends Component {
+  componentDidMount(){
+    joinRoom(this.props.link);
+    this.props.fetchGame();
+  }
+
   render() {
     return (
       <div>
       <div>Link Code: {this.props.link}</div>
-      <button onClick= {() => this.props.fetchGame()}className="join btn btn-primary">Start Game</button>
+      <Link to='/gameboard'>
+        <button onClick= {() => startGame(this.props.link)} className="join btn btn-primary">Start Game</button>
+      </Link>
       </div>
     );
   }
