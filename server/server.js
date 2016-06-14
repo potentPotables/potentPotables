@@ -31,8 +31,10 @@ app.use(cors());
 app.use(bodyParser.json({type: '*/*'}));
 router(app, io);
 
-io.on('connection', function(socket, io){
-  Sockets.initSockets(socket, io);
+io.on('connection', function(socket){
+  var clients= io.sockets.adapter;
+  var ioAccess= io.sockets
+  Sockets.initSockets(socket, clients, ioAccess);
 });
 //Server set up
 

@@ -44,11 +44,11 @@ export function linkCodeVerification({linkcode}) {
   }
 }
 
-export function createUsername({username}) {
+export function createUsername(username) {
   return function(dispatch, getState){
         const currentState = getState();
         dispatch({type: CREATE_USERNAME, payload: username});
-        console.log('currentState.linkAuth.linkCode is :', currentState.linkAuth.linkCode);
+        console.log(username)
         createUsernameSockets(username, currentState.linkAuth.linkCode);
         browserHistory.push('/usergameplay');
   }
