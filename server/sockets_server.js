@@ -35,7 +35,8 @@ module.exports.initSockets= function(socket, clients, ioAccess){
       roomData[data.room].activeUser= data.username;
     }
     socket.to(data.room).emit('setActiveUser', {username: roomData[data.room].activeUser, isButtonClicked: true});
-  })
+  });
+
   socket.on('startGame', function(data) {
   	socket.to(data.room).emit('gameActive');
   });
@@ -43,5 +44,17 @@ module.exports.initSockets= function(socket, clients, ioAccess){
   socket.on('activeClue', function(data) {
   	socket.to(data.room).emit('currentClue', {currentClue: data.activeClue});
   })
+
+  socket.on('incorrect', function(data) {
+  	socket.to(data.room).emit('incorrect', {username: data.username} );
+  });
+
+  socket.on('correct', function(data) {
+  	socket.to(data.room).emit('correct', {username: data.username} );
+  });
+
+  socket.on('skip', function(data) {
+  	socket.to(data.room).emit('skip');
+  });
 
 }

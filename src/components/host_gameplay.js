@@ -20,9 +20,10 @@ class HostGamePlay extends Component {
 }
 
 function mapStateToProps(state){
-  return {isGameActive: state.gameplay.isGameActive,
-          activeClue: state.gameplay.activeClue
-          };
+  return {
+    isGameActive: state.gameplay.isGameActive,
+    activeClue: state.gameplay.activeClue
+  };
 }
 
 export default connect(mapStateToProps, {} )(HostGamePlay)
