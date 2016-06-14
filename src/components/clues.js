@@ -5,11 +5,12 @@ class Clues extends Component {
 	render() {
 		return (
 			<div>
-						<td className="col-md-2 clues">$200</td>
-						<td className="col-md-2 clues">$400</td>
-						<td className="col-md-2 clues">$600</td>
-						<td className="col-md-2 clues">$800</td>
-						<td className="col-md-2 clues">$1000</td>
+						<td className="clues"></td>
+						<td className="clues">$200</td>
+						<td className="clues">$400</td>
+						<td className="clues">$600</td>
+						<td className="clues">$800</td>
+						<td className="clues">$1000</td>
 			</div>
 		)
 	}
