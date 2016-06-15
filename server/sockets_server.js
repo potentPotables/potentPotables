@@ -67,4 +67,9 @@ module.exports.initSockets= function(socket, clients, ioAccess){
   	socket.to(data.room).emit('skip', {isButtonCliked: false, activeUser: ''});
   });
 
+  socket.on('activateButtons', function(data) {
+    console.log(data.room);
+    ioAccess.in(data.room).emit('enableButtons');
+  });
+
 }

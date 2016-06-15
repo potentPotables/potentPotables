@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
+import { activateButtons } from '../sockets_client';
 
 class HostGamePlay extends Component {
   render(){
@@ -12,7 +13,7 @@ class HostGamePlay extends Component {
         </div> :
         this.props.activeClue.question ?
         <Link to='/hostanswer'>
-          <button className="join btn btn-primary">{this.props.activeClue.question}</button>
+          <button onClick={activateButtons(this.props.room)}className="join btn btn-primary">{this.props.activeClue.question}</button>
         </Link> :
         <div>
           Waiting for clue to be selected...
@@ -26,7 +27,8 @@ class HostGamePlay extends Component {
 function mapStateToProps(state){
   return {
     isGameActive: state.gameplay.isGameActive,
-    activeClue: state.gameplay.activeClue
+    activeClue: state.gameplay.activeClue,
+    room: state.linkAuth.linkCode,
   };
 }
 
