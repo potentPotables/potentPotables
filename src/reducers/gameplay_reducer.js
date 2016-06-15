@@ -24,7 +24,7 @@ export default function(state= {
     case SET_ACTIVE_USER:
       return {...state, activeUser: action.payload};
     case SET_ACTIVE_CLUE:
-      return {...state, activeClue: action.payload};
+      return {...state, activeClue: action.payload.currentClue};
     case INCORRECT_ANSWER:
       var stateUsernameCopy= {...state.users[action.payload.username]};
       stateUsernameCopy.score= action.payload.score;
