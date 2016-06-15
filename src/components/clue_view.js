@@ -13,7 +13,7 @@ class ClueView extends Component {
     }
   }
 
-  componentWillUnmount(){
+  componentWillMount(){
     this.props.resetClueValue(this.props.activeClue);
   }
 

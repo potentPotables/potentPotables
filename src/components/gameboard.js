@@ -3,12 +3,13 @@ import { connect } from 'react-redux';
 import Categories from './categories';
 import Clue from './clue';
 import { setActiveClue } from '../sockets_client';
+import _ from 'lodash';
 
 
 
 class Gameboard extends Component {
     render() {
-      const clues= this.props.clues.map((clue) => {
+      const clues= _.map(this.props.clues, (clue) => {
         return <Clue value={clue.value}
                      key= {clue.id}
                      clue= {clue}

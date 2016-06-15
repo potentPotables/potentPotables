@@ -56,7 +56,7 @@ class HostAnswer extends Component{
         {this.props.activeClue.answer}
         </div>
         <div>
-          <Link to= '/gameboard'>
+          <Link to= '/'>
             <button className="join btn btn-primary" onClick={this.handleCorrectClick}>Correct</button>
           </Link>
           <button className="join btn btn-primary" onClick={this.handleIncorrectClick}>Incorrect</button>
