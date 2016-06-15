@@ -32,9 +32,9 @@ export default function(state= {
       var hasAnsweredCopy = state.hasAnsweredUsers.concat(action.payload);
       return {...state, users: stateUsersCopy, hasAnsweredUsers: hasAnsweredCopy, activeUser: '', isButtonDisabled: false};
     case CORRECT_ANSWER:
-      return {...state, hasAnsweredUsers: []}; //needs additional logic to bring back to gameboard on browser
+      return {...state, hasAnsweredUsers: [], activeClue: {}}; //needs additional logic to bring back to gameboard on browser
     case SKIP:
-      return {...state, activeUser: action.payload.activeUser, isButtonDisabled: action.payload.isButtonClicked};
+      return {...state, activeUser: action.payload.activeUser, isButtonDisabled: action.payload.isButtonClicked, activeClue: {}};
     default:
       return state;
   }
