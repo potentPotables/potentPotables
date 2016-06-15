@@ -39,11 +39,11 @@ module.exports.initSockets= function(socket, clients, ioAccess){
   });
 
   socket.on('startGame', function(data) {
-    console.log('inside server start game');
   	ioAccess.in(data.room).emit('gameActive');
   });
 
   socket.on('activeClue', function(data) {
+    console.log('inside server activeClue');
   	ioAccess.in(data.room).emit('currentClue', {currentClue: data.activeClue});
   })
 
