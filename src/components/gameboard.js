@@ -18,10 +18,10 @@ class Gameboard extends Component {
       const categories = this.props.categories.map((category, index) => {
         return(
           <div>
+            <thead>
+              <th className="categories" key={category}>{category}</th>
+            </thead>
             <tbody>
-              <tr>
-                <th className="categories" key={category}> {category} </th>
-              </tr>
               <tr>
                     <div>
                         <td className="clues"></td>
