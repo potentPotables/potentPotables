@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Categories from './categories';
 import Clue from './clue';
-
+import { setActiveClue } from '../sockets_client';
 
 
 class Gameboard extends Component {
     render() {
       const clues= this.props.clues.map((clue) => {
-        return <Clue value={clue.value} key= {clue.id} />;
+        return <Clue value={clue.value}
+                     key= {clue.id}
+                     clue= {clue}
+                     setActiveClue= {setActiveClue}
+                     room= {this.props.room}/>
       });
 
       const categories = this.props.categories.map((category, index) => {
@@ -31,13 +35,17 @@ class Gameboard extends Component {
           <table className="table table-reflow">
               { categories }
           </table>
-        </div>  
+        </div>
     );
   }
 }
 
 function mapStateToProps(state){
-  return {users: state.gameplay.user, categories: state.gameboard.categories, clues: state.gameboard.clues}
+  return {users: state.gameplay.user,
+          categories: state.gameboard.categories,
+          clues: state.gameboard.clues,
+          room: state.sessionID}
 }
+
 
 export default connect(mapStateToProps)(Gameboard);
