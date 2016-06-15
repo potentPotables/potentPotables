@@ -1,11 +1,12 @@
 import io from 'socket.io-client';
 
-var socket = io();
+var socket = io('http://localhost:3000');
 
 
 export const ADD_NEW_USER = 'ADD_NEW_USER';
-export const SET_ACTIVE_USER= 'SET_ACTIVE_USER';
-export const DISABLE_BUTTON= 'DISABLE_BUTTON';
+export const SET_ACTIVE_USER = 'SET_ACTIVE_USER';
+export const SET_ACTIVE_CLUE = 'SET_ACTIVE_CLUE';
+export const DISABLE_BUTTON = 'DISABLE_BUTTON';
 export const CREATE_NEW_USER = 'CREATE_NEW_USER';
 export const ACTIVATE_GAME = 'ACTIVATE_GAME';
 export const INCORRECT_ANSWER = 'INCORRECT_ANSWER';
@@ -31,7 +32,7 @@ export function initSockets(store){
   });
 
   socket.on('currentClue', function(data) {
-
+    store.dispatch({type: SET_ACTIVE_CLUE, payload: data});
   });
 
   socket.on('incorrect', function(data) {
@@ -73,8 +74,8 @@ export function startGame(room) {
 
 // will be called inside /actions/index.js =>
 //still pending gameboard completion
-export function activeClue(activeClue, room) {
-  socket.emit('activeClue', { activeClue, room });
+export function setActiveClue(activeClue, room) {
+  socket.emit('activeClue', { activeClue: activeClue, room: room });
 }
 
 export function declareIncorrect(username, room, clue) {

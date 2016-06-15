@@ -15,7 +15,7 @@ class ClueView extends Component {
   render() {
     return(
       <div>
-        {this.props.activeClue}
+        {this.props.activeClue.question}
       </div>
     );
   }

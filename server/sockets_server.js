@@ -44,7 +44,7 @@ module.exports.initSockets= function(socket, clients, ioAccess){
   });
 
   socket.on('activeClue', function(data) {
-  	socket.to(data.room).emit('currentClue', {currentClue: data.activeClue});
+  	ioAccess.in(data.room).emit('currentClue', {currentClue: data.activeClue});
   })
 
   socket.on('incorrect', function(data) {
