@@ -62,7 +62,9 @@ module.exports.initSockets= function(socket, clients, ioAccess){
   });
 
   socket.on('skip', function(data) {
-  	socket.to(data.room).emit('skip');
+    roomData[data.room].isButtonClicked= false;
+    room[data.room].activeUser= '';
+  	socket.to(data.room).emit('skip', {isButtonCliked: false, activeUser: ''});
   });
 
 }

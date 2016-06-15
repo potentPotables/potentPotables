@@ -26,16 +26,15 @@ export default function(state= {
     case SET_ACTIVE_CLUE:
       return {...state, activeClue: action.payload.currentClue};
     case INCORRECT_ANSWER:
-      var stateUsernameCopy= {...state.users[action.payload.username]};
-      stateUsernameCopy.score= action.payload.score;
+      var stateUsernameCopy= {...state.users[action.payload.username], score: action.payload.score};
       var stateUsersCopy= {...state.users};
       stateUsersCopy[action.payload.username]= stateUsernameCopy;
       var hasAnsweredCopy = state.hasAnsweredUsers.concat(action.payload);
-      return {...state, users: stateUsersCopy, hasAnsweredUsers: hasAnsweredCopy, activeUser: '', isButtonActive: true};
+      return {...state, users: stateUsersCopy, hasAnsweredUsers: hasAnsweredCopy, activeUser: '', isButtonDisabled: false};
     case CORRECT_ANSWER:
       return {...state, hasAnsweredUsers: []}; //needs additional logic to bring back to gameboard on browser
     case SKIP:
-      return {...state}; //needs additional logic to bring back to gameboard on browser
+      return {...state, activeUser: action.payload.activeUser, isButtonDisabled: action.payload.isButtonClicked};
     default:
       return state;
   }

@@ -44,8 +44,8 @@ export function initSockets(store){
   	store.dispatch({type: CORRECT_ANSWER, payload: data});
   });
 
-  socket.on('skip', function() {
-  	store.dispatch({type: SKIP});
+  socket.on('skip', function(data) {
+  	store.dispatch({type: SKIP, payload: data});
   })
 }
 

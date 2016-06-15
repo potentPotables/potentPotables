@@ -3,14 +3,11 @@ import { connect } from 'react-redux';
 
 class Categories extends Component {
 	render() {
-
-
-  	
-  	return (
-  		<div> 
-  			{categories} 
-  		</div>
-  	);
+   	return (
+    		<div>
+    			{categories}
+    		</div>
+    );
  	}
 }
 

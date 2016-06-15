@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { resetClueValue } from '../actions/index';
 
 class ClueView extends Component {
   static contextTypes = {
@@ -10,6 +11,10 @@ class ClueView extends Component {
     if (this.props.activeClue === ''){
       this.context.router.push('/gameboard');
     }
+  }
+
+  componentWillUnmount(){
+    this.props.resetClueValue(this.props.activeClue);
   }
 
   render() {
@@ -25,4 +30,4 @@ function mapStateToProps(state){
   return {activeClue: state.gameplay.activeClue};
 }
 
-export default connect(mapStateToProps)(ClueView);
+export default connect(mapStateToProps, { resetClueValue })(ClueView);
