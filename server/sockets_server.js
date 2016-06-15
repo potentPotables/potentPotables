@@ -43,7 +43,6 @@ module.exports.initSockets= function(socket, clients, ioAccess){
   });
 
   socket.on('activeClue', function(data) {
-    console.log('inside server activeClue');
   	ioAccess.in(data.room).emit('currentClue', {currentClue: data.activeClue});
   })
 
@@ -68,7 +67,6 @@ module.exports.initSockets= function(socket, clients, ioAccess){
   });
 
   socket.on('activateButtons', function(data) {
-    console.log(data.room);
     ioAccess.in(data.room).emit('enableButtons');
   });
 

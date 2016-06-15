@@ -4,6 +4,9 @@ import { Link } from 'react-router';
 import { activateButtons } from '../sockets_client';
 
 class HostGamePlay extends Component {
+  handleClick(){
+    activateButtons(this.props.rooms);
+  }
   render(){
     return (
       <div>
@@ -13,7 +16,7 @@ class HostGamePlay extends Component {
         </div> :
         this.props.activeClue.question ?
         <Link to='/hostanswer'>
-          <button onClick={activateButtons(this.props.room)}className="join btn btn-primary">{this.props.activeClue.question}</button>
+          <button onClick={this.handleClick.bind(this)}className="join btn btn-primary">{this.props.activeClue.question}</button>
         </Link> :
         <div>
           Waiting for clue to be selected...

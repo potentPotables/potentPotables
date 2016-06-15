@@ -12,7 +12,7 @@ export const ACTIVATE_GAME = 'ACTIVATE_GAME';
 export const INCORRECT_ANSWER = 'INCORRECT_ANSWER';
 export const CORRECT_ANSWER = 'CORRECT_ANSWER';
 export const SKIP = 'SKIP';
-export const ACTIVATE_BUTTON = 'ACTIVATE_BUTTON';
+export const ACTIVATE_BUTTONS = 'ACTIVATE_BUTTONS';
 //all client-side socket listeners will be be contained here
 //initSockets will be exported to client-side index
 export function initSockets(store){
@@ -50,8 +50,7 @@ export function initSockets(store){
   });
 
   socket.on('enableButtons', function() {
-    console.log('hello from enableButtons');
-    store.dispatch({type: ACTIVATE_BUTTON, payload: false})
+    store.dispatch({type: ACTIVATE_BUTTONS, payload: false})
   });
 }
 
