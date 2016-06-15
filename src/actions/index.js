@@ -60,7 +60,7 @@ export function fetchGame(){
     axios.post('/game')
       .then(response => {
         var tempClues= response.data.clues;
-        var tempCluesFin= {};
+        var tempCluesFin= {categories: tempClues.categories, clues: {}};
         for (var i= 0; i< tempClues.clues.length; i+=5){
           tempClues.clues[i].value= 200;
           tempClues.clues[i+1].value= 400;
@@ -69,9 +69,10 @@ export function fetchGame(){
           tempClues.clues[i+4].value= 1000;
         }
         for (var j=0; j< tempClues.clues.length; j++){
-          tempCluesFin[tempClues.clues[j].id]= tempClues.clues[j];
+          tempCluesFin.clues[tempClues.clues[j].id]= tempClues.clues[j];
         }
         //console.log('tempCluesFin', tempCluesFin);
+        console.log(tempCluesFin);
         dispatch({type: CREATE_GAME, payload: tempCluesFin});
 
       })

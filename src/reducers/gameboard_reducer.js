@@ -6,6 +6,7 @@ export default function(state = {
 }, action) {
   switch(action.type){
     case CREATE_GAME:
+      console.log('gameboard', action.payload)
       return Object.assign(state, action.payload);
     case RESET_CLUE_VALUE:
       var stateClueCopy= {...state.clues[action.payload.id], value: 0};
