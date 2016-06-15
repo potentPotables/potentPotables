@@ -16,6 +16,12 @@ class HostAnswer extends Component{
   skipCurrentClue(){
     skipClue(this.props.room, this.props.activeClue);
   }
+
+  skipIncorrect() {
+    skipClue(this.props.room, this.props.activeClue);
+    declareIncorrect(this.props.activeUser, this.props.room, this.props.activeClue);
+  }
+
   handleIncorrectClick(){
     this.state.incorrectClickCount ++;
     declareIncorrect(this.props.activeUser, this.props.room, this.props.activeClue);
@@ -24,7 +30,7 @@ class HostAnswer extends Component{
       this.skipCurrentClue();
     }
     if (this.state.incorrectClickCount !== this.props.userCount){
-      var incorrectTimeout= setTimeout(this.skipCurrentClue, 10000);
+      var incorrectTimeout= setTimeout(this.skipIncorrect, 10000);
     }
   }
   handleCorrectClick(){
@@ -69,4 +75,4 @@ function mapStateToProps(state){
           usersCount: state.user.count}
 }
 
-export default connect(mapStateToProps, { skipClue })(HostAnswer);
+export default connect(mapStateToProps)(HostAnswer);

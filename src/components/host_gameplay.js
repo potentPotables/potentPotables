@@ -10,7 +10,7 @@ class HostGamePlay extends Component {
         <div>
           Waiting for game to Begin...
         </div> :
-        this.props.activeClue.question ? 
+        this.props.activeClue.question ?
         <Link to='/hostanswer'>
           <button className="join btn btn-primary">{this.props.activeClue.question}</button>
         </Link> :
@@ -30,4 +30,6 @@ function mapStateToProps(state){
   };
 }
 
+
 export default connect(mapStateToProps)(HostGamePlay)
+

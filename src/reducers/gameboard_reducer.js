@@ -1,4 +1,4 @@
-import { CREATE_GAME } from '../actions/index';
+import { CREATE_GAME, RESET_CLUE_VALUE } from '../actions/index';
 
 export default function(state = {
   categories: null,
@@ -6,8 +6,13 @@ export default function(state = {
 }, action) {
   switch(action.type){
     case CREATE_GAME:
-    	console.log(Object.assign(state, action.payload));
       return Object.assign(state, action.payload);
+    case RESET_CLUE_VALUE:
+      var stateClueCopy= {...state.clues[action.payload.id], value: 0};
+      var stateCluesCopy= {...state.clues};
+      stateCluesCopy[action.payload.id]= stateClueCopy;
+      var stateCopy= {...state, clues: stateCluesCopy};
+      return stateCopy;
     default:
       return state;
   }

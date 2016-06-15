@@ -5,6 +5,7 @@ import Clue from './clue';
 import { setActiveClue } from '../sockets_client';
 
 
+
 class Gameboard extends Component {
     render() {
       const clues= this.props.clues.map((clue) => {
