@@ -23,6 +23,9 @@ class Gameboard extends Component {
                 <th className="categories" key={category}> {category} </th>
               </tr>
               <tr>
+                    <div>
+                        <td className="clues"></td>
+                    </div>
                   {clues.splice(0, 5)}
               </tr>
             </tbody>
