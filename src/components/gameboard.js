@@ -24,7 +24,7 @@ class Gameboard extends Component {
             <tbody>
               <tr>
                     <div>
-                        <td className="clues"></td>
+                        <td className="clues" key="filler"></td>
                     </div>
                   {clues.splice(0, 5)}
               </tr>

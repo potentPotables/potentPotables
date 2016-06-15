@@ -66,7 +66,7 @@ function mapStateToProps(state){
   return {activeClue: state.gameplay.activeClue,
           activeUser: state.gameplay.activeUser,
           room: state.linkAuth.linkCode,
-          usersCount: state.users.count}
+          usersCount: state.user.count}
 }
 
 export default connect(mapStateToProps, { skipClue })(HostAnswer);

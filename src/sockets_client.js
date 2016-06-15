@@ -32,6 +32,7 @@ export function initSockets(store){
   });
 
   socket.on('currentClue', function(data) {
+    console.log('inside clients clue', data);
     store.dispatch({type: SET_ACTIVE_CLUE, payload: data});
   });
 
