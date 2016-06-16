@@ -56,7 +56,7 @@ module.exports.initSockets= function(socket, clients, ioAccess){
   socket.on('correct', function(data) {
     roomData[data.room].isButtonClicked= false;
     roomData[data.room].activeUser= '';
-    roomData[data.room].users[data.username].score += data.clue
+    roomData[data.room].users[data.username].score += data.value
     socket.to(data.room).emit('correct', {username: data.username, score: roomData[data.room].users[data.username].score} );
   });
 

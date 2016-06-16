@@ -92,7 +92,7 @@ export function declareIncorrect(username, room, clue) {
 
 export function declareCorrect(username, room, clue) {
   console.log('socket_client on line 93 ');
-	socket.emit('correct', {username: username, room: room, clue: clue.value});
+	socket.emit('correct', {username: username, room: room, value: clue.value});
 }
 
 export function skipClue(room, clue) {
