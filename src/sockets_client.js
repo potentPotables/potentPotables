@@ -65,10 +65,10 @@ export function joinRoom(room){
 }
 
 // called inside /actions/index.js => createUsername
-export function createUsernameSockets(username, room) {
+export function createUserSockets(username, photo, room) {
   console.log('room is', room);
   console.log('inside UsernameSockeetEmitter', room)
-	socket.emit('createUsernameSockets', {username: username, room: room});
+	socket.emit('createUserSockets', {username: username, photo: photo, room: room});
 }
 
 export function sendButtonClick(username, room) {

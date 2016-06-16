@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Categories from './categories';
 import Clue from './clue';
+import Scoreboard from './scoreboard';
 import { setActiveClue } from '../sockets_client';
 import { resetGameboardLive } from '../actions/index';
 
 import _ from 'lodash';
-
-
 
 class Gameboard extends Component {
     componentWillUnmount(){
@@ -46,6 +44,7 @@ class Gameboard extends Component {
           <table className="table table-reflow">
               { categories }
           </table>
+          <Scoreboard users= {this.props.users}/>
         </div>
     );
   }
