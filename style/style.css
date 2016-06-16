@@ -1,3 +1,5 @@
+@import url(http://db.onlinewebfonts.com/c/795d10ca5cef97c354da7db008fa89f5?family=Korinna+BT);
+
 .categories {
 	background-color: navy;
 	color: white;
@@ -8,9 +10,11 @@
 	flex: 2;
 	font-weight: bold;
 	text-transform: uppercase;
-	margin-top: 10px
-
-
+	border: 8px solid black !important;
+	background-image: url('http://cache1.asset-cache.net/xd/eef_010.jpg?v=1&c=IWSAsset&k=2&d=5225673E10E2FD0F0E6C89302D5D4AE94E7679DD01108BC6D5CC31666135BEB7E7BFD5B312C9BD15');
+	background-size: 175px 100px;
+	font-size: 16px;
+	font-family: "HelveticaNeue-CondensedBold";
 }
 
 .clues {
@@ -19,7 +23,24 @@
 	color: yellow;
 	width: 175px;  
 	height: 100px;
-	border: 1px;
-	font-size: 30px;
+	border: 2px solid black !important;
+	font-size: 40px;
+	font-weight: bolder;
+	text-shadow: 2px 2px black;
+	border-radius: 15px;
 	flex: 6;
+	font-family: "HelveticaNeue-CondensedBold";
+	background-image: url('http://www.santemaghreb.com/algerie/jicc2009/13_fichiers/master04_background.gif');
+	background-size: 175px 100px;
+}
+
+#question {
+	font-family: "Korinna BT";
+	font-size: 60px;
+	text-align: center;
+	color: white;
+	vertical-align: middle;
+	text-shadow: 2px 2px black;
+	background-image: url('http://www.santemaghreb.com/algerie/jicc2009/13_fichiers/master04_background.gif');
+
 }
