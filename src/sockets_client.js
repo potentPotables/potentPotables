@@ -34,7 +34,7 @@ export function initSockets(store){
 
   socket.on('currentClue', function(data) {
     console.log('inside clients clue', data);
-    store.dispatch({type: SET_ACTIVE_CLUE, payload: data});
+    store.dispatch({type: SET_ACTIVE_CLUE, payload: data.clue});
   });
 
   socket.on('incorrect', function(data) {
@@ -87,6 +87,7 @@ export function setActiveClue(activeClue, room) {
 }
 
 export function declareIncorrect(username, room, clue) {
+  console.log('inside Sockets delcareIncorrect');
 	socket.emit('incorrect', {username: username, room: room, value: clue.value});
 }
 

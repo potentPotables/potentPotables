@@ -14,7 +14,7 @@ class HostGamePlay extends Component {
         <div>
           Waiting for game to Begin...
         </div> :
-        this.props.activeClue.question ?
+        Object.keys(this.props.activeClue).length > 0 ?
         <Link to='/hostanswer'>
           <button onClick={this.handleClick.bind(this)}className="join btn btn-primary">{this.props.activeClue.question}</button>
         </Link> :

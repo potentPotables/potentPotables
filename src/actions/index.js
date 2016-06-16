@@ -11,7 +11,6 @@ export const LINK_CODE_ERROR= 'LINK_CODE_ERROR';
 export const CREATE_GAME= 'CREATE_GAME';
 export const ACTIVATE_GAME= 'ACTIVATE_GAME';
 export const SET_ACTIVE_CLUE= 'SET_ACTIVE_CLUE';
-export const RESET_CLUE_VALUE= 'RESET_CLUE_VALUE';
 
 export function createSession() {
   return function(dispatch){
@@ -60,7 +59,6 @@ export function fetchGame(){
     axios.post('/game')
       .then(response => {
         var tempClues= response.data.clues;
-        var tempCluesFin= {categories: tempClues.categories, clues: {}};
         for (var i= 0; i< tempClues.clues.length; i+=5){
           tempClues.clues[i].value= 200;
           tempClues.clues[i+1].value= 400;
@@ -68,12 +66,7 @@ export function fetchGame(){
           tempClues.clues[i+3].value= 800;
           tempClues.clues[i+4].value= 1000;
         }
-        for (var j=0; j< tempClues.clues.length; j++){
-          tempCluesFin.clues[tempClues.clues[j].id]= tempClues.clues[j];
-        }
-        //console.log('tempCluesFin', tempCluesFin);
-        console.log(tempCluesFin);
-        dispatch({type: CREATE_GAME, payload: tempCluesFin});
+        dispatch({type: CREATE_GAME, payload: tempClues});
 
       })
       .catch(response => {
@@ -82,7 +75,6 @@ export function fetchGame(){
   }
 }
 
-export function resetClueValue(clue){
-  clue.value= 0;
-  return {type: RESET_CLUE_VALUE, payload: clue}
+export function setActiveClueGameboard(clue){
+  return {type: SET_ACTIVE_CLUE, payload: clue}
 }

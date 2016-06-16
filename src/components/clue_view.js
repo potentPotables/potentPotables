@@ -1,20 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { resetClueValue } from '../actions/index';
 
 class ClueView extends Component {
   static contextTypes = {
     router: React.PropTypes.object
   }
 
-  componentWillUpdate(){
-    if (this.props.isGameboardLive){
+  componentWillReceiveProps(){
+    console.log('calling will receive props');
       this.context.router.push('/gameboard');
-    }
-  }
-
-  componentWillMount(){
-    this.props.resetClueValue(this.props.activeClue);
   }
 
   render() {
@@ -27,7 +21,7 @@ class ClueView extends Component {
 }
 
 function mapStateToProps(state){
-  return {activeClue: state.gameplay.activeClue, isGameboardLive: state.gameplay.isGameboardLive};
+  return {activeClue: state.gameplay.activeClue};
 }
 
-export default connect(mapStateToProps, { resetClueValue })(ClueView);
+export default connect(mapStateToProps)(ClueView);

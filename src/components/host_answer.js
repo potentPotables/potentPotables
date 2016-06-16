@@ -9,48 +9,48 @@ class HostAnswer extends Component{
     this.state= {
       incorrectClickCount: 0
     }
-    this.skipCurrentClue= this.skipCurrentClue.bind(this);
+    //this.skipCurrentClue= this.skipCurrentClue.bind(this);
     this.handleIncorrectClick= this.handleIncorrectClick.bind(this);
     this.handleCorrectClick= this.handleCorrectClick.bind(this);
   }
-  skipCurrentClue(){
-    skipClue(this.props.room, this.props.activeClue);
-  }
+  // skipCurrentClue(){
+  //   skipClue(this.props.room, this.props.activeClue);
+  // }
 
-  skipIncorrect() {
-    skipClue(this.props.room, this.props.activeClue);
-    declareIncorrect(this.props.activeUser, this.props.room, this.props.activeClue);
-  }
+  // skipIncorrect() {
+  //   skipClue(this.props.room, this.props.activeClue);
+  //   declareIncorrect(this.props.activeUser, this.props.room, this.props.activeClue);
+  // }
 
   handleIncorrectClick(){
     this.state.incorrectClickCount ++;
     declareIncorrect(this.props.activeUser, this.props.room, this.props.activeClue);
-    clearTimeout(initalTimeout);
-    if (this.state.incorrectClickCount === this.props.userCount){
-      this.skipCurrentClue();
-    }
-    if (this.state.incorrectClickCount !== this.props.userCount){
-      var incorrectTimeout= setTimeout(this.skipIncorrect, 10000);
-    }
+    // clearTimeout(this.initalTimeout);
+    // if (this.state.incorrectClickCount === this.props.userCount){
+    //   this.skipCurrentClue();
+    // }
+    // if (this.state.incorrectClickCount !== this.props.userCount){
+    //   var incorrectTimeout= setTimeout(this.skipIncorrect, 10000);
+    // }
   }
 
   handleCorrectClick(){
     console.log('inside HostAnswer line 38;')
     declareCorrect(this.props.activeUser, this.props.room, this.props.activeClue);
-    clearTimeout(initialTimeout);
+    //clearTimeout(this.initialTimeout);
   }
 
-  componentDidMount(){
-    var initialTimeout= setTimeout(this.skipCurrentClue, 10000);
-  }
+  // componentDidMount(){
+  //   var initialTimeout= setTimeout(this.skipCurrentClue, 10000);
+  // }
 
-  componentDidUpdate(){
-    clearTimeout(incorrectTimeout);
-  }
+  // componentDidUpdate(){
+  //   clearTimeout(this.incorrectTimeout);
+  // }
 
-  componentDidUnMount(){
-    clearTimeout(incorrectTimeout);
-  }
+  // componentDidUnMount(){
+  //   clearTimeout(this.incorrectTimeout);
+  // }
 
   render(){
     return(
