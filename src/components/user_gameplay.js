@@ -3,18 +3,18 @@ import { connect } from 'react-redux';
 import { sendButtonClick } from '../sockets_client';
 
 class UserGameplay extends Component {
-  constructor(props) {
+  constructor(props){
     super(props);
-    this.state = {score: 0};
+    this.state = {score: null};
   }
 
-  shouldComponentUpdate(){
-    this.setState({score: this.props.users[this.props.username].score});
+  componentDidUpdate(){
+    if(this.state.score != this.props.users[this.props.username].score){
+      this.setState({score: this.props.users[this.props.username].score});
+    }
   }
 
   render(){
-    console.log('inside user_gameplay: ', this.props.users);
-    // console.log(this.props.users[this.props.username].score);
     return (
       <div>
       <div>
@@ -44,7 +44,7 @@ class UserGameplay extends Component {
         }
         <div>
           <div>{this.props.username}</div>
-            <div>Score: </div>
+          <div>Score: {this.state.score}</div>
         </div>
       </div>
     );
