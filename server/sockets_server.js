@@ -49,20 +49,20 @@ module.exports.initSockets= function(socket, clients, ioAccess){
   socket.on('incorrect', function(data) {
     roomData[data.room].isButtonClicked= false;
     roomData[data.room].activeUser= '';
-    roomData[data.room][data.username].score -= data.value;
-    ioAccess.to(data.room).emit('incorrect', {username: data.username, score: roomData[data.room][data.username].score} );
+    roomData[data.room].users[data.username].score -= data.value;
+    ioAccess.to(data.room).emit('incorrect', {username: data.username, score: roomData[data.room].users[data.username].score} );
   });
 
   socket.on('correct', function(data) {
     roomData[data.room].isButtonClicked= false;
     roomData[data.room].activeUser= '';
-    roomData[data.room][data.username].score += data.value
-    socket.to(data.room).emit('correct', {username: data.username, score: roomData[data.room][data.username].score} );
+    roomData[data.room].users[data.username].score += data.clue
+    socket.to(data.room).emit('correct', {username: data.username, score: roomData[data.room].users[data.username].score} );
   });
 
   socket.on('skip', function(data) {
     roomData[data.room].isButtonClicked= false;
-    room[data.room].activeUser= '';
+    roomData[data.room].activeUser= '';
     socket.to(data.room).emit('skip', {isButtonClicked: false, activeUser: ''});
   });
 
