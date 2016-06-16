@@ -3,11 +3,17 @@ import { connect } from 'react-redux';
 import Categories from './categories';
 import Clue from './clue';
 import { setActiveClue } from '../sockets_client';
+import { resetGameboardLive } from '../actions/index';
+
 import _ from 'lodash';
 
 
 
 class Gameboard extends Component {
+    componentWillUnmount(){
+      this.props.resetGameboardLive(false)
+    }
+    
     render() {
       const clues= _.map(this.props.clues, (clue) => {
         return <Clue value={clue.value}
@@ -53,4 +59,4 @@ function mapStateToProps(state){
 }
 
 
-export default connect(mapStateToProps)(Gameboard);
+export default connect(mapStateToProps, { resetGameboardLive })(Gameboard);

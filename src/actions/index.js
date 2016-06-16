@@ -86,7 +86,3 @@ export function resetClueValue(clue){
   clue.value= 0;
   return {type: RESET_CLUE_VALUE, payload: clue}
 }
-
-//need action creator to delete clue from gameboard once clicked on gameboard
-//this function would only be called by gameboard
-

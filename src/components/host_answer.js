@@ -33,19 +33,25 @@ class HostAnswer extends Component{
       var incorrectTimeout= setTimeout(this.skipIncorrect, 10000);
     }
   }
+
   handleCorrectClick(){
+    console.log('inside HostAnswer line 38;')
     declareCorrect(this.props.activeUser, this.props.room, this.props.activeClue);
     clearTimeout(initialTimeout);
   }
+
   componentDidMount(){
     var initialTimeout= setTimeout(this.skipCurrentClue, 10000);
   }
+
   componentDidUpdate(){
     clearTimeout(incorrectTimeout);
   }
+
   componentDidUnMount(){
     clearTimeout(incorrectTimeout);
   }
+
   render(){
     return(
       <div>
@@ -69,10 +75,12 @@ class HostAnswer extends Component{
 
 //update return statement to point to correct property on activeClue
 function mapStateToProps(state){
-  return {activeClue: state.gameplay.activeClue,
-          activeUser: state.gameplay.activeUser,
-          room: state.linkAuth.linkCode,
-          usersCount: state.user.count}
+  return {
+    activeClue: state.gameplay.activeClue,
+    activeUser: state.gameplay.activeUser,
+    room: state.linkAuth.linkCode,
+    usersCount: state.user.count,
+  };
 }
 
 export default connect(mapStateToProps)(HostAnswer);

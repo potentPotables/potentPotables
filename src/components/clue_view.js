@@ -8,7 +8,7 @@ class ClueView extends Component {
   }
 
   componentWillUpdate(){
-    if (this.props.activeClue === ""){
+    if (this.props.isGameboardLive){
       this.context.router.push('/gameboard');
     }
   }
@@ -27,7 +27,7 @@ class ClueView extends Component {
 }
 
 function mapStateToProps(state){
-  return {activeClue: state.gameplay.activeClue};
+  return {activeClue: state.gameplay.activeClue, isGameboardLive: state.gameplay.isGameboardLive};
 }
 
 export default connect(mapStateToProps, { resetClueValue })(ClueView);

@@ -1,4 +1,4 @@
-import { ACTIVATE_GAME } from '../actions/index';
+import { ACTIVATE_GAME, GAMEBOARD_SWITCH } from '../actions/index';
 import { INCORRECT_ANSWER, CORRECT_ANSWER, SKIP, SET_ACTIVE_CLUE, ADD_NEW_USER, DISABLE_BUTTON, SET_ACTIVE_USER, ACTIVATE_BUTTONS } from '../sockets_client';
 
 export default function(state= {
@@ -8,7 +8,7 @@ export default function(state= {
   users: {},
   hasAnsweredUsers: [],
   isButtonDisabled: true,
-  isPlayLive: false
+  isGameboardLive: false
 }, action){
   switch(action.type){
     case ACTIVATE_GAME:
@@ -34,9 +34,12 @@ export default function(state= {
       var hasAnsweredCopy = state.hasAnsweredUsers.concat(action.payload);
       return {...state, users: stateUsersCopy, hasAnsweredUsers: hasAnsweredCopy, activeUser: '', isButtonDisabled: false};
     case CORRECT_ANSWER:
-      return {...state, hasAnsweredUsers: [], activeClue: {}}; //needs additional logic to bring back to gameboard on browser
+    console.log('inside CORRECT_ANSWER');
+      return {...state, hasAnsweredUsers: [], activeClue: {}, isGameboardLive: true}; //needs additional logic to bring back to gameboard on browser
     case SKIP:
       return {...state, activeUser: action.payload.activeUser, isButtonDisabled: action.payload.isButtonClicked, activeClue: {}};
+    case GAMEBOARD_SWITCH:
+      return {...state, isGameboardLive: action.payload};
     default:
       return state;
   }
