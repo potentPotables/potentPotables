@@ -7,13 +7,14 @@ import { resetGameboardLive } from '../actions/index';
 
 import _ from 'lodash';
 
+
 class Gameboard extends Component {
     componentWillUnmount(){
       this.props.resetGameboardLive(false)
     }
-    
+
     render() {
-      const clues= _.map(this.props.clues, (clue) => {
+      const clues= this.props.clues.map(this.props.clues, (clue) => {
         return <Clue value={clue.value}
                      key= {clue.id}
                      clue= {clue}
