@@ -50,14 +50,14 @@ module.exports.initSockets= function(socket, clients, ioAccess){
     roomData[data.room].isButtonClicked= false;
     roomData[data.room].activeUser= '';
     roomData[data.room].users[data.username].score -= data.value;
-    ioAccess.to(data.room).emit('incorrect', {username: data.username, score: roomData[data.room].users[data.username].score} );
+    ioAccess.in(data.room).emit('incorrect', {username: data.username, score: roomData[data.room].users[data.username].score} );
   });
 
   socket.on('correct', function(data) {
     roomData[data.room].isButtonClicked= false;
     roomData[data.room].activeUser= '';
     roomData[data.room].users[data.username].score += data.value
-    socket.to(data.room).emit('correct', {username: data.username, score: roomData[data.room].users[data.username].score} );
+    ioAccess.in(data.room).emit('correct', {username: data.username, score: roomData[data.room].users[data.username].score} );
   });
 
   socket.on('skip', function(data) {

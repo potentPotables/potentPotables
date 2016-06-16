@@ -31,7 +31,7 @@ export default function(state= {
       var stateUsernameCopy= {...state.users[action.payload.username], score: action.payload.score};
       var stateUsersCopy= {...state.users};
       stateUsersCopy[action.payload.username]= stateUsernameCopy;
-      var hasAnsweredCopy = state.hasAnsweredUsers.concat(action.payload);
+      var hasAnsweredCopy = state.hasAnsweredUsers.concat(action.payload.username);
       return {...state, users: stateUsersCopy, hasAnsweredUsers: hasAnsweredCopy, activeUser: '', isButtonDisabled: false};
     case CORRECT_ANSWER:
       var stateUsernameCopy= {...state.users[action.payload.username], score: action.payload.score};
