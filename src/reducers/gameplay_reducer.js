@@ -34,7 +34,11 @@ export default function(state= {
       var hasAnsweredCopy = state.hasAnsweredUsers.concat(action.payload);
       return {...state, users: stateUsersCopy, hasAnsweredUsers: hasAnsweredCopy, activeUser: '', isButtonDisabled: false};
     case CORRECT_ANSWER:
-      return {...state, hasAnsweredUsers: [], activeClue: {}, isGameboardLive: true}; //needs additional logic to bring back to gameboard on browser
+      var stateUsernameCopy= {...state.users[action.payload.username], score: action.payload.score};
+      var stateUsersCopy= {...state.users};
+      stateUsersCopy[action.payload.username]= stateUsernameCopy;
+      console.log('line 40 stateUsersCopy is : ', stateUsersCopy);
+      return {...state, users: stateUsersCopy, hasAnsweredUsers: [], activeClue: {}, activeUser: '', isGameboardLive: true}; //needs additional logic to bring back to gameboard on browser
     case SKIP:
       return {...state, activeUser: action.payload.activeUser, isButtonDisabled: action.payload.isButtonClicked, activeClue: {}};
     case GAMEBOARD_SWITCH:
