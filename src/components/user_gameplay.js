@@ -18,8 +18,11 @@ class UserGameplay extends Component {
     return (
       <div>
       <div>
-        {this.props.activeUser ?
-          <div>{this.props.activeUser} buzzed in!</div>:
+        {this.props.activeUser && this.props.activeUser !== this.props.username ?
+          <div>
+            <div>{this.props.activeUser} buzzed in!</div>
+            <div>Score: ${this.props.users[this.props.activeUser].score}</div>
+          </div>:
           <div></div>
         }
       </div>
@@ -44,7 +47,7 @@ class UserGameplay extends Component {
         }
         <div>
           <div>{this.props.username}</div>
-          <div>Score: {this.state.score}</div>
+          <div>Score: ${this.state.score}</div>
         </div>
       </div>
     );
