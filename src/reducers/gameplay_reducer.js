@@ -7,7 +7,7 @@ export default function(state= {
   activeUser: '',
   users: {},
   hasAnsweredUsers: [],
-  isButtonDisabled: false,
+  isButtonDisabled: true,
   isPlayLive: false
 }, action){
   switch(action.type){

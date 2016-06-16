@@ -5,7 +5,7 @@ import { activateButtons } from '../sockets_client';
 
 class HostGamePlay extends Component {
   handleClick(){
-    activateButtons(this.props.rooms);
+    activateButtons(this.props.room);
   }
   render(){
     return (
