@@ -41,11 +41,11 @@ module.exports = function(app, io) {
 	});
 
 	app.post('/game', function(req, res, next) {
-		//Host selects the size of the game board, otherwise defaults to 5x6
+		//host selects the size of the game board, otherwise defaults to 5x6
 		var columns = req.body.categories || 6;
 		var rows = req.body.clues || 5;
-		//Grab 13 random clues and out of those, randomly pick out 6 of the 13
-		rp('http://jservice.io/api/random?count=13')
+		//grab 13 random clues and out of those, randomly pick out 6 of the 23
+		rp('http://jservice.io/api/random?count=23')
 		.then((body) => {
 			var array = JSON.parse(body);
 			var categories = [];
@@ -57,7 +57,7 @@ module.exports = function(app, io) {
 			})
 			return categories
 		})
-		//Once you have your 6 categories, make another call to the API to grab the clues that belong to them.
+		//once you have your 6 categories, make another call to the API to grab the clues that belong to them.
 		.then((categories) => {
 			var payload = {categories: [], clues: []};
 			for(var i = 0; i < categories.length; i++){
@@ -71,8 +71,8 @@ module.exports = function(app, io) {
 				})
 				.catch(function(err) {console.log(err);})
 			}
-			//Neatly pack them up to be delivered to client
-			setTimeout(function(){ res.json({ clues: payload }); }, 1000);
+			//neatly pack them up to be delivered to client
+			setTimeout(function(){ res.json({ clues: payload }); }, 1200);
 		})
 		.catch(function(err) { console.log(err); });
 	});

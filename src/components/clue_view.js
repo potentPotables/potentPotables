@@ -8,7 +8,7 @@ class ClueView extends Component {
   }
 
   componentWillUpdate(){
-    if (!this.props.activeClue.question){
+    if (this.props.activeClue === ""){
       this.context.router.push('/gameboard');
     }
   }
