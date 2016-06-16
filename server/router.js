@@ -76,4 +76,5 @@ module.exports = function(app, io) {
 		})
 		.catch(function(err) { console.log(err); });
 	});
+	
 };
