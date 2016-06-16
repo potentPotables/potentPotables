@@ -16,7 +16,7 @@ export default function(state= {
       return {...state, isGameActive: action.payload};
     case ADD_NEW_USER:
       var stateUsersCopy = {...state.users};
-      stateUsersCopy= action.payload;
+      stateUsersCopy= action.payload.users;
       var stateCopy = {...state, users: stateUsersCopy};
       return stateCopy;
     case DISABLE_BUTTON:
@@ -34,7 +34,6 @@ export default function(state= {
       var hasAnsweredCopy = state.hasAnsweredUsers.concat(action.payload);
       return {...state, users: stateUsersCopy, hasAnsweredUsers: hasAnsweredCopy, activeUser: '', isButtonDisabled: false};
     case CORRECT_ANSWER:
-    console.log('inside CORRECT_ANSWER');
       return {...state, hasAnsweredUsers: [], activeClue: {}, isGameboardLive: true}; //needs additional logic to bring back to gameboard on browser
     case SKIP:
       return {...state, activeUser: action.payload.activeUser, isButtonDisabled: action.payload.isButtonClicked, activeClue: {}};
