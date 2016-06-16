@@ -34,7 +34,7 @@ export function initSockets(store){
 
   socket.on('currentClue', function(data) {
     console.log('inside clients clue', data);
-    store.dispatch({type: SET_ACTIVE_CLUE, payload: data});
+    store.dispatch({type: SET_ACTIVE_CLUE, payload: data.clue});
   });
 
   socket.on('incorrect', function(data) {
@@ -65,10 +65,10 @@ export function joinRoom(room){
 }
 
 // called inside /actions/index.js => createUsername
-export function createUsernameSockets(username, room) {
+export function createUserSockets(username, photo, room) {
   console.log('room is', room);
   console.log('inside UsernameSockeetEmitter', room)
-	socket.emit('createUsernameSockets', {username: username, room: room});
+	socket.emit('createUserSockets', {username: username, photo: photo, room: room});
 }
 
 export function sendButtonClick(username, room) {
@@ -87,6 +87,7 @@ export function setActiveClue(activeClue, room) {
 }
 
 export function declareIncorrect(username, room, clue) {
+  console.log('inside Sockets delcareIncorrect');
 	socket.emit('incorrect', {username: username, room: room, value: clue.value});
 }
 

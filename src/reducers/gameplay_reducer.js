@@ -1,4 +1,4 @@
-import { ACTIVATE_GAME, GAMEBOARD_SWITCH } from '../actions/index';
+import { ACTIVATE_GAME } from '../actions/index';
 import { INCORRECT_ANSWER, CORRECT_ANSWER, SKIP, SET_ACTIVE_CLUE, ADD_NEW_USER, DISABLE_BUTTON, SET_ACTIVE_USER, ACTIVATE_BUTTONS } from '../sockets_client';
 
 export default function(state= {
@@ -7,8 +7,8 @@ export default function(state= {
   activeUser: '',
   users: {},
   hasAnsweredUsers: [],
-  isButtonDisabled: true,
-  isGameboardLive: false
+  answeredClues: {},
+  isButtonDisabled: true
 }, action){
   switch(action.type){
     case ACTIVATE_GAME:
@@ -24,7 +24,9 @@ export default function(state= {
     case SET_ACTIVE_USER:
       return {...state, activeUser: action.payload};
     case SET_ACTIVE_CLUE:
-      return {...state, activeClue: action.payload.currentClue};
+      var answeredCluesCopy= {...state.answeredClues};
+      answeredCluesCopy[action.payload.id]= true;
+      return {...state, activeClue: action.payload, answeredClues: answeredCluesCopy};
     case ACTIVATE_BUTTONS:
       return {...state, isButtonDisabled: action.payload};
     case INCORRECT_ANSWER:
@@ -37,12 +39,10 @@ export default function(state= {
       var stateUsernameCopy= {...state.users[action.payload.username], score: action.payload.score};
       var stateUsersCopy= {...state.users};
       stateUsersCopy[action.payload.username]= stateUsernameCopy;
-      console.log('line 40 stateUsersCopy is : ', stateUsersCopy);
-      return {...state, users: stateUsersCopy, hasAnsweredUsers: [], activeClue: {}, activeUser: '', isGameboardLive: true}; //needs additional logic to bring back to gameboard on browser
+      console.log('inside reducer Correct', stateUsersCopy)
+      return {...state, users: stateUsersCopy, hasAnsweredUsers: [], activeClue: {}, activeUser: '', isButtonDisabled: true};
     case SKIP:
       return {...state, activeUser: action.payload.activeUser, isButtonDisabled: action.payload.isButtonClicked, activeClue: {}};
-    case GAMEBOARD_SWITCH:
-      return {...state, isGameboardLive: action.payload};
     default:
       return state;
   }

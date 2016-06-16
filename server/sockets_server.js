@@ -20,12 +20,12 @@ module.exports.initSockets= function(socket, clients, ioAccess){
     console.log('Clients in room include', clientsFin);
   });
 
-  socket.on('createUsernameSockets', function(data) {
+  socket.on('createUserSockets', function(data) {
     if(!roomData[data.room].users){
       roomData[data.room].users= {};
       roomData[data.room].users.count= 0;
     }
-    roomData[data.room].users[data.username]= {username: data.username, score: 0};
+    roomData[data.room].users[data.username]= {username: data.username, score: 0, photo: data.photo};
     roomData[data.room].users.count ++;
   	ioAccess.in(data.room).emit('newUser', {users : roomData[data.room].users} );
   });
@@ -43,7 +43,7 @@ module.exports.initSockets= function(socket, clients, ioAccess){
   });
 
   socket.on('activeClue', function(data) {
-  	ioAccess.in(data.room).emit('currentClue', {currentClue: data.activeClue});
+  	socket.to(data.room).emit('currentClue', {clue: data.activeClue});
   })
 
   socket.on('incorrect', function(data) {
@@ -54,6 +54,7 @@ module.exports.initSockets= function(socket, clients, ioAccess){
   });
 
   socket.on('correct', function(data) {
+    console.log('inside socket correct');
     roomData[data.room].isButtonClicked= false;
     roomData[data.room].activeUser= '';
     roomData[data.room].users[data.username].score += data.value

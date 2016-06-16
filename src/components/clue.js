@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 const Clue = (props) => (
 
 			<div>
-      {props.value === 0 ?
+      {props.answeredClues[props.clue.id] !== undefined ?
 
         <td className="clues"></td> :
 
