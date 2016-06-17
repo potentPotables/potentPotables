@@ -35,6 +35,7 @@
     "mongoose": "^4.4.20",
     "morgan": "^1.7.0",
     "nodemon": "^1.9.2",
+    "radium": "^0.17.1",
     "react": "^15.1.0",
     "react-addons-test-utils": "^15.1.0",
     "react-dom": "^15.1.0",
