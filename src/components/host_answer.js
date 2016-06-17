@@ -25,6 +25,8 @@ class HostAnswer extends Component{
   handleIncorrectClick(){
     this.state.incorrectClickCount ++;
     declareIncorrect(this.props.activeUser, this.props.room, this.props.activeClue);
+    const incorrect = new Audio('http://www.qwizx.com/gssfx/usa/j64-outtatime.wav');
+    incorrect.play();
     // clearTimeout(this.initalTimeout);
     // if (this.state.incorrectClickCount === this.props.userCount){
     //   this.skipCurrentClue();
@@ -35,8 +37,10 @@ class HostAnswer extends Component{
   }
 
   handleCorrectClick(){
-    console.log('inside HostAnswer line 38;')
+    console.log('inside HostAnswer line 38;');
     declareCorrect(this.props.activeUser, this.props.room, this.props.activeClue);
+    const correct = new Audio('http://www.qwizx.com/gssfx/usa/j64-ringin.wav');
+    correct.play();
     //clearTimeout(this.initialTimeout);
   }
 
