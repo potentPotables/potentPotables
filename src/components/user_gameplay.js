@@ -14,6 +14,13 @@ class UserGameplay extends Component {
     }
   }
 
+  handleBuzz(){
+    const buzz = new Audio('http://localhost:3000/game_buzz.wav');
+    console.log('inside user gameplay', buzz);
+    buzz.play();
+    sendButtonClick(this.props.username, this.props.linkCode);
+  }
+
   render(){
     return (
       <div>
@@ -38,11 +45,11 @@ class UserGameplay extends Component {
               <div>
                 <div>Button disabled</div>
                 <div>
-                    <button onClick= {() => sendButtonClick(this.props.username, this.props.linkCode)} className="join btn btn-primary">Test Button</button>
+                    <button onClick= {this.handleBuzz.bind(this)} className="join btn btn-primary">Test Button</button>
                 </div>
               </div> :
               <div>
-                <button onClick= {() => sendButtonClick(this.props.username, this.props.linkCode)} className="join btn btn-primary">Test Button</button>
+                <button onClick= {this.handleBuzz.bind(this)} className="join btn btn-primary">Test Button</button>
               </div>
         }
         <div>
