@@ -6,7 +6,7 @@ exports.createSession = function(req, res, next) {
 	session.code = str.slice(-5);
 
 	session.save(function (err) {
-		if(err) return console.log(err);
+		if(err) return console.log(err), undefined;
 		req.body.session = session;
 		next();
 	});

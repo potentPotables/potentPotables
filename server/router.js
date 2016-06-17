@@ -3,34 +3,18 @@ const VerifyCode = require('./controllers/verifycode');
 const path = require('path');
 const rp = require('request-promise');
 const _ = require('lodash');
+const express = require('express');
 
 module.exports = function(app, io) {
-
-	app.set('etag', false);
-
-	app.get('/', function(req, res) {
-		res.sendFile(path.resolve(__dirname + '/../index.html'));
-	});
+	app.use(express.static(path.join(__dirname, '../public')));
 
 	app.get('/bundle.js', function(req, res) {
 	  res.sendFile(path.resolve(__dirname + '/../bundle.js'));
 	});
 
-	app.get('/style/style.css', function(req, res) {
-	  res.sendFile(path.resolve(__dirname + '/../style/style.css'));
-	});
-
-	app.get('/*', function(req, res) {
-		res.sendFile(path.resolve(__dirname + '/../index.html'));
-	});
-
 	app.get('/node_modules/socket.io-client/socket.io.js', function(req, res) {
-	  res.sendFile(path.resolve(__dirname + '/../node_modules/socket.io-client/socket.io.js'))
+	  res.sendFile(path.resolve(__dirname + '/../node_modules/socket.io-client/socket.io.js'));
 	});
-
-	app.get('/favicon.ico', function(req, res) {
-    res.sendFile(path.resolve(__dirname + '/../style/icon/favicon.ico'));
-  });
 
 	app.post('/create', CreateSession.createSession, function(req, res, next) {
 		res.json({ session: req.body.session })
@@ -75,6 +59,10 @@ module.exports = function(app, io) {
 			setTimeout(function(){ res.json({ clues: payload }); }, 1200);
 		})
 		.catch(function(err) { console.log(err); });
+	});
+
+	app.get('*', function(req, res) {
+		res.sendFile(path.resolve(__dirname + '/../index.html'));
 	});
 	
 };
