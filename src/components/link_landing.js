@@ -10,12 +10,18 @@ class LinkLanding extends Component {
     this.props.fetchGame();
   }
 
+  handleClick() {
+    const start = new Audio('http://www.qwizx.com/gssfx/usa/jboardfill.wav');
+    start.play();
+    startGame(this.props.link);
+  }
+
   render() {
     return (
       <div>
       <div>Link Code: {this.props.link}</div>
       <Link to='/gameboard'>
-        <button onClick= {() => startGame(this.props.link)} className="join btn btn-primary">Start Game</button>
+        <button onClick= {this.handleClick} className="join btn btn-primary">Start Game</button>
       </Link>
       </div>
     );
