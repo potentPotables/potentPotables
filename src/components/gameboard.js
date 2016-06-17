@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Radium from 'radium';
 import Clue from './clue';
 import Scoreboard from './scoreboard';
 import { setActiveClue } from '../sockets_client';
@@ -15,6 +16,17 @@ class Gameboard extends Component {
       this.props.setActiveClueGameboard(clue);
     }
     render() {
+      // var styles = {
+      //   hover: {
+      //     ':hover': {
+      //       fontSize: 50,
+      //       color: 'black',
+      //       borderRadius: 5,
+      //       height: 50 
+      //     }
+      //   }
+      // };
+
       console.log(this.props.clues);
       const clues= this.props.clues.map((clue) => {
         return <Clue value={clue.value}
@@ -34,7 +46,7 @@ class Gameboard extends Component {
             <tbody>
               <tr>
                     <div>
-                        <td className="clues" key="filler"></td>
+                        <td className="clues" key={index}></td>
                     </div>
                   {clues.splice(0, 5)}
               </tr>
@@ -62,5 +74,6 @@ function mapStateToProps(state){
           room: state.sessionID}
 }
 
+Gameboard = Radium(Gameboard);
 
 export default connect(mapStateToProps, { setActiveClueGameboard })(Gameboard);
