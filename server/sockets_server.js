@@ -43,7 +43,7 @@ module.exports.initSockets= function(socket, clients, ioAccess){
   });
 
   socket.on('activeClue', function(data) {
-  	socket.to(data.room).emit('currentClue', {clue: data.activeClue});
+  	ioAccess.in(data.room).emit('currentClue', {clue: data.activeClue});
   })
 
   socket.on('incorrect', function(data) {
@@ -64,6 +64,7 @@ module.exports.initSockets= function(socket, clients, ioAccess){
   socket.on('skip', function(data) {
     roomData[data.room].isButtonClicked= false;
     roomData[data.room].activeUser= '';
+    console.log('inside server sockets');
     socket.to(data.room).emit('skip', {isButtonClicked: false, activeUser: ''});
   });
 

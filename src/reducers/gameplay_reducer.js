@@ -42,7 +42,7 @@ export default function(state= {
       console.log('inside reducer Correct', stateUsersCopy)
       return {...state, users: stateUsersCopy, hasAnsweredUsers: [], activeClue: {}, activeUser: '', isButtonDisabled: true};
     case SKIP:
-      return {...state, activeUser: action.payload.activeUser, isButtonDisabled: action.payload.isButtonClicked, activeClue: {}};
+      return {...state, activeUser: action.payload.activeUser, isButtonDisabled: true, activeClue: {}};
     default:
       return state;
   }

@@ -2,24 +2,29 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { declareIncorrect, declareCorrect, skipClue } from '../sockets_client';
+import { skipClueLocal } from '../actions/index';
 
 class HostAnswer extends Component{
   constructor(props){
     super(props);
     this.state= {
-      incorrectClickCount: 0
+      incorrectClickCount: 0,
+      generalTimeout: null,
+      activeUserTimeout: null
     }
     //this.skipCurrentClue= this.skipCurrentClue.bind(this);
     this.handleIncorrectClick= this.handleIncorrectClick.bind(this);
     this.handleCorrectClick= this.handleCorrectClick.bind(this);
   }
-  // skipCurrentClue(){
-  //   skipClue(this.props.room, this.props.activeClue);
-  // }
 
-  // skipIncorrect() {
+  static contextTypes = {
+    router: React.PropTypes.object
+  }
+  // skipCurrentClue(){
+  //   console.log('insideSkipCurrentClue');
   //   skipClue(this.props.room, this.props.activeClue);
-  //   declareIncorrect(this.props.activeUser, this.props.room, this.props.activeClue);
+  //   this.props.skipClueLocal();
+  //   this.context.router.push('/hostgameplay')
   // }
 
   handleIncorrectClick(){
@@ -27,13 +32,6 @@ class HostAnswer extends Component{
     declareIncorrect(this.props.activeUser, this.props.room, this.props.activeClue);
     const incorrect = new Audio('http://www.qwizx.com/gssfx/usa/j64-outtatime.wav');
     incorrect.play();
-    // clearTimeout(this.initalTimeout);
-    // if (this.state.incorrectClickCount === this.props.userCount){
-    //   this.skipCurrentClue();
-    // }
-    // if (this.state.incorrectClickCount !== this.props.userCount){
-    //   var incorrectTimeout= setTimeout(this.skipIncorrect, 10000);
-    // }
   }
 
   handleCorrectClick(){
@@ -41,20 +39,22 @@ class HostAnswer extends Component{
     declareCorrect(this.props.activeUser, this.props.room, this.props.activeClue);
     const correct = new Audio('http://www.qwizx.com/gssfx/usa/j64-ringin.wav');
     correct.play();
-    //clearTimeout(this.initialTimeout);
   }
 
-  // componentDidMount(){
-  //   var initialTimeout= setTimeout(this.skipCurrentClue, 10000);
-  // }
+  componentDidMount(){
+    //this.setState({generalTimeout: setTimeout(this.skipCurrentClue, 10000)});
+  }
 
-  // componentDidUpdate(){
-  //   clearTimeout(this.incorrectTimeout);
-  // }
+  componentWillReceiveProps(){
+    console.log('inside will receive props');
+   // clearTimeout(this.state.generalTimeout);
+   // this.setState({activeUserTimeout: setTimeout(this.handleIncorrectClick, 10000)})
+  }
 
-  // componentDidUnMount(){
-  //   clearTimeout(this.incorrectTimeout);
-  // }
+  componentDidUnMount(){
+    //clearTimeout(this.state.generalTimeout);
+    //clearTimeout(this.state.activeUserTimeout);
+  }
 
   render(){
     return(
@@ -87,4 +87,4 @@ function mapStateToProps(state){
   };
 }
 
-export default connect(mapStateToProps)(HostAnswer);
+export default connect(mapStateToProps, { skipClueLocal })(HostAnswer);

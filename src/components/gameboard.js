@@ -4,7 +4,6 @@ import Radium from 'radium';
 import Clue from './clue';
 import Scoreboard from './scoreboard';
 import { setActiveClue } from '../sockets_client';
-import { setActiveClueGameboard } from '../actions/index';
 
 
 import _ from 'lodash';
@@ -13,7 +12,6 @@ import _ from 'lodash';
 class Gameboard extends Component {
     handleSetActiveClue(clue, room){
       setActiveClue(clue, room);
-      this.props.setActiveClueGameboard(clue);
     }
     render() {
       // var styles = {
@@ -76,4 +74,4 @@ function mapStateToProps(state){
 
 Gameboard = Radium(Gameboard);
 
-export default connect(mapStateToProps, { setActiveClueGameboard })(Gameboard);
+export default connect(mapStateToProps)(Gameboard);

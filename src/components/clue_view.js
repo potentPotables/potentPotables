@@ -6,8 +6,9 @@ class ClueView extends Component {
     router: React.PropTypes.object
   }
 
-  componentWillReceiveProps(){
-    console.log('calling will receive props');
+  componentDidUpdate(){
+
+    console.log('calling will receive props', this.props.activeClue);
       this.context.router.push('/gameboard');
   }
 

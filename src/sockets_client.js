@@ -23,6 +23,7 @@ export function initSockets(store){
   });
 
   socket.on('setActiveUser', function(data){
+    console.log('setActiveUser');
     store.dispatch({type: SET_ACTIVE_USER, payload: data.username});
     store.dispatch({type: DISABLE_BUTTON, payload: data.isButtonClicked});
   });
@@ -48,6 +49,7 @@ export function initSockets(store){
   });
 
   socket.on('skip', function(data) {
+    console.log('insideSKipSocketsListenerasdfas');
   	store.dispatch({type: SKIP, payload: data});
   });
 
@@ -97,6 +99,7 @@ export function declareCorrect(username, room, clue) {
 }
 
 export function skipClue(room, clue) {
+  console.log('insideSkipClueSockets');
 	socket.emit('skip', {room: room, clue: clue});
 }
 
