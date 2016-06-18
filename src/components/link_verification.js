@@ -10,6 +10,7 @@ class LinkVerification extends Component {
 
   handleFormSubmit(formProps) {
     this.props.linkCodeVerification(formProps);
+    
   }
 
   renderAlert() {

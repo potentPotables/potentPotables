@@ -148,20 +148,25 @@ a.join.btn.btn-primary.btn-lg {
 }
 
 button.create.btn.btn-primary.btn-lg {
-	margin: 0 290px 52px;
+	margin: auto;
+	margin-bottom: 20px;
 }
 
 a.join.btn.btn-primary.btn-lg {
-	margin: 0 16px 52px 0px;
+	margin: auto;
+	margin-bottom: 23px;
 }
 
-.about {
+.about, .howto {
 	color: white;
 	font-family: 'Open Sans', sans-serif;
+	margin-right: 15px;
+	margin-left: 15px;
 }
 
-#about {
+#about, #howto {
 	background-color: navy;
+	color: white;
 }
 
 #stack {
@@ -170,9 +175,5 @@ a.join.btn.btn-primary.btn-lg {
 }
 
 .stack.intro {
-	color: white;
-}
-
-#why {
 	color: white;
 }

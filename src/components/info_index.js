@@ -9,13 +9,18 @@ class InfoIndex extends Component {
 		return (
 			<div className ="landing">
 				<div className="logo-holder"><img src="http://localhost:3000/assets/logo.png" /></div>
-				<button className="create btn btn-primary btn-lg" onClick={this.props.createSession}>Create a session</button>
-				<Link to="/linkverification" className="join btn btn-primary btn-lg">Join a session</Link>
-				<video>
-				</video>
 				<div>
-					<Link className="about" to="/about"><strong><u>About</u></strong></Link>
+				<button className="create btn btn-primary btn-lg" onClick={this.props.createSession}>Create a session</button>
 				</div>
+				<div>
+				<Link to="/linkverification" className="join btn btn-primary btn-lg">Join a session</Link>
+				</div>
+				<span>
+					<Link className="about" to="/about"><strong><u>About</u></strong></Link>
+				</span>
+				<span>
+					<Link className="howto" to="/howto"><strong><u>How to Play</u></strong></Link>
+				</span>
 			</div>
 		);
 	}
