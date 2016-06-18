@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import { fetchGame } from '../actions/index';
+import { fetchGame, closeSession } from '../actions/index';
 import { joinRoom, startGame } from '../sockets_client';
 
 class LinkLanding extends Component {
@@ -13,6 +13,8 @@ class LinkLanding extends Component {
   handleClick() {
     const start = new Audio('http://www.qwizx.com/gssfx/usa/jboardfill.wav');
     start.play();
+    console.log(this.props.link);
+    this.props.closeSession(this.props.link);
     startGame(this.props.link);
   }
 
@@ -31,4 +33,4 @@ class LinkLanding extends Component {
 function mapStateToProps(state) {
   return {link: state.sessionID};
 }
-export default connect(mapStateToProps, { fetchGame })(LinkLanding)
+export default connect(mapStateToProps, { fetchGame, closeSession })(LinkLanding)

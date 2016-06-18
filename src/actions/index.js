@@ -54,7 +54,7 @@ export function createUser(username, photo) {
   }
 }
 
-export function fetchGame(){
+export function fetchGame() {
   return function(dispatch){
     axios.post('/game')
       .then(response => {
@@ -75,10 +75,15 @@ export function fetchGame(){
   }
 }
 
-export function setActiveClueGameboard(clue){
+export function setActiveClueGameboard(clue) {
   return {type: SET_ACTIVE_CLUE, payload: clue}
 }
 
+export function closeSession(linkcode) {
+  return function() {
+    axios.post('/close', {linkcode});
+  }
+}
 export function skipClueLocal(){
   return {type: SKIP, payload: {activeUser: ''}}
 }
