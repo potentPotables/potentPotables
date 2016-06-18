@@ -44,9 +44,6 @@ class UserGameplay extends Component {
             this.props.hasAnsweredUsers.indexOf(this.props.username) !== -1 ?
               <div>
                 <div>Button disabled</div>
-                <div>
-                    <button onClick= {this.handleBuzz.bind(this)} className="join btn btn-primary">Test Button</button>
-                </div>
               </div> :
               <div>
                 <button onClick= {this.handleBuzz.bind(this)} className="join btn btn-primary">Test Button</button>

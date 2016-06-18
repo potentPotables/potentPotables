@@ -7,10 +7,15 @@ class InfoIndex extends Component {
 	render() {
 
 		return (
-			<div>
-				<div className="landing-page">Landing icon</div>
-				<button className="create btn btn-primary" onClick={this.props.createSession}>Create a session</button>
-				<Link to="/linkverification" className="join btn btn-primary">Join a session</Link>
+			<div className ="landing">
+				<div className="logo-holder"><img src="http://localhost:3000/assets/logo.png" /></div>
+				<button className="create btn btn-primary btn-lg" onClick={this.props.createSession}>Create a session</button>
+				<Link to="/linkverification" className="join btn btn-primary btn-lg">Join a session</Link>
+				<video>
+				</video>
+				<div>
+					<Link className="about" to="/about"><strong><u>About</u></strong></Link>
+				</div>
 			</div>
 		);
 	}
