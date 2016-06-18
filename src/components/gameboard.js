@@ -22,7 +22,7 @@ class Gameboard extends Component {
       //       fontSize: 50,
       //       color: 'black',
       //       borderRadius: 5,
-      //       height: 50 
+      //       height: 50
       //     }
       //   }
       // };

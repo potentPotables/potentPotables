@@ -11,6 +11,7 @@ export const LINK_CODE_ERROR= 'LINK_CODE_ERROR';
 export const CREATE_GAME= 'CREATE_GAME';
 export const ACTIVATE_GAME= 'ACTIVATE_GAME';
 export const SET_ACTIVE_CLUE= 'SET_ACTIVE_CLUE';
+export const SKIP= 'SKIP';
 
 export function createSession() {
   return function(dispatch){
@@ -76,4 +77,8 @@ export function fetchGame(){
 
 export function setActiveClueGameboard(clue){
   return {type: SET_ACTIVE_CLUE, payload: clue}
+}
+
+export function skipClueLocal(){
+  return {type: SKIP, payload: {activeUser: ''}}
 }

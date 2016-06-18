@@ -40,13 +40,19 @@ class UserGameplay extends Component {
           this.props.isButtonDisabled ?
               <div>
                 <div>Button disabled</div>
+                <div>
+                    <button onClick= {() => sendButtonClick(this.props.username, this.props.linkCode, this.props.activeClue)} className="join btn btn-primary">Test Button</button>
+                </div>
               </div> :
             this.props.hasAnsweredUsers.indexOf(this.props.username) !== -1 ?
               <div>
                 <div>Button disabled</div>
+                <div>
+                    <button onClick= {() => sendButtonClick(this.props.username, this.props.linkCode, this.props.activeClue)} className="join btn btn-primary">Test Button</button>
+                </div>
               </div> :
               <div>
-                <button onClick= {this.handleBuzz.bind(this)} className="join btn btn-primary">Test Button</button>
+                <button onClick= {() => sendButtonClick(this.props.username, this.props.linkCode, this.props.activeClue)} className="join btn btn-primary">Test Button</button>
               </div>
         }
         <div>

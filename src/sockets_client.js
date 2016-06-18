@@ -13,6 +13,8 @@ export const INCORRECT_ANSWER = 'INCORRECT_ANSWER';
 export const CORRECT_ANSWER = 'CORRECT_ANSWER';
 export const SKIP = 'SKIP';
 export const ACTIVATE_BUTTONS = 'ACTIVATE_BUTTONS';
+export const SKIP_INCORRECT= 'SKIP_INCORRECT';
+
 //all client-side socket listeners will be be contained here
 //initSockets will be exported to client-side index
 export function initSockets(store){
@@ -23,6 +25,7 @@ export function initSockets(store){
   });
 
   socket.on('setActiveUser', function(data){
+    console.log('setActiveUser');
     store.dispatch({type: SET_ACTIVE_USER, payload: data.username});
     store.dispatch({type: DISABLE_BUTTON, payload: data.isButtonClicked});
   });
@@ -48,12 +51,17 @@ export function initSockets(store){
   });
 
   socket.on('skip', function(data) {
+    console.log('insideSKipSocketsListenerasdfas');
   	store.dispatch({type: SKIP, payload: data});
   });
 
   socket.on('enableButtons', function() {
     store.dispatch({type: ACTIVATE_BUTTONS, payload: false})
   });
+
+  socket.on('skipIncorrect', function(data) {
+    store.dispatch({type: SKIP_INCORRECT, payload: data})
+  })
 }
 
 //all client-side socket emitters will be contained here
@@ -71,8 +79,8 @@ export function createUserSockets(username, photo, room) {
 	socket.emit('createUserSockets', {username: username, photo: photo, room: room});
 }
 
-export function sendButtonClick(username, room) {
-  socket.emit('sendButtonClick', {username: username, room: room});
+export function sendButtonClick(username, room, clue) {
+  socket.emit('sendButtonClick', {username: username, room: room, clue: clue});
 }
 
 export function startGame(room) {
@@ -80,15 +88,13 @@ export function startGame(room) {
   socket.emit('startGame', { room: room });
 }
 
-// will be called inside /actions/index.js =>
-//still pending gameboard completion
 export function setActiveClue(activeClue, room) {
   socket.emit('activeClue', { activeClue: activeClue, room: room });
 }
 
 export function declareIncorrect(username, room, clue) {
   console.log('inside Sockets delcareIncorrect');
-	socket.emit('incorrect', {username: username, room: room, value: clue.value});
+	socket.emit('incorrect', {username: username, room: room, clue: clue});
 }
 
 export function declareCorrect(username, room, clue) {
@@ -97,6 +103,7 @@ export function declareCorrect(username, room, clue) {
 }
 
 export function skipClue(room, clue) {
+  console.log('insideSkipClueSockets');
 	socket.emit('skip', {room: room, clue: clue});
 }
 
