@@ -125,7 +125,32 @@ a.join.btn.btn-primary.btn-lg {
 	color: white;
 }
 
-#why {
+button.create.btn.btn-primary.btn-lg {
+	margin: 0 290px 52px;
+}
+
+a.join.btn.btn-primary.btn-lg {
+	margin: 0 16px 52px 0px;
+}
+
+.about {
+	color: white;
+	font-family: 'Open Sans', sans-serif;
+}
+
+#about {
+	background-color: navy;
+}
+
+#stack {
+	width: 600px;
+	height: auto;
+}
+
+.stack.intro {
 	color: white;
 }
 
+#why {
+	color: white;
+}
