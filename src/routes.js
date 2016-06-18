@@ -11,6 +11,7 @@ import HostGameplay from './components/host_gameplay';
 import ClueView from './components/clue_view';
 import HostAnswer from './components/host_answer';
 import Gameboard from './components/gameboard';
+import About from './components/about';
 
 export default (
 	<Route path="/" component={App}>
@@ -23,5 +24,6 @@ export default (
     <Route path="clue_view" component={ClueView} />
     <Route path="hostanswer" component={HostAnswer} />
     <Route path="gameboard" component={Gameboard} />
+    <Route path="about" component={About} />
 	</Route>
 )

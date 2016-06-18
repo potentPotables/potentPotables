@@ -1,4 +1,5 @@
 @import url(http://db.onlinewebfonts.com/c/795d10ca5cef97c354da7db008fa89f5?family=Korinna+BT);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
 html, body {
   position: relative;
@@ -74,10 +75,37 @@ html, body {
 	margin-top: 175px;
 }
 
+.landing {
+	text-align: center;
+	background-color: navy;
+}
 
+button.create.btn.btn-primary.btn-lg {
+	margin: 0 290px 52px;
+}
 
+a.join.btn.btn-primary.btn-lg {
+	margin: 0 16px 52px 0px;
+}
 
+.about {
+	color: white;
+	font-family: 'Open Sans', sans-serif;
+}
 
+#about {
+	background-color: navy;
+}
 
+#stack {
+	width: 600px;
+	height: auto;
+}
 
+.stack.intro {
+	color: white;
+}
 
+#why {
+	color: white;
+}

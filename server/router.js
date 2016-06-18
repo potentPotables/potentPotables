@@ -39,7 +39,7 @@ module.exports = function(app, io) {
 					categories.push(category.category_id)
 				}
 			})
-			return categories
+			return categories;
 		})
 		//once you have your 6 categories, make another call to the API to grab the clues that belong to them.
 		.then((categories) => {
