@@ -39,8 +39,7 @@ export function linkCodeVerification({linkcode}) {
         dispatch({type: LINK_CODE_AUTH, payload: response.data.room})
       })
       .catch(response => {
-        console.log('error REsponse', response);
-        dispatch({type: LINK_CODE_ERROR, payload: response.data.error});
+        dispatch({type: LINK_CODE_ERROR, payload: response});
       })
   }
 }

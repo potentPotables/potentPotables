@@ -17,11 +17,11 @@ module.exports = function(app, io) {
 	});
 
 	app.post('/create', CreateSession.createSession, function(req, res, next) {
-		res.json({ session: req.body.session })
+		res.json({ session: req.body.session });
 	});
 
 	app.post('/linkcode', VerifyCode.verifyCode, function(req, res, next) {
-		res.json({ room: req.body.room })
+		res.json({ room: req.body.room });
 	});
 
 	app.post('/game', function(req, res, next) {

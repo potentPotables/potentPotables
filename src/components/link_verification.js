@@ -15,8 +15,8 @@ class LinkVerification extends Component {
   renderAlert() {
     if (this.props.linkAuthError !== ''){
       return (
-        <div className= 'alert alert-danger'>
-          <strong>{this.props.linkAuthError}</strong>
+        <div className="alert alert-danger">
+          <div>That session does not exist, please check to see if you entered in the link code correctly or create your own session.</div>
         </div>
       );
     }
