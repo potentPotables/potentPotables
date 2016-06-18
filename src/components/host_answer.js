@@ -2,17 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { declareIncorrect, declareCorrect, skipClue } from '../sockets_client';
-import { skipClueLocal } from '../actions/index';
 
 class HostAnswer extends Component{
   constructor(props){
     super(props);
-    this.state= {
-      incorrectClickCount: 0,
-      generalTimeout: null,
-      activeUserTimeout: null
-    }
-    //this.skipCurrentClue= this.skipCurrentClue.bind(this);
+
     this.handleIncorrectClick= this.handleIncorrectClick.bind(this);
     this.handleCorrectClick= this.handleCorrectClick.bind(this);
   }
@@ -20,15 +14,9 @@ class HostAnswer extends Component{
   static contextTypes = {
     router: React.PropTypes.object
   }
-  // skipCurrentClue(){
-  //   console.log('insideSkipCurrentClue');
-  //   skipClue(this.props.room, this.props.activeClue);
-  //   this.props.skipClueLocal();
-  //   this.context.router.push('/hostgameplay')
-  // }
+
 
   handleIncorrectClick(){
-    this.state.incorrectClickCount ++;
     declareIncorrect(this.props.activeUser, this.props.room, this.props.activeClue);
     const incorrect = new Audio('http://www.qwizx.com/gssfx/usa/j64-outtatime.wav');
     incorrect.play();
@@ -41,19 +29,10 @@ class HostAnswer extends Component{
     correct.play();
   }
 
-  componentDidMount(){
-    //this.setState({generalTimeout: setTimeout(this.skipCurrentClue, 10000)});
-  }
-
-  componentWillReceiveProps(){
-    console.log('inside will receive props');
-   // clearTimeout(this.state.generalTimeout);
-   // this.setState({activeUserTimeout: setTimeout(this.handleIncorrectClick, 10000)})
-  }
-
-  componentDidUnMount(){
-    //clearTimeout(this.state.generalTimeout);
-    //clearTimeout(this.state.activeUserTimeout);
+  componentDidUpdate(){
+    if (Object.keys(this.props.activeClue).length === 0){
+      this.context.router.push('/hostgameplay');
+    }
   }
 
   render(){
@@ -87,4 +66,4 @@ function mapStateToProps(state){
   };
 }
 
-export default connect(mapStateToProps, { skipClueLocal })(HostAnswer);
+export default connect(mapStateToProps)(HostAnswer);

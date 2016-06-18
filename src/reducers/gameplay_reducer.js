@@ -1,5 +1,5 @@
 import { ACTIVATE_GAME } from '../actions/index';
-import { INCORRECT_ANSWER, CORRECT_ANSWER, SKIP, SET_ACTIVE_CLUE, ADD_NEW_USER, DISABLE_BUTTON, SET_ACTIVE_USER, ACTIVATE_BUTTONS } from '../sockets_client';
+import { INCORRECT_ANSWER, CORRECT_ANSWER, SKIP_INCORRECT, SKIP, SET_ACTIVE_CLUE, ADD_NEW_USER, DISABLE_BUTTON, SET_ACTIVE_USER, ACTIVATE_BUTTONS } from '../sockets_client';
 
 export default function(state= {
   isGameActive: false,
@@ -41,8 +41,13 @@ export default function(state= {
       stateUsersCopy[action.payload.username]= stateUsernameCopy;
       console.log('inside reducer Correct', stateUsersCopy)
       return {...state, users: stateUsersCopy, hasAnsweredUsers: [], activeClue: {}, activeUser: '', isButtonDisabled: true};
+    case SKIP_INCORRECT:
+      var stateUsernameCopy= {...state.users[action.payload.username], score: action.payload.score};
+      var stateUsersCopy= {...state.users};
+      stateUsersCopy[action.payload.username]= stateUsernameCopy;
+      return {...state, users: stateUsersCopy, activeUser: '', hasAnsweredUsers: [], isButtonDisabled: true, activeClue: {}};
     case SKIP:
-      return {...state, activeUser: action.payload.activeUser, isButtonDisabled: true, activeClue: {}};
+      return {...state, activeUser: '', hasAnsweredUsers: [], isButtonDisabled: true, activeClue: {}};
     default:
       return state;
   }

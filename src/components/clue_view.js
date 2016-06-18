@@ -7,7 +7,6 @@ class ClueView extends Component {
   }
 
   componentDidUpdate(){
-
     console.log('calling will receive props', this.props.activeClue);
       this.context.router.push('/gameboard');
   }
