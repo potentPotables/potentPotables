@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { sendButtonClick } from '../sockets_client';
+import Avatar from 'material-ui/Avatar';
 
 class UserGameplay extends Component {
   constructor(props){
@@ -57,6 +58,7 @@ class UserGameplay extends Component {
         }
         <div>
           <div>{this.props.username}</div>
+          <Avatar src= {this.props.userPhoto} size= {100} disabled= {true}/>
           <div>Score: ${this.state.score}</div>
         </div>
       </div>
@@ -65,6 +67,7 @@ class UserGameplay extends Component {
 }
 
 function mapStateToProps(state){
+  console.log('insideMapState', state.user.userPhoto);
   return {
     isButtonDisabled: state.gameplay.isButtonDisabled,
     username: state.user.username,
@@ -73,7 +76,8 @@ function mapStateToProps(state){
     activeUser: state.gameplay.activeUser,
     isGameActive: state.gameplay.isGameActive,
     activeClue: state.gameplay.activeClue,
-    hasAnsweredUsers: state.gameplay.hasAnsweredUsers
+    hasAnsweredUsers: state.gameplay.hasAnsweredUsers,
+    userPhoto: state.user.photo
   };
 }
 

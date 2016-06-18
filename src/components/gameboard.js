@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Radium from 'radium';
 import Clue from './clue';
-import Scoreboard from './scoreboard';
 import { setActiveClue } from '../sockets_client';
 import { setActiveClueGameboard } from '../actions/index';
 
