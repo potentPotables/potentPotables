@@ -129,24 +129,6 @@ a.join.btn.btn-primary.btn-lg {
 	margin: 0 16px 52px 0px;
 }
 
-.about {
-	color: white;
-	font-family: 'Open Sans', sans-serif;
-}
-
-#about {
-	background-color: navy;
-}
-
-#stack {
-	width: 600px;
-	height: auto;
-}
-
-.stack.intro {
-	color: white;
-}
-
 button.create.btn.btn-primary.btn-lg {
 	margin: auto;
 	margin-bottom: 20px;
@@ -170,10 +152,26 @@ a.join.btn.btn-primary.btn-lg {
 }
 
 #stack {
-	width: 600px;
-	height: auto;
+	margin: auto;
+	width: 55%;
+	margin-bottom: 20px;
 }
 
 .stack.intro {
-	color: white;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+/*ul.why{
+	display: block;
+	text-align: center;
+}
+
+ul.why li {
+	display: inline-block;
+}*/
+
+#peter, #lukas, #chris {
+	height: 180px;
+	width: 180px;
 }

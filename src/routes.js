@@ -13,6 +13,9 @@ import HostAnswer from './components/host_answer';
 import Gameboard from './components/gameboard';
 import HowTo from './components/howto';
 import About from './components/about';
+import Peter from './components/peter';
+import Chris from './components/chris';
+import Lukas from './components/lukas';
 
 export default (
 	<Route path="/" component={App}>
@@ -27,5 +30,8 @@ export default (
     <Route path="gameboard" component={Gameboard} />
     <Route path="howto" component={HowTo} />
     <Route path="about" component={About} />
+    <Route path="peter" component={Peter} />
+    <Route path="chris" component={Chris} />
+    <Route path="lukas" component={Lukas} />
 	</Route>
 )
