@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
-import { joinRoom,
-         createUserSockets} from '../sockets_client';
+import { joinRoom, createUserSockets } from '../sockets_client';
 
 export const CREATE_SESSION = 'CREATE_SESSION';
 export const SET_USER_TYPE= 'SET_USER_TYPE';
@@ -84,6 +83,13 @@ export function closeSession(linkcode) {
     axios.post('/close', {linkcode});
   }
 }
+
 export function skipClueLocal(){
   return {type: SKIP, payload: {activeUser: ''}}
+}
+
+export function createMessage(props) {
+  return function() {
+    axios.post('/message', props);
+  }
 }
