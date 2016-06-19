@@ -11,14 +11,14 @@ class HostGamePlay extends Component {
     return (
       <div>
       {this.props.isGameActive === false ?
-        <div>
+        <div className="waitingGame">
           Waiting for game to Begin...
         </div> :
         Object.keys(this.props.activeClue).length > 0 ?
         <Link to='/hostanswer'>
           <button onClick={this.handleClick.bind(this)}className="join btn btn-primary">{this.props.activeClue.question}</button>
         </Link> :
-        <div>
+        <div className="waitingClue">
           Waiting for clue to be selected...
         </div>
       }

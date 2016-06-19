@@ -15,16 +15,6 @@ class Gameboard extends Component {
       this.props.setActiveClueGameboard(clue);
     }
     render() {
-      // var styles = {
-      //   hover: {
-      //     ':hover': {
-      //       fontSize: 50,
-      //       color: 'black',
-      //       borderRadius: 5,
-      //       height: 50
-      //     }
-      //   }
-      // };
 
       console.log(this.props.clues);
       const clues= this.props.clues.map((clue) => {
@@ -55,11 +45,10 @@ class Gameboard extends Component {
       });
 
       return(
-        <div>
+        <div id="container-table">
           <table className="table table-reflow">
               { categories }
           </table>
-          <Scoreboard users= {this.props.users}/>
         </div>
     );
   }
@@ -72,7 +61,5 @@ function mapStateToProps(state){
           answeredClues: state.gameplay.answeredClues,
           room: state.sessionID}
 }
-
-Gameboard = Radium(Gameboard);
 
 export default connect(mapStateToProps, { setActiveClueGameboard })(Gameboard);
