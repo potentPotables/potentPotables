@@ -28,24 +28,25 @@ class Hire extends Component {
 			    </div>
 			  </div>
 
-			  <div className="form-group">
-			    <label>Company</label>
+			  <div className={`form-group ${company.touched && company.invalid ? 'has-danger' : ''}`}>
+			    <label><strong>Company</strong></label>
 			    <input type="text" className="form-control" {...company} />
 			    <div class="text-help">
 			      {company.touched ? company.error: ''}
 			    </div>
 			  </div>
 
-			  <div className="form-group">
-			    <label>Email</label>
+
+			  <div className={`form-group ${email.touched && email.invalid ? 'has-danger' : ''}`}>
+			    <label><strong>Email</strong></label>
 			    <input type="email" className="form-control" {...email} />
 			    <div class="text-help">
 			      {email.touched ? email.error: ''}
 			    </div>
 			  </div>
-
-			  <div className="form-group">
-			    <label>Message</label>
+			  
+			  <div className={`form-group ${message.touched && message.invalid ? 'has-danger' : ''}`}>
+			    <label><strong>Message</strong></label>
 			    <textarea className="form-control" {...message} />
 			    <div class="text-help">
 			      {message.touched ? message.error: ''}
