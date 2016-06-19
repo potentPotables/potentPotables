@@ -5,7 +5,7 @@ export default class HowTo extends Component {
     return (
         <div id="howto">
           <div id="howto">
-          	<h3 >
+          	<h3>
               How to Play the Game:
             </h3>
               <p>
