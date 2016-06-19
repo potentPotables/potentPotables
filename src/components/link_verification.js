@@ -30,7 +30,7 @@ class LinkVerification extends Component {
   render(){
     const { handleSubmit, fields: { linkcode }} = this.props;
     return(
-      <div>
+      <div className="linkVerify">
       <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
         <div>
           <label>Link Code</label>

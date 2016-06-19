@@ -28,7 +28,7 @@ class LinkLanding extends Component {
 
     })
     return (
-      <div>
+      <div className="linkEnter">
       <div>Link Code: {this.props.link}</div>
       <div> {usersList}</div>
       <Link to='/gameboard'>
