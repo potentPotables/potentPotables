@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { fetchGame, closeSession } from '../actions/index';
 import { joinRoom, startGame } from '../sockets_client';
+import UsersListEntry from './link_landing_users';
+import _ from 'lodash';
 
 class LinkLanding extends Component {
   componentDidMount(){
@@ -19,9 +21,16 @@ class LinkLanding extends Component {
   }
 
   render() {
+
+    const usersList= _.map(this.props.users, user =>{
+      console.log('user is', user);
+     return <UsersListEntry username= {user.username} photo= {user.photo}/>
+
+    })
     return (
       <div>
       <div>Link Code: {this.props.link}</div>
+      <div> {usersList}</div>
       <Link to='/gameboard'>
         <button onClick= {this.handleClick.bind(this)} className="join btn btn-primary">Start Game</button>
       </Link>
@@ -31,6 +40,7 @@ class LinkLanding extends Component {
 };
 
 function mapStateToProps(state) {
-  return {link: state.sessionID};
+  return {link: state.sessionID,
+          users: state.gameplay.users};
 }
 export default connect(mapStateToProps, { fetchGame, closeSession })(LinkLanding)

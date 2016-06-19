@@ -18,6 +18,7 @@ export default function(state= {
       var stateUsersCopy = {...state.users};
       stateUsersCopy= action.payload.users;
       var stateCopy = {...state, users: stateUsersCopy};
+      console.log('stateCopy is', stateCopy);
       return stateCopy;
     case DISABLE_BUTTON:
       return {...state, isButtonDisabled: action.payload};

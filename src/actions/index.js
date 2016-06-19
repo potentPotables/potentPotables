@@ -48,7 +48,7 @@ export function linkCodeVerification({linkcode}) {
 export function createUser(username, photo) {
   return function(dispatch, getState){
         const currentState = getState();
-        dispatch({type: CREATE_USERNAME, payload: username});
+        dispatch({type: CREATE_USERNAME, payload: {username: username, photo: photo}});
         createUserSockets(username, photo, currentState.linkAuth.linkCode);
         browserHistory.push('/usergameplay');
   }

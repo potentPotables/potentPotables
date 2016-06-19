@@ -62,7 +62,6 @@ function mapStateToProps(state){
     activeClue: state.gameplay.activeClue,
     activeUser: state.gameplay.activeUser,
     room: state.linkAuth.linkCode,
-    usersCount: state.user.count,
   };
 }
 

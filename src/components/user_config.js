@@ -61,6 +61,7 @@ class userConfig extends Component {
   }
 
   handleSubmit(username, photo) {
+    console.log('photo is ', photo);
     this.props.createUser(username, photo);
   }
 
@@ -85,18 +86,33 @@ class userConfig extends Component {
       margin: 'auto'
     }
     return (
+      <div>
         <div>
         <div>
-          <div>
-          <Dropzone style= { styleDropzone } onDrop={this.onDrop} accept="image/*">
-            <div className= 'text-center'>Click here to upload a Selfie!</div>
-          </Dropzone>
-          </div>
+          {this.state.file.length > 0 ?
+            <div className= 'centered-Create'>
+              <img src={this.state.file[0].preview} height="200" />
+            </div>
+          :
+            <div>
+              <div>
+              <Dropzone style= { styleDropzone } onDrop={this.onDrop} accept="image/*">
+                <div className= 'text-center'>Snap a Selfie!</div>
+              </Dropzone>
+              </div>
+            </div>
+          }
         </div>
+        <div className= 'centered-Create'>
+          <button onClick={ this.removePicture }>Cancel</button>
+        </div>
+        </div>
+        <div>
           <label>Username</label>
           <input onChange={(e) => this.nameChange(e)} type="text" placeholder="Enter Username Here" value={this.state.username}/>
           <button type="button" onClick={() => this.handleSubmit(this.state.username, this.state.dataURL)}>Submit</button>
         </div>
+      </div>
     );
   }
 }

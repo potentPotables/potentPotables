@@ -11,6 +11,7 @@ module.exports.initSockets= function(socket, clients, ioAccess){
         hasClickedButton: false,
         activeUser: '',
         incorrectUserCount: 0,
+        usersCount: 0,
         generalUserTimeout: {
               skip: function(room){
                 roomData[room].isButtonClicked= false;
@@ -60,10 +61,9 @@ module.exports.initSockets= function(socket, clients, ioAccess){
   socket.on('createUserSockets', function(data) {
     if(!roomData[data.room].users){
       roomData[data.room].users= {};
-      roomData[data.room].users.count= 0;
     }
     roomData[data.room].users[data.username]= {username: data.username, score: 0, photo: data.photo};
-    roomData[data.room].users.count ++;
+    roomData[data.room].usersCount ++;
     ioAccess.in(data.room).emit('newUser', {users : roomData[data.room].users} );
   });
   socket.on('sendButtonClick', function(data) {
@@ -83,7 +83,7 @@ module.exports.initSockets= function(socket, clients, ioAccess){
   })
   socket.on('incorrect', function(data) {
     roomData[data.room].incorrectUserCount ++;
-    if (roomData[data.room].incorrectUserCount === roomData[data.room].users.count){
+    if (roomData[data.room].incorrectUserCount === roomData[data.room].usersCount){
       roomData[data.room].activeUserTimeout.clearActiveTimeout();
       roomData[data.room].activeUserTimeout.skipIncorrect(data.room, data.username, data.clue);
     }
