@@ -3,6 +3,7 @@
 @font-face {
 	font-family: 'Korinna-BT';
 	src:
+		url('./assets/fonts/Korinna_Bold_BT.tff') format('truetype'),
 		url('./assets/fonts/Korinna_Bold_BT.woff') format('woff'),
 		url('./assets/fonts/Korinna_Bold_BT.woff2') format('woff2');
 }
@@ -10,6 +11,7 @@
 @font-face {
 	font-family: 'Swiss-911';
 	src:
+		url('./assets/fonts/Swiss_911_Compressed.tff') format('truetype'),
 		url('./assets/fonts/Swiss_911_Compressed.woff') format('woff'),
 		url('./assets/fonts/Swiss_911_Compressed.woff2') format('woff2');
 }
@@ -21,6 +23,7 @@ html, body {
   min-height: 100%;
   width: 100%;
   min-width: 100%;
+  background-image: url(//www.slotsumo.com/wp-content/uploads/2015/03/jeopardy_slot_bg.jpg);
   background-size: 100% 100%;
   background-repeat:repeat-x;
   background-attachment:fixed;
