@@ -1,6 +1,20 @@
-@import url(http://db.onlinewebfonts.com/c/795d10ca5cef97c354da7db008fa89f5?family=Korinna+BT);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
-@import url(http://db.onlinewebfonts.com/c/6cc8a459c592c0f8b721e09ab3ff16d2?family=Swiss+911);
+
+@font-face {
+	font-family: 'Korinna-BT';
+	src: 
+		url('./assets/fonts/Korinna_Bold_BT.tff') format('truetype'),
+		url('./assets/fonts/Korinna_Bold_BT.woff') format('woff'),
+		url('./assets/fonts/Korinna_Bold_BT.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Swiss-911';
+	src: 
+		url('./assets/fonts/Swiss_911_Compressed.tff') format('truetype'),
+		url('./assets/fonts/Swiss_911_Compressed.woff') format('woff'),
+		url('./assets/fonts/Swiss_911_Compressed.woff2') format('woff2');
+}
 
 html, body {
   position: relative;
@@ -57,7 +71,7 @@ td.clues {
 	font-size: 65px;
 	font-weight: bolder;
 	text-shadow: 4px 4px black;
-	font-family: "Swiss 911";
+	font-family: "Swiss-911";
 	background-image: url('http://www.santemaghreb.com/algerie/jicc2009/13_fichiers/master04_background.gif');
 	background-size: 100% 100%;
     transition: 0.5s;
@@ -80,7 +94,7 @@ td.clues:hover {
 	position: absolute;
 	min-height: 100%;
 	min-width: 100%;
-	font-family: "Korinna BT";
+	font-family: "Korinna-BT";
 	font-size: 75px;
 	text-align: center;
 	color: white;
