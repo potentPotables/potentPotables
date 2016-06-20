@@ -2,7 +2,7 @@
 
 @font-face {
 	font-family: 'Korinna-BT';
-	src: 
+	src:
 		url('./assets/fonts/Korinna_Bold_BT.tff') format('truetype'),
 		url('./assets/fonts/Korinna_Bold_BT.woff') format('woff'),
 		url('./assets/fonts/Korinna_Bold_BT.woff2') format('woff2');
@@ -10,7 +10,7 @@
 
 @font-face {
 	font-family: 'Swiss-911';
-	src: 
+	src:
 		url('./assets/fonts/Swiss_911_Compressed.tff') format('truetype'),
 		url('./assets/fonts/Swiss_911_Compressed.woff') format('woff'),
 		url('./assets/fonts/Swiss_911_Compressed.woff2') format('woff2');
@@ -60,7 +60,7 @@ th.categories {
 	font-weight: bold;
 	text-transform: uppercase;
 	border: 4px solid black !important;
-	background-image: url('http://cache1.asset-cache.net/xd/eef_010.jpg?v=1&c=IWSAsset&k=2&d=5225673E10E2FD0F0E6C89302D5D4AE94E7679DD01108BC6D5CC31666135BEB7E7BFD5B312C9BD15');
+	background-image: url('//cache1.asset-cache.net/xd/eef_010.jpg?v=1&c=IWSAsset&k=2&d=5225673E10E2FD0F0E6C89302D5D4AE94E7679DD01108BC6D5CC31666135BEB7E7BFD5B312C9BD15');
 	background-size: 100% 100%;
 	font-size: 17px;
 	font-family: "HelveticaNeue-CondensedBold";
@@ -107,7 +107,7 @@ td.clues:hover {
 	text-align: center;
 	color: white;
 	text-shadow: 2px 2px black;
-	background-image: url('http://www.santemaghreb.com/algerie/jicc2009/13_fichiers/master04_background.gif');
+	background-image: url('//www.santemaghreb.com/algerie/jicc2009/13_fichiers/master04_background.gif');
 }
 
 #question-text {
