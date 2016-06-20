@@ -9,6 +9,14 @@ const express = require('express');
 module.exports = function(app, io) {
 	app.use(express.static(path.join(__dirname, '../public')));
 
+	app.get('/', function(req, res) {
+	  res.sendFile(path.resolve(__dirname + '/../index.html'));
+	});
+
+		app.get('/favicon.ico', function(req, res) {
+				console.log('test');
+	});
+
 	app.get('/bundle.js', function(req, res) {
 	  res.sendFile(path.resolve(__dirname + '/../bundle.js'));
 	});
