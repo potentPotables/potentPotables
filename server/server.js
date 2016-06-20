@@ -2,14 +2,14 @@
 "use strict"
 
 const express = require('express');
-const https = require('https');
+const http = require('http');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const cors = require('cors');
 const app = express();
 const router = require('./router');
 const mongoose = require('mongoose');
-const server = https.createServer(app);
+const server = http.createServer(app);
 const io = require('socket.io')(server);
 const Sockets= require('./sockets_server');
 const MONGODB_URI= 'mongodb://heroku_jrvjd4m6:uqf4on3flnlf2haah5opugf4nd@ds025782.mlab.com:25782/heroku_jrvjd4m6';
