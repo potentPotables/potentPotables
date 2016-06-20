@@ -16,11 +16,16 @@ class UserGameplay extends Component {
     }
   }
 
+  componentDidMount(){
+    if(this.state.score){
+    this.setState({score: this.props.users[this.props.username].score});
+    }
+  }
+
   handleBuzz(){
     const buzz = new Audio('http://localhost:3000/game_buzz.wav');
-    console.log('inside user gameplay', buzz);
     buzz.play();
-    sendButtonClick(this.props.username, this.props.linkCode);
+    sendButtonClick(this.props.username, this.props.linkCode, this.props.activeClue);
   }
 
   render(){
@@ -48,7 +53,7 @@ class UserGameplay extends Component {
                 <div>Button disabled</div>
               </div> :
               <div>
-                <button onClick= {() => sendButtonClick(this.props.username, this.props.linkCode, this.props.activeClue)} className="join btn btn-primary">Test Button</button>
+                <button onClick= {this.handleBuzz.bind(this)} className="join btn btn-primary">Test Button</button>
               </div>
         }
         <div>
