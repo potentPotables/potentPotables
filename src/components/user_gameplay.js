@@ -16,9 +16,9 @@ class UserGameplay extends Component {
     }
   }
 
-  componentDidMount(){
-    if(this.state.score){
-    this.setState({score: this.props.users[this.props.username].score});
+  componentWillMount() {
+    if(this.props.users[this.props.username]){
+      this.setState({score: this.props.users[this.props.username].score});
     }
   }
 
@@ -59,7 +59,7 @@ class UserGameplay extends Component {
         <div>
           <div>{this.props.username}</div>
           <Avatar src= {this.props.userPhoto} size= {100} disabled= {true}/>
-          <div>Score: ${this.state.score}</div>
+            <div>Score: ${this.state.score}</div>
           <Link to="scoreboard">
             <button>Scoreboard</button>
           </Link>
