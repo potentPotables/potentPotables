@@ -5,10 +5,6 @@ import Clue from './clue';
 import { setActiveClue } from '../sockets_client';
 import { setActiveClueGameboard } from '../actions/index';
 
-
-import _ from 'lodash';
-
-
 class Gameboard extends Component {
   handleSetActiveClue(clue, room){
     setActiveClue(clue, room);

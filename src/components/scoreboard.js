@@ -4,9 +4,15 @@ import { Link } from 'react-router';
 import _ from 'lodash';
 
 class Scoreboard extends Component {
-	componentDidMount() {
 
-	}
+  static contextTypes = {
+    router: React.PropTypes.object
+  }
+
+  componentWillReceiveProps() {
+    this.context.router.push('/usergameplay');
+  }
+
   render(){
   	const scores = _.map(this.props.users, function(user) {
   		return (
@@ -18,9 +24,9 @@ class Scoreboard extends Component {
 
     return (
     	<Link to="usergameplay">
-      <div>
-      	{scores}
-      </div>
+        <div>
+        	{scores}
+        </div>
       </Link>
     );
   }
@@ -29,6 +35,7 @@ class Scoreboard extends Component {
 function mapStateToProps(state){
 	return {
   	users: state.gameplay.users,
+    isButtonDisabled: state.gameplay.isButtonDisabled,
   };
 
 }
