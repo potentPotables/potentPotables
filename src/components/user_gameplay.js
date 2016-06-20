@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { sendButtonClick } from '../sockets_client';
 import Avatar from 'material-ui/Avatar';
+import { Link } from 'react-router';
 
 class UserGameplay extends Component {
   constructor(props){
@@ -41,16 +42,10 @@ class UserGameplay extends Component {
           this.props.isButtonDisabled ?
               <div>
                 <div>Button disabled</div>
-                <div>
-                    <button onClick= {() => sendButtonClick(this.props.username, this.props.linkCode, this.props.activeClue)} className="join btn btn-primary">Test Button</button>
-                </div>
               </div> :
             this.props.hasAnsweredUsers.indexOf(this.props.username) !== -1 ?
               <div>
                 <div>Button disabled</div>
-                <div>
-                    <button onClick= {() => sendButtonClick(this.props.username, this.props.linkCode, this.props.activeClue)} className="join btn btn-primary">Test Button</button>
-                </div>
               </div> :
               <div>
                 <button onClick= {() => sendButtonClick(this.props.username, this.props.linkCode, this.props.activeClue)} className="join btn btn-primary">Test Button</button>
@@ -60,6 +55,9 @@ class UserGameplay extends Component {
           <div>{this.props.username}</div>
           <Avatar src= {this.props.userPhoto} size= {100} disabled= {true}/>
           <div>Score: ${this.state.score}</div>
+          <Link to="scoreboard">
+            <button>Scoreboard</button>
+          </Link>
         </div>
       </div>
     );
@@ -68,7 +66,6 @@ class UserGameplay extends Component {
 
 function mapStateToProps(state){
   console.log('insideMapState', state.user.userPhoto);
-    console.log('inside scoreboard', state.gameplay.users);
   return {
     isButtonDisabled: state.gameplay.isButtonDisabled,
     username: state.user.username,

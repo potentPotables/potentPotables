@@ -61,7 +61,6 @@ class userConfig extends Component {
   }
 
   handleSubmit(username, photo) {
-    console.log('photo is ', photo);
     this.props.createUser(username, photo);
   }
 
