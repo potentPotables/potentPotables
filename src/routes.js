@@ -11,6 +11,7 @@ import HostGameplay from './components/host_gameplay';
 import ClueView from './components/clue_view';
 import HostAnswer from './components/host_answer';
 import Gameboard from './components/gameboard';
+import Scoreboard from './components/scoreboard';
 import HowTo from './components/howto';
 import About from './components/about';
 import Peter from './components/peter';
@@ -29,6 +30,7 @@ export default (
       <Route path="clue_view" component={ClueView} />
       <Route path="hostanswer" component={HostAnswer} />
       <Route path="gameboard" component={Gameboard} />
+      <Route path="scoreboard" component={Scoreboard} />
       <Route path="howto" component={HowTo} />
       <Route path="about" component={About} />
       <Route path="peter" component={Peter} />

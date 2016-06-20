@@ -16,13 +16,11 @@ module.exports.initSockets= function(socket, clients, ioAccess){
               skip: function(room){
                 roomData[room].isButtonClicked= false;
                 roomData[room].activeUser= '';
-                console.log('inside server sockets');
                 roomData[room].incorrectUserCount= 0;
                 ioAccess.in(room).emit('skip', {isButtonClicked: false, activeUser: ''});
               },
               generalTimeout: null,
               generalTimeoutFn: function(room){
-                console.log(room);
                 var that= this;
                 var tempFn= function (){return that.skip(room);}
                 return this.generalTimeout= setTimeout(tempFn, 10000);
@@ -42,7 +40,6 @@ module.exports.initSockets= function(socket, clients, ioAccess){
             },
             activeTimeout: null,
             activeTimeoutFn: function(room, username, clue){
-              console.log('clue is', clue);
               var that= this;
               var tempFn= function(){return that.skipIncorrect(room, username, clue)};
               return this.activeTimeout= setTimeout(tempFn, 10000);
