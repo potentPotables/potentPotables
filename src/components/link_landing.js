@@ -15,7 +15,6 @@ class LinkLanding extends Component {
   handleClick() {
     const start = new Audio('http://www.qwizx.com/gssfx/usa/jboardfill.wav');
     start.play();
-    console.log(this.props.link);
     this.props.closeSession(this.props.link);
     startGame(this.props.link);
   }
