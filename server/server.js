@@ -12,10 +12,11 @@ const mongoose = require('mongoose');
 const server = http.createServer(app);
 const io = require('socket.io')(server);
 const Sockets= require('./sockets_server');
+const MONGODB_URI= 'mongodb://heroku_jrvjd4m6:uqf4on3flnlf2haah5opugf4nd@ds025782.mlab.com:25782/heroku_jrvjd4m6';
 
 
 var db_url = process.env.MONGODB_URI || 'mongodb://localhost:sessions/sessions';
-mongoose.connect(db_url);
+mongoose.connect(MONGODB_URI);
 
 var db = mongoose.connection;
 
