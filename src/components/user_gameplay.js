@@ -68,6 +68,7 @@ class UserGameplay extends Component {
 
 function mapStateToProps(state){
   console.log('insideMapState', state.user.userPhoto);
+    console.log('inside scoreboard', state.gameplay.users);
   return {
     isButtonDisabled: state.gameplay.isButtonDisabled,
     username: state.user.username,
