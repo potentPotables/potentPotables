@@ -8,10 +8,10 @@ export default class Chris extends Component {
 	      <h1>Lukas Stuart-Fry</h1>
 	      <img />
 	      <div>
-	          <a href="https://github.com/lstuartfry"><img src="http://localhost:3000/tech_logos/github.png" height="45" width="120"/></a>
+	          <a href="https://github.com/lstuartfry"><img src="../../public/tech_logos/github.png" height="45" width="120"/></a>
 	      </div>
 	      <div>
-	          <a href="https://www.linkedin.com/in/lukasstuartfry"><img src="http://localhost:3000/tech_logos/linkedin.png" height="30" width="120"/></a>
+	          <a href="https://www.linkedin.com/in/lukasstuartfry"><img src="../../public/tech_logos/linkedin.png" height="30" width="120"/></a>
 	      </div>
 	      <div>Something that screams hire me here.</div>
 	      <Link to="hire">

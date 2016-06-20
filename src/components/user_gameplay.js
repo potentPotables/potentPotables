@@ -23,7 +23,8 @@ class UserGameplay extends Component {
   }
 
   handleBuzz(){
-    const buzz = new Audio('http://localhost:3000/game_buzz.wav');
+    const buzz = new Audio('../../public/game_buzz.wav');
+    console.log('inside user gameplay', buzz);
     buzz.play();
     sendButtonClick(this.props.username, this.props.linkCode, this.props.activeClue);
   }
