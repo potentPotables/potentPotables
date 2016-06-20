@@ -22,8 +22,12 @@ html, body {
   min-height: 100%;
   width: 100%;
   min-width: 100%;
-  background-image: url(http://www.slotsumo.com/wp-content/uploads/2015/03/jeopardy_slot_bg.jpg);
+  background-image: url('./assets/background_template_black.png');
   background-size: 100% 100%;
+  background-repeat:repeat-x;
+  background-attachment:fixed;
+  background-position: left top;
+  position:absolute;
 }
 
 a {
@@ -42,14 +46,14 @@ a {
 	padding-right: 0px !important;
 }
 
-.container-table {
-	height: 1000px;
-	width: 100%;
+#container-table {
+	width: 72.5%;
+	margin: 160px 150px 100px 290px;
 }
 
 th.categories {
-	width: 16%;
-	height: 16%;
+	width: 11%;
+	height: 12%;
 	color: white;
 	text-align: center;
 	position: absolute;
@@ -58,17 +62,17 @@ th.categories {
 	border: 4px solid black !important;
 	background-image: url('http://cache1.asset-cache.net/xd/eef_010.jpg?v=1&c=IWSAsset&k=2&d=5225673E10E2FD0F0E6C89302D5D4AE94E7679DD01108BC6D5CC31666135BEB7E7BFD5B312C9BD15');
 	background-size: 100% 100%;
-	font-size: 22px;
+	font-size: 17px;
 	font-family: "HelveticaNeue-CondensedBold";
 }
 
 td.clues {
-	height: 150px;
+	height: 108px;
 	width: 100% !important;
 	text-align: center;
 	color: yellow;
 	border: 2px solid black !important;
-	font-size: 65px;
+	font-size: 45px;
 	font-weight: bolder;
 	text-shadow: 4px 4px black;
 	font-family: "Swiss-911";
@@ -80,9 +84,13 @@ td.clues {
 td.clues:hover {
     color: #14f00c;
     border: 6px inset yellow !important;
-    padding: 10px 10px 10px 10px;
-    font-size: 85px;
+    padding: 5px 10px 10px 10px;
+    font-size: 60px;
     text-shadow: 8px 8px black;
+}
+
+.table {
+	width: 94% !important;
 }
 
 .table-reflow tr {
