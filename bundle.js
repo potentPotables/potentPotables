@@ -62153,7 +62153,7 @@
 	              _react2.default.createElement(
 	                _reactRouter.Link,
 	                { to: 'lukas' },
-	                'Lukas Stuart'
+	                'Lukas Stuart-Fry'
 	              )
 	            )
 	          ),
@@ -62231,6 +62231,24 @@
 					_react2.default.createElement(
 						'div',
 						null,
+						_react2.default.createElement(
+							'a',
+							{ href: 'https://github.com/petertdinh' },
+							_react2.default.createElement('img', { src: 'http://localhost:3000/tech_logos/github.png', height: '45', width: '120' })
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						null,
+						_react2.default.createElement(
+							'a',
+							{ href: 'https://www.linkedin.com/in/petertdinh' },
+							_react2.default.createElement('img', { src: 'http://localhost:3000/tech_logos/linkedin.png', height: '30', width: '120' })
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						null,
 						'Something that screams hire me here.'
 					),
 					_react2.default.createElement(
@@ -62251,7 +62269,7 @@
 /* 455 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -62262,6 +62280,8 @@
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(195);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -62281,59 +62301,44 @@
 	  }
 
 	  _createClass(Chris, [{
-	    key: "render",
+	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
-	        "div",
-	        { id: "about" },
+	        'div',
+	        { className: 'bio' },
 	        _react2.default.createElement(
-	          "h2",
-	          { className: "stack intro" },
-	          "These were the technologies that were used to create Jeoparty."
+	          'h1',
+	          null,
+	          'Chris Loncarich'
 	        ),
-	        _react2.default.createElement("img", { id: "stack", src: "http://localhost:3000/tech_logos/tech_stack.png" }),
+	        _react2.default.createElement('img', null),
 	        _react2.default.createElement(
-	          "div",
+	          'div',
 	          null,
 	          _react2.default.createElement(
-	            "ul",
-	            { id: "why" },
-	            _react2.default.createElement(
-	              "li",
-	              null,
-	              " We decided to build this app on React to help with the data mutation that our app goes through."
-	            ),
-	            _react2.default.createElement(
-	              "li",
-	              null,
-	              "Since a lot of our views depend heavily on our applications state, we decided to couple React with Redux, a very small library that implements the Flux architecture to our application."
-	            ),
-	            _react2.default.createElement(
-	              "li",
-	              null,
-	              "Webpack is a very powerful build tool that bundles up all of our modules and generates it into a single bundled Javascript file."
-	            ),
-	            _react2.default.createElement(
-	              "li",
-	              null,
-	              "Socket.io provides a trivial approach for us to give real time updates to our users."
-	            ),
-	            _react2.default.createElement(
-	              "li",
-	              null,
-	              "Our back-end was built on top of node.js and express.js because of its non-blocking and event-driven I/O."
-	            ),
-	            _react2.default.createElement(
-	              "li",
-	              null,
-	              "MongoDB was used to create and store our game sessions."
-	            ),
-	            _react2.default.createElement(
-	              "li",
-	              null,
-	              "To create unit and integrated testing, we used the Chai library. To implement an end-to-end test, we used CasperJS. Both of these tools were powered by the testing paradigm, Mocha."
-	            )
+	            'a',
+	            { href: 'https://github.com/Loncarich' },
+	            _react2.default.createElement('img', { src: 'http://localhost:3000/tech_logos/github.png', height: '45', width: '120' })
 	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(
+	            'a',
+	            { href: 'https://www.linkedin.com/in/loncarich' },
+	            _react2.default.createElement('img', { src: 'http://localhost:3000/tech_logos/linkedin.png', height: '30', width: '120' })
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          'Something that screams hire me here.'
+	        ),
+	        _react2.default.createElement(
+	          _reactRouter.Link,
+	          { to: 'hire' },
+	          'Hire Chris'
 	        )
 	      );
 	    }
@@ -62348,10 +62353,10 @@
 /* 456 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+			value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -62359,6 +62364,8 @@
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(195);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -62368,82 +62375,63 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Lukas = function (_Component) {
-	    _inherits(Lukas, _Component);
+	var Chris = function (_Component) {
+			_inherits(Chris, _Component);
 
-	    function Lukas() {
-	        _classCallCheck(this, Lukas);
+			function Chris() {
+					_classCallCheck(this, Chris);
 
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Lukas).apply(this, arguments));
-	    }
+					return _possibleConstructorReturn(this, Object.getPrototypeOf(Chris).apply(this, arguments));
+			}
 
-	    _createClass(Lukas, [{
-	        key: "render",
-	        value: function render() {
-	            return _react2.default.createElement(
-	                "div",
-	                { id: "about" },
-	                _react2.default.createElement(
-	                    "h2",
-	                    { className: "stack intro" },
-	                    "These were the technologies that were used to create Jeoparty."
-	                ),
-	                _react2.default.createElement(
-	                    "div",
-	                    { id: "stack" },
-	                    _react2.default.createElement("img", { src: "http://localhost:3000/tech_logos/tech_stack.png" })
-	                ),
-	                _react2.default.createElement(
-	                    "div",
-	                    null,
-	                    _react2.default.createElement(
-	                        "ul",
-	                        { id: "why" },
-	                        _react2.default.createElement(
-	                            "li",
-	                            null,
-	                            " We decided to build this app on React to help with the data mutation that our app goes through."
-	                        ),
-	                        _react2.default.createElement(
-	                            "li",
-	                            null,
-	                            "Since a lot of our views depend heavily on our applications state, we decided to couple React with Redux, a very small library that implements the Flux architecture to our application."
-	                        ),
-	                        _react2.default.createElement(
-	                            "li",
-	                            null,
-	                            "Webpack is a very powerful build tool that bundles up all of our modules and generates it into a single bundled Javascript file."
-	                        ),
-	                        _react2.default.createElement(
-	                            "li",
-	                            null,
-	                            "Socket.io provides a trivial approach for us to give real time updates to our users."
-	                        ),
-	                        _react2.default.createElement(
-	                            "li",
-	                            null,
-	                            "Our back-end was built on top of node.js and express.js because of its non-blocking and event-driven I/O."
-	                        ),
-	                        _react2.default.createElement(
-	                            "li",
-	                            null,
-	                            "MongoDB was used to create and store our game sessions."
-	                        ),
-	                        _react2.default.createElement(
-	                            "li",
-	                            null,
-	                            "To create unit and integrated testing, we used the Chai library. To implement an end-to-end test, we used CasperJS. Both of these tools were powered by the testing paradigm, Mocha."
-	                        )
-	                    )
-	                )
-	            );
-	        }
-	    }]);
+			_createClass(Chris, [{
+					key: 'render',
+					value: function render() {
+							return _react2.default.createElement(
+									'div',
+									{ className: 'bio' },
+									_react2.default.createElement(
+											'h1',
+											null,
+											'Lukas Stuart-Fry'
+									),
+									_react2.default.createElement('img', null),
+									_react2.default.createElement(
+											'div',
+											null,
+											_react2.default.createElement(
+													'a',
+													{ href: 'https://github.com/lstuartfry' },
+													_react2.default.createElement('img', { src: 'http://localhost:3000/tech_logos/github.png', height: '45', width: '120' })
+											)
+									),
+									_react2.default.createElement(
+											'div',
+											null,
+											_react2.default.createElement(
+													'a',
+													{ href: 'https://www.linkedin.com/in/lukasstuartfry' },
+													_react2.default.createElement('img', { src: 'http://localhost:3000/tech_logos/linkedin.png', height: '30', width: '120' })
+											)
+									),
+									_react2.default.createElement(
+											'div',
+											null,
+											'Something that screams hire me here.'
+									),
+									_react2.default.createElement(
+											_reactRouter.Link,
+											{ to: 'hire' },
+											'Hire Lukas'
+									)
+							);
+					}
+			}]);
 
-	    return Lukas;
+			return Chris;
 	}(_react.Component);
 
-	exports.default = Lukas;
+	exports.default = Chris;
 
 /***/ },
 /* 457 */

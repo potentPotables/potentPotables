@@ -40,7 +40,7 @@ export default class About extends Component {
               <img id="lukas" src="http://localhost:3000/assets/lukas.jpg" />
               <div>
                 <Link to="lukas">
-                  Lukas Stuart
+                  Lukas Stuart-Fry
                 </Link>
               </div>
             </span>
