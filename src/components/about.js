@@ -9,7 +9,7 @@ export default class About extends Component {
             These were the technologies that were used to create Jeoparty.
           </h2>
             <div id="stack">
-             <img src="http://localhost:3000/tech_logos/tech_stack.png" />
+             <img src="../../public/tech_logos/tech_stack.png" />
             </div>
           <div>
             <ul className="why">
@@ -18,7 +18,7 @@ export default class About extends Component {
               <li>Webpack is a very powerful build tool that bundles up all of our modules and generates it into a single bundled Javascript file. It also serves as a great debugging tool.</li>
               <li>Socket.io provides a trivial approach for us to give real time updates to our users.</li>
               <li>Our back-end was built on top of node.js and express.js because of its non-blocking and event-driven I/O.</li>
-              <li>MongoDB was used to create and store our game sessions.</li> 
+              <li>MongoDB was used to create and store our game sessions.</li>
               <li>To create unit and integrated testing, we used the Chai library. To implement an end-to-end test, we used CasperJS. Both of these tools were powered by the testing paradigm, Mocha.</li>
             </ul>
           </div>
@@ -29,7 +29,7 @@ export default class About extends Component {
             <div>
             </div>
             <span className="peter">
-              <img id="peter" src="http://localhost:3000/assets/peter.jpg" />
+              <img id="peter" src="../../public/assets/peter.jpg" />
               <div>
                 <Link to="peter">
                   Peter Dinh
@@ -37,7 +37,7 @@ export default class About extends Component {
               </div>
             </span>
             <span className="lukas">
-              <img id="lukas" src="http://localhost:3000/assets/lukas.jpg" />
+              <img id="lukas" src="../../public/assets/lukas.jpg" />
               <div>
                 <Link to="lukas">
                   Lukas Stuart-Fry
@@ -45,7 +45,7 @@ export default class About extends Component {
               </div>
             </span>
             <span className="chris">
-              <img id="chris" src="http://localhost:3000/assets/chris.jpg" />
+              <img id="chris" src="../../public/assets/chris.jpg" />
               <div>
                 <Link to="chris">
                   Chris Loncarich
