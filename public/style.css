@@ -196,35 +196,6 @@ ul.why li {
 	width: 180px;
 }
 
-#b1 { background-image: url('./assets/backgrounds/background_template_empty_board.png'); }
-#b2 { background-image: url('./assets/backgrounds/background_1.png'); } 
-#b3 { background-image: url('./assets/backgrounds/background_2.png'); } 
-#b4 { background-image: url('./assets/backgrounds/background_3.png'); }
-#b5 { background-image: url('./assets/backgrounds/background_4.png'); }
-#b6 { background-image: url('./assets/backgrounds/background_5.png'); }
-#b7 { background-image: url('./assets/backgrounds/background_6.png'); }
-#b8 { background-image: url('./assets/backgrounds/background_7.png'); } 
-#b9 { background-image: url('./assets/backgrounds/background_8.png'); }
-#b10 { background-image: url('./assets/backgrounds/background_9.png'); }
-#b11 { background-image: url('./assets/backgrounds/background_10.png'); }
-#b12 { background-image: url('./assets/backgrounds/background_11.png'); }
-#b13 { background-image: url('./assets/backgrounds/background_12.png'); }
-#b14 { background-image: url('./assets/backgrounds/background_13.png'); }
-#b15 { background-image: url('./assets/backgrounds/background_14.png'); }
-#b16 { background-image: url('./assets/backgrounds/background_15.png'); }
-#b17 { background-image: url('./assets/backgrounds/background_16.png'); }
-#b18 { background-image: url('./assets/backgrounds/background_17.png'); }
-#b19 { background-image: url('./assets/backgrounds/background_18.png'); }
-#b20 { background-image: url('./assets/backgrounds/background_19.png'); }
-#b21 { background-image: url('./assets/backgrounds/background_20.png'); }
-#b22 { background-image: url('./assets/backgrounds/background_21.png'); }
-#b23 { background-image: url('./assets/backgrounds/background_22.png'); }
-#b24 { background-image: url('./assets/backgrounds/background_23.png'); }
-#b25 { background-image: url('./assets/backgrounds/background_24.png'); }
-#b26 { background-image: url('./assets/backgrounds/background_25.png'); }
-#b27 { background-image: url('./assets/backgrounds/background_26.png'); }
-#b28 { background-image: url('./assets/backgrounds/background_27.png'); }
-
 .round-button {
 	width:25%;
 }
@@ -249,3 +220,33 @@ ul.why li {
   background: navy;
   box-shadow: 0 0 3px gray;
 }
+
+#b1 { background-image: url('./assets/backgrounds/background_1.png'); }
+#b2 { background-image: url('./assets/backgrounds/background_2.png'); } 
+#b3 { background-image: url('./assets/backgrounds/background_3.png'); } 
+#b4 { background-image: url('./assets/backgrounds/background_4.png'); }
+#b5 { background-image: url('./assets/backgrounds/background_5.png'); }
+#b6 { background-image: url('./assets/backgrounds/background_6.png'); }
+#b7 { background-image: url('./assets/backgrounds/background_7.png'); }
+#b8 { background-image: url('./assets/backgrounds/background_8.png'); } 
+#b9 { background-image: url('./assets/backgrounds/background_9.png'); }
+#b10 { background-image: url('./assets/backgrounds/background_10.png'); }
+#b11 { background-image: url('./assets/backgrounds/background_11.png'); }
+#b12 { background-image: url('./assets/backgrounds/background_12.png'); }
+#b13 { background-image: url('./assets/backgrounds/background_13.png'); }
+#b14 { background-image: url('./assets/backgrounds/background_14.png'); }
+#b15 { background-image: url('./assets/backgrounds/background_15.png'); }
+#b16 { background-image: url('./assets/backgrounds/background_16.png'); }
+#b17 { background-image: url('./assets/backgrounds/background_17.png'); }
+#b18 { background-image: url('./assets/backgrounds/background_18.png'); }
+#b19 { background-image: url('./assets/backgrounds/background_19.png'); }
+#b20 { background-image: url('./assets/backgrounds/background_20.png'); }
+#b21 { background-image: url('./assets/backgrounds/background_21.png'); }
+#b22 { background-image: url('./assets/backgrounds/background_22.png'); }
+#b23 { background-image: url('./assets/backgrounds/background_23.png'); }
+#b24 { background-image: url('./assets/backgrounds/background_24.png'); }
+#b25 { background-image: url('./assets/backgrounds/background_25.png'); }
+#b26 { background-image: url('./assets/backgrounds/background_26.png'); }
+#b27 { background-image: url('./assets/backgrounds/background_27.png'); }
+#b28 { background-image: url('./assets/backgrounds/background_28.png'); }
+#b29 { background-image: url('./assets/backgrounds/background_29.png'); }
