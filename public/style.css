@@ -96,6 +96,15 @@ td.clues:hover {
 	height: 16%;
 }
 
+.example-appear {
+  opacity: 0.01;
+}
+
+.example-appear.example-appear-active {
+  opacity: 1;
+  transition: opacity 2s ease-in;
+}
+
 #question {
 	position: absolute;
 	min-height: 100%;

@@ -4,6 +4,8 @@ import Radium from 'radium';
 import Clue from './clue';
 import { setActiveClue } from '../sockets_client';
 import { setActiveClueGameboard } from '../actions/index';
+var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
+
 
 class Gameboard extends Component {
   handleSetActiveClue(clue, room){
@@ -42,11 +44,13 @@ class Gameboard extends Component {
     });
 
     return(
+      <ReactCSSTransitionGroup transitionName="example" transitionAppear={true} transitionAppearTimeout={500}>
       <div id="container-table">
         <table className="table table-reflow">
             { categories }
         </table>
       </div>
+      </ReactCSSTransitionGroup>
     );
   }
 }

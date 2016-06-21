@@ -41,6 +41,7 @@
     "piexifjs": "^1.0.0",
     "radium": "^0.17.1",
     "react": "^15.1.0",
+    "react-addons-css-transition-group": "^15.1.0",
     "react-addons-test-utils": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-dropzone": "^3.5.1",
