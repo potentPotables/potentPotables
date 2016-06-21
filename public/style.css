@@ -2,14 +2,14 @@
 
 @font-face {
 	font-family: 'Korinna-BT';
-	src: 
+	src:
 		url('./assets/fonts/Korinna_Bold_BT.woff') format('woff'),
 		url('./assets/fonts/Korinna_Bold_BT.woff2') format('woff2');
 }
 
 @font-face {
 	font-family: 'Swiss-911';
-	src: 
+	src:
 		url('./assets/fonts/Swiss_911_Compressed.woff') format('woff'),
 		url('./assets/fonts/Swiss_911_Compressed.woff2') format('woff2');
 }
@@ -206,7 +206,7 @@ ul.why li {
   border-radius: 50%;
 	border:10px solid #cfdcec;
   overflow:hidden;
-  background: #4679BD; 
+  background: #4679BD;
   box-shadow: 0 0 3px gray;
 }
 
@@ -222,13 +222,13 @@ ul.why li {
 }
 
 #b1 { background-image: url('./assets/backgrounds/background_1.png'); }
-#b2 { background-image: url('./assets/backgrounds/background_2.png'); } 
-#b3 { background-image: url('./assets/backgrounds/background_3.png'); } 
+#b2 { background-image: url('./assets/backgrounds/background_2.png'); }
+#b3 { background-image: url('./assets/backgrounds/background_3.png'); }
 #b4 { background-image: url('./assets/backgrounds/background_4.png'); }
 #b5 { background-image: url('./assets/backgrounds/background_5.png'); }
 #b6 { background-image: url('./assets/backgrounds/background_6.png'); }
 #b7 { background-image: url('./assets/backgrounds/background_7.png'); }
-#b8 { background-image: url('./assets/backgrounds/background_8.png'); } 
+#b8 { background-image: url('./assets/backgrounds/background_8.png'); }
 #b9 { background-image: url('./assets/backgrounds/background_9.png'); }
 #b10 { background-image: url('./assets/backgrounds/background_10.png'); }
 #b11 { background-image: url('./assets/backgrounds/background_11.png'); }
@@ -250,3 +250,66 @@ ul.why li {
 #b27 { background-image: url('./assets/backgrounds/background_27.png'); }
 #b28 { background-image: url('./assets/backgrounds/background_28.png'); }
 #b29 { background-image: url('./assets/backgrounds/background_29.png'); }
+@font-face {
+    font-family: '"Korinna-BT"';
+    font-style: normal;
+    font-weight: normal;
+}
+
+#gamebutton {
+    display: inline-block;
+    margin-top: 20%;
+    -webkit-border-radius: 50%
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-box-shadow:    0 8px 0 #c5376d, 0 15px 20px rgba(0, 0, 0, .35);
+    -moz-box-shadow: 0 8px 0 #c5376d, 0 15px 20px rgba(0, 0, 0, .35);
+    box-shadow: 0 8px 0 #c5376d, 0 15px 20px rgba(0, 0, 0, .35);
+    -webkit-transition: -webkit-box-shadow .1s ease-in-out;
+    -moz-transition: -moz-box-shadow .1s ease-in-out;
+    -o-transition: -o-box-shadow .1s ease-in-out;
+    transition: box-shadow .1s ease-in-out;
+    font-size: 50px;
+    color: #fff;
+}
+
+#gamebutton span {
+    display: inline-block;
+    padding: 20px 30px;
+    background-color: #ec528d;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(hsla(338, 90%, 80%, .8)), to(hsla(338, 90%, 70%, .2)));
+    background-image: -webkit-linear-gradient(hsla(338, 90%, 80%, .8), hsla(338, 90%, 70%, .2));
+    background-image: -moz-linear-gradient(hsla(338, 90%, 80%, .8), hsla(338, 90%, 70%, .2));
+    background-image: -o-linear-gradient(hsla(338, 90%, 80%, .8), hsla(338, 90%, 70%, .2));
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-box-shadow: inset 0 -1px 1px rgba(255, 255, 255, .15);
+    -moz-box-shadow: inset 0 -1px 1px rgba(255, 255, 255, .15);
+    box-shadow: inset 0 -1px 1px rgba(255, 255, 255, .15);
+    font-family: 'Pacifico', Arial, sans-serif;
+    line-height: 1;
+    text-shadow: 0 -1px 1px rgba(175, 49, 95, .7);
+    -webkit-transition: background-color .2s ease-in-out, -webkit-transform .1s ease-in-out;
+    -moz-transition: background-color .2s ease-in-out, -moz-transform .1s ease-in-out;
+    -o-transition: background-color .2s ease-in-out, -o-transform .1s ease-in-out;
+    transition: background-color .2s ease-in-out, transform .1s ease-in-out;
+}
+
+#gamebutton:hover span {
+    background-color: #ec6a9c;
+    text-shadow: 0 -1px 1px rgba(175, 49, 95, .9), 0 0 5px rgba(255, 255, 255, .8);
+}
+
+#gamebutton:active, #button:focus {
+    -webkit-box-shadow:    0 8px 0 #c5376d, 0 12px 10px rgba(0, 0, 0, .3);
+    -moz-box-shadow: 0 8px 0 #c5376d, 0 12px 10px rgba(0, 0, 0, .3);
+    box-shadow:    0 8px 0 #c5376d, 0 12px 10px rgba(0, 0, 0, .3);
+}
+
+#gamebutton:active span {
+    -webkit-transform: translate(0, 4px);
+    -moz-transform: translate(0, 4px);
+    -o-transform: translate(0, 4px);
+    transform: translate(0, 4px);
+}

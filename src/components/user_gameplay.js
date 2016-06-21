@@ -47,9 +47,9 @@ class UserGameplay extends Component {
             Waiting for game to Begin...
           </div> :
           this.props.isButtonDisabled ?
-              <div>
-                <div className="round-button"><div className="round-button-circle"></div></div>
-              </div> :
+            <a href="#" id="gamebutton">
+                <span>Hello bitches!</span>
+            </a> :
             this.props.hasAnsweredUsers.indexOf(this.props.username) !== -1 ?
               <div>
                 <div className="round-button"><div className="round-button-circle"></div></div>
