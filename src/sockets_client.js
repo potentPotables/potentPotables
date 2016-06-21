@@ -15,7 +15,7 @@ export const SKIP = 'SKIP';
 export const ACTIVATE_BUTTONS = 'ACTIVATE_BUTTONS';
 export const SKIP_INCORRECT= 'SKIP_INCORRECT';
 
-//all client-side socket listeners will be be contained here
+//nearly all client-side socket listeners will be be contained here
 //initSockets will be exported to client-side index
 export function initSockets(store){
   console.log('inside initSockets Client');
@@ -42,16 +42,21 @@ export function initSockets(store){
 
   socket.on('incorrect', function(data) {
     console.log('client socket incorrect data is : ', data);
+    const incorrect = new Audio('http://www.qwizx.com/gssfx/usa/j64-outtatime.wav');
+    incorrect.play();
     store.dispatch({type: INCORRECT_ANSWER, payload: data});
   });
 
   socket.on('correct', function(data) {
     console.log('inside sockets_client correct');
+    const correct = new Audio('http://www.qwizx.com/gssfx/usa/j64-ringin.wav');
+    correct.play();
   	store.dispatch({type: CORRECT_ANSWER, payload: data});
   });
 
   socket.on('skip', function(data) {
-    console.log('insideSKipSocketsListenerasdfas');
+    const outOfTime = new Audio('http://www.qwizx.com/gssfx/usa/jtime.wav');
+    outOfTime.play();
   	store.dispatch({type: SKIP, payload: data});
   });
 
@@ -60,6 +65,8 @@ export function initSockets(store){
   });
 
   socket.on('skipIncorrect', function(data) {
+    const falsePromise = new Audio('http://www.qwizx.com/gssfx/usa/j64-outtatime.wav');
+    falsePromise.play();
     store.dispatch({type: SKIP_INCORRECT, payload: data})
   })
 }
@@ -93,17 +100,14 @@ export function setActiveClue(activeClue, room) {
 }
 
 export function declareIncorrect(username, room, clue) {
-  console.log('inside Sockets delcareIncorrect');
 	socket.emit('incorrect', {username: username, room: room, clue: clue});
 }
 
 export function declareCorrect(username, room, clue) {
-  console.log('socket_client on line 93 ');
 	socket.emit('correct', {username: username, room: room, value: clue.value});
 }
 
 export function skipClue(room, clue) {
-  console.log('insideSkipClueSockets');
 	socket.emit('skip', {room: room, clue: clue});
 }
 

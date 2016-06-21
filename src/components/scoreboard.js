@@ -25,7 +25,7 @@ class Scoreboard extends Component {
     return (
     	<Link to="usergameplay">
         <div>
-        	{scores}
+        	{ scores }
         </div>
       </Link>
     );

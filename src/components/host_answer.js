@@ -18,15 +18,10 @@ class HostAnswer extends Component{
 
   handleIncorrectClick(){
     declareIncorrect(this.props.activeUser, this.props.room, this.props.activeClue);
-    const incorrect = new Audio('http://www.qwizx.com/gssfx/usa/j64-outtatime.wav');
-    incorrect.play();
   }
 
   handleCorrectClick(){
-    console.log('inside HostAnswer line 38;');
     declareCorrect(this.props.activeUser, this.props.room, this.props.activeClue);
-    const correct = new Audio('http://www.qwizx.com/gssfx/usa/j64-ringin.wav');
-    correct.play();
   }
 
   componentDidUpdate(){

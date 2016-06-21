@@ -77,7 +77,7 @@ module.exports.initSockets= function(socket, clients, ioAccess){
   });
   socket.on('activeClue', function(data) {
     socket.to(data.room).emit('currentClue', {clue: data.activeClue});
-  })
+  });
   socket.on('incorrect', function(data) {
     roomData[data.room].incorrectUserCount ++;
     if (roomData[data.room].incorrectUserCount === roomData[data.room].usersCount){

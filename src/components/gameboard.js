@@ -10,6 +10,7 @@ class Gameboard extends Component {
     setActiveClue(clue, room);
     this.props.setActiveClueGameboard(clue);
   }
+
   render() {
 
     console.log(this.props.clues);
@@ -56,7 +57,9 @@ function mapStateToProps(state){
     categories: state.gameboard.categories,
     clues: state.gameboard.clues,
     answeredClues: state.gameplay.answeredClues,
-    room: state.sessionID
+    room: state.sessionID,
+    correct: state.gameplay.correct,
+    incorrect: state.gameplay.incorrect,
   };
 }
 
