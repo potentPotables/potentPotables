@@ -32,6 +32,7 @@ class UserGameplay extends Component {
   render(){
     return (
       <div>
+        <div>Score: ${this.state.score}</div>
       <div>
         {this.props.activeUser && this.props.activeUser !== this.props.username ?
           <div>
@@ -47,20 +48,19 @@ class UserGameplay extends Component {
           </div> :
           this.props.isButtonDisabled ?
               <div>
-                <div>Button disabled</div>
+                <div className="round-button"><div className="round-button-circle"></div></div>
               </div> :
             this.props.hasAnsweredUsers.indexOf(this.props.username) !== -1 ?
               <div>
-                <div>Button disabled</div>
+                <div className="round-button"><div className="round-button-circle"></div></div>
               </div> :
               <div>
-                <button onClick= {this.handleBuzz.bind(this)} className="join btn btn-primary">Test Button</button>
+                <div onClick= {this.handleBuzz.bind(this)} className="round-button"><div className="round-button-circle-activated"></div></div>
               </div>
         }
         <div>
           <div>{this.props.username}</div>
-          <Avatar src= {this.props.userPhoto} size= {100} disabled= {true}/>
-            <div>Score: ${this.state.score}</div>
+          <Avatar src= {this.props.userPhoto} size= {60} disabled= {true}/>
           <Link to="scoreboard">
             <button>Scoreboard</button>
           </Link>
