@@ -55,7 +55,7 @@ class UserGameplay extends Component {
                 <div className="round-button"><div className="round-button-circle"></div></div>
               </div> :
               <div>
-                <div onClick= {this.handleBuzz.bind(this)} className="round-button"><div className="round-button-circle">BUZZ</div></div>
+                <div onClick= {this.handleBuzz.bind(this)} className="round-button"><div className="round-button-circle-activated"></div></div>
               </div>
         }
         <div>

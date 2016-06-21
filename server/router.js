@@ -13,8 +13,7 @@ module.exports = function(app, io) {
 	  res.sendFile(path.resolve(__dirname + '/../index.html'));
 	});
 
-		app.get('/favicon.ico', function(req, res) {
-				console.log('test');
+	app.get('/favicon.ico', function(req, res) {
 	});
 
 	app.get('/bundle.js', function(req, res) {
