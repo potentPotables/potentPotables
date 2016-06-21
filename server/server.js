@@ -16,7 +16,7 @@ const MONGODB_URI= 'mongodb://heroku_jrvjd4m6:uqf4on3flnlf2haah5opugf4nd@ds02578
 
 
 var db_url = process.env.MONGODB_URI || 'mongodb://localhost:sessions/sessions';
-mongoose.connect(MONGODB_URI);
+mongoose.connect('mongodb://localhost:sessions/sessions');
 
 var db = mongoose.connection;
 
