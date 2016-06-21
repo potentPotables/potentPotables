@@ -15,7 +15,7 @@ export const SKIP = 'SKIP';
 export const ACTIVATE_BUTTONS = 'ACTIVATE_BUTTONS';
 export const SKIP_INCORRECT= 'SKIP_INCORRECT';
 
-//all client-side socket listeners will be be contained here
+//nearly all client-side socket listeners will be be contained here
 //initSockets will be exported to client-side index
 export function initSockets(store){
   console.log('inside initSockets Client');
@@ -42,15 +42,21 @@ export function initSockets(store){
 
   socket.on('incorrect', function(data) {
     console.log('client socket incorrect data is : ', data);
+    const incorrect = new Audio('http://www.qwizx.com/gssfx/usa/j64-outtatime.wav');
+    incorrect.play();
     store.dispatch({type: INCORRECT_ANSWER, payload: data});
   });
 
   socket.on('correct', function(data) {
     console.log('inside sockets_client correct');
+    const correct = new Audio('http://www.qwizx.com/gssfx/usa/j64-ringin.wav');
+    correct.play();
   	store.dispatch({type: CORRECT_ANSWER, payload: data});
   });
 
   socket.on('skip', function(data) {
+    const outOfTime = new Audio('http://www.qwizx.com/gssfx/usa/jtime.wav');
+    outOfTime.play();
   	store.dispatch({type: SKIP, payload: data});
   });
 
@@ -59,6 +65,8 @@ export function initSockets(store){
   });
 
   socket.on('skipIncorrect', function(data) {
+    const falsePromise = new Audio('http://www.qwizx.com/gssfx/usa/j64-outtatime.wav');
+    falsePromise.play();
     store.dispatch({type: SKIP_INCORRECT, payload: data})
   })
 }
