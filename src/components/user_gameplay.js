@@ -32,6 +32,7 @@ class UserGameplay extends Component {
   render(){
     return (
       <div>
+        <div>Score: ${this.state.score}</div>
       <div>
         {this.props.activeUser && this.props.activeUser !== this.props.username ?
           <div>
@@ -60,7 +61,6 @@ class UserGameplay extends Component {
         <div>
           <div>{this.props.username}</div>
           <Avatar src= {this.props.userPhoto} size= {100} disabled= {true}/>
-            <div>Score: ${this.state.score}</div>
           <Link to="scoreboard">
             <button>Scoreboard</button>
           </Link>
