@@ -198,12 +198,12 @@ ul.why li {
 
 #b1 { background-image: url('./assets/backgrounds/background_template_empty_board.png'); }
 #b2 { background-image: url('./assets/backgrounds/background_1.png'); } 
-/*#b3 { background-image: url('./assets/backgrounds/background_1.png'); } */
+#b3 { background-image: url('./assets/backgrounds/background_2.png'); } 
 #b4 { background-image: url('./assets/backgrounds/background_3.png'); }
 #b5 { background-image: url('./assets/backgrounds/background_4.png'); }
 #b6 { background-image: url('./assets/backgrounds/background_5.png'); }
 #b7 { background-image: url('./assets/backgrounds/background_6.png'); }
-/*#b8 { background-image: url('./assets/backgrounds/background_7.png'); } */
+#b8 { background-image: url('./assets/backgrounds/background_7.png'); } 
 #b9 { background-image: url('./assets/backgrounds/background_8.png'); }
 #b10 { background-image: url('./assets/backgrounds/background_9.png'); }
 #b11 { background-image: url('./assets/backgrounds/background_10.png'); }
