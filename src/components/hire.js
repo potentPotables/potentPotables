@@ -21,7 +21,7 @@ class Hire extends Component {
 			<form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
 			  <h3>Send me a message.</h3>
 			  <div className="form-group">
-			    <label>Name</label>
+			    <label><strong>Name</strong></label>
 			    <input type="text" className="form-control" {...name} />
 			    <div class="text-help">
 			      {name.touched ? name.error: ''}

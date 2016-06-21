@@ -51,7 +51,6 @@ export function initSockets(store){
   });
 
   socket.on('skip', function(data) {
-    console.log('insideSKipSocketsListenerasdfas');
   	store.dispatch({type: SKIP, payload: data});
   });
 
@@ -93,17 +92,14 @@ export function setActiveClue(activeClue, room) {
 }
 
 export function declareIncorrect(username, room, clue) {
-  console.log('inside Sockets delcareIncorrect');
 	socket.emit('incorrect', {username: username, room: room, clue: clue});
 }
 
 export function declareCorrect(username, room, clue) {
-  console.log('socket_client on line 93 ');
 	socket.emit('correct', {username: username, room: room, value: clue.value});
 }
 
 export function skipClue(room, clue) {
-  console.log('insideSkipClueSockets');
 	socket.emit('skip', {room: room, clue: clue});
 }
 

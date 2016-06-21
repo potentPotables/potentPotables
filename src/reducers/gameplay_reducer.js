@@ -8,7 +8,7 @@ export default function(state= {
   users: {},
   hasAnsweredUsers: [],
   answeredClues: {},
-  isButtonDisabled: true
+  isButtonDisabled: true,
 }, action){
   switch(action.type){
     case ACTIVATE_GAME:
