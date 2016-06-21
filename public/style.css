@@ -2,16 +2,14 @@
 
 @font-face {
 	font-family: 'Korinna-BT';
-	src:
-		url('./assets/fonts/Korinna_Bold_BT.tff') format('truetype'),
+	src: 
 		url('./assets/fonts/Korinna_Bold_BT.woff') format('woff'),
 		url('./assets/fonts/Korinna_Bold_BT.woff2') format('woff2');
 }
 
 @font-face {
 	font-family: 'Swiss-911';
-	src:
-		url('./assets/fonts/Swiss_911_Compressed.tff') format('truetype'),
+	src: 
 		url('./assets/fonts/Swiss_911_Compressed.woff') format('woff'),
 		url('./assets/fonts/Swiss_911_Compressed.woff2') format('woff2');
 }
@@ -23,7 +21,6 @@ html, body {
   min-height: 100%;
   width: 100%;
   min-width: 100%;
-  background-image: url('./assets/background_template_black.png');
   background-size: 100% 100%;
   background-repeat:repeat-x;
   background-attachment:fixed;
@@ -198,3 +195,32 @@ ul.why li {
 	height: 180px;
 	width: 180px;
 }
+
+#b1 { background-image: url('./assets/backgrounds/background_template_empty_board.png'); }
+#b2 { background-image: url('./assets/backgrounds/background_1.png'); } 
+/*#b3 { background-image: url('./assets/backgrounds/background_1.png'); } */
+#b4 { background-image: url('./assets/backgrounds/background_3.png'); }
+#b5 { background-image: url('./assets/backgrounds/background_4.png'); }
+#b6 { background-image: url('./assets/backgrounds/background_5.png'); }
+#b7 { background-image: url('./assets/backgrounds/background_6.png'); }
+/*#b8 { background-image: url('./assets/backgrounds/background_7.png'); } */
+#b9 { background-image: url('./assets/backgrounds/background_8.png'); }
+#b10 { background-image: url('./assets/backgrounds/background_9.png'); }
+#b11 { background-image: url('./assets/backgrounds/background_10.png'); }
+#b12 { background-image: url('./assets/backgrounds/background_11.png'); }
+#b13 { background-image: url('./assets/backgrounds/background_12.png'); }
+#b14 { background-image: url('./assets/backgrounds/background_13.png'); }
+#b15 { background-image: url('./assets/backgrounds/background_14.png'); }
+#b16 { background-image: url('./assets/backgrounds/background_15.png'); }
+#b17 { background-image: url('./assets/backgrounds/background_16.png'); }
+#b18 { background-image: url('./assets/backgrounds/background_17.png'); }
+#b19 { background-image: url('./assets/backgrounds/background_18.png'); }
+#b20 { background-image: url('./assets/backgrounds/background_19.png'); }
+#b21 { background-image: url('./assets/backgrounds/background_20.png'); }
+#b22 { background-image: url('./assets/backgrounds/background_21.png'); }
+#b23 { background-image: url('./assets/backgrounds/background_22.png'); }
+#b24 { background-image: url('./assets/backgrounds/background_23.png'); }
+#b25 { background-image: url('./assets/backgrounds/background_24.png'); }
+#b26 { background-image: url('./assets/backgrounds/background_25.png'); }
+#b27 { background-image: url('./assets/backgrounds/background_26.png'); }
+#b28 { background-image: url('./assets/backgrounds/background_27.png'); }

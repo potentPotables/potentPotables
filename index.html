@@ -3,6 +3,23 @@
   <head>
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+    
+    <script>
+      function run(interval, frames) {
+      var int = 1;
+    
+      function func() {
+        document.body.id = "b"+int;
+        int++;
+        if(int === frames) { int = 1; }
+      }
+    
+      var swap = window.setInterval(func, interval);
+      }
+
+      run(500, 28);
+    </script>
+
     <title>JEOPARTY</title>
 
   </head>
