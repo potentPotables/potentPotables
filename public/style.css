@@ -273,8 +273,8 @@ ul.why li {
 
 #gamebutton {
     display: inline-block;
-    margin-top: 20%;
-    -webkit-border-radius: 50%
+/*    margin-top: 20%;
+*/    -webkit-border-radius: 50%
     -moz-border-radius: 50%;
     border-radius: 50%;
     -webkit-box-shadow:    0 8px 0 #950c0c, 0 15px 20px rgba(0, 0, 0, .35);
@@ -330,8 +330,8 @@ a[disabled] {
 }
 #gamebuttonDisabled {
     display: inline-block;
-    margin-top: 20%;
-    -webkit-border-radius: 50%
+/*    margin-top: 20%;
+*/    -webkit-border-radius: 50%
     -moz-border-radius: 50%;
     border-radius: 50%;
     -webkit-box-shadow:    0 8px 0 #a8a4a4, 0 15px 20px rgba(0, 0, 0, .35);
@@ -368,3 +368,50 @@ a[disabled] {
     -o-transition: background-color .2s ease-in-out, -o-transform .1s ease-in-out;
     transition: background-color .2s ease-in-out, transform .1s ease-in-out;
 }
+
+
+
+.user-gameplay {
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.score {
+	flex-grow: 2;
+	margin: 5px;
+}
+
+.buzz-alert {
+	flex-grow: 2;
+	margin: 5px;
+}
+
+.btn-container {
+	flex-grow: 4;
+	margin: 5px;
+}
+
+.avatar {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.scoreboard {
+	flex-grow: 2;
+	margin: 5px;
+}
+
+/*.game-button {
+	margin-left: 20%;
+}
+*/
+
+
+
