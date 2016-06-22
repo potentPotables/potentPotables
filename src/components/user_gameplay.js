@@ -24,14 +24,13 @@ class UserGameplay extends Component {
 
   handleBuzz(){
     const buzz = new Audio('../../public/game_buzz.wav');
-    console.log('inside user gameplay', buzz);
+    console.log('inside user gameplay handleBuzz');
     buzz.play();
     sendButtonClick(this.props.username, this.props.linkCode, this.props.activeClue);
   }
 
   render(){
     const buttonConfig= "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0";
-    const buttonConfig2= 'Hello Bitches';
     return (
       <div>
         <div>Score: ${this.state.score}</div>
@@ -49,16 +48,16 @@ class UserGameplay extends Component {
             Waiting for game to Begin...
           </div> :
           this.props.isButtonDisabled ?
-            <a id="gamebutton" disabled= {this.props.isButtonDisabled}>
-                <span>{buttonConfig}</span>
+            <a id="gamebuttonDisabled" disabled= {true}>
+                <span >{buttonConfig}</span>
             </a> :
             this.props.hasAnsweredUsers.indexOf(this.props.username) !== -1 ?
-              <div>
-                <div className="round-button"><div className="round-button-circle"></div></div>
-              </div> :
-              <div>
-                <div onClick= {this.handleBuzz.bind(this)} className="round-button"><div className="round-button-circle-activated"></div></div>
-              </div>
+              <a id="gamebuttonDisabled" disabled= {true} >
+                  <span>{buttonConfig}</span>
+              </a> :
+              <a id="gamebutton" >
+                  <span onClick= {this.handleBuzz.bind(this)}>{buttonConfig}</span>
+              </a>
         }
         <div>
           <div>{this.props.username}</div>
