@@ -1,6 +1,6 @@
 import io from 'socket.io-client';
 
-var socket = io('localhost:3000');
+var socket = io();
 
 
 export const ADD_NEW_USER = 'ADD_NEW_USER';
