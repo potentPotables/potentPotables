@@ -1,6 +1,6 @@
 import io from 'socket.io-client';
 
-var socket = io('https://radiant-badlands-66369.herokuapp.com/');
+var socket = io();
 
 
 export const ADD_NEW_USER = 'ADD_NEW_USER';

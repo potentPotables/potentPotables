@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { sendButtonClick } from '../sockets_client';
 import Avatar from 'material-ui/Avatar';
+
+
 import { Link } from 'react-router';
 
 class UserGameplay extends Component {
@@ -32,23 +34,24 @@ class UserGameplay extends Component {
   render(){
     const buttonConfig= "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0";
     return (
-      <div>
-        <div>Score: ${this.state.score}</div>
-      <div>
-        {this.props.activeUser && this.props.activeUser !== this.props.username ?
-          <div>
-            <div>{this.props.activeUser} buzzed in!</div>
-            <div>Score: ${this.props.users[this.props.activeUser].score}</div>
-          </div>:
-          <div></div>
-        }
-      </div>
+      <div className= 'user-gameplay'>
+        <div className= 'score' >Score: ${this.state.score}</div>
+        <div className= 'buzz-alert'>
+          {this.props.activeUser && this.props.activeUser !== this.props.username ?
+            <div>
+              <div>{this.props.activeUser} buzzed in!</div>
+              <div>Score: ${this.props.users[this.props.activeUser].score}</div>
+            </div>:
+            <div></div>
+          }
+        </div>
+        <div className= 'btn-container'>
         {this.props.isGameActive === false ?
           <div>
             Waiting for game to Begin...
           </div> :
           this.props.isButtonDisabled ?
-            <a id="gamebuttonDisabled" disabled= {true}>
+            <a id="gamebuttonDisabled" className= 'game-button' disabled= {true}>
                 <span >{buttonConfig}</span>
             </a> :
             this.props.hasAnsweredUsers.indexOf(this.props.username) !== -1 ?
@@ -59,9 +62,12 @@ class UserGameplay extends Component {
                   <span onClick= {this.handleBuzz.bind(this)}>{buttonConfig}</span>
               </a>
         }
-        <div>
+        </div>
+        <div className= 'avatar'>
+          <Avatar src= {this.props.userPhoto} size= {60}/>
           <div>{this.props.username}</div>
-          <Avatar src= {this.props.userPhoto} size= {60} disabled= {true}/>
+        </div>
+        <div className= 'scoreboard'>
           <Link to="scoreboard">
             <button>Scoreboard</button>
           </Link>
