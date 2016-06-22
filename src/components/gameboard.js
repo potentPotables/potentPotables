@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Radium from 'radium';
 import Clue from './clue';
 import { setActiveClue } from '../sockets_client';
 import { setActiveClueGameboard } from '../actions/index';
+var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
+
 
 class Gameboard extends Component {
   handleSetActiveClue(clue, room){
@@ -31,9 +32,9 @@ class Gameboard extends Component {
           </thead>
           <tbody>
             <tr>
-                  <div>
-                      <td className="clues" key={index}></td>
-                  </div>
+                <div>
+                  <td className="clues" key={index}></td>
+                </div>
                 {clues.splice(0, 5)}
             </tr>
           </tbody>
@@ -42,11 +43,11 @@ class Gameboard extends Component {
     });
 
     return(
-      <div id="container-table">
-        <table className="table table-reflow">
+        <div id="container-table">
+          <table className="table table-reflow">
             { categories }
-        </table>
-      </div>
+          </table>
+        </div>
     );
   }
 }
