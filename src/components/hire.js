@@ -20,7 +20,7 @@ class Hire extends Component {
 		return (
 			<form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
 			  <h3>Send me a message.</h3>
-			  <div className="form-group">
+			  <div className={`form-group ${name.touched && name.invalid ? 'has-danger' : ''}`}>
 			    <label><strong>Name</strong></label>
 			    <input type="text" className="form-control" {...name} />
 			    <div class="text-help">

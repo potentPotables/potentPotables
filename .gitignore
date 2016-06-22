@@ -1,3 +1,4 @@
 /node_modules
 bundle.js
-sendgrid.env
+Dockerfile
+circle.yml
