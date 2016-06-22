@@ -26,11 +26,11 @@ class userConfig extends Component {
       var reader = new FileReader();
       reader.onload = function(evt) {
         var dataURL = evt.target.result;
-        //var exif = piexif.load(evt.target.result);
+        var exif = piexif.load(evt.target.result);
         var image = new Image();
         image.onload = function (imageEvent) {
           var resizedImage;
-          //var orientation = exif["0th"][piexif.ImageIFD.Orientation];
+          var orientation = exif["0th"][piexif.ImageIFD.Orientation];
           // Resize the image
           var canvas = document.createElement('canvas'),
             max_size = 150,
@@ -49,51 +49,51 @@ class userConfig extends Component {
           }
           canvas.width = width;
           canvas.height = height;
-          var context = canvas.getContext('2d').drawImage(image, 0, 0, width, height);
-          //var ctx = canvas.getContext("2d");
-          // var x = 0;
-          // var y = 0;
-          // ctx.save();
-          // if (orientation == 2) {
-          //     x = -canvas.width;
-          //     ctx.scale(-1, 1);
-          // } else if (orientation == 3) {
-          //     x = -canvas.width;
-          //     y = -canvas.height;
-          //     ctx.scale(-1, -1);
-          // } else if (orientation == 4) {
-          //     y = -canvas.height;
-          //     ctx.scale(1, -1);
-          // } else if (orientation == 5) {
-          //     canvas.width = image.height;
-          //     canvas.height = image.width;
-          //     ctx.translate(canvas.width, canvas.height / canvas.width);
-          //     ctx.rotate(Math.PI / 2);
-          //     y = -canvas.width;
-          //     ctx.scale(1, -1);
-          // } else if (orientation == 6) {
-          //     canvas.width = image.height;
-          //     canvas.height = image.width;
-          //     ctx.translate(canvas.width, canvas.height / canvas.width);
-          //     ctx.rotate(Math.PI / 2);
-          // } else if (orientation == 7) {
-          //     canvas.width = image.height;
-          //     canvas.height = image.width;
-          //     ctx.translate(canvas.width, canvas.height / canvas.width);
-          //     ctx.rotate(Math.PI / 2);
-          //     x = -canvas.height;
-          //     ctx.scale(-1, 1);
-          // } else if (orientation == 8) {
-          //     canvas.width = image.height;
-          //     canvas.height = image.width;
-          //     ctx.translate(canvas.width, canvas.height / canvas.width);
-          //     ctx.rotate(Math.PI / 2);
-          //     x = -canvas.height;
-          //     y = -canvas.width;
-          //     ctx.scale(-1, -1);
-          // }
-          // ctx.drawImage(image, x, y);
-          // ctx.restore();
+          //var context = canvas.getContext('2d').drawImage(image, 0, 0, width, height);
+          var ctx = canvas.getContext("2d");
+          var x = 0;
+          var y = 0;
+          ctx.save();
+          if (orientation == 2) {
+              x = -canvas.width;
+              ctx.scale(-1, 1);
+          } else if (orientation == 3) {
+              x = -canvas.width;
+              y = -canvas.height;
+              ctx.scale(-1, -1);
+          } else if (orientation == 4) {
+              y = -canvas.height;
+              ctx.scale(1, -1);
+          } else if (orientation == 5) {
+              canvas.width = image.height;
+              canvas.height = image.width;
+              ctx.translate(canvas.width, canvas.height / canvas.width);
+              ctx.rotate(Math.PI / 2);
+              y = -canvas.width;
+              ctx.scale(1, -1);
+          } else if (orientation == 6) {
+              canvas.width = image.height;
+              canvas.height = image.width;
+              ctx.translate(canvas.width, canvas.height / canvas.width);
+              ctx.rotate(Math.PI / 2);
+          } else if (orientation == 7) {
+              canvas.width = image.height;
+              canvas.height = image.width;
+              ctx.translate(canvas.width, canvas.height / canvas.width);
+              ctx.rotate(Math.PI / 2);
+              x = -canvas.height;
+              ctx.scale(-1, 1);
+          } else if (orientation == 8) {
+              canvas.width = image.height;
+              canvas.height = image.width;
+              ctx.translate(canvas.width, canvas.height / canvas.width);
+              ctx.rotate(Math.PI / 2);
+              x = -canvas.height;
+              y = -canvas.width;
+              ctx.scale(-1, -1);
+          }
+          ctx.drawImage(image, x, y);
+          ctx.restore();
           resizedImage = canvas.toDataURL('image/jpeg');
           that.setState({ file: file, dataURL: resizedImage });
         }

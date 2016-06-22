@@ -8,7 +8,7 @@ class InfoIndex extends Component {
 
 		return (
 			<div className ="landing">
-				<div className="logo-holder"><img src="../../public/assets/logo.png" /></div>
+				<div className="logo-holder"><img src="http://52.38.175.65:3000/assets/logo.png" /></div>
 				<div>
 				<button className="create btn btn-primary btn-lg" onClick={this.props.createSession}>Create a session</button>
 				</div>
