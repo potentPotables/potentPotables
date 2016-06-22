@@ -14,10 +14,18 @@
 		url('./assets/fonts/Swiss_911_Compressed.woff2') format('woff2');
 }
 
+@font-face {
+	font-family: 'Swiss-911-Extra-Compressed';
+	src:
+		url('./assets/fonts/Swiss_911_Extra_Compressed.woff') format('woff'),
+		url('./assets/fonts/Swiss_911_Extra_Compressed.woff2') format('woff2');
+
+}
+
 
 html, body {
   position: relative;
-  background-image: url('./assets/backgrounds/background_1.png');  
+/*  background-image: url('./assets/backgrounds/background_1.png');*/	
 	min-height: 100vh;
   min-width: 100vw;
   background-size: 100% 100%;
@@ -56,13 +64,13 @@ th.categories {
 	color: white;
 	text-align: center;
 	position: absolute;
-	font-weight: bold;
+	font-weight: 100;
 	text-transform: uppercase;
 	border: 4px solid black !important;
 	background-image: url('//cache1.asset-cache.net/xd/eef_010.jpg?v=1&c=IWSAsset&k=2&d=5225673E10E2FD0F0E6C89302D5D4AE94E7679DD01108BC6D5CC31666135BEB7E7BFD5B312C9BD15');
 	background-size: 100% 100%;
-	font-size: 19px;
-	font-family: "HelveticaNeue-CondensedBold";
+	font-size: 22px;
+	font-family: "Swiss-911";
 }
 
 
@@ -72,20 +80,19 @@ td.clues {
 	text-align: center;
 	color: yellow;
 	border: 2px solid black !important;
-	font-size: 45px;
-	font-weight: bolder;
+	font-size: 60px;
 	text-shadow: 4px 4px black;
-	font-family: "Swiss-911";
+	font-family: "Swiss-911-Extra-Compressed";
 	background-image: url('http://www.santemaghreb.com/algerie/jicc2009/13_fichiers/master04_background.gif');
 	background-size: 100% 100%;
     transition: 0.5s;
 }
 
 td.clues:hover {
-    color: #14f00c;
+    color: #CB1C4E;
     border: 6px inset yellow !important;
     padding: 5px 10px 10px 10px;
-    font-size: 60px;
+    font-size: 70px;
     text-shadow: 8px 8px black;
 }
 
