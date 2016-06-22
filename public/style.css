@@ -262,25 +262,27 @@ ul.why li {
     -webkit-border-radius: 50%
     -moz-border-radius: 50%;
     border-radius: 50%;
-    -webkit-box-shadow:    0 8px 0 #c5376d, 0 15px 20px rgba(0, 0, 0, .35);
-    -moz-box-shadow: 0 8px 0 #c5376d, 0 15px 20px rgba(0, 0, 0, .35);
-    box-shadow: 0 8px 0 #c5376d, 0 15px 20px rgba(0, 0, 0, .35);
+    -webkit-box-shadow:    0 8px 0 #950c0c, 0 15px 20px rgba(0, 0, 0, .35);
+    -moz-box-shadow: 0 8px 0 #950c0c, 0 15px 20px rgba(0, 0, 0, .35);
+    box-shadow: 0 8px 0 #950c0c, 0 15px 20px rgba(0, 0, 0, .35);
     -webkit-transition: -webkit-box-shadow .1s ease-in-out;
     -moz-transition: -moz-box-shadow .1s ease-in-out;
     -o-transition: -o-box-shadow .1s ease-in-out;
     transition: box-shadow .1s ease-in-out;
-    font-size: 50px;
+    font-size: 60px;
     color: #fff;
+    -webkit-user-select: none;
+    -moz-user-select: none;
 }
 
 #gamebutton span {
     display: inline-block;
-    padding: 20px 30px;
-    background-color: #ec528d;
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(hsla(338, 90%, 80%, .8)), to(hsla(338, 90%, 70%, .2)));
-    background-image: -webkit-linear-gradient(hsla(338, 90%, 80%, .8), hsla(338, 90%, 70%, .2));
-    background-image: -moz-linear-gradient(hsla(338, 90%, 80%, .8), hsla(338, 90%, 70%, .2));
-    background-image: -o-linear-gradient(hsla(338, 90%, 80%, .8), hsla(338, 90%, 70%, .2));
+    padding: 80px 0px;
+    background-color: #f91515;
+    /*background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(hsla(338, 90%, 80%, .8)), to(hsla(338, 90%, 70%, .2)));*/
+    /*background-image: -webkit-linear-gradient(hsla(338, 90%, 80%, .8), hsla(338, 90%, 70%, .2));*/
+    /*background-image: -moz-linear-gradient(hsla(338, 90%, 80%, .8), hsla(338, 90%, 70%, .2));*/
+    /*background-image: -o-linear-gradient(hsla(338, 90%, 80%, .8), hsla(338, 90%, 70%, .2));*/
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
@@ -294,11 +296,6 @@ ul.why li {
     -moz-transition: background-color .2s ease-in-out, -moz-transform .1s ease-in-out;
     -o-transition: background-color .2s ease-in-out, -o-transform .1s ease-in-out;
     transition: background-color .2s ease-in-out, transform .1s ease-in-out;
-}
-
-#gamebutton:hover span {
-    background-color: #ec6a9c;
-    text-shadow: 0 -1px 1px rgba(175, 49, 95, .9), 0 0 5px rgba(255, 255, 255, .8);
 }
 
 #gamebutton:active, #button:focus {

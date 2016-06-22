@@ -30,6 +30,8 @@ class UserGameplay extends Component {
   }
 
   render(){
+    const buttonConfig= "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0";
+    const buttonConfig2= 'Hello Bitches';
     return (
       <div>
         <div>Score: ${this.state.score}</div>
@@ -47,8 +49,8 @@ class UserGameplay extends Component {
             Waiting for game to Begin...
           </div> :
           this.props.isButtonDisabled ?
-            <a href="#" id="gamebutton">
-                <span>Hello bitches!</span>
+            <a id="gamebutton" disabled= {this.props.isButtonDisabled}>
+                <span>{buttonConfig}</span>
             </a> :
             this.props.hasAnsweredUsers.indexOf(this.props.username) !== -1 ?
               <div>
