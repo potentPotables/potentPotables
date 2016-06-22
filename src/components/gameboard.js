@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Radium from 'radium';
 import Clue from './clue';
 import { setActiveClue } from '../sockets_client';
 import { setActiveClueGameboard } from '../actions/index';
@@ -28,19 +27,15 @@ class Gameboard extends Component {
     const categories = this.props.categories.map((category, index) => {
       return(
         <div>
-        <ReactCSSTransitionGroup transitionName="categoriesFade" transitionAppear={true} transitionLeave={false} transitionAppearTimeout={2000}>
           <thead>
             <th className="categories" key={category}>{category}</th>
           </thead>
-        </ReactCSSTransitionGroup>
           <tbody>
             <tr>
-              <ReactCSSTransitionGroup transitionName="cluesFade" transitionAppear={true} transitionAppearTimeout={4000}>
                 <div>
                   <td className="clues" key={index}></td>
                 </div>
                 {clues.splice(0, 5)}
-              </ReactCSSTransitionGroup>
             </tr>
           </tbody>
         </div>
@@ -48,11 +43,11 @@ class Gameboard extends Component {
     });
 
     return(
-      <div id="container-table">
-        <table className="table table-reflow">
+        <div id="container-table">
+          <table className="table table-reflow">
             { categories }
-        </table>
-      </div>
+          </table>
+        </div>
     );
   }
 }

@@ -17,11 +17,9 @@
 
 html, body {
   position: relative;
-/*  background-image: url('./assets/backgrounds/background_1.png');
-*/  height: 100%;
-  min-height: 100%;
-  width: 100%;
-  min-width: 100%;
+/*  background-image: url('./assets/backgrounds/background_1.png');*/  
+	min-height: 100vh;
+  min-width: 100vw;
   background-size: 100% 100%;
   background-repeat:repeat-x;
   background-attachment:fixed;
@@ -34,7 +32,7 @@ a {
 }
 
 .container {
-	position: relative;
+	position: fixed;
 	justify-content: center;
 	align-items: center;
 	width: 100%;
@@ -46,15 +44,15 @@ a {
 }
 
 #container-table {
-	width: 68.5%;
-	margin-left: 17.15%;
+	width: 68.5vw;
+	margin-left: 17.15vw;
 	margin-right: auto;
-	margin-top: 9.37%;
+	margin-top: 16.9vh;
 }
 
 th.categories {
 	width: 11%;
-	height: 12%;
+	height: 11.83vh;
 	color: white;
 	text-align: center;
 	position: absolute;
@@ -67,36 +65,9 @@ th.categories {
 	font-family: "HelveticaNeue-CondensedBold";
 }
 
-/*.categoriesFade-appear {
-	opacity: 0.01;
-}
-
-.categoriesFade-appear.categoriesFade-appear-active {
-	opacity: 1;
-	transition: opacity 1s ease-in;
-}
-
-.cluesFade-appear {
-	opacity: 0.01;
-}
-
-.cluesFade-appear.cluesFade-appear-active {
-	opacity: 1;
-	transition: opacity 1s ease-in;
-	transition-delay: 1s;
-}*/
-
-.questionPop-appear {
-	transform: scale(.1);
-}
-
-.questionPop-appear.questionPop-appear-active {
-	transform: scale(1);
-    transition: all 0.75s ease-in-out;
-}
 
 td.clues {
-	height: 110px;
+	height: 11.83vh;
 	width: 100% !important;
 	text-align: center;
 	color: yellow;
@@ -116,6 +87,15 @@ td.clues:hover {
     padding: 5px 10px 10px 10px;
     font-size: 60px;
     text-shadow: 8px 8px black;
+}
+
+.questionPop-appear {
+	transform: scale(.1);
+}
+
+.questionPop-appear.questionPop-appear-active {
+	transform: scale(1);
+    transition: all 0.75s ease-in-out;
 }
 
 .table {
