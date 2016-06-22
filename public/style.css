@@ -17,7 +17,7 @@
 
 html, body {
   position: relative;
-/*  background-image: url('./assets/backgrounds/background_1.png');*/  
+  background-image: url('./assets/backgrounds/background_1.png');  
 	min-height: 100vh;
   min-width: 100vw;
   background-size: 100% 100%;
