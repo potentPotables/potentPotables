@@ -28,15 +28,19 @@ class Gameboard extends Component {
     const categories = this.props.categories.map((category, index) => {
       return(
         <div>
+        <ReactCSSTransitionGroup transitionName="categoriesFade" transitionAppear={true} transitionLeave={false} transitionAppearTimeout={2000}>
           <thead>
             <th className="categories" key={category}>{category}</th>
           </thead>
+        </ReactCSSTransitionGroup>
           <tbody>
             <tr>
-                  <div>
-                      <td className="clues" key={index}></td>
-                  </div>
+              <ReactCSSTransitionGroup transitionName="cluesFade" transitionAppear={true} transitionAppearTimeout={4000}>
+                <div>
+                  <td className="clues" key={index}></td>
+                </div>
                 {clues.splice(0, 5)}
+              </ReactCSSTransitionGroup>
             </tr>
           </tbody>
         </div>
@@ -44,13 +48,11 @@ class Gameboard extends Component {
     });
 
     return(
-      <ReactCSSTransitionGroup transitionName="example" transitionAppear={true} transitionAppearTimeout={500}>
       <div id="container-table">
         <table className="table table-reflow">
             { categories }
         </table>
       </div>
-      </ReactCSSTransitionGroup>
     );
   }
 }

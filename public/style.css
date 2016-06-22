@@ -17,7 +17,8 @@
 
 html, body {
   position: relative;
-  height: 100%;
+/*  background-image: url('./assets/backgrounds/background_1.png');
+*/  height: 100%;
   min-height: 100%;
   width: 100%;
   min-width: 100%;
@@ -45,8 +46,10 @@ a {
 }
 
 #container-table {
-	width: 72.5%;
-	margin: 160px 150px 100px 290px;
+	width: 68.5%;
+	margin-left: 17.15%;
+	margin-right: auto;
+	margin-top: 9.37%;
 }
 
 th.categories {
@@ -60,12 +63,40 @@ th.categories {
 	border: 4px solid black !important;
 	background-image: url('//cache1.asset-cache.net/xd/eef_010.jpg?v=1&c=IWSAsset&k=2&d=5225673E10E2FD0F0E6C89302D5D4AE94E7679DD01108BC6D5CC31666135BEB7E7BFD5B312C9BD15');
 	background-size: 100% 100%;
-	font-size: 17px;
+	font-size: 19px;
 	font-family: "HelveticaNeue-CondensedBold";
 }
 
+/*.categoriesFade-appear {
+	opacity: 0.01;
+}
+
+.categoriesFade-appear.categoriesFade-appear-active {
+	opacity: 1;
+	transition: opacity 1s ease-in;
+}
+
+.cluesFade-appear {
+	opacity: 0.01;
+}
+
+.cluesFade-appear.cluesFade-appear-active {
+	opacity: 1;
+	transition: opacity 1s ease-in;
+	transition-delay: 1s;
+}*/
+
+.questionPop-appear {
+	transform: scale(.1);
+}
+
+.questionPop-appear.questionPop-appear-active {
+	transform: scale(1);
+    transition: all 0.75s ease-in-out;
+}
+
 td.clues {
-	height: 108px;
+	height: 110px;
 	width: 100% !important;
 	text-align: center;
 	color: yellow;
@@ -88,21 +119,12 @@ td.clues:hover {
 }
 
 .table {
-	width: 94% !important;
+	width: 100% !important;
 }
 
 .table-reflow tr {
 	width: 16%;
 	height: 16%;
-}
-
-.example-appear {
-  opacity: 0.01;
-}
-
-.example-appear.example-appear-active {
-  opacity: 1;
-  transition: opacity 2s ease-in;
 }
 
 #question {
@@ -119,7 +141,11 @@ td.clues:hover {
 
 #question-text {
 	margin-top: 175px;
+	margin-left: 50px;
+	margin-right: 50px;
 }
+
+
 
 .waitingGame {
 	color: white;
