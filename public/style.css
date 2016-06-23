@@ -164,7 +164,7 @@ td.clues:hover {
 }
 
 .logo-holder {
-	margin-bottom: 10vh;
+	margin-bottom: 4vh;
 }
 
 .logo-transition-appear {
@@ -418,11 +418,45 @@ a[disabled] {
 	margin-left: 20%;
 }
 */
+.buttons {
+	 text-align: center;
+	 color: navy;
+}
+
+.create.a {
+	text-decoration: none;
+	color: navy;
+	width: 150px;
+	height: 50px;
+	background: #fee533 ;
+	position: relative;
+	margin: 30px;
+	padding: 16px;
+	font-size: 40px;
+	border-radius: 15px;
+	box-shadow: 0px 10px 0px 0px #fef299 , 0px 0px 20px 0px #bbb;
+	transition: all 0.2s;
+	cursor: pointer;
+}
+
+.create.a:active {
+	top: 6px;
+	box-shadow: 0px 7px 0px 0px #fef299 ;
+}
+
+.create.a:hover {
+	color: white !important;
+}
+
+.create {
+	background-color: #fee533 ;
+}
 
 .buttons {
   text-align: center;
   color: white;
   flex-grow: 2;
+  padding-bottom: 50px;
 }
 
 .a {
@@ -434,7 +468,7 @@ a[disabled] {
   position: relative;
   margin: 30px;
   padding: 16px;
-  font-size: 15px;
+  font-size: 25px;
   border-radius: 10px;
   box-shadow: 0px 10px 0px 0px #fef299, 0px 0px 20px 0px #bbb;
   transition: all 0.2s;
@@ -454,5 +488,7 @@ a[disabled] {
   color: white;
 }
 
-
-
+.btm {
+	margin-top: 30px;
+	margin-bottom: 45px;
+}
