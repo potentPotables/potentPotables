@@ -25,7 +25,7 @@
 
 html, body {
   position: relative;
-  background-image: url('./assets/backgrounds/animated_background.gif');	
+  background-image: url('./assets/backgrounds/animated_background.gif');
 	min-height: 100vh;
   min-width: 100vw;
   background-size: 100% 100%;
@@ -362,7 +362,7 @@ a[disabled] {
 
 
 
-.user-gameplay {
+.gameplay-view {
   display: -webkit-flex;
   display: -webkit-box;
   display: -moz-box;
@@ -372,6 +372,13 @@ a[disabled] {
   justify-content: center;
   align-items: center;
   padding: 5px;
+  background-image: url('./assets/user-gameplay_bckgrnd.jpg');
+  background-size: 100% 100%;
+  background-repeat:repeat-x;
+  min-height: 100vh;
+  min-width: 100vw;
+  font-weight: bold;
+  color: white;
 }
 
 .score {
@@ -385,24 +392,55 @@ a[disabled] {
 }
 
 .btn-container {
-	flex-grow: 4;
+	flex-grow: 5;
 	margin: 5px;
 }
 
 .avatar {
 	margin-top: 20px;
 	text-align: center;
-}
-
-.scoreboard {
-	flex-grow: 2;
-	margin: 5px;
+	flex-grow: 3;
 }
 
 /*.game-button {
 	margin-left: 20%;
 }
 */
+
+.buttons {
+  text-align: center;
+  color: white;
+  flex-grow: 2;
+}
+
+.a {
+  text-decoration: none;
+  color: white;
+  width: 150px;
+  height: 50px;
+  background: #fee533;
+  position: relative;
+  margin: 30px;
+  padding: 16px;
+  font-size: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 0px 0px #fef299, 0px 0px 20px 0px #bbb;
+  transition: all 0.2s;
+}
+
+.a:active {
+  top: 10px;
+  box-shadow: 0px 7px 0px 0px #fef299;
+}
+
+.button1 {
+  background-color: #fee533;
+}
+
+.buttons-question {
+	text-align: center;
+  color: white;
+}
 
 
 

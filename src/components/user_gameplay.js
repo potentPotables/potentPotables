@@ -10,6 +10,7 @@ class UserGameplay extends Component {
   constructor(props){
     super(props);
     this.state = {score: null};
+    this.getUserPhoto= this.getUserPhoto.bind(this);
   }
 
   componentDidUpdate(){
@@ -30,18 +31,30 @@ class UserGameplay extends Component {
     buzz.play();
     sendButtonClick(this.props.username, this.props.linkCode, this.props.activeClue);
   }
-
+  getUserPhoto(user){
+    for (key in this.props.users){
+      if (this.props.users[key] === user){
+        return this.props.users[key];
+      }
+    }
+  }
   render(){
     const buttonConfig= "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0";
+    const activeUser= this.getUserPhoto(this.props.activeUser);
     return (
-      <div className= 'user-gameplay'>
+      <div className= 'gameplay-view'>
         <div className= 'score' >Score: ${this.state.score}</div>
         <div className= 'buzz-alert'>
           {this.props.activeUser && this.props.activeUser !== this.props.username ?
-            <div>
-              <div>{this.props.activeUser} buzzed in!</div>
-              <div>Score: ${this.props.users[this.props.activeUser].score}</div>
-            </div>:
+            activeUser.photo !== '' ?
+                <div>
+                  <Avatar src= {this.props.userPhoto} size= {80}>
+                  </Avatar>
+                  <div>{this.props.activeUser} buzzed in!</div>
+                </div>
+                :
+                <div>{this.props.activeUser} buzzed in!</div>
+              :
             <div></div>
           }
         </div>
@@ -64,12 +77,15 @@ class UserGameplay extends Component {
         }
         </div>
         <div className= 'avatar'>
-          <Avatar src= {this.props.userPhoto} size= {60}/>
+          {this.props.userPhoto !== '' ?
+            <Avatar src= {this.props.userPhoto} size= {80}/> :
+            <div></div>
+          }
           <div>{this.props.username}</div>
         </div>
-        <div className= 'scoreboard'>
+        <div className="buttons">
           <Link to="scoreboard">
-            <button>Scoreboard</button>
+            <a className="button1 a" >Go to Scoreboard </a>
           </Link>
         </div>
       </div>
