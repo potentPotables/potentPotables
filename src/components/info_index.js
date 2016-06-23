@@ -11,7 +11,7 @@ class InfoIndex extends Component {
 		return (
 			<div className ="landing">
 				<ReactCSSTransitionGroup transitionName="logo-transition" transitionAppear={true} transitionAppearTimeout={1500}>
-					<div className="logo-holder"><img id="logo" src="./assets/logo.png"/></div>
+					<div className="logo-holder"><img id="logo" src="http://52.38.175.65/assets/logo.png"/></div>
 				</ReactCSSTransitionGroup>
 				<ReactCSSTransitionGroup transitionName="index-transition" transitionAppear={true} transitionAppearTimeout={3000}>
 				<div className="buttons">

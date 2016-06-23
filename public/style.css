@@ -164,7 +164,7 @@ td.clues:hover {
 }
 
 .logo-holder {
-	margin-bottom: 10vh;
+	margin-bottom: 4vh;
 }
 
 .logo-transition-appear {
@@ -437,7 +437,6 @@ a[disabled] {
 	box-shadow: 0px 10px 0px 0px #fef299 , 0px 0px 20px 0px #bbb;
 	transition: all 0.2s;
 	cursor: pointer;
-	/*display: inline-block;*/
 }
 
 .create.a:active {
@@ -445,38 +444,19 @@ a[disabled] {
 	box-shadow: 0px 7px 0px 0px #fef299 ;
 }
 
+.create.a:hover {
+	color: white !important;
+}
+
 .create {
 	background-color: #fee533 ;
-}
-
-.join.a {
-	text-decoration: none;
-	color: navy;
-	width: 150px;
-	height: 50px;
-	background: #fee533 ;
-	position: relative;
-	margin: 30px;
-	margin-top: 60px;
-	padding: 16px;
-	font-size: 40px;
-	border-radius: 15px;
-	box-shadow: 0px 10px 0px 0px #fef299 , 0px 0px 20px 0px #bbb;
-	transition: all 0.2s;
-	cursor: pointer;
-	/*display: inline-block;*/
-}
-
-.join.a:active {
-	top: 6px;
-	box-shadow: 0px 7px 0px 0px #fef299 ;
 }
 
 .buttons {
   text-align: center;
   color: white;
   flex-grow: 2;
-  padding-bottom: 60px;
+  padding-bottom: 50px;
 }
 
 .a {
@@ -488,7 +468,7 @@ a[disabled] {
   position: relative;
   margin: 30px;
   padding: 16px;
-  font-size: 15px;
+  font-size: 25px;
   border-radius: 10px;
   box-shadow: 0px 10px 0px 0px #fef299, 0px 0px 20px 0px #bbb;
   transition: all 0.2s;
@@ -509,5 +489,6 @@ a[disabled] {
 }
 
 .btm {
-	margin-top: 60px;
+	margin-top: 30px;
+	margin-bottom: 45px;
 }
