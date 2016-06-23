@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import io from 'socket.io-client';
 
 var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
-
-var socket = io('http://localhost:3000');
 
 class ClueView extends Component {
   static contextTypes = {
