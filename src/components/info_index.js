@@ -14,14 +14,16 @@ class InfoIndex extends Component {
 					<div className="logo-holder"><img id="logo" src="./assets/logo.png"/></div>
 				</ReactCSSTransitionGroup>
 				<ReactCSSTransitionGroup transitionName="index-transition" transitionAppear={true} transitionAppearTimeout={3000}>
-					<div>
-						<button className="create btn btn-primary btn-lg" onClick={this.props.createSession}>Create a session</button>
-					</div>
+				<div className="buttons">
+					<a className="create a" onClick={this.props.createSession}>Create a Game</a>
+				</div>
 				</ReactCSSTransitionGroup>
 				<ReactCSSTransitionGroup transitionName="index-transition" transitionAppear={true} transitionAppearTimeout={3000}>
-					<div>
-						<Link to="/linkverification" className="join btn btn-primary btn-lg">Join a session</Link>
-					</div>
+				  <div>
+					  <Link to="linkverification">
+					  	<a className="join a">Join a Game</a>
+					  </Link>
+				  </div>
 					<span>
 						<Link className="about" to="/about"><strong><u>About</u></strong></Link>
 					</span>
