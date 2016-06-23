@@ -9,7 +9,7 @@ import { Link } from 'react-router';
 class UserGameplay extends Component {
   constructor(props){
     super(props);
-    this.state = {score: null};
+    this.state = {score: 0};
     this.getUserPhoto= this.getUserPhoto.bind(this);
   }
 
@@ -94,7 +94,6 @@ class UserGameplay extends Component {
 }
 
 function mapStateToProps(state){
-  console.log('insideMapState', state.user.userPhoto);
   return {
     isButtonDisabled: state.gameplay.isButtonDisabled,
     username: state.user.username,
