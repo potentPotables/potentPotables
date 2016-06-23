@@ -1,6 +1,7 @@
 import io from 'socket.io-client';
 
 var socket = io();
+var socket = io('http://52.38.175.65:8080');
 
 
 export const ADD_NEW_USER = 'ADD_NEW_USER';

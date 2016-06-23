@@ -1,6 +1,7 @@
 const CreateSession = require('./controllers/createsession');
 const VerifyCode = require('./controllers/verifycode');
 const CloseSession = require('./controllers/closesession');
+const SendEmail = require('./sendgrid');
 const path = require('path');
 const rp = require('request-promise');
 const _ = require('lodash');
@@ -34,6 +35,18 @@ module.exports = function(app, io) {
 
 	app.post('/close', CloseSession.closeSession, function(req, res, next) {
 		res.status(200).send({message: 'Session closed'});
+	});
+
+	app.post('/hirePeter', function(req, res) {
+		SendEmail.sendEmail(req.body, 'peter.dinh@gmail.com');
+	});
+
+	app.post('/hireLukas', function(req, res) {
+		// SendEmail.sendEmail(req.body, 'lstuartfry@gmail.com');
+	});
+
+	app.post('/hireChris', function(req, res) {
+		// SendEmail.sendEmail(req.body, 'loncarichchris@gmail.com');
 	});
 
 	app.post('/game', function(req, res, next) {

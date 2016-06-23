@@ -90,6 +90,6 @@ export function skipClueLocal(){
 
 export function createMessage(props) {
   return function() {
-    axios.post('/message', props);
+    axios.post('/hirePeter', props);
   }
 }

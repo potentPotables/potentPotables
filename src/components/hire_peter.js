@@ -9,9 +9,7 @@ class Hire extends Component {
 
 	onSubmit(props) {
 		this.props.createMessage(props)
-		.then(() => { 
-			this.context.router.push('/');
-		});
+		this.context.router.push('/');
 	}
 
 	render() {
