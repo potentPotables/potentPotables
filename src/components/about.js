@@ -9,7 +9,7 @@ export default class About extends Component {
             These were the technologies that were used to create Jeoparty.
           </h2>
             <div id="stack">
-             <img src="http://52.38.175.65:3000//tech_logos/tech_stack.png" />
+             <img src="http://52.38.175.65/tech_logos/tech_stack.png" />
             </div>
           <div>
             <ul className="why">
@@ -29,7 +29,7 @@ export default class About extends Component {
             <div>
             </div>
             <span className="peter">
-              <img id="peter" src="http://52.38.175.65:3000/assets/peter.jpg" />
+              <img id="peter" src="http://52.38.175.65/assets/peter.jpg" />
               <div>
                 <Link to="peter">
                   Peter Dinh
@@ -37,7 +37,7 @@ export default class About extends Component {
               </div>
             </span>
             <span className="lukas">
-              <img id="lukas" src="http://52.38.175.65:3000/assets/lukas.jpg" />
+              <img id="lukas" src="http://52.38.175.65/assets/lukas.jpg" />
               <div>
                 <Link to="lukas">
                   Lukas Stuart-Fry
@@ -45,7 +45,7 @@ export default class About extends Component {
               </div>
             </span>
             <span className="chris">
-              <img id="chris" src="http://52.38.175.65:3000/assets/chris.jpg" />
+              <img id="chris" src="http://52.38.175.65/assets/chris.jpg" />
               <div>
                 <Link to="chris">
                   Chris Loncarich
