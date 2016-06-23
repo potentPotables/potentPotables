@@ -19,17 +19,19 @@ class InfoIndex extends Component {
 				</div>
 				</ReactCSSTransitionGroup>
 				<ReactCSSTransitionGroup transitionName="index-transition" transitionAppear={true} transitionAppearTimeout={3000}>
-				  <div>
-					  <Link to="linkverification">
-					  	<a className="join a">Join a Game</a>
-					  </Link>
-				  </div>
+				  	<div className="btm">
+						  <Link to="linkverification">
+						  	<a className="create a">Join a Game</a>
+						  </Link>
+					  </div>
+				<div class="links">
 					<span>
 						<Link className="about" to="/about"><strong><u>About</u></strong></Link>
 					</span>
 					<span>
 						<Link className="howto" to="/howto"><strong><u>How to Play</u></strong></Link>
 					</span>
+				</div>
 				</ReactCSSTransitionGroup>
 			</div>
 		);
@@ -37,4 +39,3 @@ class InfoIndex extends Component {
 }
 
 export default connect(null, { createSession })(InfoIndex);
-

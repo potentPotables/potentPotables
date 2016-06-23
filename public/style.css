@@ -431,7 +431,6 @@ a[disabled] {
 	background: #fee533 ;
 	position: relative;
 	margin: 30px;
-	margin-bottom: 60px;
 	padding: 16px;
 	font-size: 40px;
 	border-radius: 15px;
@@ -477,6 +476,7 @@ a[disabled] {
   text-align: center;
   color: white;
   flex-grow: 2;
+  padding-bottom: 60px;
 }
 
 .a {
@@ -508,5 +508,6 @@ a[disabled] {
   color: white;
 }
 
-
-
+.btm {
+	margin-top: 60px;
+}
