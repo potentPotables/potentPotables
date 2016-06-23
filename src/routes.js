@@ -17,7 +17,9 @@ import About from './components/about';
 import Peter from './components/peter';
 import Chris from './components/chris';
 import Lukas from './components/lukas';
-import Hire from './components/hire';
+import HirePeter from './components/hire_peter';
+import HireLukas from './components/hire_lukas';
+import HireChris from './components/hire_chris';
 
 export default (
 	<Route path="/" component={App}>
@@ -36,6 +38,8 @@ export default (
       <Route path="peter" component={Peter} />
       <Route path="chris" component={Chris} />
       <Route path="lukas" component={Lukas} />
-      <Route path="hire" component={Hire} />
+      <Route path="hire/peter" component={HirePeter} />
+      <Route path="hire/lukas" component={HireLukas} />
+      <Route path="hire/chris" component={HireChris} />
 	</Route>
 )
