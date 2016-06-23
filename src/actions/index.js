@@ -88,8 +88,9 @@ export function skipClueLocal(){
   return {type: SKIP, payload: {activeUser: ''}}
 }
 
-export function createMessage(props) {
+export function createMessage(props, recipient) {
   return function() {
-    axios.post('/hirePeter', props);
+    props.recipient = recipient;
+    axios.post('/hire', props);
   }
 }

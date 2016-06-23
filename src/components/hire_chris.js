@@ -2,13 +2,13 @@ import React, { Component, PropTypes } from 'react';
 import { reduxForm } from 'redux-form';
 import { createMessage } from '../actions/index';
 
-class HirePeter extends Component {
+class HireChris extends Component {
 	static contextTypes = {
 		router: PropTypes.object
 	};
 
 	onSubmit(props) {
-		this.props.createMessage(props, 'peter.dinh@gmail.com');
+		this.props.createMessage(props, 'loncarichchris@gmail.com');
 		this.context.router.push('/');
 	}
 
@@ -80,4 +80,4 @@ export default reduxForm({
 	form: 'HireMessageForm',
 	fields: ['name', 'company', 'email', 'message'],
 	validate,
-}, null, { createMessage })(HirePeter);
+}, null, { createMessage })(HireChris);

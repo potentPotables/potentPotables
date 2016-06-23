@@ -38,6 +38,8 @@ export default (
       <Route path="peter" component={Peter} />
       <Route path="chris" component={Chris} />
       <Route path="lukas" component={Lukas} />
-      <Route path="hire" component={Hire} />
+      <Route path="hire/peter" component={HirePeter} />
+      <Route path="hire/lukas" component={HireLukas} />
+      <Route path="hire/chris" component={HireChris} />
 	</Route>
 )

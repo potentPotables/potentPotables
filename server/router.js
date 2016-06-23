@@ -37,16 +37,8 @@ module.exports = function(app, io) {
 		res.status(200).send({message: 'Session closed'});
 	});
 
-	app.post('/hirePeter', function(req, res) {
-		SendEmail.sendEmail(req.body, 'peter.dinh@gmail.com');
-	});
-
-	app.post('/hireLukas', function(req, res) {
-		// SendEmail.sendEmail(req.body, 'lstuartfry@gmail.com');
-	});
-
-	app.post('/hireChris', function(req, res) {
-		// SendEmail.sendEmail(req.body, 'loncarichchris@gmail.com');
+	app.post('/hire', function(req, res) {
+		SendEmail.sendEmail(req.body);
 	});
 
 	app.post('/game', function(req, res, next) {
