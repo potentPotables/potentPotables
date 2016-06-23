@@ -32,7 +32,7 @@ class HostAnswer extends Component{
 
   render(){
     return(
-      <div>
+      <div className= 'gameplay-view'>
         <div>
         {this.props.activeUser}
         </div>
