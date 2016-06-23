@@ -35,3 +35,4 @@ class InfoIndex extends Component {
 }
 
 export default connect(null, { createSession })(InfoIndex);
+

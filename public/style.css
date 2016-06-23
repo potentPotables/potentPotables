@@ -418,6 +418,58 @@ a[disabled] {
 	margin-left: 20%;
 }
 */
+.buttons {
+	 text-align: center;
+	 color: navy;
+}
+
+.create.a {
+	text-decoration: none;
+	color: navy;
+	width: 150px;
+	height: 50px;
+	background: #fee533 ;
+	position: relative;
+	margin: 30px;
+	margin-bottom: 60px;
+	padding: 16px;
+	font-size: 40px;
+	border-radius: 10px;
+	box-shadow: 0px 10px 0px 0px #fef299 , 0px 0px 20px 0px #bbb;
+	transition: all 0.2s;
+	cursor: pointer;
+}
+
+.create.a:active {
+	top: 6px;
+	box-shadow: 0px 7px 0px 0px #fef299 ;
+}
+
+.create {
+	background-color: #fee533 ;
+}
+
+.join.a {
+	text-decoration: none;
+	color: navy;
+	width: 150px;
+	height: 50px;
+	background: #fee533 ;
+	position: relative;
+	margin: 30px;
+	margin-bottom: 60px;
+	padding: 16px;
+	font-size: 40px;
+	border-radius: 10px;
+	box-shadow: 0px 10px 0px 0px #fef299 , 0px 0px 20px 0px #bbb;
+	transition: all 0.2s;
+	cursor: pointer;
+}
+
+.join.a:active {
+	top: 6px;
+	box-shadow: 0px 7px 0px 0px #fef299 ;
+}
 
 .buttons {
   text-align: center;
