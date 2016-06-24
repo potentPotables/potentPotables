@@ -9,7 +9,7 @@ import { Link } from 'react-router';
 class UserGameplay extends Component {
   constructor(props){
     super(props);
-    this.state = {score: null};
+    this.state = {score: 0};
     this.getUserPhoto= this.getUserPhoto.bind(this);
   }
 
@@ -32,7 +32,7 @@ class UserGameplay extends Component {
     sendButtonClick(this.props.username, this.props.linkCode, this.props.activeClue);
   }
   getUserPhoto(user){
-    for (key in this.props.users){
+    for (var key in this.props.users){
       if (this.props.users[key] === user){
         return this.props.users[key];
       }
@@ -94,7 +94,7 @@ class UserGameplay extends Component {
 }
 
 function mapStateToProps(state){
-  console.log('insideMapState', state.user.userPhoto);
+    console.log('isGameActive', state.gameplay.isGameActive);
   return {
     isButtonDisabled: state.gameplay.isButtonDisabled,
     username: state.user.username,
