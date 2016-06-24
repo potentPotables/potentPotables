@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createUser } from '../actions/index';
 import Dropzone from 'react-dropzone';
-import { piexifjs } from 'piexifjs';
+import { piexif } from 'piexifjs';
 
 class userConfig extends Component {
   constructor (props) {
