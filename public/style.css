@@ -3,25 +3,32 @@
 @font-face {
 	font-family: 'Korinna-BT';
 	src:
-		url('./assets/fonts/Korinna_Bold_BT.woff') format('woff'),
-		url('./assets/fonts/Korinna_Bold_BT.woff2') format('woff2');
+		url('./assets/fonts/Korinna_Bold_BT.woff2') format('woff2'),
+		url('./assets/fonts/Korinna_Bold_BT.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Swiss-911';
 	src:
-		url('./assets/fonts/Swiss_911_Compressed.woff') format('woff'),
-		url('./assets/fonts/Swiss_911_Compressed.woff2') format('woff2');
+		url('./assets/fonts/Swiss_911_Compressed.woff2') format('woff2'),
+		url('./assets/fonts/Swiss_911_Compressed.woff') format('woff');
+
 }
 
 @font-face {
 	font-family: 'Swiss-911-Extra-Compressed';
 	src:
-		url('./assets/fonts/Swiss_911_Extra_Compressed.woff') format('woff'),
-		url('./assets/fonts/Swiss_911_Extra_Compressed.woff2') format('woff2');
-
+		url('./assets/fonts/Swiss_911_Extra_Compressed.woff2') format('woff2'),	
+		url('./assets/fonts/Swiss_911_Extra_Compressed.woff') format('woff');
 }
 
+@font-face {
+	font-family: 'Gyparody';
+	src: 
+		url('./assets/fonts/gyparody.woff2') format('woff2'),
+		url('./assets/fonts/gyparody.woff') format('woff');
+
+}
 
 html, body {
   position: relative;
@@ -50,6 +57,16 @@ a {
 	padding-left: 0px !important;
 	padding-right: 0px !important;
 }
+
+.about-transition-appear {
+	transform: translate3d(100%, 0, 0);
+}
+
+.about-transition-appear.about-transition-appear-active {
+	transform: translate3d(0, 0, 0);
+	transition: all 1s ease-in;
+}
+
 
 #container-table {
 	width: 68.5vw;
@@ -144,6 +161,9 @@ td.clues:hover {
 	font-size: 20px;
 }
 
+.links {
+	animation-delay: 3s;
+}
 .linkEnter {
 	color: white;
 	font-weight: bolder;
@@ -182,7 +202,6 @@ td.clues:hover {
   transition-delay: 0.5s;
 }
 
-
 .index-transition-appear {
 	opacity: 0;
 }
@@ -216,11 +235,49 @@ a.join.btn.btn-primary.btn-lg {
 	font-family: 'Open Sans', sans-serif;
 	margin-right: 15px;
 	margin-left: 15px;
+	font-size: 3.5vh;
 }
 
-#about, #howto {
+u:hover {
+	color: #CB1C4E;
+}
+
+#about {
 	background-color: navy;
 	color: white;
+}
+
+#howto {
+	color: yellow;
+	width: 64vw;
+	margin-left: 9vw;
+	margin-right: auto;
+	margin-top: 17.5vh;
+	font-family: 'Open Sans';
+}
+
+#howto .gyparody {
+	font-family: 'Gyparody';
+	font-size: 3vw;
+	text-align: center;
+	animation-duration: 
+}
+
+.howto-transition-appear {
+	opacity: 0;
+}
+
+.howto-transition-appear.howto-transition-appear-active {
+	opacity: 1;
+	transition: opacity 1s ease-in;
+}
+
+#aboutDiv {
+	margin-bottom: 10px;
+}
+
+#howtoDiv {
+
 }
 
 #stack {
@@ -426,6 +483,7 @@ a[disabled] {
 .buttons {
 	 text-align: center;
 	 color: navy;
+	 animation-delay: 2s;
 }
 
 .create.a {
@@ -496,4 +554,5 @@ a[disabled] {
 .btm {
 	margin-top: 30px;
 	margin-bottom: 45px;
+	animation-delay: 2s;
 }

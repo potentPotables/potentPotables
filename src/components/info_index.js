@@ -10,29 +10,25 @@ class InfoIndex extends Component {
 
 		return (
 			<div className ="landing">
-				<ReactCSSTransitionGroup transitionName="logo-transition" transitionAppear={true} transitionAppearTimeout={1500}>
+				<ReactCSSTransitionGroup transitionName="logo-transition" transitionAppear={true} transitionAppearTimeout={2000}>
 					<div className="logo-holder"><img id="logo" src="http://52.38.175.65/assets/logo.png"/></div>
 				</ReactCSSTransitionGroup>
-				<ReactCSSTransitionGroup transitionName="index-transition" transitionAppear={true} transitionAppearTimeout={3000}>
-				<div className="buttons">
+				<div className="buttons animated bounceIn">
 					<a className="create a" onClick={this.props.createSession}>Create a Game</a>
 				</div>
-				</ReactCSSTransitionGroup>
-				<ReactCSSTransitionGroup transitionName="index-transition" transitionAppear={true} transitionAppearTimeout={3000}>
-				  	<div className="btm">
+				  	<div className="btm animated bounceIn">
 						  <Link to="linkverification">
 						  	<a className="create a">Join a Game</a>
 						  </Link>
 					  </div>
-				<div class="links">
-					<span>
+				<div className="links animated fadeInUp">
+					<div id="aboutDiv">
 						<Link className="about" to="/about"><strong><u>About</u></strong></Link>
-					</span>
-					<span>
+					</div>
+					<div id="howtoDiv">
 						<Link className="howto" to="/howto"><strong><u>How to Play</u></strong></Link>
-					</span>
+					</div>
 				</div>
-				</ReactCSSTransitionGroup>
 			</div>
 		);
 	}
