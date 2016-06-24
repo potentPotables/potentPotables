@@ -6,10 +6,21 @@ export default class About extends Component {
     return (
         <div id="about">
           <h2 className="stack intro">
-            These were the technologies that were used to create Potent Potables.
+            Technology:
           </h2>
             <div id="stack">
-             <img src="http://52.38.175.65/tech_logos/tech_stack.png" height="400" width="640"/>
+              <img id="react" src="http://52.38.175.65/tech_logos/react.png" height="65" width="65"/>
+              <img id="redux" src="http://52.38.175.65/tech_logos/redux.png" height="65" width="65"/>
+              <img id="webpack" src="http://52.38.175.65/tech_logos/webpack.png" height="65" width="65"/>
+              <img id="socket" src="http://52.38.175.65/tech_logos/socket.png" height="65" width="65"/>
+              <img id="node" src="http://52.38.175.65/tech_logos/node.png" height="65" width="65"/>
+              <img id="express" src="http://52.38.175.65/tech_logos/express.png" height="65" width="190"/>
+              <img id="mongodb" src="http://52.38.175.65/tech_logos/mongodb.png" height="65" width="65"/>
+              <img id="chai" src="http://52.38.175.65/tech_logos/chai.png" height="65" width="65"/>
+              <img id="mocha" src="http://52.38.175.65/tech_logos/mocha.png" height="65" width="65"/>
+              <img id="phantomjs" src="http://52.38.175.65/tech_logos/phanthomjs.png" height="65" width="65"/>
+              <img id="casperjs" src="http://52.38.175.65/tech_logos/casper.png" height="140" width="65"/>
+              <img id="aws" src="http://52.38.175.65/tech_logos/aws.png" height="65" width="65"/>
             </div>
           <div>
             <ul className="why">

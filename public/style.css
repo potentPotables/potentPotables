@@ -243,8 +243,12 @@ u:hover {
 }
 
 #about {
-	background-color: navy;
-	color: white;
+	color: yellow;
+	width: 75vw;
+	margin-left: 9vw;
+	margin-right: auto;
+	margin-top: 17.5vh;
+	font-family: 'Open Sans';
 }
 
 #howto {
