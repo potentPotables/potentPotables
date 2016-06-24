@@ -40,22 +40,19 @@ class UserGameplay extends Component {
   }
   render(){
     const buttonConfig= "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0";
-    const activeUser= this.getUserPhoto(this.props.activeUser);
     return (
       <div className= 'gameplay-view'>
         <div className= 'score' >Score: ${this.state.score}</div>
         <div className= 'buzz-alert'>
           {this.props.activeUser && this.props.activeUser !== this.props.username ?
-            activeUser.photo !== '' ?
+            this.props.users[this.props.activeUser].photo !== '' ?
                 <div>
-                  <Avatar src= {this.props.userPhoto} size= {80}>
-                  </Avatar>
+                  <Avatar src= {this.props.users[this.props.activeUser].photo} size= {80}/>
                   <div>{this.props.activeUser} buzzed in!</div>
                 </div>
                 :
                 <div>{this.props.activeUser} buzzed in!</div>
-              :
-            <div></div>
+            : <div></div>
           }
         </div>
         <div className= 'btn-container'>
