@@ -232,7 +232,7 @@ a.join.btn.btn-primary.btn-lg {
 
 .about, .howto {
 	color: white;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Gyparody';
 	margin-right: 15px;
 	margin-left: 15px;
 	font-size: 3.5vh;
@@ -491,11 +491,12 @@ a[disabled] {
 	color: navy;
 	width: 150px;
 	height: 50px;
+	font-family: Gyparody;
 	background: #fee533 ;
 	position: relative;
 	margin: 30px;
 	padding: 16px;
-	font-size: 40px;
+	font-size: 55px;
 	border-radius: 15px;
 	box-shadow: 0px 10px 0px 0px #fef299 , 0px 0px 20px 0px #bbb;
 	transition: all 0.2s;
@@ -556,3 +557,13 @@ a[disabled] {
 	margin-bottom: 45px;
 	animation-delay: 2s;
 }
+
+.parent {
+	display: flex;
+	justify-content: space-around;
+}
+
+.developers {
+	text-align: center;
+	padding-bottom: 20px;
+} 
