@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
+
 
 export default class About extends Component {
   render() {
     return (
+      <ReactCSSTransitionGroup transitionName="about-transition" transitionAppear={true} transitionAppearTimeout={1500}>
         <div id="about">
           <h2 className="stack intro">
             These were the technologies that were used to create Jeoparty.
@@ -54,6 +57,7 @@ export default class About extends Component {
             </span>
           </div>
         </div>
+      </ReactCSSTransitionGroup>
     );
   }
 }
