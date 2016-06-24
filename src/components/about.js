@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
 export default class About extends Component {
   render() {
@@ -9,18 +10,18 @@ export default class About extends Component {
             Technology:
           </h2>
             <div id="stack">
-              <img id="react" src="http://52.38.175.65/tech_logos/react.png" height="65" width="65"/>
-              <img id="redux" src="http://52.38.175.65/tech_logos/redux.png" height="65" width="65"/>
-              <img id="webpack" src="http://52.38.175.65/tech_logos/webpack.png" height="65" width="65"/>
-              <img id="socket" src="http://52.38.175.65/tech_logos/socket.png" height="65" width="65"/>
-              <img id="node" src="http://52.38.175.65/tech_logos/node.png" height="65" width="65"/>
-              <img id="express" src="http://52.38.175.65/tech_logos/express.png" height="65" width="190"/>
-              <img id="mongodb" src="http://52.38.175.65/tech_logos/mongodb.png" height="65" width="65"/>
-              <img id="chai" src="http://52.38.175.65/tech_logos/chai.png" height="65" width="65"/>
-              <img id="mocha" src="http://52.38.175.65/tech_logos/mocha.png" height="65" width="65"/>
-              <img id="phantomjs" src="http://52.38.175.65/tech_logos/phanthomjs.png" height="65" width="65"/>
-              <img id="casperjs" src="http://52.38.175.65/tech_logos/casper.png" height="140" width="65"/>
-              <img id="aws" src="http://52.38.175.65/tech_logos/aws.png" height="65" width="65"/>
+              <img className="logo" id="react" src="http://52.38.175.65/tech_logos/react.png" height="65" width="65"/>
+              <img className="logo" id="redux" src="http://52.38.175.65/tech_logos/redux.png" height="65" width="65"/>
+              <img className="logo" id="webpack" src="http://52.38.175.65/tech_logos/webpack.png" height="65" width="65"/>
+              <img className="logo" id="socket" src="http://52.38.175.65/tech_logos/socket.png" height="65" width="65"/>
+              <img className="logo" id="node" src="http://52.38.175.65/tech_logos/nodejs.png" height="65" width="65"/>
+              <img className="logo" id="express" src="http://52.38.175.65/tech_logos/express.png" height="55" width="205"/>
+              <img className="logo" id="mongodb" src="http://52.38.175.65/tech_logos/mongodb.png" height="65" width="65"/>
+              <img className="logo" id="chai" src="http://52.38.175.65/tech_logos/chai.png" height="65" width="65"/>
+              <img className="logo" id="mocha" src="http://52.38.175.65/tech_logos/mocha.png" height="65" width="65"/>
+              <img className="logo" id="phantomjs" src="http://52.38.175.65/tech_logos/phantomjs.png" height="65" width="65"/>
+              <img className="logo" id="casperjs" src="http://52.38.175.65/tech_logos/casper.png" height="80" width="65"/>
+              <img className="logo" id="aws" src="http://52.38.175.65/tech_logos/aws.png" height="65" width="125"/>
             </div>
           <div>
             <ul className="why">
