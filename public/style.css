@@ -167,6 +167,11 @@ td.clues:hover {
 	margin-bottom: 4vh;
 }
 
+#logo {
+	width:	45vw;
+	height:	17vh;
+}
+
 .logo-transition-appear {
 	transform: scale(0);
 }
