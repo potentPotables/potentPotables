@@ -10,7 +10,6 @@ class LinkVerification extends Component {
 
   handleFormSubmit(formProps) {
     this.props.linkCodeVerification(formProps);
-    
   }
 
   renderAlert() {
@@ -32,23 +31,27 @@ class LinkVerification extends Component {
     const { handleSubmit, fields: { linkcode }} = this.props;
     return(
       <div className="linkVerify">
-      <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-        <div>
-          <input type="text" placeholder="Enter Link Code Here" {...linkcode}/>
-        </div>
-        {this.renderAlert()}
-        <button type="submit" className="a" id="submit">Submit</button>
-      </form>
-      <div>
-        <input type="checkbox" onClick={(e) => this.checkBox(e) }/>Join as the host
-      </div>
+        <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+	        <div>
+	          <label>Link Code</label>
+	          <input type="text" placeholder="Enter Link Code Here" {...linkcode}/>
+	        </div>
+	        {this.renderAlert()}
+	        <button type="submit" className="a" id="submit">Submit</button>
+      	</form>
+	      <div>
+	        <input type="checkbox" onClick={(e) => this.checkBox(e) }/>Join as the host
+	      </div>
       </div>
     );
   }
 }
 
 function mapStateToProps(state){
-  return {linkAuthError: state.linkAuth.linkCodeError};
+  return {
+    linkAuthError: state.linkAuth.linkCodeError,
+    hostExists: state.linkAuth.hostExists
+  };
 }
 
 export default reduxForm({

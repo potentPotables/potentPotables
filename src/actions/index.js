@@ -36,7 +36,10 @@ export function linkCodeVerification({linkcode}) {
         const currentState= getState();
         currentState.user.userType !== 'host' ? browserHistory.push('/userconfig') : browserHistory.push('/hostgameplay');
         joinRoom(response.data.room);
-        dispatch({type: LINK_CODE_AUTH, payload: response.data.room})
+        var obj = {room: response.data.room};
+        currentState.user.userType === 'host' ? obj.hostExists = true : obj;
+        console.log('obj inside of linkCodeVerification', obj);
+        dispatch({type: LINK_CODE_AUTH, payload: obj});
       })
       .catch(response => {
         dispatch({type: LINK_CODE_ERROR, payload: response});
