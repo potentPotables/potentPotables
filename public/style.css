@@ -201,12 +201,22 @@ td.clues:hover {
 }
 
 #startGame.a:hover {
-	color: white !important;
+	color: #669DD3 !important;
+}
+
+.verifyContainer {
+  display: flex;
+  justify-content: center;
+  background-image: url('./assets/user-gameplay_bckgrnd.jpg');
+  background-size: 100% 100%;
+  min-height: 100vh;
+  min-width: 100vw;
+  font-weight: bold;
+  color: white;
 }
 
 .linkVerify {
 	margin-top: 30vh;
-	color: white;
 	font-weight: bolder;
 	font-size: 40px;
 	text-align: center;
@@ -231,7 +241,7 @@ input[type="text"] {
   width: 300px;
   background: #fee533;
   position: relative;
-  margin-bottom: 5%;
+  margin-bottom: 15%;
   padding: 15px;
   font-size: 40px;
   border-radius: 15px;
@@ -538,6 +548,7 @@ a[disabled] {
   min-width: 100vw;
   font-weight: bold;
   color: white;
+  font-size: 30px;
 }
 
 .score {
@@ -594,7 +605,7 @@ a[disabled] {
 }
 
 .create.a:hover {
-	color: white !important;
+	color: #669DD3 !important;
 }
 
 .create {
@@ -687,7 +698,7 @@ img {
 	image-rendering: crisp-edges;
 }
 .host-gameplay-question {
-	margin-bottom: 60px;
+	margin-bottom: 20%;
 	text-align: center;
 }
 

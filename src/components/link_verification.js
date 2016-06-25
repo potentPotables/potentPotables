@@ -30,10 +30,11 @@ class LinkVerification extends Component {
   render(){
     const { handleSubmit, fields: { linkcode }} = this.props;
     return(
+      <div className="verifyContainer">
+      
       <div className="linkVerify">
         <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
 	        <div>
-	          <label className= 'link-code'>Link Code</label>
 	          <input type="text" placeholder="Enter Link Code Here" {...linkcode}/>
 	        </div>
 	        {this.renderAlert()}
@@ -42,6 +43,8 @@ class LinkVerification extends Component {
 	      <div>
 	        <input type="checkbox" onClick={(e) => this.checkBox(e) }/>Join as the host
 	      </div>
+      </div>
+
       </div>
     );
   }
