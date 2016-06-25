@@ -31,7 +31,7 @@ class LinkLanding extends Component {
       <div>Link Code: {this.props.link}</div>
       <div> {usersList}</div>
       <Link to='/gameboard'>
-        <button onClick= {this.handleClick.bind(this)} className="join btn btn-primary">Start Game</button>
+        <button onClick= {this.handleClick.bind(this)} id="startGame" className="a">Start Game</button>
       </Link>
       </div>
     );

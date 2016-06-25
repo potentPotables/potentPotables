@@ -102,7 +102,7 @@ td.clues {
 	font-family: "Swiss-911-Extra-Compressed";
 	background-image: url('http://www.santemaghreb.com/algerie/jicc2009/13_fichiers/master04_background.gif');
 	background-size: 100% 100%;
-    transition: 0.5s;
+  transition: 0.5s;
 }
 
 td.clues:hover {
@@ -165,15 +165,81 @@ td.clues:hover {
 	animation-delay: 3s;
 }
 .linkEnter {
+	margin-top: 30vh;
+	text-align: center; 
 	color: white;
 	font-weight: bolder;
-	font-size: 20px;
+	font-size: 40px;
+}
+
+#startGame {
+	text-decoration: none;
+  color: navy;
+  height: 100px;
+  width: 300px;
+  background: #fee533;
+  position: relative;
+  margin: 50px;
+  padding: 15px;
+  font-size: 40px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 0px 0px #fef299 , 0px 0px 20px 0px #bbb;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+#startGame.a:active {
+	top: 6px;
+	box-shadow: 0px 7px 0px 0px #fef299 ;
+}
+
+#startGame.a:hover {
+	color: white !important;
 }
 
 .linkVerify {
+	margin-top: 30vh;
 	color: white;
 	font-weight: bolder;
-	font-size: 20px;
+	font-size: 40px;
+	text-align: center;
+}
+
+input[type="text"] {
+  max-width: 90%;
+  font-size: 30px;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 4%;
+}
+
+#submit {
+	text-decoration: none;
+  color: navy;
+  height: 100px;
+  width: 300px;
+  background: #fee533;
+  position: relative;
+  margin-bottom: 5%;
+  padding: 15px;
+  font-size: 40px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 0px 0px #fef299 , 0px 0px 20px 0px #bbb;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+#submit.a:active {
+	top: 6px;
+	box-shadow: 0px 7px 0px 0px #fef299 ;
+}
+
+#submit.a:hover {
+	color: white !important;
+}
+
+input[type="checkbox"] {
+  margin: 15px;
 }
 
 .landing {
@@ -188,8 +254,7 @@ td.clues:hover {
 }
 
 #logo {
-	width:	45vw;
-	height:	17vh;
+	max-width: 60%;
 }
 
 .logo-transition-appear {
@@ -609,4 +674,28 @@ img {
 .host-gameplay-question {
 	margin-bottom: 60px;
 	text-align: center;
+}
+/*
+/////////////////
+Hover.css classes
+/////////////////
+*/
+
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
