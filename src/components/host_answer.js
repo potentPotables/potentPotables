@@ -33,17 +33,20 @@ class HostAnswer extends Component{
   render(){
     return(
       <div className= 'gameplay-view'>
-        <div>
-        {this.props.activeUser}
+        <div className= 'host-answer'>
+        {this.props.activeUser !== '' ?
+          <div>Active User: {this.props.activeUser}</div> :
+          <div></div>
+        }
         </div>
-        <div>
+        <div className= 'host-answer'>
         {this.props.activeClue.answer}
         </div>
-        <div>
-          <Link to= '/hostgameplay'>
-            <button className="join btn btn-primary" onClick={this.handleCorrectClick}>Correct</button>
+        <div className= 'row'>
+          <Link to="hostgameplay">
+            <a className="a correct" onClick={this.handleCorrectClick}> Correct </a>
           </Link>
-          <button className="join btn btn-primary" onClick={this.handleIncorrectClick}>Incorrect</button>
+          <a className="a incorrect" onClick={this.handleIncorrectClick}> Incorrect </a>
         </div>
       </div>
 
