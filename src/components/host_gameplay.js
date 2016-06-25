@@ -13,13 +13,18 @@ class HostGamePlay extends Component {
   }
   handleQuestionLength(){
     var tempQuestion= this.props.activeClue.question.split(' ');
+    var flag= false;
     if (tempQuestion.length === 1 && tempQuestion[0].indexOf(',') !== -1){
       tempQuestion= this.props.activeClue.question.split(',');
+      flag= true;
     }
     var results= [];
     var tempResults= [];
     if (tempQuestion.length < 7){
+      if (flag){
       return tempQuestion.join(', ');
+      }
+      return tempQuestion.join(' ');
     }
     else{
       for (var i= 0; i< tempQuestion.length; i++){

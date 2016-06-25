@@ -173,7 +173,7 @@ td.clues:hover {
 }
 .linkEnter {
 	margin-top: 30vh;
-	text-align: center; 
+	text-align: center;
 	color: white;
 	font-weight: bolder;
 	font-size: 40px;
@@ -685,6 +685,38 @@ img {
 .host-gameplay-question {
 	margin-bottom: 60px;
 	text-align: center;
+}
+
+.correct {
+  background: #09b209;
+  background-color: #09b209;
+  box-shadow: 0px 10px 0px 0px #067c06, 0px 0px 20px 0px #bbb;
+  margin-right: 5px;
+  color: white !important;
+}
+
+.correct:active {
+	box-shadow: 0px 7px 0px 0px #067c06;
+}
+
+.incorrect {
+	background: #ec0404;
+	background-color: #ec0404;
+	box-shadow: 0px 10px 0px 0px #a50202, 0px 0px 20px 0px #bbb;
+	margin-left: 5px;
+	color: white;
+}
+
+.incorrect:active {
+	box-shadow: 0px 7px 0px 0px #a50202;
+}
+.host-answer {
+	margin-bottom: 40px;
+	font-size: 60px;
+}
+.row {
+    width: auto;
+    margin-top: 30px;
 }
 /*
 /////////////////
