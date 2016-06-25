@@ -25,10 +25,30 @@ class Gameboard extends Component {
     });
 
     const categories = this.props.categories.map((category, index) => {
+
+      var fontSize;
+      if(category.length <= 5) {
+        fontSize = "38px";
+      } else if(category.length >= 6 && category.length <= 10) {
+        fontSize = "34px"; 
+      } else if (category.length >= 11 && category.length <= 16) {
+        fontSize = "30px"
+      } else if (category.length >= 17 && category.length <= 22) {
+        fontSize = "26px";
+      } else if (category.length >= 23 && category.length <= 28) {
+          fontSize = "22px";
+      } else if (category.length >= 29) {
+          fontSize = "20px";
+      }
+
+      var categoryStyle = {
+        fontSize: fontSize
+      }
+
       return(
         <div>
           <thead>
-            <th className="categories" key={category}>{category}</th>
+            <th className="categories" style={categoryStyle} key={category}>{category}</th>
           </thead>
           <tbody>
             <tr>
