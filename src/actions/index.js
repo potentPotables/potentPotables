@@ -35,7 +35,7 @@ export function linkCodeVerification({linkcode}) {
     axios.post('/linkcode', {linkcode, user: currentState.user.userType})
       .then(response => {
         if(response.data.host){
-          browserHistory.push('/redirect');
+          currentState.user.userType = 'player';
         }
         currentState.user.userType !== 'host' ? browserHistory.push('/userconfig') : browserHistory.push('/hostgameplay');
         joinRoom(response.data.room);
