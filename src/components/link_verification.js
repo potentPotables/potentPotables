@@ -33,7 +33,7 @@ class LinkVerification extends Component {
       <div className="linkVerify">
         <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
 	        <div>
-	          <label>Link Code</label>
+	          <label className= 'link-code'>Link Code</label>
 	          <input type="text" placeholder="Enter Link Code Here" {...linkcode}/>
 	        </div>
 	        {this.renderAlert()}
