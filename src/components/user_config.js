@@ -132,8 +132,8 @@ class userConfig extends Component {
       margin: 'auto'
     }
     return (
-      <div>
-        <div>
+      <div className="configContainer">
+        <div className="selfieContainer">
         <div>
           {this.state.file.length > 0 ?
             <div className= 'centered-Create'>
@@ -150,13 +150,12 @@ class userConfig extends Component {
           }
         </div>
         <div className= 'centered-Create'>
-          <button onClick={ this.removePicture }>Cancel</button>
+          <button className="a cancel" onClick={ this.removePicture }>Cancel</button>
         </div>
         </div>
-        <div>
-          <label>Username</label>
+        <div className = "usernameContainer">
           <input onChange={(e) => this.nameChange(e)} type="text" placeholder="Enter Username Here" value={this.state.username}/>
-          <button type="button" onClick={() => this.handleSubmit(this.state.username, this.state.dataURL)}>Submit</button>
+          <button type="button" id="submitUsername" className="a" onClick={() => this.handleSubmit(this.state.username, this.state.dataURL)}>Submit</button>
         </div>
       </div>
     );
