@@ -16,7 +16,7 @@ export function createSession() {
   return function(dispatch){
     axios.post('/create')
       .then( response => {
-        dispatch({type: CREATE_SESSION, payload: response});
+        dispatch({type: CREATE_SESSION, payload: response.data.session.code});
         browserHistory.push('/linklanding');
       })
   }

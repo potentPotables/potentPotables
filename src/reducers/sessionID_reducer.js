@@ -1,9 +1,11 @@
 import { CREATE_SESSION } from '../actions/index';
 
-export default function (state = "", action) {
+export default function (state = {
+  sessionID: ''
+}, action) {
 	switch(action.type) {
 		case CREATE_SESSION:
-			return state.concat(action.payload.data.session.code);
+			return {...state, sessionID: action.payload};
 		default:
 			return state;
 	}
