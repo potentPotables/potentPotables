@@ -30,7 +30,7 @@ module.exports = function(app, io) {
 	});
 
 	app.post('/linkcode', VerifyCode.verifyCode, function(req, res, next) {
-		res.json({ room: req.body.room });
+		res.json({ room: req.body.room , host: req.body.host});
 	});
 
 	app.post('/close', CloseSession.closeSession, function(req, res, next) {
