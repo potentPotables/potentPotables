@@ -34,11 +34,10 @@ class LinkVerification extends Component {
       <div className="linkVerify">
       <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
         <div>
-          <label>Link Code</label>
           <input type="text" placeholder="Enter Link Code Here" {...linkcode}/>
         </div>
         {this.renderAlert()}
-        <button type="submit">Submit</button>
+        <button type="submit" className="a" id="submit">Submit</button>
       </form>
       <div>
         <input type="checkbox" onClick={(e) => this.checkBox(e) }/>Join as the host
