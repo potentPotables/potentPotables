@@ -212,6 +212,10 @@ td.clues:hover {
 	text-align: center;
 }
 
+.link-code {
+	margin-right: 5px;
+}
+
 input[type="text"] {
   max-width: 90%;
   font-size: 30px;
