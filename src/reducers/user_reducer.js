@@ -3,7 +3,7 @@ import { SET_USER_TYPE, CREATE_USERNAME } from '../actions/index';
 export default function(state = {
   userType: '',
   username: '',
-  photo: ''
+  photo: '',
 }, action) {
   switch(action.type){
     case SET_USER_TYPE:

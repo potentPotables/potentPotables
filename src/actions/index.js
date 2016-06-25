@@ -31,12 +31,15 @@ export function setUserType(value) {
 
 export function linkCodeVerification({linkcode}) {
   return function(dispatch, getState){
-    axios.post('/linkcode', {linkcode})
+    const currentState= getState();
+    axios.post('/linkcode', {linkcode, user: currentState.user.userType})
       .then(response => {
-        const currentState= getState();
+        if(response.data.host){
+          currentState.user.userType = 'player';
+        }
         currentState.user.userType !== 'host' ? browserHistory.push('/userconfig') : browserHistory.push('/hostgameplay');
         joinRoom(response.data.room);
-        dispatch({type: LINK_CODE_AUTH, payload: response.data.room})
+        dispatch({type: LINK_CODE_AUTH, payload: response.data.room});
       })
       .catch(response => {
         dispatch({type: LINK_CODE_ERROR, payload: response});

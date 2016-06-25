@@ -1,7 +1,7 @@
 const Session = require('../models/session');
 
 exports.createSession = function(req, res, next) {
-	const session = new Session({code: null});
+	const session = new Session({code: null, hostExists: false});
 	const str = String(session._id);
 	session.code = str.slice(-5);
 
