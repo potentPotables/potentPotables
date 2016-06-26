@@ -836,3 +836,49 @@ Hover.css classes
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
+
+.bio {
+  color: yellow;
+  width: 54vw;
+  margin-left: 18vw;
+  margin-right: auto;
+  margin-top: 18.5vh;
+  font-family: 'Open Sans';
+}
+
+h1.devName.peter {
+  margin-left: 26vw;
+}
+
+h1.devName.lukas {
+	margin-left: 23vw;
+}
+
+h1.devName.chris {
+	margin-left: 23vw;
+}
+
+.github {
+	display: inline;
+	margin-right: 25px;
+}
+
+.linkedin {
+	display: inline;
+}
+
+.externals {
+  margin-left: 24vw;
+}
+
+.hire.link.peter{
+	margin-left: 29vw;
+}
+
+.hire.link.lukas {
+	margin-left: 28.5vw;
+}
+
+.hire.link.chris {
+	margin-left: 28.5vw
+}
