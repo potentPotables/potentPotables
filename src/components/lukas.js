@@ -16,9 +16,11 @@ export default class Chris extends Component {
 		      </div>
 	      </div>
 	      <div className="sell">Something that screams hire me here.</div>
-	      <Link to="hire/lukas">
-	          Hire Lukas
-	      </Link>
+	      <div className="hire link lukas">
+		      <Link to="hire/lukas">
+		          Hire Lukas
+		      </Link>
+	      </div>
 	    </div>
     );
   }

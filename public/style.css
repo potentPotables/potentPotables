@@ -847,7 +847,7 @@ Hover.css classes
 }
 
 h1.devName.peter {
-  margin-left: 25vw;
+  margin-left: 26vw;
 }
 
 h1.devName.lukas {
@@ -860,6 +860,7 @@ h1.devName.chris {
 
 .github {
 	display: inline;
+	margin-right: 25px;
 }
 
 .linkedin {
@@ -868,4 +869,16 @@ h1.devName.chris {
 
 .externals {
   margin-left: 24vw;
+}
+
+.hire.link.peter{
+	margin-left: 29vw;
+}
+
+.hire.link.lukas {
+	margin-left: 28.5vw;
+}
+
+.hire.link.chris {
+	margin-left: 28.5vw
 }
