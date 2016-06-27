@@ -35,7 +35,7 @@ class LinkVerification extends Component {
       <div className="linkVerify">
         <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
 	        <div>
-	          <input type="text" placeholder="Enter Link Code Here" {...linkcode}/>
+	          <input type="text" id="linkEntry" placeholder="Enter Link Code Here" {...linkcode}/>
 	        </div>
 	        {this.renderAlert()}
 	        <button type="submit" className="a" id="submit">Submit</button>
