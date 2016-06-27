@@ -58,7 +58,7 @@ class HostGamePlay extends Component {
             </Link>
           </div>
         </div>:
-        <div className="waitingClue">
+        <div className="waitingClue animated infinite flash">
           Waiting for clue to be selected...
         </div>
       }

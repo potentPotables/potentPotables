@@ -33,9 +33,9 @@ class Gameboard extends Component {
       } else if(category.length >= 6 && category.length <= 10) {
         fontSize = "34px";
       } else if (category.length >= 11 && category.length <= 16) {
-        fontSize = "30px"
+        fontSize = "28px"
       } else if (category.length >= 17 && category.length <= 22) {
-        fontSize = "26px";
+        fontSize = "24px";
       } else if (category.length >= 23 && category.length <= 28) {
           fontSize = "22px";
       } else if (category.length >= 29) {
@@ -49,7 +49,7 @@ class Gameboard extends Component {
       return(
         <div>
           <thead>
-            <th className="categories" style={categoryStyle} key={category}>{category}</th>
+            <th className="categories animated flipInX" style={categoryStyle} key={category}>{category}</th>
           </thead>
           <tbody>
             <tr>
