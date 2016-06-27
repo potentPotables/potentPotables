@@ -68,6 +68,7 @@ class HostGamePlay extends Component {
 }
 
 function mapStateToProps(state){
+  console.log('inside hostgameplay', state.gameplay.activeClue);
   return {
     isGameActive: state.gameplay.isGameActive,
     activeClue: state.gameplay.activeClue,

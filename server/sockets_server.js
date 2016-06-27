@@ -5,7 +5,6 @@ module.exports.initSockets= function(socket, clients, ioAccess){
   var isButtonClicked= false;
   socket.emit('test', { hello: 'world' });
   socket.on('joinRoom', function(data){
-    console.log(data);
     if (!roomData[data.room]){
       roomData[data.room]= {
         hasClickedButton: false,
@@ -53,7 +52,6 @@ module.exports.initSockets= function(socket, clients, ioAccess){
     }
     socket.join(data.room);
     var clientsFin= clients.rooms[data.room].sockets;
-    console.log('Clients in room include', clientsFin);
   });
   socket.on('createUserSockets', function(data) {
     if(!roomData[data.room].users){

@@ -38,6 +38,7 @@ export function linkCodeVerification({linkcode}) {
           currentState.user.userType = 'player';
         }
         currentState.user.userType !== 'host' ? browserHistory.push('/userconfig') : browserHistory.push('/hostgameplay');
+        console.log('inside linkCodeVeerification');
         joinRoom(response.data.room);
         dispatch({type: LINK_CODE_AUTH, payload: response.data.room});
       })

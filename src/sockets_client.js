@@ -1,6 +1,6 @@
 import io from 'socket.io-client';
 
-var socket = io('http://52.38.175.65');
+var socket = io();
 
 export const ADD_NEW_USER = 'ADD_NEW_USER';
 export const SET_ACTIVE_USER = 'SET_ACTIVE_USER';
@@ -35,7 +35,6 @@ export function initSockets(store){
   });
 
   socket.on('currentClue', function(data) {
-    console.log('inside clients clue', data);
     store.dispatch({type: SET_ACTIVE_CLUE, payload: data.clue});
   });
 
