@@ -242,9 +242,10 @@ td.clues:hover {
 }
 
 .linkVerify {
-	margin-top: 30vh;
+	width: 75vw;
+	margin-top: 20vh;
 	font-weight: bolder;
-	font-size: 40px;
+	font-size: 3em;
 	text-align: center;
 }
 
@@ -253,18 +254,18 @@ td.clues:hover {
 }
 
 input[type="text"] {
-  max-width: 90%;
-  font-size: 30px;
+  width: 100%;
+  font-size: 90%;
   text-align: center;
   padding: 10px;
-  margin-bottom: 4%;
+  margin-bottom: 15%;
 }
 
 #submit {
 	text-decoration: none;
   color: navy;
-  height: 100px;
-  width: 300px;
+  height: 15vh;
+  width: 65vw;
   background: #fee533;
   position: relative;
   margin-bottom: 15%;

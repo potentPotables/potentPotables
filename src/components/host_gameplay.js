@@ -44,7 +44,7 @@ class HostGamePlay extends Component {
     return (
       <div className= 'gameplay-view'>
       {this.props.isGameActive === false ?
-        <div className="waitingGame">
+        <div className="waitingGame animated infinite flash">
           Waiting for game to Begin...
         </div> :
         Object.keys(this.props.activeClue).length > 0 ?
