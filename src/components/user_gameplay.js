@@ -59,7 +59,7 @@ class UserGameplay extends Component {
         </div>
         <div className= 'btn-container'>
         {this.props.isGameActive === false ?
-          <div>
+          <div className="animated infinite flash">
             Waiting for game to Begin...
           </div> :
           this.props.isButtonDisabled ?
@@ -70,7 +70,7 @@ class UserGameplay extends Component {
               <a id="gamebuttonDisabled" disabled= {true} >
                   <span>{buttonConfig}</span>
               </a> :
-              <a id="gamebutton" >
+              <a id="gamebutton" className="animated infinite pulse" >
                   <span onClick= {this.handleBuzz.bind(this)}>{buttonConfig}</span>
               </a>
         }
@@ -84,7 +84,7 @@ class UserGameplay extends Component {
         </div>
         <div className="buttons">
           <Link to="scoreboard">
-            <a className="button1 a" >Go to Scoreboard </a>
+            <a className="button1 a" id="scoreButton" >Go to Scoreboard </a>
           </Link>
         </div>
       </div>

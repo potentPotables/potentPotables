@@ -54,7 +54,7 @@ class HostGamePlay extends Component {
           </div>
           <div className="buttons-question">
             <Link to='/hostanswer'>
-              <a onClick={this.handleClick.bind(this)} className="button1 a" >Activate Users</a>
+              <a onClick={this.handleClick.bind(this)} className="button1 a" id="activateUsers">Activate Users</a>
             </Link>
           </div>
         </div>:
