@@ -9,7 +9,7 @@ const UsersListEntry = (props) =>{
         <Avatar src= {props.photo} size= {100} disabled= {true}/>
         {props.username}
       </div> :
-      <div>props.username</div>
+      <div>{props.username}</div>
     }
     </div>
   );

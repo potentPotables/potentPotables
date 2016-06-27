@@ -12,8 +12,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { persistStore, autoRehydrate } from 'redux-persist';
 
 const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
-const store = createStoreWithMiddleware(reducers, undefined, autoRehydrate());
-persistStore(store);
+const store = createStoreWithMiddleware(reducers);
+//persistStore(store);
 initSockets(store);
 
 ReactDOM.render(

@@ -10,6 +10,7 @@ class Gameboard extends Component {
   handleSetActiveClue(clue, room){
     setActiveClue(clue, room);
     this.props.setActiveClueGameboard(clue);
+    //console.log('inside Set Active Clue');
   }
 
   render() {
@@ -30,7 +31,7 @@ class Gameboard extends Component {
       if(category.length <= 5) {
         fontSize = "38px";
       } else if(category.length >= 6 && category.length <= 10) {
-        fontSize = "34px"; 
+        fontSize = "34px";
       } else if (category.length >= 11 && category.length <= 16) {
         fontSize = "30px"
       } else if (category.length >= 17 && category.length <= 22) {
@@ -78,7 +79,7 @@ function mapStateToProps(state){
     categories: state.gameboard.categories,
     clues: state.gameboard.clues,
     answeredClues: state.gameplay.answeredClues,
-    room: state.sessionID,
+    room: state.sessionID.sessionID,
     correct: state.gameplay.correct,
     incorrect: state.gameplay.incorrect,
   };
