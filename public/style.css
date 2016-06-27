@@ -108,7 +108,7 @@ td.clues {
 	font-family: "Swiss-911-Extra-Compressed";
 	background-image: url('http://www.santemaghreb.com/algerie/jicc2009/13_fichiers/master04_background.gif');
 	background-size: 100% 100%;
-  transition: 0.5s;
+  	transition: 0.5s;
 }
 
 td.clues:hover {
@@ -159,13 +159,15 @@ td.clues:hover {
 .waitingGame {
 	color: white;
 	font-weight: bolder;
-	font-size: 20px;
+	font-size: 30px;
+	margin-bottom: 20vh;
 }
 
 .waitingClue {
 	color: white;
 	font-weight: bolder;
-	font-size: 20px;
+	font-size: 30px;
+	margin-bottom: 20vh;
 }
 
 .links {
@@ -284,7 +286,8 @@ input[type="text"] {
 }
 
 input[type="checkbox"] {
-  margin: 15px;
+  margin: 15px 50px 15px 15px;
+  transform: scale(3);
 }
 
 input[type="checkbox"]:hover {
@@ -477,6 +480,7 @@ ul.why li {
 
 #trebek {
 	background-image: url('./assets/trebek_default.png');
+	display: inline-block;
 }
 
 .round-button {
@@ -812,30 +816,23 @@ img {
     width: auto;
     margin-top: 30px;
 }
+
 /*
-/////////////////
-Hover.css classes
-/////////////////
+///////////////////
+Animate.css classes
+///////////////////
 */
 
-.hvr-grow {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
+.flash {
+	animation-duration: 5s !important;
 }
-.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+
+.fadeInX {
+	animation-duration: 1.5s !important;
 }
+
+/*
+*/
 
 .bio {
   color: yellow;
