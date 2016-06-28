@@ -32,8 +32,8 @@ class HostAnswer extends Component{
 
   render(){
     return(
-      <div className= 'gameplay-view'>
-        <div className= 'host-answer'>
+      <div className= 'host-view'>
+        <div className= 'active-user'>
         {this.props.activeUser !== '' ?
           <div>Active User: {this.props.activeUser}</div> :
           <div></div>
