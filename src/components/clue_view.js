@@ -15,8 +15,11 @@ class ClueView extends Component {
   }
 
   componentDidUpdate(){
+    if(Object.keys(this.props.answeredClues).length === 60){
+      return this.context.router.push('/end');
+    }
     console.log('calling will receive props', this.props.activeClue);
-      this.context.router.push('/gameboard');
+    this.context.router.push('/gameboard');
   }
 
   render() {

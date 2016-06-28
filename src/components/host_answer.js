@@ -60,6 +60,7 @@ function mapStateToProps(state){
     activeClue: state.gameplay.activeClue,
     activeUser: state.gameplay.activeUser,
     room: state.linkAuth.linkCode,
+    answeredClues: state.gameplay.answeredClues,
   };
 }
 

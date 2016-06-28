@@ -7,6 +7,13 @@ var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
 
 class Gameboard extends Component {
+  componentDidMount() {
+    if(Object.keys(this.props.answeredClues).length === 30) {
+      var dbl = new Audio('http://www.qwizx.com/gssfx/usa/jeop-dj84woosh.wav');
+      dbl.play();
+    }
+  }
+
   handleSetActiveClue(clue, room){
     setActiveClue(clue, room);
     this.props.setActiveClueGameboard(clue);
