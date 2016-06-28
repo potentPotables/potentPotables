@@ -1,6 +1,6 @@
 import { CREATE_GAME} from '../actions/index';
 
-export default function(state = {
+export default function( state = {
   categories: null,
   clues: null,
 }, action) {

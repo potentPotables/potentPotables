@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { fetchRoundTwo } from '../actions/index';
 
 var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
 class ClueView extends Component {
   static contextTypes = {
     router: React.PropTypes.object
+  }
+  componentDidMount() {
+    if(Object.keys(this.props.answeredClues).length === 30){
+      this.props.fetchRoundTwo();
+    }
   }
 
   componentDidUpdate(){
@@ -27,7 +33,10 @@ class ClueView extends Component {
 }
 
 function mapStateToProps(state){
-  return {activeClue: state.gameplay.activeClue};
+  return {
+    activeClue: state.gameplay.activeClue,
+    answeredClues: state.gameplay.answeredClues,
+  };
 }
 
-export default connect(mapStateToProps)(ClueView);
+export default connect(mapStateToProps, { fetchRoundTwo })(ClueView);
