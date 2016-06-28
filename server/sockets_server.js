@@ -37,15 +37,33 @@ module.exports.initSockets= function(socket, clients, ioAccess){
               roomData[room].incorrectUserCount= 0;
               ioAccess.in(room).emit('skipIncorrect', {username: username, score: roomData[room].users[username].score});
             },
+            declareIncorrect: function(room, username, clue){
+              roomData[room].isButtonClicked= false;
+              roomData[room].activeUser= '';
+              roomData[room].users[username].score -= clue.value;
+              roomData[room].generalUserTimeout.generalTimeoutFn(room);
+              roomData[room].incorrectUserCount ++;
+              ioAccess.in(room).emit('incorrect', {username: username, score: roomData[room].users[username].score} );
+            },
+            declareTimeout: null,
             activeTimeout: null,
             activeTimeoutFn: function(room, username, clue){
               var that= this;
               var tempFn= function(){return that.skipIncorrect(room, username, clue)};
               return this.activeTimeout= setTimeout(tempFn, 10000);
             },
+            declareTimeoutFn: function(room, username, clue){
+              var that= this;
+              var tempFn= function(){return that.declareIncorrect(room, username, clue)};
+              return this.declareTimeout= setTimeout(tempFn, 10000);
+            },
             clearActiveTimeout: function(){
               var that= this;
               clearTimeout(that.activeTimeout);
+            },
+            clearDeclareTimeout: function(){
+              var that= this;
+              clearTimeout(that.declareTimeout);
             }
           }
       }
@@ -66,7 +84,11 @@ module.exports.initSockets= function(socket, clients, ioAccess){
       roomData[data.room].isButtonClicked= true;
       roomData[data.room].activeUser= data.username;
       roomData[data.room].generalUserTimeout.clearGeneralTimeout();
-      roomData[data.room].activeUserTimeout.activeTimeoutFn(data.room, data.username, data.clue);
+      if (roomData[data.room].incorrectUserCount === roomData[data.room].usersCount -1){
+        roomData[data.room].activeUserTimeout.activeTimeoutFn(data.room, data.username, data.clue);
+      }else{
+        roomData[data.room].activeUserTimeout.declareTimeoutFn(data.room, data.username, data.clue);
+      }
     }
     ioAccess.in(data.room).emit('setActiveUser', {username: roomData[data.room].activeUser, isButtonClicked: true});
   });
@@ -80,6 +102,7 @@ module.exports.initSockets= function(socket, clients, ioAccess){
     roomData[data.room].incorrectUserCount ++;
     if (roomData[data.room].incorrectUserCount === roomData[data.room].usersCount){
       roomData[data.room].activeUserTimeout.clearActiveTimeout();
+      roomData[data.room].activeUserTimeout.clearDeclareTimeout();
       roomData[data.room].activeUserTimeout.skipIncorrect(data.room, data.username, data.clue);
     }
     else{
@@ -87,6 +110,7 @@ module.exports.initSockets= function(socket, clients, ioAccess){
       roomData[data.room].activeUser= '';
       roomData[data.room].users[data.username].score -= data.clue.value;
       roomData[data.room].activeUserTimeout.clearActiveTimeout();
+      roomData[data.room].activeUserTimeout.clearDeclareTimeout();
       roomData[data.room].generalUserTimeout.generalTimeoutFn(data.room);
       ioAccess.in(data.room).emit('incorrect', {username: data.username, score: roomData[data.room].users[data.username].score} );
     }
@@ -97,6 +121,7 @@ module.exports.initSockets= function(socket, clients, ioAccess){
     roomData[data.room].activeUser= '';
     roomData[data.room].users[data.username].score += data.value;
     roomData[data.room].activeUserTimeout.clearActiveTimeout();
+    roomData[data.room].activeUserTimeout.clearDeclareTimeout();
     roomData[data.room].incorrectUserCount= 0;
     ioAccess.in(data.room).emit('correct', {username: data.username, score: roomData[data.room].users[data.username].score} );
   });
