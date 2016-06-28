@@ -862,6 +862,63 @@ a.button1.a {
     margin-top: 30px;
 }
 
+.scoreboard-transition-appear {
+	transform: scale(.1);
+}
+
+.scoreboard-transition-appear.scoreboard-appear-active {
+	transform: scale(1);
+  transition: all 0.75s ease-in-out;
+}
+
+#scoreboardContainer {
+    width: 62vw;
+    height: 63vh;
+    margin-left: 19vw;
+    margin-top: 24vh;
+    text-align: center;
+}
+
+#scoreboard-header {
+  font-family: 'Gyparody';
+  color: yellow;
+  font-size: 6em;
+  text-align: center;
+}
+
+.user-score {
+	float: right;
+	font-family: "Swiss-911-Extra-Compressed";
+}
+
+.scoreboard-scores {
+	font-size: 2em;
+	color: white;
+	font-weight: bold;
+}
+
+.back {
+	position: static;
+	padding: 0.25em;
+	font-size: 4em;
+	background: #ec0404;
+	background-color: #ec0404;
+	box-shadow: 0px 10px 0px 0px #a50202, 0px 0px 20px 0px #bbb;
+	color: white !important;
+	width: 20vw;
+	height: 7vh;
+}
+
+.back:active {
+	box-shadow: 0px 7px 0px 0px #067c06;
+}
+
+/*.backContainer {
+  width: 50%;
+  margin-top: 42vh;
+  margin-left: 23vw;
+}*/
+
 /*
 ///////////////////
 Animate.css classes

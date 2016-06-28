@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import Clue from './clue';
 import { setActiveClue } from '../sockets_client';
 import { setActiveClueGameboard } from '../actions/index';
-var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
 
 class Gameboard extends Component {

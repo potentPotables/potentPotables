@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import _ from 'lodash';
 
+
 class Scoreboard extends Component {
 
   static contextTypes = {
@@ -16,18 +17,23 @@ class Scoreboard extends Component {
   render(){
   	const scores = _.map(this.props.users, function(user) {
   		return (
-  			<div key={user.username}>
-  				{user.username}: ${user.score}
+  			<div key={user.username} style={{border: "2px outset yellow", padding: "1%"}}>
+  				{user.username}: <span className="user-score">${user.score}</span>
   			</div>
   		);
   	});
 
     return (
-    	<Link to="usergameplay">
-        <div>
-        	{ scores }
+        <div id="scoreboardContainer" className="animated flipInY">
+          <div id="scoreboard-header" className=" animated infinite pulse">SCOREBOARD</div>
+    	     
+          <div className="scoreboard-scores">
+        	 { scores }
+          </div>
+          <Link to="usergameplay">
+            <a className="a back">Back</a>
+          </Link>
         </div>
-      </Link>
     );
   }
 }
