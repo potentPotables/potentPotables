@@ -64,14 +64,14 @@ class UserGameplay extends Component {
           </div> :
           this.props.isButtonDisabled ?
             <a id="gamebuttonDisabled" className= 'game-button' disabled= {true}>
-                <span >{buttonConfig}</span>
+                <span className="buttonSize">{buttonConfig}</span>
             </a> :
             this.props.hasAnsweredUsers.indexOf(this.props.username) !== -1 ?
               <a id="gamebuttonDisabled" disabled= {true} >
-                  <span>{buttonConfig}</span>
+                  <span className="buttonSize">{buttonConfig}</span>
               </a> :
               <a id="gamebutton" className="animated infinite pulse" >
-                  <span onClick= {this.handleBuzz.bind(this)}>{buttonConfig}</span>
+                  <span className="buttonSize" onClick= {this.handleBuzz.bind(this)}>{buttonConfig}</span>
               </a>
         }
         </div>

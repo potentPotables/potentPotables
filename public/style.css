@@ -174,7 +174,7 @@ td.clues:hover {
 
 .links {
 	animation-delay: 3s;
-	margin-top: 10vh;
+	margin-top: 7.5vh;
 }
 .linkEnter {
 	margin-top: 30vh;
@@ -212,12 +212,12 @@ td.clues:hover {
 #submitUsername {
 	text-decoration: none;
   color: navy;
-  height: 100px;
-  width: 300px;
+  height: 10vh;
+  width: 50vw;
   background: #fee533;
   position: relative;
   padding: 15px;
-  font-size: 40px;
+  font-size: 5em;
   border-radius: 15px;
   box-shadow: 0px 10px 0px 0px #fef299 , 0px 0px 20px 0px #bbb;
   transition: all 0.2s;
@@ -268,12 +268,12 @@ input[type="text"] {
 	text-decoration: none;
   color: navy;
   height: 15vh;
-  width: 65vw;
+  width: 55vw;
   background: #fee533;
   position: relative;
   margin-bottom: 15%;
   padding: 15px;
-  font-size: 40px;
+  font-size: 1.5em;
   border-radius: 15px;
   box-shadow: 0px 10px 0px 0px #fef299 , 0px 0px 20px 0px #bbb;
   transition: all 0.2s;
@@ -440,6 +440,9 @@ u:hover {
     color: white !important;
     padding: 0px !important;
     margin-top: 0vh !important;
+    font-size: 3em !important;
+    width: 30vw !important;
+    height: 5vh !important;
 }
 
 .cancel:active {
@@ -453,7 +456,7 @@ u:hover {
 
 .text-center {
   text-align: center;
-  margin-top: 5vh;
+  margin-top: 3vh;
   text-transform: uppercase;
   font-size: 2em;
 }
@@ -466,6 +469,10 @@ u:hover {
 .usernameContainer {
 	text-align: center;
 	margin-top: 10vh;
+}
+
+#enterUsername {
+	width: 90%;
 }
 
 /*ul.why{
@@ -636,12 +643,19 @@ a[disabled] {
   font-size: 30px;
 }
 
+.buttonSize {
+	width: 50vw;
+	height: 29vh;
+}
+
 .score {
+	font-size: 2em;
 	flex-grow: 2;
 	margin: 5px;
 }
 
 .buzz-alert {
+	font-size: 1.5em;
 	flex-grow: 2;
 	margin: 5px;
 }
@@ -653,6 +667,7 @@ a[disabled] {
 }
 
 #scoreButton {
+	padding: 0.5em;
 	font-size: 2em;
 }
 
@@ -661,6 +676,7 @@ a[disabled] {
 }
 
 .avatar {
+	font-size: 1.5em;
 	margin-top: 20px;
 	text-align: center;
 	flex-grow: 3;
@@ -793,14 +809,14 @@ img {
 	image-rendering: crisp-edges;
 }
 .host-gameplay-question {
-	margin-bottom: 20vh;
+	margin: 0vh 5vw 20vh 5vw;
 	text-align: center;
 	font-weight: bolder;
-	font-size: 1.25em;
+	font-size: 1.5em;
 }
 
 a#activateUsers {
-	font-size: 2.5em;
+	font-size: 4em;
 }
 
 a.button1.a {
@@ -808,7 +824,8 @@ a.button1.a {
 }
 
 .correct {
-	font-size: 4em;
+	padding: 0.25em;
+	font-size: 3em;
   background: #09b209;
   background-color: #09b209;
   box-shadow: 0px 10px 0px 0px #067c06, 0px 0px 20px 0px #bbb;
@@ -821,11 +838,12 @@ a.button1.a {
 }
 
 .incorrect {
-	font-size: 4em;
+	padding: 0.25em;
+	font-size: 3em;
 	background: #ec0404;
 	background-color: #ec0404;
 	box-shadow: 0px 10px 0px 0px #a50202, 0px 0px 20px 0px #bbb;
-	margin-left: 5px;
+	margin-left: 5vw;
 	color: white;
 }
 

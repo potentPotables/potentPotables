@@ -155,7 +155,7 @@ class userConfig extends Component {
         </div>
         <div className = "usernameContainer">
           <div>
-            <input onChange={(e) => this.nameChange(e)} type="text" placeholder="Enter Username Here" value={this.state.username}/>
+            <input onChange={(e) => this.nameChange(e)} id="enterUsername" type="text" placeholder="Enter Username Here" value={this.state.username}/>
           </div>
           <div>
             <button type="button" id="submitUsername" className="a" onClick={() => this.handleSubmit(this.state.username, this.state.dataURL)}>Submit</button>
