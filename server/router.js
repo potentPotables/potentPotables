@@ -15,6 +15,7 @@ module.exports = function(app, io) {
 	});
 
 	app.get('/favicon.ico', function(req, res) {
+		res.sendFile(path.resolve(__dirname + 'favicon.ico'));
 	});
 
 	app.get('/bundle.js', function(req, res) {

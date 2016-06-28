@@ -40,7 +40,8 @@ class LinkLanding extends Component {
 
 function mapStateToProps(state) {
   console.log('insidestate', state.sessionID.sessionID);
-  return {link: state.sessionID.sessionID,
-          users: state.gameplay.users};
+  return {
+    link: state.sessionID.sessionID,
+    users: state.gameplay.users};
 }
 export default connect(mapStateToProps, { fetchGame, closeSession })(LinkLanding)
