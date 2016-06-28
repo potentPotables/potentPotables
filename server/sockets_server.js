@@ -115,9 +115,12 @@ module.exports.initSockets= function(socket, clients, ioAccess){
     roomData[data.room].users[data.username].score -= data.clue.value;
     consonle.log('insideserverskipincorrect');
     ioAccess.in(data.room).emit('skipIncorrect', {username: data.username, score: roomData[data.room].users[data.username].score});
-  })
+  });
   socket.on('activateButtons', function(data) {
     roomData[data.room].generalUserTimeout.generalTimeoutFn(data.room);
     ioAccess.in(data.room).emit('enableButtons');
+  });
+  socket.on('dbl', function(data) {
+    ioAccess.in(data.room).emit('dbl');
   });
 }
