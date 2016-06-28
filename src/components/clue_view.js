@@ -16,7 +16,7 @@ class ClueView extends Component {
 
   componentDidUpdate(){
     if(Object.keys(this.props.answeredClues).length === 60){
-      this.context.router.push('/end');
+      return this.context.router.push('/end');
     }
     console.log('calling will receive props', this.props.activeClue);
     this.context.router.push('/gameboard');
