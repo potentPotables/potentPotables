@@ -9,7 +9,8 @@ class userConfig extends Component {
     super(props);
     this.state = {username: '',
                   file: [],
-                  dataURL: ''};
+                  dataURL: ''
+                  };
     this.onDrop = this.onDrop.bind(this);
     this.removePicture = this.removePicture.bind(this);
   }
@@ -105,8 +106,18 @@ class userConfig extends Component {
 
   nameChange(e) {
     this.setState({username: e.target.value});
+    console.log('insideNameChange', this.state.username.length);
   }
-
+  validateUsername(){
+    if (this.state.username.length > 12){
+      return  <div className="alert alert-danger">
+                Username must be less than 13 characters!
+              </div>
+    }
+    else{
+      return <div></div>
+    }
+  }
   handleSubmit(username, photo) {
     this.props.createUser(username, photo);
   }
@@ -156,6 +167,7 @@ class userConfig extends Component {
         <div className = "usernameContainer">
           <div>
             <input onChange={(e) => this.nameChange(e)} id="enterUsername" type="text" placeholder="Enter Username Here" value={this.state.username}/>
+            {this.validateUsername()}
           </div>
           <div>
             <button type="button" id="submitUsername" className="a" onClick={() => this.handleSubmit(this.state.username, this.state.dataURL)}>Submit</button>
