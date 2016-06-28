@@ -928,3 +928,29 @@ h1.devName.chris {
 .hire.link.chris {
 	margin-left: 28.5vw
 }
+
+#end {
+	color: yellow;
+	width: 64vw;
+	margin-left: 40vw;
+	margin-right: auto;
+	margin-top: 16.5vh;
+	font-family: 'Open Sans';
+}
+
+.thankyou {
+	font-family: 'Gyparody';
+	font-size: 49px;
+}
+
+.final.header {
+	margin-left: 9vw;
+}
+
+span.finalscore {
+  float: right;
+}
+
+.final.scores {
+	width: 22.5vw;
+}
