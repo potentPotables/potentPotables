@@ -14,7 +14,7 @@ class InfoIndex extends Component {
 		return (
 			<div className ="landing">
 				<ReactCSSTransitionGroup transitionName="logo-transition" transitionAppear={true} transitionAppearTimeout={2000}>
-					<div className="logo-holder"><img id="logo" src="http://52.38.175.65/assets/logo.png"/></div>
+					<div className="logo-holder"><img id="logo" src="http://50.112.42.29/assets/logo.png"/></div>
 				</ReactCSSTransitionGroup>
 				<div className="buttons animated bounceIn">
 					<a className="create a" onClick={this.props.createSession}>Create a Game</a>
