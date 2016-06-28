@@ -26,6 +26,10 @@ class HostAnswer extends Component{
 
   componentDidUpdate(){
     if (Object.keys(this.props.activeClue).length === 0){
+      if(Object.keys(this.props.answeredClues).length === 30){
+        var dbl = new Audio('http://www.qwizx.com/gssfx/usa/jeop-dj84woosh.wav');
+        dbl.play();
+      }
       this.context.router.push('/hostgameplay');
     }
   }
@@ -60,6 +64,7 @@ function mapStateToProps(state){
     activeClue: state.gameplay.activeClue,
     activeUser: state.gameplay.activeUser,
     room: state.linkAuth.linkCode,
+    answeredClues: state.gameplay.answeredClues,
   };
 }
 
