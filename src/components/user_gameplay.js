@@ -26,7 +26,7 @@ class UserGameplay extends Component {
   }
 
   handleBuzz(){
-    const buzz = new Audio('http://52.38.175.65/game_buzz.wav');
+    const buzz = new Audio('http://50.112.42.29/game_buzz.wav');
     console.log('inside user gameplay handleBuzz');
     buzz.play();
     sendButtonClick(this.props.username, this.props.linkCode, this.props.activeClue);

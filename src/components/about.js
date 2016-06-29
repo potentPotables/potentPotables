@@ -10,18 +10,18 @@ export default class About extends Component {
             Technology:
           </h2>
             <div id="stack">
-              <img className="logo" id="react" src="http://52.38.175.65/tech_logos/react.png" height="65" width="65"/>
-              <img className="logo" id="redux" src="http://52.38.175.65/tech_logos/redux.png" height="65" width="65"/>
-              <img className="logo" id="webpack" src="http://52.38.175.65/tech_logos/webpack.png" height="65" width="65"/>
-              <img className="logo" id="socket" src="http://52.38.175.65/tech_logos/socket.png" height="65" width="65"/>
-              <img className="logo" id="node" src="http://52.38.175.65/tech_logos/nodejs.png" height="65" width="65"/>
-              <img className="logo" id="express" src="http://52.38.175.65/tech_logos/express.png" height="55" width="205"/>
-              <img className="logo" id="mongodb" src="http://52.38.175.65/tech_logos/mongodb.png" height="65" width="65"/>
-              <img className="logo" id="chai" src="http://52.38.175.65/tech_logos/chai.png" height="65" width="65"/>
-              <img className="logo" id="mocha" src="http://52.38.175.65/tech_logos/mocha.png" height="65" width="65"/>
-              <img className="logo" id="phantomjs" src="http://52.38.175.65/tech_logos/phantomjs.png" height="65" width="65"/>
-              <img className="logo" id="casperjs" src="http://52.38.175.65/tech_logos/casper.png" height="80" width="65"/>
-              <img className="logo" id="aws" src="http://52.38.175.65/tech_logos/aws.png" height="65" width="125"/>
+              <img className="logo" id="react" src="http://50.112.42.29/tech_logos/react.png" height="65" width="65"/>
+              <img className="logo" id="redux" src="http://50.112.42.29/tech_logos/redux.png" height="65" width="65"/>
+              <img className="logo" id="webpack" src="http://50.112.42.29/tech_logos/webpack.png" height="65" width="65"/>
+              <img className="logo" id="socket" src="http://50.112.42.29/tech_logos/socket.png" height="65" width="65"/>
+              <img className="logo" id="node" src="http://50.112.42.29/tech_logos/nodejs.png" height="65" width="65"/>
+              <img className="logo" id="express" src="http://50.112.42.29/tech_logos/express.png" height="55" width="205"/>
+              <img className="logo" id="mongodb" src="http://50.112.42.29/tech_logos/mongodb.png" height="65" width="65"/>
+              <img className="logo" id="chai" src="http://50.112.42.29/tech_logos/chai.png" height="65" width="65"/>
+              <img className="logo" id="mocha" src="http://50.112.42.29/tech_logos/mocha.png" height="65" width="65"/>
+              <img className="logo" id="phantomjs" src="http://50.112.42.29/tech_logos/phantomjs.png" height="65" width="65"/>
+              <img className="logo" id="casperjs" src="http://50.112.42.29/tech_logos/casper.png" height="80" width="65"/>
+              <img className="logo" id="aws" src="http://50.112.42.29/tech_logos/aws.png" height="65" width="125"/>
             </div>
           <div>
             <ul className="why">
@@ -40,7 +40,7 @@ export default class About extends Component {
             </h2>
             <div className="parent">
               <div className="peter">
-                <img id="peter" src="http://52.38.175.65/assets/peter.jpg" />
+                <img id="peter" src="http://50.112.42.29/assets/peter.jpg" />
                 <div>
                   <Link to="peter">
                     Peter Dinh
@@ -48,7 +48,7 @@ export default class About extends Component {
                 </div>
               </div>
               <div className="lukas">
-                <img id="lukas" src="http://52.38.175.65/assets/lukas.jpg" />
+                <img id="lukas" src="http://50.112.42.29/assets/lukas.jpg" />
                 <div>
                   <Link to="lukas">
                     Lukas Stuart-Fry
@@ -56,7 +56,7 @@ export default class About extends Component {
                 </div>
               </div>
               <div className="chris">
-                <img id="chris" src="http://52.38.175.65/assets/chris.jpg" />
+                <img id="chris" src="http://50.112.42.29/assets/chris.jpg" />
                 <div>
                   <Link to="chris">
                     Chris Loncarich
