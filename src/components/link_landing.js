@@ -13,11 +13,7 @@ class LinkLanding extends Component {
   }
 
   handleClick() {
-    checkForHost();
-    const start = new Audio('http://www.qwizx.com/gssfx/usa/jboardfill.wav');
-    start.play();
-    this.props.closeSession(this.props.link);
-    startGame(this.props.link);
+    checkForHost(this.props.link);
   }
 
   render() {

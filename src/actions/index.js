@@ -7,6 +7,7 @@ export const SET_USER_TYPE= 'SET_USER_TYPE';
 export const CREATE_USERNAME= 'CREATE_USERNAME';
 export const LINK_CODE_AUTH= 'LINK_CODE_AUTH';
 export const LINK_CODE_ERROR= 'LINK_CODE_ERROR';
+export const START_GAME_ERROR = 'START_GAME_ERROR';
 export const CREATE_GAME= 'CREATE_GAME';
 export const ACTIVATE_GAME= 'ACTIVATE_GAME';
 export const SET_ACTIVE_CLUE= 'SET_ACTIVE_CLUE';
@@ -52,8 +53,11 @@ export function checkForHost({linkcode}) {
   return function(dispatch) {
     axios.post('/check', { linkcode })
       .then(response => {
-        browserHistory.push('/gameboard');
-        
+        console.log('inside response', response);
+        // browserHistory.push('/gameboard');
+        // const start = new Audio('http://www.qwizx.com/gssfx/usa/jboardfill.wav');
+        // start.play();
+        // startGame(this.props.link);
       })
       .catch(response => {
         dispatch({type: START_GAME_ERROR, payload: response})
