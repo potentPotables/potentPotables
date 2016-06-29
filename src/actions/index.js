@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
-import { joinRoom, createUserSockets } from '../sockets_client';
+import { joinRoom, createUserSockets, startGame } from '../sockets_client';
 
 export const CREATE_SESSION = 'CREATE_SESSION';
 export const SET_USER_TYPE= 'SET_USER_TYPE';
@@ -44,6 +44,19 @@ export function linkCodeVerification({linkcode}) {
       })
       .catch(response => {
         dispatch({type: LINK_CODE_ERROR, payload: response});
+      })
+  }
+}
+
+export function checkForHost({linkcode}) {
+  return function(dispatch) {
+    axios.post('/check', { linkcode })
+      .then(response => {
+        browserHistory.push('/gameboard');
+        
+      })
+      .catch(response => {
+        dispatch({type: START_GAME_ERROR, payload: response})
       })
   }
 }
