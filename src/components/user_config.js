@@ -130,7 +130,9 @@ class userConfig extends Component {
       borderColor: '#666',
       borderStyle: 'dashed',
       borderRadius: 5,
-      margin: 'auto'
+      margin: 'auto',
+      backgroundColor: 'white',
+      color: 'black'
     }
 
     const activeStyleDropzone= {
@@ -140,8 +142,11 @@ class userConfig extends Component {
       borderColor: '#666',
       borderStyle: 'dashed',
       borderRadius: 5,
-      margin: 'auto'
+      margin: 'auto',
+      backgroundColor: 'white',
+      color: 'black'
     }
+    
     return (
       <div className="configContainer">
         <div className="selfieContainer">
@@ -154,14 +159,14 @@ class userConfig extends Component {
             <div>
               <div>
               <Dropzone style= { styleDropzone } onDrop={this.onDrop} accept="image/*">
-                <div className= 'text-center'>Snap a Selfie!</div>
+                <div className='text-center animated infinite flash'>Snap a Selfie!</div>
               </Dropzone>
               </div>
             </div>
           }
         </div>
         <div className= 'centered-Create'>
-          <button className="a cancel" onClick={ this.removePicture }>Cancel</button>
+          <button className="a cancel" onClick={ this.removePicture }>cancel</button>
         </div>
         </div>
         <div className = "usernameContainer">
