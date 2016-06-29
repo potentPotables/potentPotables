@@ -77,7 +77,7 @@ class UserGameplay extends Component {
         </div>
         <div className= 'avatar'>
           {this.props.userPhoto !== '' ?
-            <Avatar src= {this.props.userPhoto} size= {80}/> :
+            <Avatar src= {this.props.userPhoto} size= {120}/> :
             <div></div>
           }
           <div>{this.props.username}</div>

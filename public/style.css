@@ -1,5 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
+@media (orientation: landscape) {
+  body {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+}
+
 html, body {
   position: relative;
   background-image: url('./assets/gameboard_background.gif');
@@ -164,6 +174,7 @@ td.clues:hover {
   margin: 50px;
   padding: 15px;
   font-size: 40px;
+  font-family: "Gyparody";
   border-radius: 15px;
   box-shadow: 0px 10px 0px 0px #fef299 , 0px 0px 20px 0px #bbb;
   transition: all 0.2s;
@@ -244,6 +255,7 @@ input[type="text"] {
   margin-bottom: 15%;
   padding: 15px;
   font-size: 1.5em;
+  font-family: "Gyparody";
   border-radius: 15px;
   box-shadow: 0px 10px 0px 0px #fef299 , 0px 0px 20px 0px #bbb;
   transition: all 0.2s;
@@ -651,6 +663,7 @@ a[disabled] {
 #scoreButton {
 	padding: 0.5em;
 	font-size: 2em;
+	font-family: "Gyparody"
 }
 
 #linkEntry {
@@ -679,7 +692,7 @@ a[disabled] {
 	color: navy;
 	width: 150px;
 	height: 50px;
-	font-family: Gyparody;
+	font-family: "Gyparody";
 	background: #fee533 ;
 	position: relative;
 	margin: 30px;
@@ -798,7 +811,9 @@ img {
 }
 
 a#activateUsers {
+	font-family: "Gyparody";
 	font-size: 4em;
+	color: navy;
 }
 
 a.button1.a {
@@ -806,6 +821,7 @@ a.button1.a {
 }
 
 .correct {
+	font-family: "Gyparody";
 	padding: 0.25em;
 	font-size: 6em;
   background: #09b209;
@@ -821,6 +837,7 @@ a.button1.a {
 }
 
 .incorrect {
+	font-family: "Gyparody";
 	padding: 0.25em;
 	font-size: 6em;
 	background: #ec0404;
@@ -895,9 +912,12 @@ a.button1.a {
 	font-size: 2em;
 	color: white;
 	font-weight: bold;
+	margin-bottom: 5vh;
 }
 
 .back {
+	font-family: "Gyparody";
+	font-size: 5em;
 	position: static;
 	padding: 0.25em;
 	font-size: 4em;
