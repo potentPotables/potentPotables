@@ -1,15 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
-@media (orientation: landscape) {
-  body {
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-  }
-}
-
 html, body {
   position: relative;
   background-image: url('./assets/gameboard_background.gif');
