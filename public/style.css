@@ -536,7 +536,7 @@ ul.why li {
     -moz-transition: -moz-box-shadow .1s ease-in-out;
     -o-transition: -o-box-shadow .1s ease-in-out;
     transition: box-shadow .1s ease-in-out;
-    font-size: 60px;
+    font-size: 50px;
     color: #fff;
     -webkit-user-select: none;
     -moz-user-select: none;
