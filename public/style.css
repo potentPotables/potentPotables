@@ -126,12 +126,25 @@ td.clues:hover {
 	margin-right: 50px;
 }
 
-.waitingGame {
+/*ORIGINAL*/
+/*.waitingGame {
 	color: white;
 	font-weight: bolder;
 	font-size: 2.5em;
 	margin-bottom: 20vh;
 	text-align: center;
+}*/
+
+.waitingGame {
+    color: navy;
+    font-weight: bolder;
+    font-size: 2.5em;
+    margin-bottom: 20vh;
+    text-align: center;
+    background-color: yellow;
+    height: 20vh;
+    padding: 1em;
+    border-radius: 30px;
 }
 
 .waitingClue {
@@ -215,12 +228,25 @@ td.clues:hover {
   color: white;
 }
 
-.linkVerify {
+/* ORIGINAL */
+/*.linkVerify {
 	width: 75vw;
 	margin-top: 20vh;
 	font-weight: bolder;
 	font-size: 3em;
 	text-align: center;
+}*/
+
+.linkVerify {
+    width: 75vw;
+    margin-top: 15vh;
+    font-weight: bolder;
+    font-size: 3em;
+    text-align: center;
+    background-color: rgb(30, 91, 144);
+    border-radius: 25px;
+    height: 60vh;
+    box-shadow: 0px 0px 75px 20px rgba(255,255,0,1)
 }
 
 .link-code {
@@ -510,7 +536,7 @@ ul.why li {
     -moz-transition: -moz-box-shadow .1s ease-in-out;
     -o-transition: -o-box-shadow .1s ease-in-out;
     transition: box-shadow .1s ease-in-out;
-    font-size: 60px;
+    font-size: 50px;
     color: #fff;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -554,6 +580,29 @@ ul.why li {
 a[disabled] {
     pointer-events: none;
 }
+
+span#disabledText {
+  background-color: rgba(0, 0, 0, 0) !important;
+  padding: inherit !important;
+  display: block !important;
+  text-align: center;
+  box-shadow: none !important;
+  font-family: "Swiss-911" !important;
+  font-size: 1.25em;
+}
+
+span#enabledText {
+	background-color: rgba(0, 0, 0, 0) !important;
+	padding: inherit !important;
+  display: block !important;
+  text-align: center;
+  box-shadow: none !important;
+  font-family: "Swiss-911" !important;
+  font-size: 2em;
+}
+
+
+
 #gamebuttonDisabled {
     display: inline-block;
 /*    margin-top: 20%;
@@ -632,10 +681,27 @@ a[disabled] {
 	height: 29vh;
 }
 
-.score {
-	font-size: 2em;
+/*ORIGINAL*/
+/*.score {
+	font-size: 3em;
 	flex-grow: 2;
 	margin: 5px;
+	font-family: "Swiss-911"
+}*/
+
+.score {
+    text-shadow: 5px 5px black;
+    box-shadow: 0px 0px 50px 10px rgba(255,255,0,1);
+    text-align: center;
+    border-radius: 25px;
+    background-color: rgb(30, 91, 144);
+    font-size: 3em;
+    flex-grow: 2;
+    margin: 5px;
+    font-family: "Swiss-911";
+    width: 50vw;
+    height: 0vh;
+    padding-top: 10px;
 }
 
 .buzz-alert {
@@ -656,8 +722,15 @@ a[disabled] {
 	font-family: "Gyparody"
 }
 
-#linkEntry {
+/* ORIGINAL */
+/*#linkEntry {
 	font-size: 95%;
+}*/
+
+#linkEntry {
+  margin-top: 5vh;
+  font-size: 95%;
+  width: 75%;
 }
 
 .avatar {
@@ -819,7 +892,6 @@ a.button1.a {
   box-shadow: 0px 10px 0px 0px #067c06, 0px 0px 20px 0px #bbb;
   margin-left: 9vw;
   margin-right: 5vw;
-  color: white !important;
 }
 
 .correct:active {
@@ -834,7 +906,6 @@ a.button1.a {
 	background-color: #ec0404;
 	box-shadow: 0px 10px 0px 0px #a50202, 0px 0px 20px 0px #bbb;
 	margin-left: 5vw;
-	color: white !important;
 }
 
 .disable {

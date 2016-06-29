@@ -42,7 +42,7 @@ class UserGameplay extends Component {
     const buttonConfig= "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0";
     return (
       <div className= 'gameplay-view'>
-        <div className= 'score' >Score: ${this.state.score}</div>
+        <div className= 'score' >SCORE: <span style={{fontFamily: "Swiss-911-Extra-Compressed", color: "yellow"}}>${this.state.score}</span></div>
         <div className= 'buzz-alert'>
           {this.props.activeUser && this.props.activeUser !== this.props.username ?
             this.props.users[this.props.activeUser].photo !== '' ?
@@ -64,14 +64,14 @@ class UserGameplay extends Component {
           </div> :
           this.props.isButtonDisabled ?
             <a id="gamebuttonDisabled" className= 'game-button' disabled= {true}>
-                <span className="buttonSize">{buttonConfig}</span>
+              <span className="buttonSize">{buttonConfig}<span id="disabledText">disabled</span></span>
             </a> :
             this.props.hasAnsweredUsers.indexOf(this.props.username) !== -1 ?
               <a id="gamebuttonDisabled" disabled= {true} >
-                  <span className="buttonSize">{buttonConfig}</span>
+                  <span className="buttonSize">{buttonConfig}<span id="disabledText">disabled</span></span>
               </a> :
               <a id="gamebutton" className="animated infinite pulse" >
-                  <span className="buttonSize" onClick= {this.handleBuzz.bind(this)}>{buttonConfig}</span>
+                  <span className="buttonSize" onClick= {this.handleBuzz.bind(this)}>{buttonConfig}<span id="enabledText">BUZZ IN</span></span>
               </a>
         }
         </div>
