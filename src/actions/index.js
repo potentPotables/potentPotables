@@ -1,12 +1,13 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
-import { joinRoom, createUserSockets } from '../sockets_client';
+import { joinRoom, createUserSockets, startGame } from '../sockets_client';
 
 export const CREATE_SESSION = 'CREATE_SESSION';
 export const SET_USER_TYPE= 'SET_USER_TYPE';
 export const CREATE_USERNAME= 'CREATE_USERNAME';
 export const LINK_CODE_AUTH= 'LINK_CODE_AUTH';
 export const LINK_CODE_ERROR= 'LINK_CODE_ERROR';
+export const START_GAME_ERROR = 'START_GAME_ERROR';
 export const CREATE_GAME= 'CREATE_GAME';
 export const ACTIVATE_GAME= 'ACTIVATE_GAME';
 export const SET_ACTIVE_CLUE= 'SET_ACTIVE_CLUE';
@@ -38,12 +39,28 @@ export function linkCodeVerification({linkcode}) {
           currentState.user.userType = 'player';
         }
         currentState.user.userType !== 'host' ? browserHistory.push('/userconfig') : browserHistory.push('/hostgameplay');
-        console.log('inside linkCodeVeerification');
         joinRoom(response.data.room);
         dispatch({type: LINK_CODE_AUTH, payload: response.data.room});
       })
       .catch(response => {
         dispatch({type: LINK_CODE_ERROR, payload: response});
+      })
+  }
+}
+
+export function checkForHost(linkcode) {
+  console.log('inside checkForHost action creator', { linkcode });
+  return function(dispatch) {
+    axios.post('/check', { linkcode })
+      .then(response => {
+        browserHistory.push('/gameboard');
+        const start = new Audio('http://www.qwizx.com/gssfx/usa/jboardfill.wav');
+        start.play();
+        startGame(response.data.room);
+        dispatch({type: START_GAME_ERROR, payload: ""})
+      })
+      .catch(response => {
+        dispatch({type: START_GAME_ERROR, payload: response})
       })
   }
 }

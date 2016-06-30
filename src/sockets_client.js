@@ -73,7 +73,6 @@ export function initSockets(store){
 //functions will be exported to appropriate files
 export function joinRoom(room){
   console.log('insideJoinRoom');
-  console.log('socket.emit', socket.emit);
   socket.emit('joinRoom', {room: room});
 }
 

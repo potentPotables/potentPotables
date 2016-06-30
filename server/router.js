@@ -1,6 +1,6 @@
 const CreateSession = require('./controllers/createsession');
 const VerifyCode = require('./controllers/verifycode');
-const CloseSession = require('./controllers/closesession');
+const CheckSession = require('./controllers/checksession');
 const SendEmail = require('./sendgrid');
 const path = require('path');
 const rp = require('request-promise');
@@ -34,8 +34,8 @@ module.exports = function(app, io) {
 		res.json({ room: req.body.room , host: req.body.host});
 	});
 
-	app.post('/close', CloseSession.closeSession, function(req, res, next) {
-		res.status(200).send({message: 'Session closed'});
+	app.post('/check', CheckSession.checkSession, function(req, res, next) {
+		res.json({ room: req.body.room });
 	});
 
 	app.post('/hire', function(req, res) {
