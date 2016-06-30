@@ -39,7 +39,6 @@ export function linkCodeVerification({linkcode}) {
           currentState.user.userType = 'player';
         }
         currentState.user.userType !== 'host' ? browserHistory.push('/userconfig') : browserHistory.push('/hostgameplay');
-        console.log('inside linkCodeVeerification');
         joinRoom(response.data.room);
         dispatch({type: LINK_CODE_AUTH, payload: response.data.room});
       })
@@ -49,15 +48,16 @@ export function linkCodeVerification({linkcode}) {
   }
 }
 
-export function checkForHost({linkcode}) {
+export function checkForHost(linkcode) {
+  console.log('inside checkForHost action creator', { linkcode });
   return function(dispatch) {
     axios.post('/check', { linkcode })
       .then(response => {
-        console.log('inside response', response);
-        // browserHistory.push('/gameboard');
-        // const start = new Audio('http://www.qwizx.com/gssfx/usa/jboardfill.wav');
-        // start.play();
-        // startGame(this.props.link);
+        browserHistory.push('/gameboard');
+        const start = new Audio('http://www.qwizx.com/gssfx/usa/jboardfill.wav');
+        start.play();
+        startGame(response.data.room);
+        dispatch({type: START_GAME_ERROR, payload: ""})
       })
       .catch(response => {
         dispatch({type: START_GAME_ERROR, payload: response})

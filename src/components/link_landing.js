@@ -13,7 +13,17 @@ class LinkLanding extends Component {
   }
 
   handleClick() {
-    checkForHost(this.props.link);
+    this.props.checkForHost(this.props.link);
+  }
+
+  renderAlert() {
+    if (this.props.startGameError !== ''){
+      return (
+        <div className="alert alert-danger">
+          <div>Please have a host join before you start the game.</div>
+        </div>
+      );
+    }
   }
 
   render() {
@@ -25,21 +35,20 @@ class LinkLanding extends Component {
     })
     return (
       <div className="linkEnter">
-      <div>Link Code: {this.props.link}</div>
-      <div> {usersList}</div>
-      <Link to='/gameboard'>
+        <div>Link Code: {this.props.link}</div>
+        <div> {usersList}</div>
         <button onClick= {this.handleClick.bind(this)} id="startGame" className="a">Start Game</button>
-      </Link>
+        {this.renderAlert()}
       </div>
     );
   }
 };
 
 function mapStateToProps(state) {
-  console.log('insidestate', state.sessionID.sessionID);
   return {
     link: state.sessionID.sessionID,
     users: state.gameplay.users,
+    startGameError: state.linkAuth.startGameError,
   };
 }
 export default connect(mapStateToProps, { fetchGame, checkForHost })(LinkLanding)

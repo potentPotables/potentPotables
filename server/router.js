@@ -34,13 +34,9 @@ module.exports = function(app, io) {
 		res.json({ room: req.body.room , host: req.body.host});
 	});
 
-	// app.post('/close', CloseSession.closeSession, function(req, res, next) {
-	// 	res.status(200).send({message: 'Session closed'});
-	// });
-
 	app.post('/check', CheckSession.checkSession, function(req, res, next) {
 		res.json({ room: req.body.room });
-	})
+	});
 
 	app.post('/hire', function(req, res) {
 		SendEmail.sendEmail(req.body);
