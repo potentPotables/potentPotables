@@ -148,4 +148,7 @@ module.exports.initSockets= function(socket, clients, ioAccess){
   socket.on('dbl', function(data) {
     ioAccess.in(data.room).emit('dbl');
   });
+  socket.on('host', function(data) {
+    ioAccess.in(data.room).emit('host');
+  })
 }

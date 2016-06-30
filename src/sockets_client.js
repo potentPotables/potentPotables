@@ -13,6 +13,7 @@ export const CORRECT_ANSWER = 'CORRECT_ANSWER';
 export const SKIP = 'SKIP';
 export const ACTIVATE_BUTTONS = 'ACTIVATE_BUTTONS';
 export const SKIP_INCORRECT= 'SKIP_INCORRECT';
+export const START_GAME_ERROR = 'START_GAME_ERROR';
 
 //nearly all client-side socket listeners will be be contained here
 //initSockets will be exported to client-side index
@@ -66,7 +67,11 @@ export function initSockets(store){
     const falsePromise = new Audio('http://www.qwizx.com/gssfx/usa/j64-outtatime.wav');
     falsePromise.play();
     store.dispatch({type: SKIP_INCORRECT, payload: data})
-  })
+  });
+
+  socket.on('host', function(data) {
+    store.dispatch({type: START_GAME_ERROR, payload: ''});
+  });
 }
 
 //all client-side socket emitters will be contained here
@@ -90,6 +95,10 @@ export function sendButtonClick(username, room, clue) {
 export function startGame(room) {
   console.log('emitting start Game', room);
   socket.emit('startGame', { room: room });
+}
+
+export function hostJoins(room) {
+  socket.emit('host', { room })
 }
 
 export function setActiveClue(activeClue, room) {
