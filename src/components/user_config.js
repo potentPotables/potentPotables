@@ -149,6 +149,7 @@ class userConfig extends Component {
     
     return (
       <div className="configContainer">
+        <div className="backgroundContainer">
         <div className="selfieContainer">
         <div>
           {this.state.file.length > 0 ?
@@ -177,6 +178,7 @@ class userConfig extends Component {
           <div>
             <button type="button" id="submitUsername" className="a" onClick={() => this.handleSubmit(this.state.username, this.state.dataURL)}>Submit</button>
           </div>
+        </div>
         </div>
       </div>
     );

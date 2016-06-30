@@ -202,6 +202,7 @@ td.clues:hover {
   position: relative;
   padding: 15px;
   font-size: 5em;
+  font-family: "Gyparody";
   border-radius: 15px;
   box-shadow: 0px 10px 0px 0px #fef299 , 0px 0px 20px 0px #bbb;
   transition: all 0.2s;
@@ -426,6 +427,16 @@ u:hover {
   color: white;
 }
 
+.backgroundContainer {
+	margin-top: 15vh;
+	width: 75vw;
+	height: 60vh;
+	background-color: rgb(30, 91, 144);
+	border-radius: 25px;
+	box-shadow: 0px 0px 75px 20px rgba(255,255,0,1);
+	margin-left: 11vw;
+}
+
 .selfieContainer {
 	margin-top: 10vh;
 }
@@ -439,6 +450,7 @@ u:hover {
     padding: 0px !important;
     margin-top: 0vh !important;
     font-size: 3em !important;
+    font-family: "Gyparody" !important;
     width: 30vw !important;
     height: 5vh !important;
 }
