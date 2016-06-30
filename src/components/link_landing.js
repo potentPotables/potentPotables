@@ -24,6 +24,11 @@ class LinkLanding extends Component {
         </div>
       );
     }
+    if(this.props.startGameError === ''){
+      return (
+        <div></div>
+      );
+    }  
   }
 
   render() {
