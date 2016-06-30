@@ -10,7 +10,12 @@ class End extends Component {
 	}
 
 	render(){
-		const scores = _.map(this.props.users, function(user) {
+
+		const leaders = _.sortBy(this.props.users, function(user) {
+		  return -user.score;
+		});
+
+		const scores = _.map(leaders, function(user) {
 			return (
 				<div className="report" key={user.username}>
 						<span className="finaluser">{user.username}:</span>
