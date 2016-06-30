@@ -17,10 +17,30 @@ class Scoreboard extends Component {
   }
 
   render(){
-  	const scores = _.map(this.props.users, function(user) {
+    
+    var leaders = _.sortBy(this.props.users, function(user) {
+      return -user.score;
+    });
+  	
+    const scores = _.map(leaders, function(user) {
+      var scoreColor;
+      if(user.score === 0 ) {
+        scoreColor = "white";
+      } else if (user.score < 0 ) {
+        scoreColor = "#FF0000";
+      } else if (user.score > 0 ) {
+        scoreColor = "#00FF00";
+      }
+
+      var scoreStyle = {
+        color: scoreColor,
+        float: "right",
+        fontFamily: "Swiss-911-Extra-Compressed"
+      }
+
   		return (
-  			<div key={user.username} style={{border: "2px outset yellow", padding: "1%"}}>
-  				{user.username}: <span className="user-score">${user.score}</span>
+  			<div key={user.username} style={{textAlign: "left", border: "2px outset yellow", padding: "1%"}}>
+  				{user.username}: <span style={scoreStyle} >${user.score}</span>
   			</div>
   		);
   	});
