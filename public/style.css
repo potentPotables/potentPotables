@@ -202,6 +202,7 @@ td.clues:hover {
   position: relative;
   padding: 15px;
   font-size: 5em;
+  font-family: "Gyparody";
   border-radius: 15px;
   box-shadow: 0px 10px 0px 0px #fef299 , 0px 0px 20px 0px #bbb;
   transition: all 0.2s;
@@ -426,6 +427,16 @@ u:hover {
   color: white;
 }
 
+.backgroundContainer {
+	margin-top: 15vh;
+	width: 75vw;
+	height: 60vh;
+	background-color: rgb(30, 91, 144);
+	border-radius: 25px;
+	box-shadow: 0px 0px 75px 20px rgba(255,255,0,1);
+	margin-left: 11vw;
+}
+
 .selfieContainer {
 	margin-top: 10vh;
 }
@@ -439,6 +450,7 @@ u:hover {
     padding: 0px !important;
     margin-top: 0vh !important;
     font-size: 3em !important;
+    font-family: "Gyparody" !important;
     width: 30vw !important;
     height: 5vh !important;
 }
@@ -871,6 +883,7 @@ img {
 	text-align: center;
 	font-weight: bolder;
 	font-size: 1.5em;
+	font-family: "Korinna-BT";
 }
 
 a#activateUsers {
@@ -884,14 +897,14 @@ a.button1.a {
 }
 
 .correct {
+	color: white !important;
 	font-family: "Gyparody";
 	padding: 0.25em;
 	font-size: 6em;
   background: #09b209;
   background-color: #09b209;
   box-shadow: 0px 10px 0px 0px #067c06, 0px 0px 20px 0px #bbb;
-  margin-left: 9vw;
-  margin-right: 5vw;
+  margin-left: 8vw;
 }
 
 .correct:active {
@@ -905,13 +918,13 @@ a.button1.a {
 	background: #ec0404;
 	background-color: #ec0404;
 	box-shadow: 0px 10px 0px 0px #a50202, 0px 0px 20px 0px #bbb;
-	margin-left: 5vw;
 }
 
 .disable {
- background: #d2cece;
- background-color: #d2cece;
- box-shadow: 0px 10px 0px 0px #939090, 0px 0px 20px 0px #bbb;
+	color: white !important;
+ 	background: #d2cece;
+ 	background-color: #d2cece;
+ 	box-shadow: 0px 10px 0px 0px #939090, 0px 0px 20px 0px #bbb;
 }
 
 .incorrect:active {
