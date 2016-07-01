@@ -16,15 +16,30 @@ class End extends Component {
 		});
 
 		const scores = _.map(leaders, function(user) {
+			var scoreColor;
+			if(user.score === 0 ) {
+			  scoreColor = "white";
+			} else if (user.score < 0 ) {
+			  scoreColor = "#FF0000";
+			} else if (user.score > 0 ) {
+			  scoreColor = "#00FF00";
+			}
+
+			var scoreStyle = {
+			  color: scoreColor,
+			  float: "right",
+			  fontFamily: "Swiss-911-Extra-Compressed"
+			}
+
 			return (
 				<div className="report" key={user.username}>
 						<span className="finaluser">{user.username}:</span>
-						<span className="finalscore">{user.score > 0 ? '$' + user.score : '-$' + String(user.score).slice(1)}</span>
+						<span className="finalscore" style={scoreStyle}>{user.score > 0 ? '$' + user.score : '-$' + String(user.score).slice(1)}</span>
 				</div>
 			);
 		});
 
-	  return (
+			return (
 	      <div id="end">
 	      	<h1 className="thankyou animated infinite flash">Thank you for playing!</h1>
 	      	<div className="final header"><strong>Final scores:</strong></div>

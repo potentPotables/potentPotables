@@ -1295,21 +1295,25 @@ h1.devName.chris {
 }
 
 #end {
+	text-align: center;
 	color: yellow;
 	width: 64vw;
-	margin-left: 40vw;
+	height: 60vh;
+	margin-left: auto;
 	margin-right: auto;
-	margin-top: 16.5vh;
-	font-family: 'Open Sans';
+	margin-top: 18.5vh;
+  overflow-y: auto;
 }
 
 .thankyou {
 	font-family: 'Gyparody';
-	font-size: 49px;
+	font-size: 4em;
+	margin-bottom: 5vh;
 }
 
 .final.header {
-	margin-left: 9vw;
+	font-size: 2em;
+	font-family: "Korinna-BT";
 }
 
 span.finalscore {
@@ -1317,5 +1321,18 @@ span.finalscore {
 }
 
 .final.scores {
-	width: 22.5vw;
+  margin: auto;
+  text-align: left;
+  border: 4px outset #C36830;
+  width: 35vw;
+  padding: 1%;
+  font-size: 2em;
+  font-family: 'Square-721-Bold-BT';
 }
+
+
+
+
+
+
+
