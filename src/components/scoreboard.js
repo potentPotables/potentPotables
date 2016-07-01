@@ -11,9 +11,7 @@ class Scoreboard extends Component {
   }
 
   componentWillReceiveProps() {
-    if(!this.props.isButtonDisabled){
-      this.context.router.push('/usergameplay');
-    }
+    this.context.router.push('/usergameplay');
   }
 
   render(){

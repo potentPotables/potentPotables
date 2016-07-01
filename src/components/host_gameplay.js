@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { activateButtons } from '../sockets_client';
+import { HostCategory } from './host_category';
 
 class HostGamePlay extends Component {
   constructor(props){
@@ -41,6 +42,8 @@ class HostGamePlay extends Component {
     }
   }
   render(){
+    const categories = 
+
     return (
       <div className= 'gameplay-view'>
       {this.props.isGameActive === false ?
@@ -73,6 +76,7 @@ function mapStateToProps(state){
     isGameActive: state.gameplay.isGameActive,
     activeClue: state.gameplay.activeClue,
     room: state.linkAuth.linkCode,
+    categories: state.gameboard.categories,
   };
 }
 
