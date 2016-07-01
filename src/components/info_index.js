@@ -31,6 +31,9 @@ class InfoIndex extends Component {
 					<div id="howtoDiv">
 						<Link className="howto" to="/howto"><strong><u>How to Play</u></strong></Link>
 					</div>
+					<div id="creditsDiv">
+						<Link className="credits" to="/credits"><strong><u>Credits</u></strong></Link>
+					</div>
 				</div>
 			</div>
 		);

@@ -15,6 +15,7 @@ import Scoreboard from './components/scoreboard';
 import End from './components/end';
 import HowTo from './components/howto';
 import About from './components/about';
+import Credits from './components/credits';
 import Peter from './components/peter';
 import Chris from './components/chris';
 import Lukas from './components/lukas';
@@ -37,6 +38,7 @@ export default (
       <Route path="end" component={End} />
       <Route path="howto" component={HowTo} />
       <Route path="about" component={About} />
+      <Route path="credits" component={Credits} />
       <Route path="peter" component={Peter} />
       <Route path="chris" component={Chris} />
       <Route path="lukas" component={Lukas} />
