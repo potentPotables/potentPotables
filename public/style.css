@@ -1,7 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
 html, body {
-  position: relative;
   background-image: url('./assets/gameboard_background.gif');
 	min-height: 100vh;
   min-width: 100vw;
@@ -9,7 +8,7 @@ html, body {
   background-repeat:repeat-x;
   background-attachment:fixed;
   background-position: left top;
-  position:absolute;
+  position: fixed;
   cursor: url('./assets/custom_pointer.png') 9 1, auto !important;
 
 }
@@ -23,7 +22,7 @@ a:hover {
 }
 
 .container {
-	position: fixed;
+	position: static;
 	justify-content: center;
 	align-items: center;
 	width: 100%;
@@ -530,12 +529,16 @@ ul.why {
 }
 
 #howto {
-	color: yellow;
-	width: 64vw;
-	margin-left: 9vw;
-	margin-right: auto;
-	margin-top: 17.5vh;
-	font-family: 'Open Sans';
+  font-size: 2em;
+  position: fixed;
+  color: yellow;
+  width: 60vw;
+  margin-left: 19vw;
+  margin-right: auto;
+  margin-top: 17.5vh;
+  font-family: 'Open Sans';
+  overflow-y: auto;
+  height: 69vh;
 }
 
 #howto .gyparody {

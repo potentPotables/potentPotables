@@ -4,7 +4,6 @@ export default class HowTo extends Component {
   render() {
     return (
         <div id="howto" className="animated flipInX">
-          <div id="howto">
           	<div className="gyparody animated infinite pulse">
               How to Play the Game
             </div>
@@ -26,7 +25,6 @@ export default class HowTo extends Component {
                 <li>Your button is only enabled once the host finishes reading out the clue.</li>
                 <li>You or someone in your team knows the answer? Buzz in!</li>
               </ul>
-          </div>
         </div>
     );
   }
