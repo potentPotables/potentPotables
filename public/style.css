@@ -154,9 +154,28 @@ td.clues:hover {
 	text-align: center;
 }
 
+@media only screen
+	and (min-device-width: 320px)
+	and (max-device-width: 736px) {
+		.links {
+			display: block !important;
+			margin-top: 8.5vh !important;
+		}
+		#aboutDiv {
+			margin: 5% !important;
+		}
+		#howtoDiv {
+			margin: 5% !important;
+		}
+		#creditsDiv {
+			margin: 5% !important;
+		}
+	}
+
 .links {
 	animation-delay: 3s;
-	margin-top: 7.5vh;
+	margin-top: 3.5vh;
+	display: inline-flex;
 }
 .linkEnter {
 	margin-top: 30vh;
@@ -349,7 +368,7 @@ a.join.btn.btn-primary.btn-lg {
 	margin-bottom: 23px;
 }
 
-.about, .howto {
+.about, .howto, .credits {
 	color: white;
 	font-family: 'Gyparody';
 	margin-right: 15px;
@@ -558,12 +577,46 @@ ul.why {
 }
 
 #aboutDiv {
-	margin-bottom: 10px;
+	margin-right: 2vw;
 }
 
 #howtoDiv {
-
 }
+
+#creditsDiv {
+	margin-left: 1vw;
+}
+
+.creditsContainer {
+	display: inline-block;
+	background-image: url('./assets/user-gameplay_bckgrnd.jpg');
+	background-size: 100% 100%;
+  background-repeat:repeat-x;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.creditsTitle {
+	text-shadow: 0px -2px black;
+	color: yellow;
+	font-size: 4em;
+	margin-bottom: 1vh;
+	text-align: center;
+	font-family: "Gyparody";
+}
+
+.creditsText {
+  width: 90vw;
+  margin-top: 15vh;
+  font-weight: bolder;
+  font-size: 3em;
+  text-align: center;
+  background-color: rgb(30, 91, 144);
+  border-radius: 25px;
+  height: 75vh;
+  box-shadow: 0px 0px 18px 20px black;
+}
+
 
 .configContainer {
 	display: inline-block;
