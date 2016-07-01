@@ -397,7 +397,7 @@ u:hover {
 
 .logo1 {
 	margin-right: 5px;
-	animation-delay: 1s;
+	animation-delay: 1.25s;
 }
 
 .logo2 {
@@ -406,43 +406,43 @@ u:hover {
 }
 .logo3 {
 	margin-right: 5px;
-	animation-delay: 2s;
+	animation-delay: 1.75s;
 }
 .logo4 {
 	margin-right: 5px;
-	animation-delay: 2.5s;
+	animation-delay: 2s;
 }
 .logo5 {
 	margin-right: 5px;
-	animation-delay: 3s;
+	animation-delay: 2.25s;
 }
 .logo6 {
 	margin-right: 5px;
-	animation-delay: 3.5s;
+	animation-delay: 2.5s;
 }
 .logo7 {
 	margin-right: 5px;
-	animation-delay: 4s;
+	animation-delay: 2.75s;
 }
 .logo8 {
 	margin-right: 5px;
-	animation-delay: 4.5s;
+	animation-delay: 3s;
 }
 .logo9 {
 	margin-right: 5px;
-	animation-delay: 5s;
+	animation-delay: 3.25s;
 }
 .logo10 {
 	margin-right: 5px;
-	animation-delay: 5.5s;
+	animation-delay: 3.5s;
 }
 .logo11 {
 	margin-right: 5px;
-	animation-delay: 6s;
+	animation-delay: 3.75s;
 }
 .logo12 {
 	margin-right: 5px;
-	animation-delay: 6.5s;
+	animation-delay: 4s;
 }
 
 #why {
@@ -1127,7 +1127,7 @@ Animate.css classes
 }
 
 .flipInX {
-	animation-duration: 1.5s !important;
+	animation-duration: 1s !important;
 }
 
 /*
