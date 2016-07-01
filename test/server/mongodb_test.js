@@ -1,10 +1,10 @@
-var request = ('supertest')('http://localhost:8080');
+var request = require('supertest')('http://localhost:8080');
 const express = require('express');
 import { expect } from '../test_helper';
 
 var app = express();
 
-describe('POST /create' () => {
+describe('POST /create', () => {
 
 	it('creates a new session', () => {
 		request.post('/create')

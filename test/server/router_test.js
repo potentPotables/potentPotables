@@ -15,7 +15,7 @@ describe('GET /', () => {
 });
 
 describe('GET /bundle.js', () => {
-	it('respond with bundle.js' (res) => {
+	it('respond with bundle.js', (res) => {
 		request(app)
 			.get('/')
 			.expect(200)

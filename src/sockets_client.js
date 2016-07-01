@@ -1,6 +1,6 @@
 import io from 'socket.io-client';
 
-var socket = io();
+var socket = io('http://localhost:8080');
 
 export const ADD_NEW_USER = 'ADD_NEW_USER';
 export const SET_ACTIVE_USER = 'SET_ACTIVE_USER';

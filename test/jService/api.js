@@ -11,8 +11,5 @@ describe('POST /game', () => {
 			.post('/game')
 			.expect('Content-Type', /json/)
 			.expect(200);
-			.end((err) => {
-				if (err) { return console.log(err); }
-			})
 	})
 })
