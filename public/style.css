@@ -1195,6 +1195,33 @@ h1.devName.chris {
 	margin-top: 5vh;
 }
 
+.hireContainer {
+	display: inline-block;
+	text-align: center;
+	width: 100vw;
+	height: 100vh;
+	background-image: url('./assets/user-gameplay_bckgrnd.jpg');
+	background-size: 100% 100%;
+}
+
+.hireLayout {
+	color: black;
+  background-color: #a24c4c;
+  border-radius: 25px;
+  box-shadow: 0px -10px 10px;
+  width: 90vw;
+  height: 90vh;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5vh;
+  font-family: 'Open Sans';
+}
+
+.hire-input {
+	text-align: left !important;
+	font-size: 2em !important;
+}
+
 #end {
 	color: yellow;
 	width: 64vw;
