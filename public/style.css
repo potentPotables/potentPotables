@@ -1133,25 +1133,41 @@ Animate.css classes
 /*
 */
 
+.bioContainer {
+	display: inline-block;
+	text-align: center;
+	width: 100vw;
+	height: 100vh;
+	background-image: url('./assets/user-gameplay_bckgrnd.jpg');
+	background-size: 100% 100%;
+}
+
 .bio {
-  color: yellow;
-  width: 54vw;
-  margin-left: 18vw;
+  color: black;
+  background-color: #a24c4c;
+  border-radius: 25px;
+  box-shadow: 0px -10px 10px;
+  width: 64vw;
+  height: 45vh;
+  margin-left: auto;
   margin-right: auto;
-  margin-top: 18.5vh;
+  margin-top: 5vh;
   font-family: 'Open Sans';
 }
 
 h1.devName.peter {
-  margin-left: 26vw;
+  font-size: 4em;
+  color: yellow !important;
 }
 
 h1.devName.lukas {
-	margin-left: 23vw;
+	font-size: 4em;
+	color: yellow !important;
 }
 
 h1.devName.chris {
-	margin-left: 23vw;
+	font-size: 4em;
+	color: yellow !important;
 }
 
 .github {
@@ -1164,19 +1180,19 @@ h1.devName.chris {
 }
 
 .externals {
-  margin-left: 24vw;
+  text-align: center;
 }
 
-.hire.link.peter{
-	margin-left: 29vw;
+.sell {
+	color: yellow;
 }
 
-.hire.link.lukas {
-	margin-left: 28.5vw;
-}
-
-.hire.link.chris {
-	margin-left: 28.5vw
+.hire.link {
+	background-color: yellow;
+	border-radius: 25px;
+	width: 15vw;
+	margin: auto;
+	margin-top: 5vh;
 }
 
 #end {
