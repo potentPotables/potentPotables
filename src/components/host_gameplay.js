@@ -42,8 +42,6 @@ class HostGamePlay extends Component {
     }
   }
   render(){
-    const categories = 
-
     return (
       <div className= 'gameplay-view'>
       {this.props.isGameActive === false ?
