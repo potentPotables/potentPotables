@@ -38,7 +38,7 @@ class Scoreboard extends Component {
 
   		return (
   			<div key={user.username} style={{textAlign: "left", border: "2px outset yellow", padding: "1%"}}>
-  				{user.username}: <span style={scoreStyle} >${user.score}</span>
+  				{user.username}: <span style={scoreStyle} >{user.score > 0 ? '$' + user.score : '-$' + String(user.score).slice(1)}</span>
   			</div>
   		);
   	});
