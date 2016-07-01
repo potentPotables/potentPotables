@@ -19,7 +19,7 @@ class End extends Component {
 			return (
 				<div className="report" key={user.username}>
 						<span className="finaluser">{user.username}:</span>
-						<span className="finalscore">{user.score > 0 ? '$' + user.score : '-$' + user.score}</span>
+						<span className="finalscore">{user.score > 0 ? '$' + user.score : '-$' + String(user.score).slice(1)}</span>
 				</div>
 			);
 		});

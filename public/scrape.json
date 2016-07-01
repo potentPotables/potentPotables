@@ -1,0 +1,442 @@
+[
+  {
+    "id": 7248,
+    "answer": "A.A. Milne",
+    "question": "He created the characters of Kanga & Roo",
+    "value": 400,
+    "airdate": "1990-01-08T12:00:00.000Z",
+    "created_at": "2014-02-11T22:51:01.729Z",
+    "updated_at": "2014-02-11T22:51:01.729Z",
+    "category_id": 937,
+    "game_id": null,
+    "invalid_count": null,
+    "category": {
+      "id": 937,
+      "title": "famous kangaroos",
+      "created_at": "2014-02-11T22:51:01.351Z",
+      "updated_at": "2014-02-11T22:51:01.351Z",
+      "clues_count": 5
+    }
+  },
+  {
+    "id": 7249,
+    "answer": "Sen. Thomas Eagleton",
+    "question": "He's the only man nominated for V.P. by a natl. convention who resigned his candidacy under pressure",
+    "value": 500,
+    "airdate": "1990-01-08T12:00:00.000Z",
+    "created_at": "2014-02-11T22:51:01.743Z",
+    "updated_at": "2014-02-11T22:51:01.743Z",
+    "category_id": 842,
+    "game_id": null,
+    "invalid_count": null,
+    "category": {
+      "id": 842,
+      "title": "file under \"e\"",
+      "created_at": "2014-02-11T22:50:33.665Z",
+      "updated_at": "2014-02-11T22:50:33.665Z",
+      "clues_count": 10
+    }
+  },
+  {
+    "id": 7250,
+    "answer": "Nova Scotia",
+    "question": "The Cajuns migrated to Louisiana from there",
+    "value": 500,
+    "airdate": "1990-01-08T12:00:00.000Z",
+    "created_at": "2014-02-11T22:51:01.757Z",
+    "updated_at": "2014-02-11T22:51:01.757Z",
+    "category_id": 50,
+    "game_id": null,
+    "invalid_count": null,
+    "category": {
+      "id": 50,
+      "title": "u.s. history",
+      "created_at": "2014-02-11T22:47:25.662Z",
+      "updated_at": "2014-02-11T22:47:25.662Z",
+      "clues_count": 135
+    }
+  },
+  {
+    "id": 7251,
+    "answer": "Gian Carlo Menotti",
+    "question": "He wrote his 1st opera, \"The Death of Pierrot\", at age 11; the one about Amahl came much later",
+    "value": 500,
+    "airdate": "1990-01-08T12:00:00.000Z",
+    "created_at": "2014-02-11T22:51:01.771Z",
+    "updated_at": "2014-02-11T22:51:01.771Z",
+    "category_id": 936,
+    "game_id": null,
+    "invalid_count": null,
+    "category": {
+      "id": 936,
+      "title": "opera",
+      "created_at": "2014-02-11T22:51:01.330Z",
+      "updated_at": "2014-02-11T22:51:01.330Z",
+      "clues_count": 55
+    }
+  },
+  {
+    "id": 7252,
+    "answer": "British Airways",
+    "question": "Their ads say they're \"The World's Favourite Airline\"",
+    "value": 500,
+    "airdate": "1990-01-08T12:00:00.000Z",
+    "created_at": "2014-02-11T22:51:01.785Z",
+    "updated_at": "2014-02-11T22:51:01.785Z",
+    "category_id": 369,
+    "game_id": null,
+    "invalid_count": null,
+    "category": {
+      "id": 369,
+      "title": "travel & tourism",
+      "created_at": "2014-02-11T22:48:26.976Z",
+      "updated_at": "2014-02-11T22:48:26.976Z",
+      "clues_count": 146
+    }
+  },
+  {
+    "id": 7253,
+    "answer": "Enrico Fermi",
+    "question": "Italian-born physicist whose control rods put a \"damper\" on the 1st controlled nuclear reaction",
+    "value": 500,
+    "airdate": "1990-01-08T12:00:00.000Z",
+    "created_at": "2014-02-11T22:51:01.799Z",
+    "updated_at": "2014-02-11T22:51:01.799Z",
+    "category_id": 13,
+    "game_id": null,
+    "invalid_count": null,
+    "category": {
+      "id": 13,
+      "title": "inventions",
+      "created_at": "2014-02-11T22:47:20.279Z",
+      "updated_at": "2014-02-11T22:47:20.279Z",
+      "clues_count": 65
+    }
+  }
+]
+
+{
+  "id": 937,
+  "title": "famous kangaroos",
+  "clues_count": 5,
+  "clues": [
+    {
+      "id": 7230,
+      "answer": "Bob Keeshan",
+      "question": "He named his character Captain Kangaroo from the large pockets on his jacket",
+      "value": 100,
+      "airdate": "1990-01-08T12:00:00.000Z",
+      "category_id": 937,
+      "game_id": null,
+      "invalid_count": null
+    },
+    {
+      "id": 7236,
+      "answer": "Boxing",
+      "question": "The 1978 Elliott Gould film \"Matilda\" was about a kangaroo who participated in this sport",
+      "value": 200,
+      "airdate": "1990-01-08T12:00:00.000Z",
+      "category_id": 937,
+      "game_id": null,
+      "invalid_count": null
+    },
+    {
+      "id": 7242,
+      "answer": "\"Tie Me Kangaroo Down\"",
+      "question": "In 1963 Aussie Rolf Harris had his only U.S. top 40 hit with this song",
+      "value": 300,
+      "airdate": "1990-01-08T12:00:00.000Z",
+      "category_id": 937,
+      "game_id": null,
+      "invalid_count": null
+    },
+    {
+      "id": 7248,
+      "answer": "A.A. Milne",
+      "question": "He created the characters of Kanga & Roo",
+      "value": 400,
+      "airdate": "1990-01-08T12:00:00.000Z",
+      "category_id": 937,
+      "game_id": null,
+      "invalid_count": null
+    },
+    {
+      "id": 7254,
+      "answer": "\"Skippy, the Bush Kangaroo\"",
+      "question": "In 1969 this bush kangaroo got his own syndicated TV series",
+      "value": 500,
+      "airdate": "1990-01-08T12:00:00.000Z",
+      "category_id": 937,
+      "game_id": null,
+      "invalid_count": null
+    }
+  ]
+}
+
+{
+  "id": 842,
+  "title": "file under \"e\"",
+  "clues_count": 10,
+  "clues": [
+    {
+      "id": 6325,
+      "answer": "\"E Pluribus Unum\"",
+      "question": "The motto on the Great Seal of the U.S.:  \"Out of many, one\"",
+      "value": 100,
+      "airdate": "1990-03-19T12:00:00.000Z",
+      "category_id": 842,
+      "game_id": null,
+      "invalid_count": null
+    },
+    {
+      "id": 6331,
+      "answer": "Ethiopia",
+      "question": "Eritrea, now the northernmost province of this country, was an Italian colony from 1890-1941",
+      "value": 200,
+      "airdate": "1990-03-19T12:00:00.000Z",
+      "category_id": 842,
+      "game_id": null,
+      "invalid_count": null
+    },
+    {
+      "id": 6337,
+      "answer": "epee",
+      "question": "3-sided sword that's a familiar word to fencers & crossword puzzle enthusiasts",
+      "value": 300,
+      "airdate": "1990-03-19T12:00:00.000Z",
+      "category_id": 842,
+      "game_id": null,
+      "invalid_count": null
+    },
+    {
+      "id": 6343,
+      "answer": "Esquire",
+      "question": "A candidate for knighthood in medieval times, or an English country gentleman",
+      "value": 400,
+      "airdate": "1990-03-19T12:00:00.000Z",
+      "category_id": 842,
+      "game_id": null,
+      "invalid_count": null
+    },
+    {
+      "id": 6349,
+      "answer": "Ephesus",
+      "question": "This ancient Greek city in Asia Minor was the site of the temple of Artemis",
+      "value": 500,
+      "airdate": "1990-03-19T12:00:00.000Z",
+      "category_id": 842,
+      "game_id": null,
+      "invalid_count": null
+    },
+  ]
+  [
+  	{
+      "id": 271,
+      "answer": "Theodore Roosevelt",
+      "question": "Some 30 years before his cousin's New Deal, he gave us a \"Square Deal\"",
+      "value": 100,
+      "airdate": "1984-12-03T12:00:00.000Z",
+      "category_id": 50,
+      "game_id": null,
+      "invalid_count": null
+    },
+    {
+      "id": 277,
+      "answer": "the donkey and the elephant",
+      "question": "In 1870s cartoonist Thomas Nast gave Democrats & GOP these symbols",
+      "value": 200,
+      "airdate": "1984-12-03T12:00:00.000Z",
+      "category_id": 50,
+      "game_id": null,
+      "invalid_count": null
+    },
+    {
+      "id": 283,
+      "answer": "the League of Nations",
+      "question": "Pres. Wilson founded this world organization which America never joined",
+      "value": 300,
+      "airdate": "1984-12-03T12:00:00.000Z",
+      "category_id": 50,
+      "game_id": null,
+      "invalid_count": null
+    },
+    {
+      "id": 289,
+      "answer": "Cuba",
+      "question": "The Spanish-American War led to this Caribbean country's independence",
+      "value": 400,
+      "airdate": "1984-12-03T12:00:00.000Z",
+      "category_id": 50,
+      "game_id": null,
+      "invalid_count": null
+    },
+    {
+      "id": 295,
+      "answer": "Alan Shepard",
+      "question": "He was the first American in space",
+      "value": 500,
+      "airdate": "1984-12-03T12:00:00.000Z",
+      "category_id": 50,
+      "game_id": null,
+      "invalid_count": null
+    },
+  ],
+  "clues": [
+  	{
+  	      "id": 7227,
+  	      "answer": "George Gershwin",
+  	      "question": "He composed a 1-act jazz opera called \"Blue Monday\" 13 years before \"Porgy & Bess\"",
+  	      "value": 100,
+  	      "airdate": "1990-01-08T12:00:00.000Z",
+  	      "category_id": 936,
+  	      "game_id": null,
+  	      "invalid_count": null
+  	    },
+  	    {
+  	      "id": 7233,
+  	      "answer": "Crazy Horse",
+  	      "question": "",
+  	      "value": null,
+  	      "airdate": "1990-01-08T12:00:00.000Z",
+  	      "category_id": 936,
+  	      "game_id": null,
+  	      "invalid_count": null
+  	    },
+  	    {
+  	      "id": 7239,
+  	      "answer": "Massachusetts",
+  	      "question": "",
+  	      "value": null,
+  	      "airdate": "1990-01-08T12:00:00.000Z",
+  	      "category_id": 936,
+  	      "game_id": null,
+  	      "invalid_count": null
+  	    },
+  	    {
+  	      "id": 7245,
+  	      "answer": "Antonio Salieri",
+  	      "question": "Rimsky-Korsakov wrote an opera about Mozart's rivalry with this man, who allegedly poisoned him",
+  	      "value": 400,
+  	      "airdate": "1990-01-08T12:00:00.000Z",
+  	      "category_id": 936,
+  	      "game_id": null,
+  	      "invalid_count": null
+  	    },
+  	    {
+  	      "id": 7251,
+  	      "answer": "Gian Carlo Menotti",
+  	      "question": "He wrote his 1st opera, \"The Death of Pierrot\", at age 11; the one about Amahl came much later",
+  	      "value": 500,
+  	      "airdate": "1990-01-08T12:00:00.000Z",
+  	      "category_id": 936,
+  	      "game_id": null,
+  	      "invalid_count": null
+  	    }
+  ],
+  "clues": [
+  	"clues": [
+  	    {
+  	      "id": 2407,
+  	      "answer": "sauna",
+  	      "question": "\"Birnbaum's Europe\" says while in Helsinki you should take one of these in a 200° F. room",
+  	      "value": 100,
+  	      "airdate": "1987-03-17T12:00:00.000Z",
+  	      "category_id": 369,
+  	      "game_id": null,
+  	      "invalid_count": null
+  	    },
+  	    {
+  	      "id": 2413,
+  	      "answer": "<i>Star Trek</i>",
+  	      "question": "A Sept. '87 theme cruise with stars of this TV show will take place on the Azure Seas, not the Enterprise",
+  	      "value": 200,
+  	      "airdate": "1987-03-17T12:00:00.000Z",
+  	      "category_id": 369,
+  	      "game_id": null,
+  	      "invalid_count": null
+  	    },
+  	    {
+  	      "id": 2419,
+  	      "answer": "bullfighting",
+  	      "question": "Rabbi Ovadya Yosef ruled religious law bars Jews from attending these sporting events in Spain",
+  	      "value": 300,
+  	      "airdate": "1987-03-17T12:00:00.000Z",
+  	      "category_id": 369,
+  	      "game_id": null,
+  	      "invalid_count": null
+  	    },
+  	    {
+  	      "id": 2425,
+  	      "answer": "White House",
+  	      "question": "For tours here, use the East Gate on East Executive Ave. & remember, no admission is ever charged",
+  	      "value": 400,
+  	      "airdate": "1987-03-17T12:00:00.000Z",
+  	      "category_id": 369,
+  	      "game_id": null,
+  	      "invalid_count": null
+  	    },
+  	    {
+  	      "id": 2431,
+  	      "answer": "Universal Studios",
+  	      "question": "At this site where tourists could see a chicken farm in 1922, they can see a \"Kongflict\" today",
+  	      "value": 500,
+  	      "airdate": "1987-03-17T12:00:00.000Z",
+  	      "category_id": 369,
+  	      "game_id": null,
+  	      "invalid_count": null
+  	    },
+
+  	    "clues":
+  	    "clues": [
+  	        {
+  	          "id": 61,
+  	          "answer": "a steamboat",
+  	          "question": "\"Fulton's Folly\"",
+  	          "value": 100,
+  	          "airdate": "1984-12-12T12:00:00.000Z",
+  	          "category_id": 13,
+  	          "game_id": null,
+  	          "invalid_count": null
+  	        },
+  	        {
+  	          "id": 67,
+  	          "answer": "a bicycle",
+  	          "question": "Early ones were called the \"hobby horse\", \"penny-farthing\" & \"high-wheeler\"",
+  	          "value": 200,
+  	          "airdate": "1984-12-12T12:00:00.000Z",
+  	          "category_id": 13,
+  	          "game_id": null,
+  	          "invalid_count": null
+  	        },
+  	        {
+  	          "id": 73,
+  	          "answer": "a paper clip",
+  	          "question": "1899 device for attaching papers that can ruin a computer disc when magnetized",
+  	          "value": 300,
+  	          "airdate": "1984-12-12T12:00:00.000Z",
+  	          "category_id": 13,
+  	          "game_id": null,
+  	          "invalid_count": null
+  	        },
+  	        {
+  	          "id": 79,
+  	          "answer": "Archimedes",
+  	          "question": "After inventing the lever & pulley, this Greek said, \"I will move the Earth\"",
+  	          "value": 400,
+  	          "airdate": "1984-12-12T12:00:00.000Z",
+  	          "category_id": 13,
+  	          "game_id": null,
+  	          "invalid_count": null
+  	        },
+  	        {
+  	          "id": 85,
+  	          "answer": "a submarine",
+  	          "question": "1st one to attempt sinking a warship was the \"Turtle\" in the Revolutionary War",
+  	          "value": 500,
+  	          "airdate": "1984-12-12T12:00:00.000Z",
+  	          "category_id": 13,
+  	          "game_id": null,
+  	          "invalid_count": null
+  	        }
+  ]
+}
