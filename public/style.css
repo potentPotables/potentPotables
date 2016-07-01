@@ -514,6 +514,21 @@ ul.why {
 	color: #CB1C4E;
 }
 
+#submitMessage {
+  text-decoration: none;
+  color: navy;
+  height: 6vh;
+  width: 30vw;
+  background: #fee533;
+  position: relative;
+  font-size: 2em;
+  font-family: "Gyparody";
+  border-radius: 15px;
+  box-shadow: 0px 10px 0px 0px #fef299 , 0px 0px 20px 0px #bbb;
+  transition: all 0.2s;
+  cursor: url('./assets/custom_pointer.png') 9 1, auto !important;
+}
+
 #howto {
 	color: yellow;
 	width: 64vw;
@@ -1220,6 +1235,7 @@ h1.devName.chris {
 .hire-input {
 	text-align: left !important;
 	font-size: 2em !important;
+	margin-bottom: 0% !important;
 }
 
 #end {
