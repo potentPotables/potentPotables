@@ -40,7 +40,6 @@ export function initSockets(store){
   });
 
   socket.on('incorrect', function(data) {
-    console.log('client socket incorrect data is : ', data);
     const incorrect = new Audio('http://www.qwizx.com/gssfx/usa/j64-outtatime.wav');
     incorrect.play();
     store.dispatch({type: INCORRECT_ANSWER, payload: data});
