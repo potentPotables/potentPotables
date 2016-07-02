@@ -4,13 +4,15 @@ export default class HowTo extends Component {
   render() {
     return (
         <div id="howto" className="animated flipInX">
-          	<div className="gyparody animated infinite pulse">
+          	<div className="gyparody">
               What is Potent Potables?
+          	<div className="gyparody">
+              How to Play the Game
             </div>
               <p>
                 Potent Potables is a simple same-room party game that combines the popular trivia game show Jeopardy™ and the Jackbox Party Pack™. For 1-100 players, your phones and your tablets are your controllers! Offering actual questions from the TV show itself, Potent Potables provides an authentic experience for fans of the show.
               </p>
-              <div className="gyparody animated infinite pulse">How to Play the Game</div>
+              <div className="gyparody">How to Play the Game</div>
               <p>AS A HOST:</p>
               <ul>
                 <li>Create a game! For optimal experience, hook your computer it up to a larger display.</li>

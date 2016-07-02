@@ -158,7 +158,8 @@ td.clues:hover {
 	and (min-device-width: 320px)
 	and (max-device-width: 736px) {
 		.links {
-			display: inline !important;
+			display: inline-block !important;
+			width: 40vw !important;
 		}
 		#aboutDiv {
 			margin: 5% !important;
@@ -390,6 +391,47 @@ u:hover {
 	color: #CB1C4E;
 }
 
+@media only screen
+	and (min-device-width: 320px)
+	and (max-device-width: 736px) {
+		#about {
+			height: 90vh !important;
+			font-size: 5em !important;
+		}
+		ul.why {
+			width: 90vw !important;
+			margin: auto !important;
+			font-size: 20px !important;
+		}
+		.stack.intro {
+			font-size: 1em !important;
+		}
+		.developers {
+			font-size: 1em !important;
+		}
+		.developerContainer {
+			margin-top: 3vh !important;
+			margin-bottom: 5vh !important;
+		}
+		.peter {
+			font-size: 60% !important;
+			margin-left: 2vw !important;
+		}
+		.lukas {
+			font-size: 60% !important;
+			margin-left: 3vw !important;
+		}
+		.chris {
+			font-size: 60% !important;
+		}
+		#aboutContainer {
+		  overflow-y: auto;
+		}
+		.developerText {
+			font-size: 80% !important;
+		}
+}
+
 #aboutContainer {
 	display: inline-block;
 	background-image: url('./assets/user-gameplay_bckgrnd.jpg');
@@ -421,13 +463,13 @@ u:hover {
 	margin-bottom: 2vh;
 	background-color: yellow;
 	border-radius: 20px;
-}
-
-.logo1 {
-	margin-right: 5px;
 	animation-delay: 1.25s;
 }
 
+.logo {
+	margin-right: 5px;
+}
+/*
 .logo2 {
 	margin-right: 5px;
 	animation-delay: 1.5s;
@@ -471,7 +513,7 @@ u:hover {
 .logo12 {
 	margin-right: 5px;
 	animation-delay: 4s;
-}
+}*/
 
 #why {
 	margin: auto;
@@ -480,8 +522,10 @@ u:hover {
 }
 
 ul.why {
-  width: 71vw;
-  margin-left: 10vw;
+  width: 90vw;
+  margin: auto;
+  margin-bottom: 5vh;
+  font-weight: bold;
 }
 
 .developerContainer {
@@ -536,6 +580,8 @@ ul.why {
 
 .developerText {
 	color: white;
+	text-decoration: underline;
+	font-family: 'Square-721-Bold-BT';
 }
 
 .developerText:hover {
@@ -1226,6 +1272,10 @@ Animate.css classes
 	animation-duration: 1s !important;
 }
 
+.bounce {
+	animation-duration: 1s !important;
+}
+
 /*
 */
 
@@ -1251,19 +1301,10 @@ Animate.css classes
   font-family: 'Open Sans';
 }
 
-h1.devName.peter {
+.devName {
   font-size: 4em;
   color: yellow !important;
-}
-
-h1.devName.lukas {
-	font-size: 4em;
-	color: yellow !important;
-}
-
-h1.devName.chris {
-	font-size: 4em;
-	color: yellow !important;
+  font-family: 'Square-721-Bold-BT';
 }
 
 .github {
