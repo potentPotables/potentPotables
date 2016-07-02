@@ -39,7 +39,7 @@ class LinkLanding extends Component {
     })
     return (
       <div className="linkEnter">
-        <div>Link Code: {this.props.link}</div>
+        <div id="linkcode">Link Code: {this.props.link}</div>
         <div id="usersContainer">
           <div> {usersList}</div>
         </div>

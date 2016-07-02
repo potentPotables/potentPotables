@@ -191,7 +191,9 @@ td.clues:hover {
   width: 300px;
   background: #fee533;
   position: relative;
-  margin: 50px;
+  /*margin: 50px;*/
+  margin-top: -3px;
+  margin-bottom: 15px;
   padding: 15px;
   font-size: 40px;
   font-family: "Gyparody";
@@ -285,7 +287,7 @@ input[type="text"] {
   font-size: 3em;
   text-align: center;
   padding: 10px;
-  margin-bottom: 15%;
+  margin-bottom: 10%;
 }
 
 #submit {
@@ -556,7 +558,7 @@ ul.why {
 }
 
 #howto {
-  font-size: 2em;
+  font-size: 1em;
   position: fixed;
   color: yellow;
   width: 60vw;
@@ -1353,7 +1355,13 @@ span.finalscore {
   font-family: 'Square-721-Bold-BT';
 }
 
-
+.alert {
+  padding: 0px;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  font-size: 22px;
+}
 
 
 
