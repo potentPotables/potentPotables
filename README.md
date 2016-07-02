@@ -6,7 +6,7 @@ Looking to test your trivia knowledge amongst your friends, family, or coworkers
 
 Potent Potables is a simple same-room party game that combines the popular trivia game show Jeopardy™ and the Jackbox Party Pack™. For 1-100 players, your phones and your tablets are your controllers! 
 
-With actual Jeopardy questions provided by **http://jservice.io/**, Potent Potables offers an authentic experience for fans of the TV show.
+With actual Jeopardy questions provided by **[jservice.io](http://jservice.io/)**, Potent Potables offers an authentic experience for fans of the TV show.
 
 Once a game is created, contestants will browse to **potentpotables.io** on their mobile device and click on Join a Game. They will punch in the link code provided by the main display and that will have them join the session. Super easy to setup and no big mess of controllers needed.
 
@@ -36,3 +36,59 @@ Once a game is created, contestants will browse to **potentpotables.io** on thei
 * [Node](https://nodejs.org/en/)
 * [Express](http://expressjs.com/)
 * [MongoDB](https://www.mongodb.com/)
+
+### Front-End(ReactJS)
+```
+src
+├── actions
+│   └── index.js
+│
+├── components
+│   ├── auth.conroller.js
+│   ├── auth.factory.js
+│   ├── auth.html
+│   ├──
+│   ├──
+│   ├──
+│   ├──
+│   ├──
+│   ├──
+│   ├──
+│   ├──
+│   ├──
+│   ├──
+│   ├──
+│   ├──
+│   ├──
+│   ├── battlefield.controller.js
+│   ├── battlefield.factory.js
+│   ├── battlefield.html
+│   ├── battlefieldLogic.factory.js
+│   └── battlefieldTimer.factory.js
+│ 
+├── lobby
+│   ├── chat.factory.js
+│   ├── lobby.controller.js
+│   ├── lobby.factory.js
+│   ├── lobby.html
+│   ├── lobbyListeners.factory.js
+│   └── stats.factory.js
+│ 
+├── shared
+│   └── socket.factory.js
+│ 
+├── sound
+│   └── sound.factory.js
+│ 
+├── ui-router
+│   └── app.config.js
+│ 
+├── waiting
+│   ├── waiting.controller.js
+│   ├── waiting.factory.js
+│   ├── waiting.html
+│   └── waitingListeners.factory.js
+│ 
+├── app.controller.js
+└── app.module.js
+```
