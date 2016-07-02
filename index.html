@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
     <link rel="stylesheet" href="/animate.css">
+    
     <style>
     @font-face {
       font-family: 'Korinna-BT';
@@ -42,12 +43,16 @@
         url('./assets/fonts/Square_721_Bold_BT.woff') format('woff')
     }
     </style>
+    <script>
+    screen.orientation.lock('portrait').catch(function() {
+      console.log('orientation locked!');
+    });
+    </script>
 
     <title>POPO</title>
 
   </head>
   <body>
-
     <div class="container"></div>
   </body>
   <script src="/node_modules/socket.io-client/socket.io.js"></script>
