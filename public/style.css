@@ -913,7 +913,7 @@ span#enabledText {
     flex-grow: 2;
     margin: 5px;
     font-family: "Swiss-911";
-    width: 50vw;
+    width: 60vw;
     height: 0vh;
     padding-top: 10px;
 }
@@ -962,6 +962,7 @@ span#enabledText {
 	 text-align: center;
 	 color: navy;
 	 animation-delay: 2s;
+	 margin-bottom: 2vh;
 }
 
 .create.a {
