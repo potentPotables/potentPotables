@@ -53,13 +53,13 @@ class HostGamePlay extends Component {
           <div className= 'host-gameplay-question'>
           {this.handleQuestionLength()}
           </div>
-          <div className="buttons-question">
+          <div className="buttons-question animated infinite flash">
             <Link to='/hostanswer'>
               <a onClick={this.handleClick.bind(this)} className="button1 a animated infinite pulse" id="activateUsers">Activate Users</a>
             </Link>
           </div>
         </div>:
-        <div className="waitingClue animated infinite flash">
+        <div className="waitingClue">
           Waiting for clue to be selected...
         </div>
       }

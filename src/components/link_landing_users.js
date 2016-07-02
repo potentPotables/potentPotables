@@ -6,7 +6,7 @@ const UsersListEntry = (props) =>{
     <div>
     {props.photo !== '' ?
       <div>
-        <Avatar src= {props.photo} size= {100} disabled= {true}/>
+        <Avatar src= {props.photo} size= {75} disabled= {true}/>
         {props.username}
       </div> :
       <div>{props.username}</div>

@@ -36,12 +36,13 @@ class LinkLanding extends Component {
     const usersList= _.map(this.props.users, user =>{
       console.log('user is', user);
      return <UsersListEntry username= {user.username} photo= {user.photo}/>
-
     })
     return (
       <div className="linkEnter">
         <div>Link Code: {this.props.link}</div>
-        <div> {usersList}</div>
+        <div id="usersContainer">
+          <div> {usersList}</div>
+        </div>
         <button onClick= {this.handleClick.bind(this)} id="startGame" className="a">Start Game</button>
         {this.renderAlert()}
       </div>
