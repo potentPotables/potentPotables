@@ -8,7 +8,7 @@ Potent Potables is a simple same-room party game that combines the popular trivi
 
 With actual Jeopardy questions provided by **[jservice.io](http://jservice.io/)**, Potent Potables offers an authentic experience for fans of the TV show.
 
-Once a game is created, contestants will browse to **potentpotables.io** on their mobile device and click on Join a Game. They will punch in the link code provided by the main display and that will have them join the session. Super easy to setup and no big mess of controllers needed.
+Once a game is created, contestants will browse to **[potentpotables.io](http://potentpotables.io)** on their mobile device and click on Join a Game. They will punch in the link code provided by the main display and that will have them join the session. Super easy to setup and no big mess of controllers needed.
 
 ## Play online
 
@@ -37,58 +37,111 @@ Once a game is created, contestants will browse to **potentpotables.io** on thei
 * [Express](http://expressjs.com/)
 * [MongoDB](https://www.mongodb.com/)
 
-### Front-End(ReactJS)
+### Front-End(React, Redux, Socket.io)
 ```
 src
 ├── actions
 │   └── index.js
 │
 ├── components
-│   ├── auth.conroller.js
-│   ├── auth.factory.js
-│   ├── auth.html
-│   ├──
-│   ├──
-│   ├──
-│   ├──
-│   ├──
-│   ├──
-│   ├──
-│   ├──
-│   ├──
-│   ├──
-│   ├──
-│   ├──
-│   ├──
-│   ├── battlefield.controller.js
-│   ├── battlefield.factory.js
-│   ├── battlefield.html
-│   ├── battlefieldLogic.factory.js
-│   └── battlefieldTimer.factory.js
+│   ├── about.js
+│   ├── app.js
+│   ├── categories.js
+│   ├── chris.js
+│   ├── clue.js
+│   ├── clue_view.js
+│   ├── end.js
+│   ├── gameboard.js
+│   ├── hire_chris.js
+│   ├── hire_lukas.js
+│   ├── hire_peter.js
+│   ├── host_answer.js
+│   ├── host_category.js
+│   ├── host_clue.js
+│   ├── host_gameplay.js
+│   ├── howto.js
+│   ├── info_index.js
+│   ├── link_landing.js
+│   ├── link_landing_users.js
+│   ├── link_verification.js
+│   ├── lukas.js
+│   ├── peter.js
+│   ├── redirect.js
+│   ├── scoreboard.js
+│   ├── user_config.js
+│   └── user_gameplay.js
 │ 
-├── lobby
-│   ├── chat.factory.js
-│   ├── lobby.controller.js
-│   ├── lobby.factory.js
-│   ├── lobby.html
-│   ├── lobbyListeners.factory.js
-│   └── stats.factory.js
+├── reducers
+│   ├── gameboard_reducer.js
+│   ├── gameplay_reducer.js
+│   ├── index.js
+│   ├── linkAuth_reducer.js
+│   ├── sessionID_reducer.js
+│   └── user_reducer.js
 │ 
-├── shared
-│   └── socket.factory.js
-│ 
-├── sound
-│   └── sound.factory.js
-│ 
-├── ui-router
-│   └── app.config.js
-│ 
-├── waiting
-│   ├── waiting.controller.js
-│   ├── waiting.factory.js
-│   ├── waiting.html
-│   └── waitingListeners.factory.js
-│ 
-├── app.controller.js
-└── app.module.js
+├── index.js
+├── routes.js
+└── sockets_client.js
 ```
+### Front-End Styles
+```
+styles
+├── assets
+│   └── fonts
+│   |   ├── gyparody.woff
+│   |   ├── gyparody.woff2
+│   |   ├── Korinna_Bold_BT.ttf
+│   |   ├── Korinna_Bold_BT.woff
+│   |   ├── Korinna_Bold_BT.woff2
+│   |   ├── Swiss_911_Compressed.ttf
+│   |   ├── Swiss_911_Compressed.woff
+│   |   ├── Swiss_911_Compressed.woff2
+│   |   ├── Swiss_911_Extra_Compressed.woff
+│   |   └── Swiss_911_Extra_Compressed.woff2
+│   |
+|   ├── chris.jpg
+|   ├── custom_pointer.png
+|   ├── gameboard_background.gif
+|   ├── logo.png
+|   ├── lukas.jpg
+|   ├── neon_cursor.png
+|   ├── peter.jpg
+|   └── user-gameplay_bckground.jpg
+├── tech_logos
+│   ├── aws.png
+│   ├── casper.png
+│   ├── chai.png
+│   ├── express.png
+│   ├── github.png
+│   ├── github_glossy.png
+│   ├── linkedin.png
+│   ├── linkedin_glossy.png
+│   ├── mocha.png
+│   ├── mongodb.png
+│   ├── nodejs.png
+│   ├── phantomjs.png
+│   ├── react.png
+│   ├── redux.png
+│   ├── socket.png
+│   └── webpack.png
+|
+├── animate.css
+├── favicon.ico
+├── game_buzz.wav
+├── scrape.json
+└── style.css
+````
+### Back-End(Node, Express, MongoDB, Socket.io)
+````
+server
+├── controllers
+|   ├── checksession.js
+|   ├── closesession.js
+|   └── verifycode.js
+├── models
+|   └── session.js
+├── router.js
+├── sendgrid.js
+├── server.js
+└── sockets_server.js
+````
