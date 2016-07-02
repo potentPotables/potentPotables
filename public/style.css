@@ -141,7 +141,7 @@ td.clues:hover {
     margin-bottom: 20vh;
     text-align: center;
     background-color: yellow;
-    height: 20vh;
+    height: 25vh;
     padding: 1em;
     border-radius: 30px;
 }
@@ -158,8 +158,7 @@ td.clues:hover {
 	and (min-device-width: 320px)
 	and (max-device-width: 736px) {
 		.links {
-			display: block !important;
-			margin-top: 8.5vh !important;
+			display: inline !important;
 		}
 		#aboutDiv {
 			margin: 5% !important;
@@ -170,7 +169,7 @@ td.clues:hover {
 		#creditsDiv {
 			margin: 5% !important;
 		}
-	}
+}
 
 .links {
 	animation-delay: 3s;
@@ -209,6 +208,15 @@ td.clues:hover {
 
 #startGame.a:hover {
 	color: #669DD3 !important;
+}
+
+#usersContainer {
+	font-size: 50%;
+  display: flex;
+  width: 63vw;
+  margin: auto;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 #submitUsername {
@@ -318,7 +326,7 @@ input[type="checkbox"]:hover {
 .landing {
 	min-width: 100vw;
 	min-height: 100vh;
-	margin-top: 20vh;
+	margin-top: 18vh;
 	text-align: center;
 }
 
@@ -632,7 +640,7 @@ ul.why {
 .backgroundContainer {
 	margin-top: 15vh;
 	width: 75vw;
-	height: 60vh;
+	height: 65vh;
 	background-color: rgb(30, 91, 144);
 	border-radius: 25px;
 	box-shadow: 0px 0px 75px 20px rgba(255,255,0,1);
@@ -856,6 +864,20 @@ span#enabledText {
     -moz-transition: background-color .2s ease-in-out, -moz-transform .1s ease-in-out;
     -o-transition: background-color .2s ease-in-out, -o-transform .1s ease-in-out;
     transition: background-color .2s ease-in-out, transform .1s ease-in-out;
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+  	.score {
+  		height: 5vh;
+  	}
+  	.buttonSize {
+  		width: 50vw;
+  		height: 35vh;
+  	}
 }
 
 .gameplay-view {
