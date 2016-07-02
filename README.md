@@ -25,7 +25,7 @@ Once a game is created, contestants will browse to **[potentpotables.io](http://
 3. In two more tabs, type **mongod** in one, and **webpack --watch** in the other
 4. In the first tab, type **npm start**
 5. Visit **http://localhost:8080/**
-6. To simulate mobile contestants with Chrome, head to the DevTools and click on Toggle Device Toolbar and choose your device.
+6. To simulate mobile contestants with Chrome, head to the DevTools and click on Toggle Device Toolbar and choose your device
 
 ## Developer Documentation
 
@@ -83,6 +83,12 @@ src
 ├── routes.js
 └── sockets_client.js
 ```
+#### Separation of Concerns Across Modules
+* Action creators are where any changes to the local application state start.
+* In Redux, all application state is stored as a single object. Reducers specify how the application's state change in response to an action creator.
+* Components are responsible for rendering views upon digest.
+* Sockets allow an action from one client to change the state of another.
+
 ### Front-End Styles
 ```
 styles
@@ -135,6 +141,7 @@ styles
 ````
 server
 ├── controllers
+|   ├── createsession.js
 |   ├── checksession.js
 |   ├── closesession.js
 |   └── verifycode.js
@@ -145,3 +152,20 @@ server
 ├── server.js
 └── sockets_server.js
 ````
+#### Server
+The server is built using Node.js and Express. The Express server is created first and then passed into Socket.io as parameter. When the application is started the listen() function activates both the Express and socket server.
+
+#### Database
+Upon clicking on Create a Game, a session is created and stored within the database. Whenever a new document is created, MongoDB provides it with a unique ID. We sliced off the last five characters of that ID and assigned that to the code property of each session. Whenever a contestant submits a code, the server runs a check to see if there exist a session with that code exist. When a game starts, the session is removed from the database.
+
+#### Schema
+Session { code: String, hostExists: Boolean }
+
+#### Sockets
+Rooms in Socket.io don't have to be created, one is created when a socket joins it. The first socket that joins it is the main display(the gameboard). Whenever a code is validated, a client joins that same room on the server side.
+
+### The Developers
+
+* [Peter Dinh](https://github.com/petertdinh)
+* [Lukas Stuart-Fry](https://github.com/lstuartfry)
+* [Chris Loncarich](https://github.com/Loncarich)
