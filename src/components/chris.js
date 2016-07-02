@@ -6,7 +6,7 @@ export default class Chris extends Component {
     return (
       <div className="bioContainer">
       <div className="bio">
-        <h1 className="devName chris">Chris Loncarich</h1>
+        <h1 className="devName">Chris Loncarich</h1>
         <img />
         <div className="externals">
           <div className="github">

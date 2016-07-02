@@ -4,24 +4,24 @@ import { Link } from 'react-router';
 export default class About extends Component {
   render() {
     return (
-      <div id="aboutContainer" className="animated flipInX">
+      <div id="aboutContainer" className="animated fadeInUpBig">
         <div id="about">
           <h2 className="stack intro">
             Technology:
           </h2>
-            <div id="stack">
-              <img className="logo1 animated zoomIn" id="react" src="http://50.112.42.29/tech_logos/react.png" height="65" width="65"/>
-              <img className="logo2 animated zoomIn" id="redux" src="http://50.112.42.29/tech_logos/redux.png" height="65" width="65"/>
-              <img className="logo3 animated zoomIn" id="webpack" src="http://50.112.42.29/tech_logos/webpack.png" height="65" width="65"/>
-              <img className="logo4 animated zoomIn" id="socket" src="http://50.112.42.29/tech_logos/socket.png" height="65" width="65"/>
-              <img className="logo5 animated zoomIn" id="node" src="http://50.112.42.29/tech_logos/nodejs.png" height="65" width="65"/>
-              <img className="logo6 animated zoomIn" id="express" src="http://50.112.42.29/tech_logos/express.png" height="55" width="205"/>
-              <img className="logo7 animated zoomIn" id="mongodb" src="http://50.112.42.29/tech_logos/mongodb.png" height="65" width="65"/>
-              <img className="logo8 animated zoomIn" id="chai" src="http://50.112.42.29/tech_logos/chai.png" height="65" width="65"/>
-              <img className="logo9 animated zoomIn" id="mocha" src="http://50.112.42.29/tech_logos/mocha.png" height="65" width="65"/>
-              <img className="logo10 animated zoomIn" id="phantomjs" src="http://50.112.42.29/tech_logos/phantomjs.png" height="65" width="65"/>
-              <img className="logo11 animated zoomIn" id="casperjs" src="http://50.112.42.29/tech_logos/casper.png" height="80" width="65"/>
-              <img className="logo12 animated zoomIn" id="aws" src="http://50.112.42.29/tech_logos/aws.png" height="65" width="125"/>
+            <div id="stack" className="animated zoomIn">
+              <img className="logo" id="react" src="http://50.112.42.29/tech_logos/react.png" height="65" width="65"/>
+              <img className="logo" id="redux" src="http://50.112.42.29/tech_logos/redux.png" height="65" width="65"/>
+              <img className="logo" id="webpack" src="http://50.112.42.29/tech_logos/webpack.png" height="65" width="65"/>
+              <img className="logo" id="socket" src="http://50.112.42.29/tech_logos/socket.png" height="65" width="65"/>
+              <img className="logo" id="node" src="http://50.112.42.29/tech_logos/nodejs.png" height="65" width="65"/>
+              <img className="logo" id="express" src="http://50.112.42.29/tech_logos/express.png" height="55" width="205"/>
+              <img className="logo" id="mongodb" src="http://50.112.42.29/tech_logos/mongodb.png" height="65" width="65"/>
+              <img className="logo" id="chai" src="http://50.112.42.29/tech_logos/chai.png" height="65" width="65"/>
+              <img className="logo" id="mocha" src="http://50.112.42.29/tech_logos/mocha.png" height="65" width="65"/>
+              <img className="logo" id="phantomjs" src="http://50.112.42.29/tech_logos/phantomjs.png" height="65" width="65"/>
+              <img className="logo" id="casperjs" src="http://50.112.42.29/tech_logos/casper.png" height="80" width="65"/>
+              <img className="logo" id="aws" src="http://50.112.42.29/tech_logos/aws.png" height="65" width="125"/>
             </div>
           <div>
             <ul className="why">
@@ -36,10 +36,10 @@ export default class About extends Component {
             </ul>
           </div>
           <div className="developerContainer">
-            <h2 className="developers animated infinite pulse">
+            <h2 className="developers">
               The Developers:
             </h2>
-            <h3 className="clickDevelopers">
+            <h3 className="clickDevelopers animated infinite flash">
             (click us for more info)
             </h3>
             <div className="parent">
