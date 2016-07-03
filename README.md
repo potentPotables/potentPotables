@@ -18,7 +18,7 @@ Once a game is created, contestants will browse to **[potentpotables.io](http://
 4. Once contestants have been verified, they will be directed to a page where they will submit their username as well as snap a selfie if they like.
 5. Sessions can support any amount of players, feel free to form teams/alliances to combine trivia knowledge!
 
-## Play locally
+## Contribute
 
 1. Fork and clone this repo.
 2. In your terminal within the root directory, type: **npm install**
@@ -26,6 +26,11 @@ Once a game is created, contestants will browse to **[potentpotables.io](http://
 4. In the first tab, type **npm start**
 5. Visit **http://localhost:8080/**
 6. To simulate mobile contestants with Chrome, head to the DevTools and click on Toggle Device Toolbar and choose your device
+
+## Features for future releases
+* **Host Control**: Right now the host has to switch between the main display's computer and their mobile. To select a clue in the former and to activate users, declare incorrect, and correct in the latter. We initially didn't come up with this because we thought fitting the gameboard on the mobile wouldn't be practical. However we came up with a solution to that as you see in the link. This is high priority as it heavily improves the quality of life for the host.
+* **Final Potent Potables**: Just like the show, contestants would write out their answer for a final clue. To do this, we would pull a random clue from the API at the end of Double Potent Potables. Contestants would then be able wager their points and write out their answer on their mobile devices. Currently looking into canvas based signature pads used by POS systems to implement this feature.
+* **More Clues**: At the moment, a category will always return the same five clues. The categories provided by the API, especially the popular ones can have well over 100 clues, so about 20 possible sets. Looking to modify the API to give us a more diverse set of clues.
 
 ## Developer Documentation
 
