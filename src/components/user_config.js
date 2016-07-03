@@ -123,7 +123,7 @@ class userConfig extends Component {
   }
 
   render() {
-    const styleDropzone= {
+    const styleDropzone = {
       width: 200,
       height: 200,
       borderWith: 2,
@@ -133,9 +133,9 @@ class userConfig extends Component {
       margin: 'auto',
       backgroundColor: 'white',
       color: 'black'
-    }
+    };
 
-    const activeStyleDropzone= {
+    const activeStyleDropzone = {
       width: 200,
       height: 200,
       borderWith: 2,
@@ -145,7 +145,7 @@ class userConfig extends Component {
       margin: 'auto',
       backgroundColor: 'white',
       color: 'black'
-    }
+    };
     
     return (
       <div className="configContainer">

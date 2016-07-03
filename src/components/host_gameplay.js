@@ -7,20 +7,20 @@ import { HostCategory } from './host_category';
 class HostGamePlay extends Component {
   constructor(props){
     super(props)
-    this.handleQuestionLength= this.handleQuestionLength.bind(this);
+    this.handleQuestionLength = this.handleQuestionLength.bind(this);
   }
   handleClick(){
     activateButtons(this.props.room);
   }
   handleQuestionLength(){
-    var tempQuestion= this.props.activeClue.question.split(' ');
-    var flag= false;
+    var tempQuestion = this.props.activeClue.question.split(' ');
+    var flag = false;
     if (tempQuestion.length === 1 && tempQuestion[0].indexOf(',') !== -1){
       tempQuestion= this.props.activeClue.question.split(',');
-      flag= true;
+      flag = true;
     }
-    var results= [];
-    var tempResults= [];
+    var results = [];
+    var tempResults = [];
     if (tempQuestion.length < 7){
       if (flag){
       return tempQuestion.join(', ');
@@ -69,7 +69,6 @@ class HostGamePlay extends Component {
 }
 
 function mapStateToProps(state){
-  console.log('inside hostgameplay', state.gameplay.activeClue);
   return {
     isGameActive: state.gameplay.isGameActive,
     activeClue: state.gameplay.activeClue,

@@ -6,9 +6,7 @@ var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
 
 class InfoIndex extends Component {
-	componentDidMount(){
-
-	}
+	
 	render() {
 
 		return (

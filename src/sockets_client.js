@@ -18,20 +18,17 @@ export const START_GAME_ERROR = 'START_GAME_ERROR';
 //nearly all client-side socket listeners will be be contained here
 //initSockets will be exported to client-side index
 export function initSockets(store){
-  console.log('inside initSockets Client');
 
   socket.on('newUser', function(data) {
   	store.dispatch({type: ADD_NEW_USER, payload: data})
   });
 
   socket.on('setActiveUser', function(data){
-    console.log('setActiveUser');
     store.dispatch({type: SET_ACTIVE_USER, payload: data.username});
     store.dispatch({type: DISABLE_BUTTON, payload: data.isButtonClicked});
   });
 
   socket.on('gameActive', function(data) {
-    console.log('listening start game client');
     store.dispatch({type: ACTIVATE_GAME, payload: true});
   });
 
@@ -76,14 +73,11 @@ export function initSockets(store){
 //all client-side socket emitters will be contained here
 //functions will be exported to appropriate files
 export function joinRoom(room){
-  console.log('insideJoinRoom');
   socket.emit('joinRoom', {room: room});
 }
 
 // called inside /actions/index.js => createUsername
 export function createUserSockets(username, photo, room) {
-  console.log('room is', room);
-  console.log('inside UsernameSockeetEmitter', room)
 	socket.emit('createUserSockets', {username: username, photo: photo, room: room});
 }
 
@@ -92,7 +86,6 @@ export function sendButtonClick(username, room, clue) {
 }
 
 export function startGame(room) {
-  console.log('emitting start Game', room);
   socket.emit('startGame', { room: room });
 }
 

@@ -27,7 +27,6 @@ class UserGameplay extends Component {
 
   handleBuzz(){
     const buzz = new Audio('http://50.112.42.29/game_buzz.wav');
-    console.log('inside user gameplay handleBuzz');
     buzz.play();
     sendButtonClick(this.props.username, this.props.linkCode, this.props.activeClue);
   }
@@ -93,7 +92,6 @@ class UserGameplay extends Component {
 }
 
 function mapStateToProps(state){
-    console.log('isGameActive', state.gameplay.isGameActive);
   return {
     isButtonDisabled: state.gameplay.isButtonDisabled,
     username: state.user.username,
