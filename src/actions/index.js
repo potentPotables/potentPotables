@@ -81,7 +81,7 @@ export function fetchGame() {
   return function(dispatch){
     axios.post('/game')
       .then(response => {
-        var tempClues= response.data.clues;
+        var tempClues = response.data.clues;
         for (var i= 0; i< tempClues.clues.length; i+=5){
           tempClues.clues[i].value= 200;
           tempClues.clues[i+1].value= 400;
@@ -101,7 +101,7 @@ export function fetchRoundTwo() {
   return function(dispatch){
     axios.post('/game')
       .then(response => {
-        var tempClues= response.data.clues;
+        var tempClues = response.data.clues;
         for (var i= 0; i< tempClues.clues.length; i+=5){
           tempClues.clues[i].value= 400;
           tempClues.clues[i+1].value= 800;

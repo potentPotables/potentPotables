@@ -6,7 +6,7 @@ export default function( state = {
 }, action) {
   switch(action.type){
     case CREATE_GAME:
-      return Object.assign(state, action.payload);
+      return {...state, categories: action.payload.categories, clues: action.payload.clues};
     default:
       return state;
   }

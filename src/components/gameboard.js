@@ -16,12 +16,10 @@ class Gameboard extends Component {
   handleSetActiveClue(clue, room){
     setActiveClue(clue, room);
     this.props.setActiveClueGameboard(clue);
-    //console.log('inside Set Active Clue');
   }
 
   render() {
 
-    console.log(this.props.clues);
     const clues= this.props.clues.map((clue) => {
       return <Clue value={clue.value}
                    key= {clue.id}

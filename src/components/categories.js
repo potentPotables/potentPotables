@@ -12,7 +12,10 @@ class Categories extends Component {
 }
 
 function mapStateToProps(state){
-  return {categories: state.gameboard.categories, clues: state.gameboard.clues}
+  return {
+  	categories: state.gameboard.categories, 
+  	clues: state.gameboard.clues
+  };
 };
 
 export default connect(mapStateToProps)(Categories);
