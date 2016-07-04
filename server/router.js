@@ -51,12 +51,15 @@ module.exports = function(app, io) {
 		.then((body) => {
 			var array = JSON.parse(body);
 			var categories = [];
+			array = array.filter(clue => {
+				return clue.question !== "" || clue.invalid_count === null;
+			});
 			_.shuffle(array).forEach(category => {
 				if (categories.indexOf(category.category_id) > -1 || categories.length > columns - 1) {
 				} else {
 					categories.push(category.category_id)
 				}
-			})
+			});
 			return categories;
 		})
 		//once you have your 6 categories, make another call to the API to grab the clues that belong to them.
