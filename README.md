@@ -18,7 +18,7 @@ Once a game is created, contestants will browse to **[potentpotables.io](http://
 4. Once contestants have been verified, they will be directed to a page where they will submit their username as well as snap a selfie if they like.
 5. Sessions can support any amount of players, feel free to form teams/alliances to combine trivia knowledge!
 
-## Play locally
+## Contribute
 
 1. Fork and clone this repo.
 2. In your terminal within the root directory, type: **npm install**
@@ -26,6 +26,10 @@ Once a game is created, contestants will browse to **[potentpotables.io](http://
 4. In the first tab, type **npm start**
 5. Visit **http://localhost:8080/**
 6. To simulate mobile contestants with Chrome, head to the DevTools and click on Toggle Device Toolbar and choose your device
+
+## Features for future releases
+* **Host Control**: Right now the host has to switch between the main display's computer and their mobile. To select a clue in the former and to activate users, declare incorrect, and correct in the latter. We initially didn't come up with this because we thought fitting the gameboard on the mobile wouldn't be practical. However we came up with a solution to that as you see in the link. This is high priority as it heavily improves the quality of life for the host.
+* **Final Potent Potables**: Just like the show, contestants would write out their answer for a final clue. To do this, we would pull a random clue from the API at the end of Double Potent Potables. Contestants would then be able wager their points and write out their answer on their mobile devices. This will probably be done with the <canvas> element.
 
 ## Developer Documentation
 
@@ -44,32 +48,41 @@ src
 │   └── index.js
 │
 ├── components
-│   ├── about.js
+|   ├── about
+│   |   ├── about.js
+│   |   ├── chris.js
+│   |   ├── hire_chris.js
+│   |   ├── hire_lukas.js
+│   |   ├── hire_peter.js
+│   |   ├── lukas.js
+│   |   └── peter.js
+│   |
+|   ├── gameplay
+│   |   ├── categories.js
+│   |   ├── clue.js
+│   |   ├── clue_view.js
+│   |   ├── end.js
+│   |   ├── gameboard.js
+│   |   ├── host_answer.js
+│   |   ├── host_category.js
+│   |   ├── host_clue.js
+│   |   ├── host_gameplay.js
+│   |   ├── redirect.js
+│   |   ├── scoreboard.js
+│   |   ├── user_config.js
+│   |   └── user_gameplay.js
+│   |
+|   ├── howto
+│   |   └── howto.js
+│   |
+│   └── linkcode
+│   |   ├── link_landing.js
+│   |   ├── link_landing_users.js
+│   |   └── link_verification.js
+│   |
 │   ├── app.js
-│   ├── categories.js
-│   ├── chris.js
-│   ├── clue.js
-│   ├── clue_view.js
-│   ├── end.js
-│   ├── gameboard.js
-│   ├── hire_chris.js
-│   ├── hire_lukas.js
-│   ├── hire_peter.js
-│   ├── host_answer.js
-│   ├── host_category.js
-│   ├── host_clue.js
-│   ├── host_gameplay.js
-│   ├── howto.js
-│   ├── info_index.js
-│   ├── link_landing.js
-│   ├── link_landing_users.js
-│   ├── link_verification.js
-│   ├── lukas.js
-│   ├── peter.js
-│   ├── redirect.js
-│   ├── scoreboard.js
-│   ├── user_config.js
-│   └── user_gameplay.js
+│   ├── credits.js
+│   └── landing.js
 │ 
 ├── reducers
 │   ├── gameboard_reducer.js
