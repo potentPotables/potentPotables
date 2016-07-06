@@ -69,7 +69,7 @@ class UserGameplay extends Component {
               <a id="gamebuttonDisabled" disabled= {true} >
                   <span className="buttonSize">{buttonConfig}<span id="disabledText">disabled</span></span>
               </a> :
-              <a id="gamebutton" className="animated infinite pulse" >
+              <a id="gamebutton">
                   <span className="buttonSize" onClick= {this.handleBuzz.bind(this)}>{buttonConfig}<span id="enabledText">BUZZ IN</span></span>
               </a>
         }
