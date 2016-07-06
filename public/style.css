@@ -920,11 +920,10 @@ span#enabledText {
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) {
   	.score {
-  		height: 5vh;
+  		height: 12vh !important;
   	}
   	.buttonSize {
-  		width: 50vw;
-  		height: 35vh;
+  		width: 50vw !important;
   	}
 }
 
@@ -962,7 +961,7 @@ span#enabledText {
 
 .buttonSize {
 	width: 50vw;
-	height: 29vh;
+	height: 28vh;
 }
 
 /*ORIGINAL*/
@@ -980,24 +979,26 @@ span#enabledText {
     border-radius: 25px;
     background-color: rgb(30, 91, 144);
     font-size: 3em;
-    flex-grow: 2;
     margin: 5px;
     font-family: "Swiss-911";
     width: 60vw;
-    height: 0vh;
+    height: 15vh;
     padding-top: 10px;
 }
 
 .buzz-alert {
+	width: 100vw;
+	position: absolute;
 	font-size: 1.5em;
-	flex-grow: 2;
-	margin: 5px;
+	margin-top: 5%;
+	text-align: center;
 }
 
 .btn-container {
-	flex-grow: 5;
-	margin: 5px;
+	position: static;
+	margin: 5%;
 	font-size: 1.5em;
+	margin-top: 25%;
 }
 
 #scoreButton {
@@ -1019,9 +1020,9 @@ span#enabledText {
 
 .avatar {
 	font-size: 1.5em;
-	margin-top: 20px;
+	margin-top: 25%;
 	text-align: center;
-	flex-grow: 3;
+	position: static;
 }
 
 /*.game-button {
@@ -1033,6 +1034,7 @@ span#enabledText {
 	 color: navy;
 	 animation-delay: 2s;
 	 margin-bottom: 2vh;
+	 margin-top: 15%;
 }
 
 .create.a {
