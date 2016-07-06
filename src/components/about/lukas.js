@@ -10,10 +10,10 @@ export default class Chris extends Component {
 	      <img />
 	      <div className="externals">
 		      <div className="github">
-		          <a href="https://github.com/lstuartfry"><img src="http://localhost:8080/tech_logos/github_glossy.png" height="100" width="100"/></a>
+		          <a href="https://github.com/lstuartfry"><img src="http://50.112.42.29/tech_logos/github_glossy.png" height="100" width="100"/></a>
 		      </div>
 		      <div className="linkedin">
-		          <a href="https://www.linkedin.com/in/lukasstuartfry"><img src="http://localhost:8080/tech_logos/linkedin_glossy.png" height="135" width="135" /></a>
+		          <a href="https://www.linkedin.com/in/lukasstuartfry"><img src="http://50.112.42.29/tech_logos/linkedin_glossy.png" height="135" width="135" /></a>
 		      </div>
 	      </div>
 	      <div className="sell">Something that screams hire me here.</div>

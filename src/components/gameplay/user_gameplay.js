@@ -50,7 +50,7 @@ class UserGameplay extends Component {
                   <div>{this.props.activeUser} buzzed in!</div>
                 </div>
                 :
-                <div>{this.props.activeUser} buzzed in!</div>
+                <div className="buzzed">{this.props.activeUser} buzzed in!</div>
             : this.props.activeUser && this.props.activeUser === this.props.username ?
               <div> You're live !</div> :
               <div></div>
