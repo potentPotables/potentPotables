@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchRoundTwo } from '../actions/index';
+import { fetchRoundTwo } from '../../actions/index';
 
 var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 

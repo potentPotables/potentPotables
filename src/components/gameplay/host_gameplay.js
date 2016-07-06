@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import { activateButtons } from '../sockets_client';
+import { activateButtons } from '../../sockets_client';
 import { HostCategory } from './host_category';
 
 class HostGamePlay extends Component {

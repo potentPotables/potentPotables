@@ -1,14 +1,14 @@
 import React, { Component, PropTypes } from 'react';
 import { reduxForm } from 'redux-form';
-import { createMessage } from '../actions/index';
+import { createMessage } from '../../actions/index';
 
-class HireChris extends Component {
+class HireLukas extends Component {
 	static contextTypes = {
 		router: PropTypes.object
 	};
 
 	onSubmit(props) {
-		this.props.createMessage(props, 'loncarichchris@gmail.com');
+		this.props.createMessage(props, 'lstuartfry@gmail.com');
 		this.context.router.push('/');
 	}
 
@@ -29,7 +29,7 @@ class HireChris extends Component {
 			  </div>
 
 			  <div className={`form-group ${company.touched && company.invalid ? 'has-danger' : ''}`}>
-			    <label><strong style={{fontSize: "2em"}}>Company</strong></label>
+			    <label><strong>Company</strong></label>
 			    <input type="text" className="form-control hire-input" {...company} />
 			    <div class="text-help">
 			      {company.touched ? company.error: ''}
@@ -84,4 +84,4 @@ export default reduxForm({
 	form: 'HireMessageForm',
 	fields: ['name', 'company', 'email', 'message'],
 	validate,
-}, null, { createMessage })(HireChris);
+}, null, { createMessage })(HireLukas);

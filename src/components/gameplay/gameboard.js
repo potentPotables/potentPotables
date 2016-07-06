@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Clue from './clue';
-import { setActiveClue } from '../sockets_client';
-import { setActiveClueGameboard } from '../actions/index';
+import { setActiveClue } from '../../sockets_client';
+import { setActiveClueGameboard } from '../../actions/index';
 
 
 class Gameboard extends Component {

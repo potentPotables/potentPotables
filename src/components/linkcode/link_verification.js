@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
-import { setUserType, linkCodeVerification } from '../actions/index';
+import { setUserType, linkCodeVerification } from '../../actions/index';
 
 
 class LinkVerification extends Component {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { sendButtonClick } from '../sockets_client';
+import { sendButtonClick } from '../../sockets_client';
 import Avatar from 'material-ui/Avatar';
 
 
@@ -50,7 +50,7 @@ class UserGameplay extends Component {
                   <div>{this.props.activeUser} buzzed in!</div>
                 </div>
                 :
-                <div>{this.props.activeUser} buzzed in!</div>
+                <div className="buzzed">{this.props.activeUser} buzzed in!</div>
             : this.props.activeUser && this.props.activeUser === this.props.username ?
               <div> You're live !</div> :
               <div></div>

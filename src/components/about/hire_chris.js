@@ -1,14 +1,14 @@
 import React, { Component, PropTypes } from 'react';
 import { reduxForm } from 'redux-form';
-import { createMessage } from '../actions/index';
+import { createMessage } from '../../actions/index';
 
-class HirePeter extends Component {
+class HireChris extends Component {
 	static contextTypes = {
 		router: PropTypes.object
 	};
 
 	onSubmit(props) {
-		this.props.createMessage(props, 'peter.dinh@gmail.com');
+		this.props.createMessage(props, 'loncarichchris@gmail.com');
 		this.context.router.push('/');
 	}
 
@@ -20,7 +20,7 @@ class HirePeter extends Component {
 			<div className="hireLayout">
 			<form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
 			  <h3 style={{color: "yellow", fontFamily: "Swiss-911", fontSize: "3em"}}>Send me a message</h3>
-			  <div className={`form-group ${name.touched && name.invalid ? 'has-danger' : ''}`} style={{height: "5vh", width: "80%", margin: "auto", marginBottom: "7.5%"}}>
+			  <div className={`form-group ${name.touched && name.invalid ? 'has-danger' : ''}`}>
 			    <label><strong style={{fontSize: "2em"}}>Name</strong></label>
 			    <input type="text" className="form-control hire-input" {...name} />
 			    <div class="text-help">
@@ -28,7 +28,7 @@ class HirePeter extends Component {
 			    </div>
 			  </div>
 
-			  <div className={`form-group ${company.touched && company.invalid ? 'has-danger' : ''}`} style={{height: "5vh", width: "80%", margin: "auto", marginBottom: "7.5%"}}>
+			  <div className={`form-group ${company.touched && company.invalid ? 'has-danger' : ''}`}>
 			    <label><strong style={{fontSize: "2em"}}>Company</strong></label>
 			    <input type="text" className="form-control hire-input" {...company} />
 			    <div class="text-help">
@@ -37,7 +37,7 @@ class HirePeter extends Component {
 			  </div>
 
 
-			  <div className={`form-group ${email.touched && email.invalid ? 'has-danger' : ''}`} style={{height: "5vh", width: "80%", margin: "auto", marginBottom: "7.5%"}}>
+			  <div className={`form-group ${email.touched && email.invalid ? 'has-danger' : ''}`}>
 			    <label><strong style={{fontSize: "2em"}}>Email</strong></label>
 			    <input type="email" className="form-control hire-input" {...email} />
 			    <div class="text-help">
@@ -45,7 +45,7 @@ class HirePeter extends Component {
 			    </div>
 			  </div>
 			  
-			  <div className={`form-group ${message.touched && message.invalid ? 'has-danger' : ''}`} style={{height: "5vh", width: "80%", margin: "auto", marginBottom: "7.5%"}}>
+			  <div className={`form-group ${message.touched && message.invalid ? 'has-danger' : ''}`}>
 			    <label><strong style={{fontSize: "2em"}}>Message</strong></label>
 			    <input type="text" className="form-control hire-input" {...message} />
 			    <div class="text-help">
@@ -84,4 +84,4 @@ export default reduxForm({
 	form: 'HireMessageForm',
 	fields: ['name', 'company', 'email', 'message'],
 	validate,
-}, null, { createMessage })(HirePeter);
+}, null, { createMessage })(HireChris);

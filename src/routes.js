@@ -2,26 +2,26 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
 import App from './components/app';
-import InfoIndex from './components/info_index';
-import LinkLanding from './components/link_landing';
-import LinkVerification from './components/link_verification';
-import UserConfig from './components/user_config';
-import UserGameplay from './components/user_gameplay';
-import HostGameplay from './components/host_gameplay';
-import ClueView from './components/clue_view';
-import HostAnswer from './components/host_answer';
-import Gameboard from './components/gameboard';
-import Scoreboard from './components/scoreboard';
-import End from './components/end';
-import HowTo from './components/howto';
-import About from './components/about';
+import InfoIndex from './components/landing';
+import LinkLanding from './components/linkcode/link_landing';
+import LinkVerification from './components/linkcode/link_verification';
+import UserConfig from './components/gameplay/user_config';
+import UserGameplay from './components/gameplay/user_gameplay';
+import HostGameplay from './components/gameplay/host_gameplay';
+import ClueView from './components/gameplay/clue_view';
+import HostAnswer from './components/gameplay/host_answer';
+import Gameboard from './components/gameplay/gameboard';
+import Scoreboard from './components/gameplay/scoreboard';
+import End from './components/gameplay/end';
+import HowTo from './components/howto/howto';
+import About from './components/about/about';
 import Credits from './components/credits';
-import Peter from './components/peter';
-import Chris from './components/chris';
-import Lukas from './components/lukas';
-import HirePeter from './components/hire_peter';
-import HireLukas from './components/hire_lukas';
-import HireChris from './components/hire_chris';
+import Peter from './components/about/peter';
+import Chris from './components/about/chris';
+import Lukas from './components/about/lukas';
+import HirePeter from './components/about/hire_peter';
+import HireLukas from './components/about/hire_lukas';
+import HireChris from './components/about/hire_chris';
 
 export default (
 	<Route path="/" component={App}>
