@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import { declareIncorrect, declareCorrect, skipClue } from '../sockets_client';
+import { declareIncorrect, declareCorrect, skipClue } from '../../sockets_client';
 
 class HostAnswer extends Component{
   constructor(props){

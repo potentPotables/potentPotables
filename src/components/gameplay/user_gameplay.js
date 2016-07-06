@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { sendButtonClick } from '../sockets_client';
+import { sendButtonClick } from '../../sockets_client';
 import Avatar from 'material-ui/Avatar';
 
 
