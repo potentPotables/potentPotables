@@ -1406,7 +1406,9 @@ span.finalscore {
   font-size: 22px;
 }
 
-
+.buttons.animated.bounceIn {
+  margin-top: auto;
+}
 
 
 
