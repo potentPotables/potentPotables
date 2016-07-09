@@ -71,7 +71,6 @@ export function initSockets(store){
   });
 
   socket.on('clues', function(data) {
-    console.log('inside sockets_client', data);
     store.dispatch({type: INCOMING_CLUES, payload: data});
   })
 }

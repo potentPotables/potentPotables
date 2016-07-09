@@ -1,12 +1,8 @@
-// import React, { Component } from 'react';
+import React, { Component } from 'react';
 
 
-// const HostCategories = (props) => {
-// 	//categories= map over categories
-// 	// return <Category onClick= push to Clue>
-// 	render() {
-// 	  return (
-      
-// 	  )
-// 	}
-// }
+const HostCategory = (props) => (
+	<div>{props.category}</div>
+);
+
+export default HostCategory;

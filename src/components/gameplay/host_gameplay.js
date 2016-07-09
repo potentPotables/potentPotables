@@ -2,12 +2,37 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { activateButtons } from '../../sockets_client';
-import { HostCategory } from './host_category';
+import HostCategory from './host_category';
 
 class HostGamePlay extends Component {
   constructor(props){
     super(props)
+    this.state = { categories: [] };
     this.handleQuestionLength = this.handleQuestionLength.bind(this);
+  }
+  componentDidMount() {
+    if(this.props.categories !== null){
+      let clues = this.props.clues;
+      let tempCategories= this.props.categories.map((category, index) => {
+          return <HostCategory 
+                  key={index}
+                  category={category}
+                  clues={clues.splice(0,5)}/>
+      });
+      this.setState({categories: tempCategories});
+    }
+  }
+  componentWillReceiveProps() {
+    if(this.props.categories !== null){
+      let clues = this.props.clues;
+      let tempCategories= this.props.categories.map((category, index) => {
+          return <HostCategory 
+                  key={index}
+                  category={category}
+                  clues={clues.splice(0,5)}/>
+      });
+      this.setState({categories: tempCategories});
+    }
   }
   handleClick(){
     activateButtons(this.props.room);
@@ -42,6 +67,10 @@ class HostGamePlay extends Component {
     }
   }
   render(){
+    // let clues = this.props.clues;
+    // const categories = this.state.categories.map((category, index) => {
+    //   return <HostCategory key={index} category={category} />
+    // });
     return (
       <div className= 'gameplay-view'>
       {this.props.isGameActive === false ?
@@ -60,7 +89,7 @@ class HostGamePlay extends Component {
           </div>
         </div>:
         <div className="waitingClue">
-          Waiting for clue to be selected...
+          {this.state.categories}
         </div>
       }
       </div>
@@ -74,6 +103,7 @@ function mapStateToProps(state){
     activeClue: state.gameplay.activeClue,
     room: state.linkAuth.linkCode,
     categories: state.gameboard.categories,
+    clues: state.gameboard.clues,
   };
 }
 

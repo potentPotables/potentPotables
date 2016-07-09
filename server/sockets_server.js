@@ -1,4 +1,3 @@
-const RoomStorage = require('./room_storage');
 //all server-side sockets functions will be written here;
 //initSockets will be exported to server-side index
 var roomData = {};
@@ -7,7 +6,68 @@ module.exports.initSockets = function(socket, clients, ioAccess){
   socket.emit('test', { hello: 'world' });
   socket.on('joinRoom', function(data){
     if (!roomData[data.room]){
-      roomData[data.room] = RoomStorage.roomStorage;
+      roomData[data.room] = {
+        hasClickedButton: false,
+        activeUser: '',
+        incorrectUserCount: 0,
+        usersCount: 0,
+        gameboard: null,
+        generalUserTimeout: {
+              skip: function(room){
+                roomData[room].isButtonClicked= false;
+                roomData[room].activeUser= '';
+                roomData[room].incorrectUserCount= 0;
+                ioAccess.in(room).emit('skip', {isButtonClicked: false, activeUser: ''});
+              },
+              generalTimeout: null,
+              generalTimeoutFn: function(room){
+                var that= this;
+                var tempFn= function (){return that.skip(room);}
+                return this.generalTimeout= setTimeout(tempFn, 10000);
+              },
+              clearGeneralTimeout: function(){
+                var that= this;
+                clearTimeout(that.generalTimeout);
+              }
+          },
+        activeUserTimeout: {
+            skipIncorrect: function(room, username, clue){
+              roomData[room].isButtonClicked= false;
+              roomData[room].activeUser= '';
+              roomData[room].users[username].score -= clue.value;
+              roomData[room].incorrectUserCount= 0;
+              ioAccess.in(room).emit('skipIncorrect', {username: username, score: roomData[room].users[username].score});
+            },
+            declareIncorrect: function(room, username, clue){
+              roomData[room].isButtonClicked= false;
+              roomData[room].activeUser= '';
+              roomData[room].users[username].score -= clue.value;
+              roomData[room].generalUserTimeout.generalTimeoutFn(room);
+              roomData[room].incorrectUserCount ++;
+              ioAccess.in(room).emit('incorrect', {username: username, score: roomData[room].users[username].score} );
+            },
+            declareTimeout: null,
+            activeTimeout: null,
+            activeTimeoutFn: function(room, username, clue){
+              var that= this;
+              var tempFn= function(){return that.skipIncorrect(room, username, clue)};
+              return this.activeTimeout= setTimeout(tempFn, 10000);
+            },
+            declareTimeoutFn: function(room, username, clue){
+              var that= this;
+              var tempFn= function(){return that.declareIncorrect(room, username, clue)};
+              return this.declareTimeout= setTimeout(tempFn, 10000);
+            },
+            clearActiveTimeout: function(){
+              var that= this;
+              clearTimeout(that.activeTimeout);
+            },
+            clearDeclareTimeout: function(){
+              var that= this;
+              clearTimeout(that.declareTimeout);
+            }
+          }
+      };
     }
     socket.join(data.room);
     var clientsFin = clients.rooms[data.room].sockets;
