@@ -7,7 +7,7 @@ import HostCategory from './host_category';
 class HostGamePlay extends Component {
   constructor(props){
     super(props)
-    this.state = { categories: [] };
+    this.state = { categories: [] , clues: []};
     this.handleQuestionLength = this.handleQuestionLength.bind(this);
   }
   componentDidMount() {
@@ -29,10 +29,14 @@ class HostGamePlay extends Component {
           return <HostCategory 
                   key={index}
                   category={category}
+                  setActiveClues={this.handleSetActiveClues.bind(this)}
                   clues={clues.splice(0,5)}/>
       });
       this.setState({categories: tempCategories});
     }
+  }
+  handleSetActiveClues(clues) {
+    this.setState({})
   }
   handleClick(){
     activateButtons(this.props.room);
@@ -67,10 +71,6 @@ class HostGamePlay extends Component {
     }
   }
   render(){
-    // let clues = this.props.clues;
-    // const categories = this.state.categories.map((category, index) => {
-    //   return <HostCategory key={index} category={category} />
-    // });
     return (
       <div className= 'gameplay-view'>
       {this.props.isGameActive === false ?
@@ -88,7 +88,7 @@ class HostGamePlay extends Component {
             </Link>
           </div>
         </div>:
-        <div className="waitingClue">
+        <div className="categories">
           {this.state.categories}
         </div>
       }

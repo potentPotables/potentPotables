@@ -53,7 +53,7 @@ export default class About extends Component {
               </div>
               <div className="lukas">
               <Link to="lukas">
-                <img id="lukas" src="http://50.112.42.29/assets/lukas.jpg" />
+                <img id="lukas" src="http://50.112.42.29/assets/lukas.png" />
                   <div className="developerText">
                     Lukas Stuart-Fry
                 </div>
