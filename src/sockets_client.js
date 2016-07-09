@@ -14,6 +14,7 @@ export const SKIP = 'SKIP';
 export const ACTIVATE_BUTTONS = 'ACTIVATE_BUTTONS';
 export const SKIP_INCORRECT= 'SKIP_INCORRECT';
 export const START_GAME_ERROR = 'START_GAME_ERROR';
+export const INCOMING_CLUES = 'INCOMING_CLUES';
 
 //nearly all client-side socket listeners will be be contained here
 //initSockets will be exported to client-side index
@@ -68,6 +69,11 @@ export function initSockets(store){
   socket.on('host', function(data) {
     store.dispatch({type: START_GAME_ERROR, payload: ''});
   });
+
+  socket.on('clues', function(data) {
+    console.log('inside sockets_client', data);
+    store.dispatch({type: INCOMING_CLUES, payload: data});
+  })
 }
 
 //all client-side socket emitters will be contained here
@@ -86,7 +92,7 @@ export function sendButtonClick(username, room, clue) {
 }
 
 export function startGame(room) {
-  socket.emit('startGame', { room: room });
+  socket.emit('startGame', { room });
 }
 
 export function hostJoins(room) {
@@ -94,21 +100,25 @@ export function hostJoins(room) {
 }
 
 export function setActiveClue(activeClue, room) {
-  socket.emit('activeClue', { activeClue: activeClue, room: room });
+  socket.emit('activeClue', { activeClue, room });
 }
 
 export function declareIncorrect(username, room, clue) {
-	socket.emit('incorrect', {username: username, room: room, clue: clue});
+	socket.emit('incorrect', { username, room, clue });
 }
 
 export function declareCorrect(username, room, clue) {
-	socket.emit('correct', {username: username, room: room, value: clue.value});
+	socket.emit('correct', { username, room, value: clue.value});
 }
 
 export function skipClue(room, clue) {
-	socket.emit('skip', {room: room, clue: clue});
+	socket.emit('skip', { room, clue});
 }
 
 export function activateButtons(room) {
-  socket.emit('activateButtons', {room: room});
+  socket.emit('activateButtons', { room });
+}
+
+export function cluesToClients(room, categories, clues) {
+  socket.emit('cluesToClients', { room, categories, clues });
 }

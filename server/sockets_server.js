@@ -87,4 +87,7 @@ module.exports.initSockets = function(socket, clients, ioAccess){
   socket.on('host', function(data) {
     ioAccess.in(data.room).emit('host');
   })
+  socket.on('cluesToClients', function(data) {
+    ioAccess.in(data.room).emit('clues', {categories: data.categories, clues: data.clues});
+  })
 }

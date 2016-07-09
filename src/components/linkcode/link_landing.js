@@ -11,9 +11,8 @@ class LinkLanding extends Component {
     joinRoom(this.props.link);
     this.props.fetchGame();
   }
-
   handleClick() {
-    this.props.checkForHost(this.props.link);
+    this.props.checkForHost(this.props.link, this.props.categories, this.props.clues);
   }
 
   renderAlert() {
@@ -34,7 +33,6 @@ class LinkLanding extends Component {
   render() {
 
     const usersList= _.map(this.props.users, user =>{
-      console.log('user is', user);
      return <UsersListEntry username= {user.username} photo= {user.photo}/>
     })
     return (
@@ -55,6 +53,8 @@ function mapStateToProps(state) {
     link: state.sessionID.sessionID,
     users: state.gameplay.users,
     startGameError: state.linkAuth.startGameError,
+    clues: state.gameboard.clues,
+    categories: state.gameboard.categories,
   };
 }
 export default connect(mapStateToProps, { fetchGame, checkForHost })(LinkLanding)
