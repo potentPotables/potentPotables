@@ -15,11 +15,21 @@ class HostGamePlay extends Component {
     if(this.props.categories !== null){
       let clues = this.props.clues.slice();
       let tempCategories= this.props.categories.map((category, index) => {
+        let respectiveClues = clues.splice(0, 5);
+        let flag = false;
+        for(var i = 0; i < respectiveClues.length; i++) {
+          if(!this.props.answeredClues[respectiveClues[i].id]){
+            flag = true;
+            break;
+          }
+        }
+        if(flag) {
           return <HostCategory 
                   key={index}
                   category={category}
                   setActiveClues={this.handleSetActiveClues.bind(this)}
-                  clues={clues.splice(0,5)}/>
+                  clues={respectiveClues}/>
+        }
       });
       this.setState({categories: tempCategories});
     }
@@ -28,17 +38,26 @@ class HostGamePlay extends Component {
     if(this.props.categories !== null){
       let clues = this.props.clues.slice();
       let tempCategories= this.props.categories.map((category, index) => {
+        let respectiveClues = clues.splice(0, 5);
+        let flag = false;
+        for(var i = 0; i < respectiveClues.length; i++) {
+          if(!this.props.answeredClues[respectiveClues[i].id]){
+            flag = true;
+            break;
+          }
+        }
+        if(flag) {
           return <HostCategory 
                   key={index}
                   category={category}
                   setActiveClues={this.handleSetActiveClues.bind(this)}
-                  clues={clues.splice(0,5)}/>
+                  clues={respectiveClues}/>
+        }
       });
       this.setState({categories: tempCategories});
     }
   }
   handleSetActiveClues(clues) {
-    // console.log('inside handleSetActiveClues', clues);
     this.setState({clues});
   }
   handleSetActiveClue(room, clue) {
@@ -81,11 +100,13 @@ class HostGamePlay extends Component {
   }
   render(){
     const clues = this.state.clues.map(clue => {
-      return <HostClue 
-              key={clue.id}
-              setActiveClue={this.handleSetActiveClue.bind(this)}
-              room={this.props.room}
-              clue={clue}/>
+      if(!this.props.answeredClues[clue.id]){
+        return <HostClue 
+                key={clue.id}
+                setActiveClue={this.handleSetActiveClue.bind(this)}
+                room={this.props.room}
+                clue={clue}/>
+      }
     });
     return (
       <div className= 'gameplay-view'>
@@ -126,6 +147,7 @@ function mapStateToProps(state){
     room: state.linkAuth.linkCode,
     categories: state.gameboard.categories,
     clues: state.gameboard.clues,
+    answeredClues: state.gameplay.answeredClues,
   };
 }
 

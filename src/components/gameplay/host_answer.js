@@ -51,7 +51,7 @@ class HostAnswer extends Component{
           </div>:
           <div className= 'row'>
             <Link to="hostgameplay">
-              <a className="a correct disable" onClick={this.handleCorrectClick}> Correct </a>
+              <a className="a correct disable" onClick={this.handleCorrectClick} disabled= {true}> Correct </a>
             </Link>
             <a className="a incorrect disable" onClick={this.handleIncorrectClick} disabled= {true}> Incorrect </a>
           </div>

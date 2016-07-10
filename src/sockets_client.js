@@ -48,7 +48,6 @@ export function initSockets(store){
   });
 
   socket.on('correct', function(data) {
-    console.log('inside sockets_client correct');
     const correct = new Audio('http://www.qwizx.com/gssfx/usa/j64-ringin.wav');
     correct.play();
     store.dispatch({type: CORRECT_ANSWER, payload: data});
