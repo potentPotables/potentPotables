@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import { activateButtons } from '../../sockets_client';
+import { activateButtons, setActiveClueFromHost } from '../../sockets_client';
 import HostCategory from './host_category';
+import HostClue from './host_clue';
 
 class HostGamePlay extends Component {
   constructor(props){
@@ -12,11 +13,12 @@ class HostGamePlay extends Component {
   }
   componentDidMount() {
     if(this.props.categories !== null){
-      let clues = this.props.clues;
+      let clues = this.props.clues.slice();
       let tempCategories= this.props.categories.map((category, index) => {
           return <HostCategory 
                   key={index}
                   category={category}
+                  setActiveClues={this.handleSetActiveClues.bind(this)}
                   clues={clues.splice(0,5)}/>
       });
       this.setState({categories: tempCategories});
@@ -24,7 +26,7 @@ class HostGamePlay extends Component {
   }
   componentWillReceiveProps() {
     if(this.props.categories !== null){
-      let clues = this.props.clues;
+      let clues = this.props.clues.slice();
       let tempCategories= this.props.categories.map((category, index) => {
           return <HostCategory 
                   key={index}
@@ -36,7 +38,14 @@ class HostGamePlay extends Component {
     }
   }
   handleSetActiveClues(clues) {
-    this.setState({})
+    // console.log('inside handleSetActiveClues', clues);
+    this.setState({clues});
+  }
+  handleSetActiveClue(room, clue) {
+    setActiveClueFromHost(room, clue);
+  }
+  handleBack() {
+    this.setState({clues: []});
   }
   handleClick(){
     activateButtons(this.props.room);
@@ -71,9 +80,17 @@ class HostGamePlay extends Component {
     }
   }
   render(){
+    const clues = this.state.clues.map(clue => {
+      return <HostClue 
+              key={clue.id}
+              setActiveClue={this.handleSetActiveClue.bind(this)}
+              room={this.props.room}
+              clue={clue}/>
+    });
     return (
       <div className= 'gameplay-view'>
-      {this.props.isGameActive === false ?
+      {
+        this.props.isGameActive === false ?
         <div className="waitingGame animated infinite flash">
           Waiting for game to Begin...
         </div> :
@@ -88,9 +105,14 @@ class HostGamePlay extends Component {
             </Link>
           </div>
         </div>:
-        <div className="categories">
-          {this.state.categories}
-        </div>
+        this.state.clues.length !== 0 ?
+          <div className="clues">
+            {clues}
+            <div onClick={this.handleBack.bind(this)}>BACK</div>
+          </div>:
+          <div className="categories">
+            {this.state.categories}
+          </div>
       }
       </div>
     );
@@ -108,5 +130,5 @@ function mapStateToProps(state){
 }
 
 
-export default connect(mapStateToProps)(HostGamePlay)
+export default connect(mapStateToProps,)(HostGamePlay)
 

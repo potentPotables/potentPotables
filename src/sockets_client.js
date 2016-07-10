@@ -121,3 +121,8 @@ export function activateButtons(room) {
 export function cluesToClients(room, categories, clues) {
   socket.emit('cluesToClients', { room, categories, clues });
 }
+
+export function setActiveClueFromHost(room, clue) {
+  console.log('inside setActiveClueFromHost', {room, clue});
+  socket.emit('hostSelects', { room, clue });
+}
