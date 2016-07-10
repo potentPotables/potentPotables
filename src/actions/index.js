@@ -98,7 +98,7 @@ export function fetchGame() {
   }
 }
 
-export function fetchRoundTwo() {
+export function fetchRoundTwo(linkcode) {
   return function(dispatch){
     axios.post('/game')
       .then(response => {
@@ -110,6 +110,7 @@ export function fetchRoundTwo() {
           tempClues.clues[i+3].value= 1600;
           tempClues.clues[i+4].value= 2000;
         }
+        cluesToClients(linkcode, tempClues.categories, tempClues.clues);
         dispatch({type: CREATE_GAME, payload: tempClues});
       })
       .catch(response => {
