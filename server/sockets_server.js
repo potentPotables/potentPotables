@@ -99,6 +99,9 @@ module.exports.initSockets = function(socket, clients, ioAccess){
   socket.on('activeClue', function(data) {
     socket.to(data.room).emit('currentClue', {clue: data.activeClue});
   });
+  socket.on('hostSelects', function(data) {
+    ioAccess.in(data.room).emit('activeClueFromHost', {clue: data.clue});
+  });
   socket.on('incorrect', function(data) {
     roomData[data.room].incorrectUserCount ++;
     if (roomData[data.room].incorrectUserCount === roomData[data.room].usersCount){
@@ -146,8 +149,8 @@ module.exports.initSockets = function(socket, clients, ioAccess){
   });
   socket.on('host', function(data) {
     ioAccess.in(data.room).emit('host');
-  })
+  });
   socket.on('cluesToClients', function(data) {
     ioAccess.in(data.room).emit('clues', {categories: data.categories, clues: data.clues});
-  })
+  });
 }

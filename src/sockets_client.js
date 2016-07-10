@@ -37,6 +37,10 @@ export function initSockets(store){
     store.dispatch({type: SET_ACTIVE_CLUE, payload: data.clue});
   });
 
+  socket.on('activeClueFromHost', function(data) {
+    store.dispatch({type: SET_ACTIVE_CLUE, payload: data.clue});
+  });
+
   socket.on('incorrect', function(data) {
     const incorrect = new Audio('http://www.qwizx.com/gssfx/usa/j64-outtatime.wav');
     incorrect.play();
@@ -47,13 +51,13 @@ export function initSockets(store){
     console.log('inside sockets_client correct');
     const correct = new Audio('http://www.qwizx.com/gssfx/usa/j64-ringin.wav');
     correct.play();
-  	store.dispatch({type: CORRECT_ANSWER, payload: data});
+    store.dispatch({type: CORRECT_ANSWER, payload: data});
   });
 
   socket.on('skip', function(data) {
     const outOfTime = new Audio('http://www.qwizx.com/gssfx/usa/jtime.wav');
     outOfTime.play();
-  	store.dispatch({type: SKIP, payload: data});
+    store.dispatch({type: SKIP, payload: data});
   });
 
   socket.on('enableButtons', function() {
@@ -72,7 +76,7 @@ export function initSockets(store){
 
   socket.on('clues', function(data) {
     store.dispatch({type: INCOMING_CLUES, payload: data});
-  })
+  });
 }
 
 //all client-side socket emitters will be contained here
@@ -123,6 +127,5 @@ export function cluesToClients(room, categories, clues) {
 }
 
 export function setActiveClueFromHost(room, clue) {
-  console.log('inside setActiveClueFromHost', {room, clue});
   socket.emit('hostSelects', { room, clue });
 }

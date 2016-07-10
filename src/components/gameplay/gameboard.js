@@ -17,9 +17,8 @@ class Gameboard extends Component {
     }
   }
 
-  componentWillReceiveProps() {
-    console.log('inside componentWillReceiveProps', this.props.activeClue);
-    if(Object.keys(this.props.activeClue).length === 1) {
+  componentDidUpdate() {
+    if(Object.keys(this.props.activeClue).length > 0) {
       this.context.router.push('/clue_view');
     }
   }
