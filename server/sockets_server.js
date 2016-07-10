@@ -11,35 +11,36 @@ module.exports.initSockets = function(socket, clients, ioAccess){
         activeUser: '',
         incorrectUserCount: 0,
         usersCount: 0,
+        gameboard: null,
         generalUserTimeout: {
               skip: function(room){
-                roomData[room].isButtonClicked = false;
-                roomData[room].activeUser = '';
-                roomData[room].incorrectUserCount = 0;
+                roomData[room].isButtonClicked= false;
+                roomData[room].activeUser= '';
+                roomData[room].incorrectUserCount= 0;
                 ioAccess.in(room).emit('skip', {isButtonClicked: false, activeUser: ''});
               },
               generalTimeout: null,
               generalTimeoutFn: function(room){
-                var that = this;
-                var tempFn = function (){return that.skip(room);}
-                return this.generalTimeout = setTimeout(tempFn, 10000);
+                var that= this;
+                var tempFn= function (){return that.skip(room);}
+                return this.generalTimeout= setTimeout(tempFn, 10000);
               },
               clearGeneralTimeout: function(){
-                var that = this;
+                var that= this;
                 clearTimeout(that.generalTimeout);
               }
           },
         activeUserTimeout: {
             skipIncorrect: function(room, username, clue){
-              roomData[room].isButtonClicked = false;
-              roomData[room].activeUser = '';
+              roomData[room].isButtonClicked= false;
+              roomData[room].activeUser= '';
               roomData[room].users[username].score -= clue.value;
-              roomData[room].incorrectUserCount = 0;
+              roomData[room].incorrectUserCount= 0;
               ioAccess.in(room).emit('skipIncorrect', {username: username, score: roomData[room].users[username].score});
             },
             declareIncorrect: function(room, username, clue){
-              roomData[room].isButtonClicked = false;
-              roomData[room].activeUser = '';
+              roomData[room].isButtonClicked= false;
+              roomData[room].activeUser= '';
               roomData[room].users[username].score -= clue.value;
               roomData[room].generalUserTimeout.generalTimeoutFn(room);
               roomData[room].incorrectUserCount ++;
@@ -48,25 +49,25 @@ module.exports.initSockets = function(socket, clients, ioAccess){
             declareTimeout: null,
             activeTimeout: null,
             activeTimeoutFn: function(room, username, clue){
-              var that = this;
-              var tempFn = function(){return that.skipIncorrect(room, username, clue)};
+              var that= this;
+              var tempFn= function(){return that.skipIncorrect(room, username, clue)};
               return this.activeTimeout= setTimeout(tempFn, 10000);
             },
             declareTimeoutFn: function(room, username, clue){
-              var that = this;
-              var tempFn = function(){return that.declareIncorrect(room, username, clue)};
+              var that= this;
+              var tempFn= function(){return that.declareIncorrect(room, username, clue)};
               return this.declareTimeout= setTimeout(tempFn, 10000);
             },
             clearActiveTimeout: function(){
-              var that = this;
+              var that= this;
               clearTimeout(that.activeTimeout);
             },
             clearDeclareTimeout: function(){
-              var that = this;
+              var that= this;
               clearTimeout(that.declareTimeout);
             }
           }
-      }
+      };
     }
     socket.join(data.room);
     var clientsFin = clients.rooms[data.room].sockets;
@@ -97,6 +98,9 @@ module.exports.initSockets = function(socket, clients, ioAccess){
   });
   socket.on('activeClue', function(data) {
     socket.to(data.room).emit('currentClue', {clue: data.activeClue});
+  });
+  socket.on('hostSelects', function(data) {
+    ioAccess.in(data.room).emit('activeClueFromHost', {clue: data.clue});
   });
   socket.on('incorrect', function(data) {
     roomData[data.room].incorrectUserCount ++;
@@ -145,5 +149,8 @@ module.exports.initSockets = function(socket, clients, ioAccess){
   });
   socket.on('host', function(data) {
     ioAccess.in(data.room).emit('host');
-  })
+  });
+  socket.on('cluesToClients', function(data) {
+    ioAccess.in(data.room).emit('clues', {categories: data.categories, clues: data.clues});
+  });
 }

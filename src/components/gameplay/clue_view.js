@@ -10,7 +10,7 @@ class ClueView extends Component {
   }
   componentDidMount() {
     if(Object.keys(this.props.answeredClues).length === 30){
-      this.props.fetchRoundTwo();
+      this.props.fetchRoundTwo(this.props.room);
     }
   }
 
@@ -18,7 +18,6 @@ class ClueView extends Component {
     if(Object.keys(this.props.answeredClues).length === 60){
       return this.context.router.push('/end');
     }
-    console.log('calling will receive props', this.props.activeClue);
     this.context.router.push('/gameboard');
   }
 
@@ -39,6 +38,7 @@ function mapStateToProps(state){
   return {
     activeClue: state.gameplay.activeClue,
     answeredClues: state.gameplay.answeredClues,
+    room: state.sessionID.sessionID,
   };
 }
 

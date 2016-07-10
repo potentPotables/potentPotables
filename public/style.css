@@ -1406,7 +1406,33 @@ span.finalscore {
   font-size: 22px;
 }
 
+.buttons.animated.bounceIn {
+  margin-top: auto;
+}
 
+/*.category {
+	display: flex;
+}*/
 
+.hostCategory {
+  height: 218px;
+  margin: 5px;
+  background-color: black;
+  text-align: center;
+  line-height: 200px;
+  font-weight: 600;
+  font-size: 60px;
+  margin-top: 50px;
+}
 
-
+.hostClue {
+	height: 218px;
+	margin: 5px;
+	background-color: black;
+	text-align: center;
+	line-height: 200px;
+	font-weight: 600;
+	font-size: 60px;
+	margin-top: 50px;
+	width: 800px;
+}

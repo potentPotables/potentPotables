@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
-import { joinRoom, createUserSockets, startGame, hostJoins } from '../sockets_client';
+import { joinRoom, createUserSockets, startGame, hostJoins, cluesToClients } from '../sockets_client';
 
 export const CREATE_SESSION = 'CREATE_SESSION';
 export const SET_USER_TYPE = 'SET_USER_TYPE';
@@ -53,10 +53,11 @@ export function linkCodeVerification({linkcode}) {
   }
 }
 
-export function checkForHost(linkcode) {
+export function checkForHost(linkcode, categories, clues) {
   return function(dispatch) {
     axios.post('/check', { linkcode })
       .then(response => {
+        cluesToClients(linkcode, categories, clues);
         browserHistory.push('/gameboard');
         const start = new Audio('http://www.qwizx.com/gssfx/usa/jboardfill.wav');
         start.play();
@@ -97,7 +98,7 @@ export function fetchGame() {
   }
 }
 
-export function fetchRoundTwo() {
+export function fetchRoundTwo(linkcode) {
   return function(dispatch){
     axios.post('/game')
       .then(response => {
@@ -109,6 +110,7 @@ export function fetchRoundTwo() {
           tempClues.clues[i+3].value= 1600;
           tempClues.clues[i+4].value= 2000;
         }
+        cluesToClients(linkcode, tempClues.categories, tempClues.clues);
         dispatch({type: CREATE_GAME, payload: tempClues});
       })
       .catch(response => {

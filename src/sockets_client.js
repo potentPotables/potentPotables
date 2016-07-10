@@ -14,6 +14,7 @@ export const SKIP = 'SKIP';
 export const ACTIVATE_BUTTONS = 'ACTIVATE_BUTTONS';
 export const SKIP_INCORRECT= 'SKIP_INCORRECT';
 export const START_GAME_ERROR = 'START_GAME_ERROR';
+export const INCOMING_CLUES = 'INCOMING_CLUES';
 
 //nearly all client-side socket listeners will be be contained here
 //initSockets will be exported to client-side index
@@ -36,6 +37,10 @@ export function initSockets(store){
     store.dispatch({type: SET_ACTIVE_CLUE, payload: data.clue});
   });
 
+  socket.on('activeClueFromHost', function(data) {
+    store.dispatch({type: SET_ACTIVE_CLUE, payload: data.clue});
+  });
+
   socket.on('incorrect', function(data) {
     const incorrect = new Audio('http://www.qwizx.com/gssfx/usa/j64-outtatime.wav');
     incorrect.play();
@@ -43,16 +48,15 @@ export function initSockets(store){
   });
 
   socket.on('correct', function(data) {
-    console.log('inside sockets_client correct');
     const correct = new Audio('http://www.qwizx.com/gssfx/usa/j64-ringin.wav');
     correct.play();
-  	store.dispatch({type: CORRECT_ANSWER, payload: data});
+    store.dispatch({type: CORRECT_ANSWER, payload: data});
   });
 
   socket.on('skip', function(data) {
     const outOfTime = new Audio('http://www.qwizx.com/gssfx/usa/jtime.wav');
     outOfTime.play();
-  	store.dispatch({type: SKIP, payload: data});
+    store.dispatch({type: SKIP, payload: data});
   });
 
   socket.on('enableButtons', function() {
@@ -67,6 +71,10 @@ export function initSockets(store){
 
   socket.on('host', function(data) {
     store.dispatch({type: START_GAME_ERROR, payload: ''});
+  });
+
+  socket.on('clues', function(data) {
+    store.dispatch({type: INCOMING_CLUES, payload: data});
   });
 }
 
@@ -86,7 +94,7 @@ export function sendButtonClick(username, room, clue) {
 }
 
 export function startGame(room) {
-  socket.emit('startGame', { room: room });
+  socket.emit('startGame', { room });
 }
 
 export function hostJoins(room) {
@@ -94,21 +102,29 @@ export function hostJoins(room) {
 }
 
 export function setActiveClue(activeClue, room) {
-  socket.emit('activeClue', { activeClue: activeClue, room: room });
+  socket.emit('activeClue', { activeClue, room });
 }
 
 export function declareIncorrect(username, room, clue) {
-	socket.emit('incorrect', {username: username, room: room, clue: clue});
+	socket.emit('incorrect', { username, room, clue });
 }
 
 export function declareCorrect(username, room, clue) {
-	socket.emit('correct', {username: username, room: room, value: clue.value});
+	socket.emit('correct', { username, room, value: clue.value});
 }
 
 export function skipClue(room, clue) {
-	socket.emit('skip', {room: room, clue: clue});
+	socket.emit('skip', { room, clue});
 }
 
 export function activateButtons(room) {
-  socket.emit('activateButtons', {room: room});
+  socket.emit('activateButtons', { room });
+}
+
+export function cluesToClients(room, categories, clues) {
+  socket.emit('cluesToClients', { room, categories, clues });
+}
+
+export function setActiveClueFromHost(room, clue) {
+  socket.emit('hostSelects', { room, clue });
 }

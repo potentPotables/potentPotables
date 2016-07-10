@@ -51,7 +51,6 @@ class LinkVerification extends Component {
 }
 
 function mapStateToProps(state){
-  console.log('inside link_verification', state.linkAuth);
   return {
     linkAuthError: state.linkAuth.linkCodeError,
     hostExists: state.linkAuth.hostExists

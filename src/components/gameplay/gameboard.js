@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Clue from './clue';
 import { setActiveClue } from '../../sockets_client';
@@ -6,6 +6,10 @@ import { setActiveClueGameboard } from '../../actions/index';
 
 
 class Gameboard extends Component {
+  static contextTypes = {
+    router: PropTypes.object
+  };
+
   componentDidMount() {
     if(Object.keys(this.props.answeredClues).length === 30) {
       var dbl = new Audio('http://www.qwizx.com/gssfx/usa/jeop-dj84woosh.wav');
@@ -13,6 +17,11 @@ class Gameboard extends Component {
     }
   }
 
+  componentDidUpdate() {
+    if(Object.keys(this.props.activeClue).length > 0) {
+      this.context.router.push('/clue_view');
+    }
+  }
   handleSetActiveClue(clue, room){
     setActiveClue(clue, room);
     this.props.setActiveClueGameboard(clue);
@@ -86,6 +95,7 @@ function mapStateToProps(state){
     room: state.sessionID.sessionID,
     correct: state.gameplay.correct,
     incorrect: state.gameplay.incorrect,
+    activeClue: state.gameplay.activeClue,
   };
 }
 
