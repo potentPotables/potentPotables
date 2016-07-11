@@ -7,7 +7,7 @@ export default class Peter extends Component {
 			<div className="bioContainer">
 			<div className="bio">
 				<h1 className="devName">Peter Dinh</h1>
-				<img />
+				<img id="peter" src="http://50.112.42.29/assets/peter.jpg"/>
 				<div className="externals">
 					<div className="github">
 						<a href="https://github.com/petertdinh"><img src="http://50.112.42.29/tech_logos/github_glossy.png" height="100" width="100"/></a>
@@ -16,8 +16,8 @@ export default class Peter extends Component {
 						<a href="https://www.linkedin.com/in/petertdinh"><img src="http://50.112.42.29/tech_logos/linkedin_glossy.png" height="135" width="135" /></a>
 					</div>
 				</div>
-				<div className="sell">Something that screams hire me here.</div>
-				<div className="hire link animated infinite pulse">
+				<div className="sell">Favorite Category: Potpourii</div>
+				<div className="hire link">
 					<Link to="hire/peter" style={{color: "blue", fontSize: "3em", fontFamily: "Swiss-911"}}>
 						Hire Peter
 					</Link>
