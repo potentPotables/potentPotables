@@ -30,6 +30,9 @@ class UserGameplay extends Component {
     buzz.play();
     sendButtonClick(this.props.username, this.props.linkCode, this.props.activeClue);
   }
+  handleSpam(){
+    
+  }
   getUserPhoto(user){
     for (var key in this.props.users){
       if (this.props.users[key] === user){
@@ -62,16 +65,24 @@ class UserGameplay extends Component {
             Waiting for game to Begin...
           </div> :
           this.props.isButtonDisabled ?
-            <a id="gamebuttonDisabled" className= 'game-button' disabled= {true}>
-              <span className="buttonSize">{buttonConfig}<span id="disabledText">disabled</span></span>
-            </a> :
-            this.props.hasAnsweredUsers.indexOf(this.props.username) !== -1 ?
-              <a id="gamebuttonDisabled" disabled= {true} >
-                  <span className="buttonSize">{buttonConfig}<span id="disabledText">disabled</span></span>
+            this.props.username === this.props.activeUser ?
+              <a id="gamebuttonDisabled" className= 'game-button'>
+                <span className="buttonSize">{buttonConfig}<span id="disabledText">disabled</span></span>
               </a> :
-              <a id="gamebutton">
-                  <span className="buttonSize" onClick= {this.handleBuzz.bind(this)}>{buttonConfig}<span id="enabledText">BUZZ IN</span></span>
-              </a>
+              Object.keys(this.props.activeClue).length < 1 ?
+              <a id="gamebuttonDisabled" className= 'game-button'>
+                <span className="buttonSize">{buttonConfig}<span id="disabledText">disabled</span></span>
+              </a> :
+              <a id="gamebuttonDisabled" className= 'game-button'>
+                <span className="buttonSize" onClick={this.handleSpam.bind(this)}>{buttonConfig}<span id="disabledText">disabled</span></span>
+              </a> :
+              this.props.hasAnsweredUsers.indexOf(this.props.username) !== -1 ?
+                <a id="gamebuttonDisabled">
+                    <span className="buttonSize">{buttonConfig}<span id="disabledText">disabled</span></span>
+                </a> :
+                <a id="gamebutton">
+                    <span className="buttonSize" onClick= {this.handleBuzz.bind(this)}>{buttonConfig}<span id="enabledText">BUZZ IN</span></span>
+                </a>
         }
         </div>
         <div className= 'avatar'>
