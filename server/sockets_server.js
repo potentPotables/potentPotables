@@ -23,7 +23,7 @@ module.exports.initSockets = function(socket, clients, ioAccess){
               generalTimeoutFn: function(room){
                 var that= this;
                 var tempFn= function (){return that.skip(room);}
-                return this.generalTimeout= setTimeout(tempFn, 10000);
+                return this.generalTimeout= setTimeout(tempFn, 6500);
               },
               clearGeneralTimeout: function(){
                 var that= this;
@@ -51,12 +51,12 @@ module.exports.initSockets = function(socket, clients, ioAccess){
             activeTimeoutFn: function(room, username, clue){
               var that= this;
               var tempFn= function(){return that.skipIncorrect(room, username, clue)};
-              return this.activeTimeout= setTimeout(tempFn, 10000);
+              return this.activeTimeout= setTimeout(tempFn, 6500);
             },
             declareTimeoutFn: function(room, username, clue){
               var that= this;
               var tempFn= function(){return that.declareIncorrect(room, username, clue)};
-              return this.declareTimeout= setTimeout(tempFn, 10000);
+              return this.declareTimeout= setTimeout(tempFn, 6500);
             },
             clearActiveTimeout: function(){
               var that= this;
