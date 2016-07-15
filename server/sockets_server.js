@@ -76,8 +76,8 @@ module.exports.initSockets = function(socket, clients, ioAccess){
     if(!roomData[data.room].users){
       roomData[data.room].users = {};
     }
-    roomData[data.room].users[data.username] = {username: data.username, score: 0, photo: data.photo, penalty: 5};
-    roomData[data.room].usersCount ++;
+    roomData[data.room].users[data.username] = {username: data.username, score: 0, photo: data.photo, penalty: 1};
+    roomData[data.room].usersCount++;
     ioAccess.in(data.room).emit('newUser', {users : roomData[data.room].users} );
   });
   socket.on('sendButtonClick', function(data) {
@@ -121,8 +121,12 @@ module.exports.initSockets = function(socket, clients, ioAccess){
   });
   socket.on('penalize', function(data) {
     roomData[data.room].users[data.username].score -= roomData[data.room].users[data.username].penalty;
-    roomData[data.room].users[data.username].penalty += 5;
-    ioAccess.in(data.room).emit('penalize', {username: data.username, score: roomData[data.room].users[data.username].score} );
+    if(roomData[data.room].users[data.username].penalty < 5){
+      roomData[data.room].users[data.username].penalty++;
+    } else {
+      roomData[data.room].users[data.username].penalty += 5;
+    }
+    ioAccess.in(data.room).emit('penalize', {username: data.username, score: roomData[data.room].users[data.username].score, penalty: roomData[data.room].users[data.username].penalty} );
   })
   socket.on('correct', function(data) {
     roomData[data.room].isButtonClicked = false;

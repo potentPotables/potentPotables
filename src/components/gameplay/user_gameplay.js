@@ -9,7 +9,7 @@ import { Link } from 'react-router';
 class UserGameplay extends Component {
   constructor(props){
     super(props);
-    this.state = {score: 0};
+    this.state = {score: 0, penaltyQueue: []};
     this.getUserPhoto= this.getUserPhoto.bind(this);
   }
 
@@ -32,6 +32,9 @@ class UserGameplay extends Component {
   }
   handleSpam(){
     penalizeUser(this.props.username, this.props.linkCode);
+    var currentDeduction = this.state.penaltyQueue.slice();
+    currentDeduction.push(this.props.users[this.props.username].penalty);
+    this.setState({penaltyQueue: currentDeduction});
   }
   getUserPhoto(user){
     for (var key in this.props.users){
@@ -42,9 +45,16 @@ class UserGameplay extends Component {
   }
   render(){
     const buttonConfig= "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0";
+    const penalty = this.state.penaltyQueue.map(alert => {
+      return <div className="penalty animated fadeOutUp">wait for host -${alert}</div>
+    });
     return (
       <div className= 'gameplay-view'>
         <div className= 'score' >SCORE: <span style={{fontFamily: "Swiss-911-Extra-Compressed", color: "yellow"}}>${this.state.score}</span></div>
+        { this.state.penalty === 0 ?
+          <div className="penalty animated fadeOutUp"></div>:
+          penalty
+        }
         <div className= 'buzz-alert'>
           {this.props.activeUser && this.props.activeUser !== this.props.username ?
             this.props.users[this.props.activeUser].photo !== '' ?

@@ -47,7 +47,7 @@ export default function(state = {
     case SKIP:
       return {...state, activeUser: '', hasAnsweredUsers: [], isButtonDisabled: true, activeClue: {}};
     case PENALIZE_USER:
-      var stateUsernameCopy = {...state.users[action.payload.username], score: action.payload.score};
+      var stateUsernameCopy = {...state.users[action.payload.username], score: action.payload.score, penalty: action.payload.penalty};
       var stateUsersCopy = {...state.users};
       stateUsersCopy[action.payload.username] = stateUsernameCopy;
       return {...state, users: stateUsersCopy};
