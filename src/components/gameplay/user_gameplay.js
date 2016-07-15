@@ -51,8 +51,7 @@ class UserGameplay extends Component {
     return (
       <div className= 'gameplay-view'>
         <div className= 'score' >SCORE: <span style={{fontFamily: "Swiss-911-Extra-Compressed", color: "yellow"}}>${this.state.score}</span></div>
-        { this.state.penalty === 0 ?
-          <div className="penalty animated fadeOutUp"></div>:
+        { 
           penalty
         }
         <div className= 'buzz-alert'>
