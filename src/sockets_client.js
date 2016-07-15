@@ -118,8 +118,8 @@ export function declareCorrect(username, room, clue) {
 	socket.emit('correct', { username, room, value: clue.value});
 }
 
-export function penalizeUser(username, room, amount) {
-  socket.emit('penalize', { username, room, amount });
+export function penalizeUser(username, room) {
+  socket.emit('penalize', { username, room });
 }
 
 export function skipClue(room, clue) {

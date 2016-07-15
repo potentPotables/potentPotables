@@ -76,7 +76,7 @@ module.exports.initSockets = function(socket, clients, ioAccess){
     if(!roomData[data.room].users){
       roomData[data.room].users = {};
     }
-    roomData[data.room].users[data.username] = {username: data.username, score: 0, photo: data.photo};
+    roomData[data.room].users[data.username] = {username: data.username, score: 0, photo: data.photo, penalty: 5};
     roomData[data.room].usersCount ++;
     ioAccess.in(data.room).emit('newUser', {users : roomData[data.room].users} );
   });
@@ -120,7 +120,8 @@ module.exports.initSockets = function(socket, clients, ioAccess){
     }
   });
   socket.on('penalize', function(data) {
-    roomData[data.room].users[data.username].score -= data.amount;
+    roomData[data.room].users[data.username].score -= roomData[data.room].users[data.username].penalty;
+    roomData[data.room].users[data.username].penalty += 5;
     ioAccess.in(data.room).emit('penalize', {username: data.username, score: roomData[data.room].users[data.username].score} );
   })
   socket.on('correct', function(data) {

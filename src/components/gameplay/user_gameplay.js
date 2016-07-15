@@ -9,7 +9,7 @@ import { Link } from 'react-router';
 class UserGameplay extends Component {
   constructor(props){
     super(props);
-    this.state = {score: 0, penalty: 5};
+    this.state = {score: 0};
     this.getUserPhoto= this.getUserPhoto.bind(this);
   }
 
@@ -31,8 +31,7 @@ class UserGameplay extends Component {
     sendButtonClick(this.props.username, this.props.linkCode, this.props.activeClue);
   }
   handleSpam(){
-    penalizeUser(this.props.username, this.props.linkCode, this.state.penalty);
-    this.setState({penalty: this.state.penalty + 5});
+    penalizeUser(this.props.username, this.props.linkCode);
   }
   getUserPhoto(user){
     for (var key in this.props.users){
