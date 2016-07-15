@@ -13,12 +13,11 @@ export default class HowTo extends Component {
               <div className="gyparody">How to Play the Game</div>
               <p>AS A HOST:</p>
               <ul>
-                <li>Create a game! For optimal experience, hook your computer it up to a larger display.</li>
+                <li>Create a game! For optimal experience, hook your computer up to a larger display.</li>
                 <li>On your mobile device, click on Join a Game and type in the link code provided and check the box to join as the host.</li>
                 <li>Once everyone has joined the session, click on Start Game. This will generate the actual Jeopardy™ gameboard with random categories.</li>
-                <li>Your computer will show the gameboard and here you will click on the clues that your contestants choose.</li> 
-                <li>Once you click on it, read the clue off of your mobile device. After you finish reading the clue, enable the contestants so they can buzz in.</li> 
-                <li>You will also get the answer displayed on your mobile device.</li>
+                <li>You can select the clues from your mobile. Doing so will update the main display.</li> 
+                <li>Once you clicked on a clue, read it off. After you finish reading the clue, enable the contestants so they can buzz in.</li> 
                 <li>After a contestant has buzzed in and given their answer, you will mark it as either correct or incorrect.</li>
               </ul>
               <p>AS A CONTESTANT:</p>

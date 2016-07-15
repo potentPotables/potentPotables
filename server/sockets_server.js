@@ -23,7 +23,7 @@ module.exports.initSockets = function(socket, clients, ioAccess){
               generalTimeoutFn: function(room){
                 var that= this;
                 var tempFn= function (){return that.skip(room);}
-                return this.generalTimeout= setTimeout(tempFn, 10000);
+                return this.generalTimeout= setTimeout(tempFn, 6500);
               },
               clearGeneralTimeout: function(){
                 var that= this;
@@ -51,12 +51,12 @@ module.exports.initSockets = function(socket, clients, ioAccess){
             activeTimeoutFn: function(room, username, clue){
               var that= this;
               var tempFn= function(){return that.skipIncorrect(room, username, clue)};
-              return this.activeTimeout= setTimeout(tempFn, 10000);
+              return this.activeTimeout= setTimeout(tempFn, 6500);
             },
             declareTimeoutFn: function(room, username, clue){
               var that= this;
               var tempFn= function(){return that.declareIncorrect(room, username, clue)};
-              return this.declareTimeout= setTimeout(tempFn, 10000);
+              return this.declareTimeout= setTimeout(tempFn, 6500);
             },
             clearActiveTimeout: function(){
               var that= this;
@@ -76,8 +76,8 @@ module.exports.initSockets = function(socket, clients, ioAccess){
     if(!roomData[data.room].users){
       roomData[data.room].users = {};
     }
-    roomData[data.room].users[data.username] = {username: data.username, score: 0, photo: data.photo};
-    roomData[data.room].usersCount ++;
+    roomData[data.room].users[data.username] = {username: data.username, score: 0, photo: data.photo, penalty: 1};
+    roomData[data.room].usersCount++;
     ioAccess.in(data.room).emit('newUser', {users : roomData[data.room].users} );
   });
   socket.on('sendButtonClick', function(data) {
@@ -119,6 +119,15 @@ module.exports.initSockets = function(socket, clients, ioAccess){
       ioAccess.in(data.room).emit('incorrect', {username: data.username, score: roomData[data.room].users[data.username].score} );
     }
   });
+  socket.on('penalize', function(data) {
+    roomData[data.room].users[data.username].score -= roomData[data.room].users[data.username].penalty;
+    if(roomData[data.room].users[data.username].penalty < 5){
+      roomData[data.room].users[data.username].penalty++;
+    } else {
+      roomData[data.room].users[data.username].penalty += 5;
+    }
+    ioAccess.in(data.room).emit('penalize', {username: data.username, score: roomData[data.room].users[data.username].score, penalty: roomData[data.room].users[data.username].penalty} );
+  })
   socket.on('correct', function(data) {
     roomData[data.room].isButtonClicked = false;
     roomData[data.room].activeUser = '';
@@ -137,7 +146,6 @@ module.exports.initSockets = function(socket, clients, ioAccess){
     roomData[data.room].isButtonClicked = false;
     roomData[data.room].activeUser = '';
     roomData[data.room].users[data.username].score -= data.clue.value;
-    consonle.log('insideserverskipincorrect');
     ioAccess.in(data.room).emit('skipIncorrect', {username: data.username, score: roomData[data.room].users[data.username].score});
   });
   socket.on('activateButtons', function(data) {

@@ -1,5 +1,5 @@
 import { ACTIVATE_GAME } from '../actions/index';
-import { INCORRECT_ANSWER, CORRECT_ANSWER, SKIP_INCORRECT, SKIP, SET_ACTIVE_CLUE, ADD_NEW_USER, DISABLE_BUTTON, SET_ACTIVE_USER, ACTIVATE_BUTTONS } from '../sockets_client';
+import { INCORRECT_ANSWER, CORRECT_ANSWER, SKIP_INCORRECT, SKIP, SET_ACTIVE_CLUE, ADD_NEW_USER, DISABLE_BUTTON, SET_ACTIVE_USER, ACTIVATE_BUTTONS, PENALIZE_USER } from '../sockets_client';
 
 export default function(state = {
   isGameActive: false,
@@ -46,6 +46,11 @@ export default function(state = {
       return {...state, users: stateUsersCopy, activeUser: '', hasAnsweredUsers: [], isButtonDisabled: true, activeClue: {}};
     case SKIP:
       return {...state, activeUser: '', hasAnsweredUsers: [], isButtonDisabled: true, activeClue: {}};
+    case PENALIZE_USER:
+      var stateUsernameCopy = {...state.users[action.payload.username], score: action.payload.score, penalty: action.payload.penalty};
+      var stateUsersCopy = {...state.users};
+      stateUsersCopy[action.payload.username] = stateUsernameCopy;
+      return {...state, users: stateUsersCopy};
     default:
       return state;
   }

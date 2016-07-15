@@ -986,6 +986,16 @@ span#enabledText {
     padding-top: 10px;
 }
 
+.penalty {
+	text-shadow: 5px 5px black;
+	font-family: "Swiss-911";
+	font-size: 2.5em;
+	color: red;
+	position: absolute;
+	text-align: center;
+	width: 100vw;
+}
+
 .buzz-alert {
 	width: 100vw;
 	position: absolute;
@@ -1182,7 +1192,7 @@ a.button1.a {
 	font-size: 4em;
 	width: 100vw;
 	text-align: center;
-
+	position: absolute;
 }
 
 .host-answer {
@@ -1270,12 +1280,12 @@ Animate.css classes
 	animation-duration: 1.5s !important;
 }
 
-.flipInX {
+.flipInX, .bounce {
 	animation-duration: 1s !important;
 }
 
-.bounce {
-	animation-duration: 1s !important;
+.fadeOutUp{
+	animation-duration: 2s !important;
 }
 
 /*
