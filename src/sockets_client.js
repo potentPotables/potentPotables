@@ -15,6 +15,7 @@ export const ACTIVATE_BUTTONS = 'ACTIVATE_BUTTONS';
 export const SKIP_INCORRECT= 'SKIP_INCORRECT';
 export const START_GAME_ERROR = 'START_GAME_ERROR';
 export const INCOMING_CLUES = 'INCOMING_CLUES';
+export const PENALIZE_USER = 'PENALIZE_USER';
 
 //nearly all client-side socket listeners will be be contained here
 //initSockets will be exported to client-side index
@@ -76,6 +77,10 @@ export function initSockets(store){
   socket.on('clues', function(data) {
     store.dispatch({type: INCOMING_CLUES, payload: data});
   });
+
+  socket.on('penalize', function(data) {
+    store.dispatch({type: PENALIZE_USER, payload: data});
+  });
 }
 
 //all client-side socket emitters will be contained here
@@ -111,6 +116,10 @@ export function declareIncorrect(username, room, clue) {
 
 export function declareCorrect(username, room, clue) {
 	socket.emit('correct', { username, room, value: clue.value});
+}
+
+export function penalizeUser(username, room, amount) {
+  socket.emit('penalize', { username, room, amount });
 }
 
 export function skipClue(room, clue) {

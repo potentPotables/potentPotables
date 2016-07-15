@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { sendButtonClick } from '../../sockets_client';
+import { sendButtonClick, penalizeUser } from '../../sockets_client';
 import Avatar from 'material-ui/Avatar';
 
 
@@ -9,7 +9,7 @@ import { Link } from 'react-router';
 class UserGameplay extends Component {
   constructor(props){
     super(props);
-    this.state = {score: 0};
+    this.state = {score: 0, penalty: 5};
     this.getUserPhoto= this.getUserPhoto.bind(this);
   }
 
@@ -31,7 +31,8 @@ class UserGameplay extends Component {
     sendButtonClick(this.props.username, this.props.linkCode, this.props.activeClue);
   }
   handleSpam(){
-    
+    penalizeUser(this.props.username, this.props.linkCode, this.state.penalty);
+    this.setState({penalty: this.state.penalty + 5});
   }
   getUserPhoto(user){
     for (var key in this.props.users){
@@ -65,19 +66,15 @@ class UserGameplay extends Component {
             Waiting for game to Begin...
           </div> :
           this.props.isButtonDisabled ?
-            this.props.username === this.props.activeUser ?
-              <a id="gamebuttonDisabled" className= 'game-button'>
+            this.props.username === this.props.activeUser || Object.keys(this.props.activeClue).length < 1 ?
+              <a id="gamebuttonDisabled" className="game-button">
                 <span className="buttonSize">{buttonConfig}<span id="disabledText">disabled</span></span>
               </a> :
-              Object.keys(this.props.activeClue).length < 1 ?
-              <a id="gamebuttonDisabled" className= 'game-button'>
-                <span className="buttonSize">{buttonConfig}<span id="disabledText">disabled</span></span>
-              </a> :
-              <a id="gamebuttonDisabled" className= 'game-button'>
+              <a id="gamebuttonDisabled" className="game-button">
                 <span className="buttonSize" onClick={this.handleSpam.bind(this)}>{buttonConfig}<span id="disabledText">disabled</span></span>
               </a> :
               this.props.hasAnsweredUsers.indexOf(this.props.username) !== -1 ?
-                <a id="gamebuttonDisabled">
+                <a id="gamebuttonDisabled" className="game-button">
                     <span className="buttonSize">{buttonConfig}<span id="disabledText">disabled</span></span>
                 </a> :
                 <a id="gamebutton">

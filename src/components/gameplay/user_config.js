@@ -21,7 +21,6 @@ class userConfig extends Component {
 
   onDrop(file) {
     //make sure file is an image file in here
-    console.log('file', file);
     var that = this;
     if (file[0].type.match(/image.*/)) {
       var reader = new FileReader();
@@ -106,7 +105,6 @@ class userConfig extends Component {
 
   nameChange(e) {
     this.setState({username: e.target.value});
-    console.log('insideNameChange', this.state.username.length);
   }
   validateUsername(){
     if (this.state.username.length > 12){

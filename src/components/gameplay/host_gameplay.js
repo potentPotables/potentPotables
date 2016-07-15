@@ -12,29 +12,12 @@ class HostGamePlay extends Component {
     this.handleQuestionLength = this.handleQuestionLength.bind(this);
   }
   componentDidMount() {
-    if(this.props.categories !== null){
-      let clues = this.props.clues.slice();
-      let tempCategories= this.props.categories.map((category, index) => {
-        let respectiveClues = clues.splice(0, 5);
-        let flag = false;
-        for(var i = 0; i < respectiveClues.length; i++) {
-          if(!this.props.answeredClues[respectiveClues[i].id]){
-            flag = true;
-            break;
-          }
-        }
-        if(flag) {
-          return <HostCategory 
-                  key={index}
-                  category={category}
-                  setActiveClues={this.handleSetActiveClues.bind(this)}
-                  clues={respectiveClues}/>
-        }
-      });
-      this.setState({categories: tempCategories});
-    }
+    this.renderCategories();
   }
   componentWillReceiveProps() {
+    this.renderCategories();
+  }
+  renderCategories() {
     if(this.props.categories !== null){
       let clues = this.props.clues.slice();
       let tempCategories= this.props.categories.map((category, index) => {

@@ -119,6 +119,10 @@ module.exports.initSockets = function(socket, clients, ioAccess){
       ioAccess.in(data.room).emit('incorrect', {username: data.username, score: roomData[data.room].users[data.username].score} );
     }
   });
+  socket.on('penalize', function(data) {
+    roomData[data.room].users[data.username].score -= data.amount;
+    ioAccess.in(data.room).emit('penalize', {username: data.username, score: roomData[data.room].users[data.username].score} );
+  })
   socket.on('correct', function(data) {
     roomData[data.room].isButtonClicked = false;
     roomData[data.room].activeUser = '';
@@ -137,7 +141,6 @@ module.exports.initSockets = function(socket, clients, ioAccess){
     roomData[data.room].isButtonClicked = false;
     roomData[data.room].activeUser = '';
     roomData[data.room].users[data.username].score -= data.clue.value;
-    consonle.log('insideserverskipincorrect');
     ioAccess.in(data.room).emit('skipIncorrect', {username: data.username, score: roomData[data.room].users[data.username].score});
   });
   socket.on('activateButtons', function(data) {
