@@ -1450,13 +1450,18 @@ span.finalscore {
 }
 
 .hostClue {
+	text-shadow: 6px 6px black;
+	box-shadow: 0px 0px 50px 10px rgba(255,255,0,1);
 	height: 218px;
+	background-image: url('http://www.santemaghreb.com/algerie/jicc2009/13_fichiers/master04_background.gif');
+	background-size: cover;
+	font-family: "Swiss-911-Extra-Compressed";
 	margin: 5px;
-	background-color: black;
+	color: yellow;
 	text-align: center;
 	line-height: 200px;
 	font-weight: 600;
-	font-size: 60px;
+	font-size: 150px;
 	margin-top: 50px;
-	width: 800px;
+	width: 500px;
 }
