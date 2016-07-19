@@ -1,29 +1,16 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import Bio from './bio';
 
 export default class Chris extends Component {
   render() {
     return (
-    	<div className="bioContainer">
-	    <div className="bio">
-	      <h1 className="devName">Lukas Stuart-Fry</h1>
-	      <img id="lukas" src="http://50.112.42.29/assets/lukas.png" />
-	      <div className="externals">
-		      <div className="github">
-		          <a href="https://github.com/lstuartfry"><img src="http://50.112.42.29/tech_logos/github_glossy.png" height="100" width="100"/></a>
-		      </div>
-		      <div className="linkedin">
-		          <a href="https://www.linkedin.com/in/lukasstuartfry"><img src="http://50.112.42.29/tech_logos/linkedin_glossy.png" height="135" width="135" /></a>
-		      </div>
-	      </div>
-	      <div className="sell">Favorite Category: Zombies Are Coming!</div>
-	      <div className="hire link">
-		      <Link to="hire/lukas" style={{color: "blue", fontSize: "3em", fontFamily: "Swiss-911"}}>
-		          Hire Lukas
-		      </Link>
-	      </div>
-	    </div>
-	    </div>
+      <Bio name={"Lukas Stuart-Fry"}
+           image={"http://50.112.42.29/assets/lukas.png"}
+           github={"https://github.com/lstuartfry"}
+           linkedin={"https://www.linkedin.com/in/lukasstuartfry"}
+           category={"Zombies Are Coming!"}
+           link={"hire/lukas"}/>
     );
   }
 }
