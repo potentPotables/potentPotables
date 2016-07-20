@@ -112,7 +112,7 @@ class HostGamePlay extends Component {
         this.state.clues.length !== 0 ?
           <div className="clues">
             {clues}
-            <div onClick={this.handleBack.bind(this)}>BACK</div>
+            <div className="hostBack a" onClick={this.handleBack.bind(this)}>BACK</div>
           </div>:
           <div className="categories">
             {this.state.categories}
