@@ -666,15 +666,59 @@ ul.why {
 }
 
 .creditsText {
-  width: 90vw;
-  margin-top: 15vh;
+	display: flex;
+  width: 95%;
+  margin: auto;
+  margin-top: 3vh;
   font-weight: bolder;
   font-size: 3em;
   text-align: center;
   background-color: rgb(30, 91, 144);
   border-radius: 25px;
-  height: 75vh;
-  box-shadow: 0px 0px 18px 20px black;
+  height: 80vh;
+  box-shadow: 0px 0px 18px 5px black;
+}
+
+#jService {
+	width: 45%;
+	margin-left: 50px;
+	margin-top: 4vh;
+}
+
+#jServiceTitle {
+	font-family: Verdana;
+	font-size: 35px;
+	color: yellow;
+	margin-top: 2vh;
+}
+
+#jServiceText {
+	font-size: 25px;
+	color: white;
+	margin-top: 5vh;
+}
+
+#webFonts {
+	width: 45%;
+	margin-top: 8vh;
+}
+
+#webFontsTitle {
+	color: white;
+}
+
+#webFontsText {
+	margin-top: 7vh;
+}
+
+.creditsLink {
+	font-size: 30px;
+	color: #EFBA98;
+	text-decoration: underline !important;
+}
+
+.creditsLink:hover {
+	color: red;
 }
 
 
