@@ -175,6 +175,7 @@ td.clues:hover {
 .links {
 	animation-delay: 3s;
 	margin-top: 3.5vh;
+	margin-bottom: 5%;
 	display: inline-flex;
 }
 .linkEnter {
@@ -331,10 +332,12 @@ input[type="checkbox"]:hover {
 }
 
 .landing {
-	min-width: 100vw;
-	min-height: 100vh;
+	width: 75vw;
+	height: 70vh;
+	margin: auto;
 	margin-top: 18vh;
 	text-align: center;
+	overflow-y: auto;
 }
 
 .logo-holder {
@@ -448,9 +451,11 @@ u:hover {
 #about {
 	color: yellow;
 	width: 90vw;
+	height: 90vh;
 	margin: auto;
 	margin-top: 5vh;
 	font-family: 'Open Sans';
+	overflow-y: auto;
 }
 
 .stack.intro {
@@ -677,6 +682,7 @@ ul.why {
   border-radius: 25px;
   height: 80vh;
   box-shadow: 0px 0px 18px 5px black;
+  overflow-y: auto;
 }
 
 #jService {
