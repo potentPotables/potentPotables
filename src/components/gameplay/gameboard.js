@@ -42,17 +42,17 @@ class Gameboard extends Component {
 
       var fontSize;
       if(category.length <= 5) {
-        fontSize = "38px";
+        fontSize = "27px";
       } else if(category.length >= 6 && category.length <= 10) {
-        fontSize = "34px";
+        fontSize = "27px";
       } else if (category.length >= 11 && category.length <= 16) {
-        fontSize = "28px"
+        fontSize = "24px"
       } else if (category.length >= 17 && category.length <= 22) {
         fontSize = "24px";
       } else if (category.length >= 23 && category.length <= 28) {
-          fontSize = "22px";
-      } else if (category.length >= 29) {
           fontSize = "20px";
+      } else if (category.length >= 29) {
+          fontSize = "18px";
       }
 
       var categoryStyle = {
