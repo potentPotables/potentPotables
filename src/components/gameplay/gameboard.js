@@ -44,13 +44,29 @@ class Gameboard extends Component {
       if(category.length <= 5) {
         fontSize = "27px";
       } else if(category.length >= 6 && category.length <= 10) {
-        fontSize = "27px";
+        if(category.indexOf(" ") !== -1) {
+          fontSize = "24px";
+        } else {
+          fontSize = "27px";
+        }
       } else if (category.length >= 11 && category.length <= 16) {
-        fontSize = "24px"
-      } else if (category.length >= 17 && category.length <= 22) {
-        fontSize = "24px";
-      } else if (category.length >= 23 && category.length <= 28) {
+        if(category.indexOf(" ") !== -1) {
           fontSize = "20px";
+        } else {
+          fontSize = "24px"
+        }
+      } else if (category.length >= 17 && category.length <= 22) {
+        if(category.indexOf(" ") !== -1) {
+          fontSize = "18px";
+        } else {
+          fontSize = "22px";
+        }
+      } else if (category.length >= 23 && category.length <= 28) {
+        if(category.indexOf(" ") !== -1) {
+          fontSize = "18px";
+        } else {
+          fontSize = "20px";
+        }
       } else if (category.length >= 29) {
           fontSize = "18px";
       }
