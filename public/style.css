@@ -1103,7 +1103,7 @@ span#enabledText {
 
 .create.a {
 	text-decoration: none;
-	color: navy;
+	color: navy !important;
 	width: 150px;
 	height: 50px;
 	font-family: "Gyparody";
