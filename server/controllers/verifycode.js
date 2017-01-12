@@ -1,7 +1,7 @@
 const Session = require('../models/session');
 
 exports.verifyCode = function(req, res, next) {
-	const code = req.body.linkcode;
+	const code = req.body.linkcode.toLowerCase();
 	const user = req.body.user;
 
 	Session.findOne({code: code }, function(err, existingSession) {
