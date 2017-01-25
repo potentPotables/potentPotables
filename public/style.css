@@ -114,6 +114,7 @@ td.clues:hover {
 	min-width: 100%;
 	*/
 	height: 100vh;
+	width: 100%;
 	font-family: "Korinna-BT";
 	font-size: 75px;
 	text-align: center;
@@ -1223,9 +1224,9 @@ a.button1.a {
   margin-left: 8vw;
 }
 
-.correct:active {
+/*.correct:active {
 	box-shadow: 0px 7px 0px 0px #067c06;
-}
+}*/
 
 .incorrect {
 	width: inherit;
@@ -1498,7 +1499,7 @@ span.finalscore {
   box-shadow: 0px 10px 0px 0px #fef299, 0px 0px 20px 0px #bbb;
   border-radius: 15px;
   height: 218px;
-  color: navy;
+  color: yellow;
   text-align: center;
   line-height: 200px;
   font-weight: lighter;
